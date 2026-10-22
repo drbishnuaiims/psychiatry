@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Psychotropic Medical Emergencies – Bedside Note</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f7f9;--card:#fff;--tx:#1c2430;--mu:#5b6675;--bd:#d9dee6;--ac:#0f6b7a;--acb:#dff1f4;--wr:#fdeaea;--wrt:#9b1c1c;--ti:#e8f5e9;--tit:#1b5e20;--yl:#fff4c2;--yt:#5c4600;--bl:#e6eefc;--blt:#1c3d80}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161c;--card:#1b212a;--tx:#e6eaf0;--mu:#9aa6b6;--bd:#2e3745;--ac:#5cc2d1;--acb:#17353b;--wr:#3a1c1c;--wrt:#ffb4b4;--ti:#173321;--tit:#9be3a8;--yl:#3b3410;--yt:#ffe48a;--bl:#1a2a4a;--blt:#a9c4ff}}
+:root[data-theme="dark"]{--bg:#12161c;--card:#1b212a;--tx:#e6eaf0;--mu:#9aa6b6;--bd:#2e3745;--ac:#5cc2d1;--acb:#17353b;--wr:#3a1c1c;--wrt:#ffb4b4;--ti:#173321;--tit:#9be3a8;--yl:#3b3410;--yt:#ffe48a;--bl:#1a2a4a;--blt:#a9c4ff}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:18px 16px 8px;max-width:1000px;margin:auto}h1{margin:0;font-size:1.35rem}header p{margin:4px 0 0;color:var(--mu);font-size:.85rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--bd);display:flex;gap:6px;overflow-x:auto;padding:8px 12px}
+nav button{flex:none;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:6px 12px;border-radius:999px;font:inherit;font-size:.82rem;cursor:pointer}
+nav button.on{background:var(--ac);color:var(--bg);border-color:var(--ac);font-weight:600}
+main{max-width:1000px;margin:auto;padding:12px 14px 60px}section{display:none}section.on{display:block}
+h2{font-size:1.15rem;margin:6px 0 10px;border-left:5px solid var(--ac);padding-left:10px}h3{font-size:.95rem;margin:16px 0 6px;color:var(--ac)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px 14px;margin:10px 0}
+.box{border-radius:8px;padding:9px 13px;margin:10px 0;border-left:5px solid}.warn{background:var(--wr);color:var(--wrt);border-color:var(--wrt)}.tip{background:var(--ti);color:var(--tit);border-color:var(--tit)}.key{background:var(--yl);color:var(--yt);border-color:var(--yt)}.info{background:var(--bl);color:var(--blt);border-color:var(--blt)}
+.box b:first-child{text-transform:uppercase;font-size:.72rem;letter-spacing:.05em;display:block}
+mark{background:var(--yl);color:var(--yt);padding:0 3px;border-radius:3px;font-weight:600}
+.g{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.chip{display:inline-block;background:var(--acb);color:var(--ac);border-radius:6px;padding:1px 7px;margin:2px 2px 2px 0;font-size:.8rem;font-weight:600}
+ul{margin:4px 0;padding-left:20px}li{margin:2px 0}
+.tw{overflow-x:auto;margin:8px 0}table{border-collapse:collapse;width:100%;min-width:480px;font-size:.84rem;background:var(--card)}
+th,td{border:1px solid var(--bd);padding:5px 8px;text-align:left;vertical-align:top}th{background:var(--acb);color:var(--ac)}
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:10px 0}.flow div{background:var(--card);border:2px solid var(--ac);border-radius:8px;padding:7px 12px;text-align:center;font-size:.88rem}
+.flow div+div{margin-top:18px;position:relative}.flow div+div::before{content:"▼";position:absolute;top:-17px;left:50%;transform:translateX(-50%);color:var(--ac);font-size:.8rem}
+.flow .r{border-color:var(--wrt);background:var(--wr);color:var(--wrt)}.flow .s{border-color:var(--tit);background:var(--ti);color:var(--tit)}
+details{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:6px 12px;margin:8px 0}summary{cursor:pointer;font-weight:600;color:var(--ac)}
+.tg{float:right;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:6px;padding:3px 9px;cursor:pointer;font-size:.8rem}
+@media print{nav,.tg{display:none}section{display:block!important;page-break-inside:avoid}}
+</style></head><body>
+<header><button class="tg" id="th">◐ Theme</button><h1>💊 Medical Emergencies with Psychotropics</h1>
+<p>Bedside / grand-round reference · Source: Grover, Sarkar, Avasthi. <i>Indian J Psychiatry</i> 2022;64(Suppl 2):S236–S250 · Clinical aid, not a substitute for clinical judgement.</p></header>
+<nav id="nav"></nav>
+<main>
+
+<section id="overview" data-t="Overview"><h2>Overview</h2>
+<div class="tw"><table><tr><th>Emergency</th><th>Usual culprit</th></tr>
+<tr><td>Acute dystonia · Akathisia · NMS</td><td>Antipsychotics (typical &gt; atypical)</td></tr>
+<tr><td>Anticholinergic syndrome</td><td>Antipsychotics (+ many other drug classes)</td></tr>
+<tr><td>Serotonin syndrome</td><td>Antidepressants (esp. combinations)</td></tr>
+<tr><td>Toxicity / overdose</td><td>Antipsychotics, antidepressants, lithium, valproate, carbamazepine, benzodiazepines</td></tr></table></div>
+<div class="box key"><b>Core principle</b>Maintain a high index of suspicion, but <mark>rule out organic / other causes</mark> before attributing a picture to the psychotropic.</div>
+<div class="g"><div class="card"><b>Rigidity + altered sensorium + autonomic change?</b><ul><li>Think NMS / serotonin / anticholinergic</li><li>Check drug list, vitals, tone, reflexes, pupils, skin, bowel sounds</li></ul></div>
+<div class="card"><b>Always ask</b><ul><li>Which drug, dose, duration, recent change</li><li>OTC, herbal, illicit drugs</li><li>Intentional overdose? Empty strips?</li></ul></div></div>
+<h3>General approach to the three syndromes (NMS / SS / anticholinergic)</h3>
+<div class="flow"><div class="r">1 · STOP offending / suspected agent(s)</div><div>2 · Confirm diagnosis: history, exam, investigations</div><div>3 · Rule out differentials &amp; grade severity</div><div>4 · Supportive care (ABC, cooling, fluids, benzodiazepines)</div><div class="s">5 · Specific antidote / drug</div><div>6 · Prevent complications</div><div>7 · Restart psychotropics for primary illness (cautiously)</div></div>
+</section>
+
+<section id="dystonia" data-t="Acute Dystonia"><h2>Acute Dystonia (antipsychotic-induced)</h2>
+<p>Sudden involuntary sustained contraction → twisting / repetitive movements, abnormal postures; <b>painful</b>. Focal or generalized.</p>
+<div class="box key"><b>Timing</b>Within <mark>7 days</mark> of starting / rapid dose rise / removing anticholinergic. <mark>95% within 4 days.</mark> Prevalence 2–90%. Higher D2 : ACh antagonism → higher risk.</div>
+<h3>Presentations</h3>
+<div class="tw"><table><tr><th>Site</th><th>Feature</th></tr><tr><td>Neck</td><td>Torticollis / retrocollis / anterocollis (commonest)</td></tr><tr><td>Eyelids</td><td>Blepharospasm</td></tr><tr><td>Jaw</td><td>Oromandibular: slurred speech, drooling, chewing/swallowing difficulty</td></tr><tr><td>Tongue</td><td>Lingual dystonia</td></tr><tr><td>Larynx</td><td><mark>Laryngeal dystonia → stridor, LIFE-THREATENING</mark></td></tr><tr><td>Generalized</td><td>Opisthotonus (rare)</td></tr><tr><td>Eyes</td><td><b>Oculogyric crisis</b> – can occur on stable dose; triggers: alcohol, stress, fatigue, suggestibility</td></tr></table></div>
+<h3>Risk factors</h3>
+<span class="chip">High-potency (haloperidol, fluphenazine, pimozide)</span><span class="chip">Age 10–19</span><span class="chip">Male</span><span class="chip">Prior dystonia (strongest)</span><span class="chip">Family history</span><span class="chip">Cocaine</span><span class="chip">Mood disorder</span><span class="chip">Hypocalcemia / hypoparathyroidism</span><span class="chip">Hyperthyroidism</span><span class="chip">Dehydration</span>
+<h3>Differential</h3>
+<ul><li>Other drugs: metoclopramide, SSRIs, buspirone, diazepam, sumatriptan, chloroquine/HCQ, phenylpropanolamine; cocaine, ecstasy</li><li>Dissociation, catatonia, <b>tardive dystonia</b> (months–years, no quick anticholinergic response), temporal lobe epilepsy, hypocalcemia</li></ul>
+<h3>Management – stepwise</h3>
+<div class="flow"><div class="s">Step 1 · IM/IV anticholinergic / antihistamine: <b>Benztropine 1–2 mg</b> · <b>Biperiden 5 mg</b> · <b>Diphenhydramine 25–50 mg</b><br>Response: 15–20 min IM, ~5 min IV</div><div>Alternative: Diazepam 2–5 mg / Lorazepam 1–2 mg (<mark>choice for laryngospasm</mark>)<br>Oculogyric crisis: oral clonazepam 0.5–4 mg/day divided</div><div>Step 2 · No response → repeat same drug after ~30 min</div><div>Step 3 · Still no response → switch drug</div><div class="r">Step 4 · Fails → reconsider diagnosis (e.g. persistent trismus → dislocated jaw)</div></div>
+<div class="box tip"><b>After resolution</b>Continue anticholinergic ≥24–48 h (practice: 4–7 days). Routine prophylaxis not recommended – use only if risk factors / high-potency drug / high dose.</div>
+</section>
+
+<section id="akathisia" data-t="Akathisia"><h2>Akathisia</h2>
+<p>Greek: “inability to sit”. <b>Subjective</b> inner restlessness + dysphoria, mounting tension on staying still + <b>objective</b> restlessness.</p>
+<div class="box warn"><b>Danger</b>Associated with high risk of <mark>suicidal behaviour</mark> – always assess suicidality.</div>
+<div class="tw"><table><tr><th>Type</th><th>Timing</th></tr><tr><td>Acute</td><td>First hours–days of antipsychotic</td></tr><tr><td>Chronic</td><td>≥3 months</td></tr><tr><td>Withdrawal</td><td>Within 6 weeks of dose reduction / stopping</td></tr><tr><td>Tardive</td><td>After long-term use</td></tr></table></div>
+<p><b>Risks:</b> first exposure, rapid escalation, antipsychotic polypharmacy. <b>Scale:</b> Barnes Akathisia Rating Scale (BARS) – use before starting/increasing dose.</p>
+<p><b>DDx:</b> psychotic/affective agitation, non-akathisia dysphoria, RLS, anxiety, drug withdrawal, delirium/head injury/hypoglycemia, Parkinson’s/Huntington’s, tardive dyskinesia, insomnia.</p>
+<h3>Management</h3>
+<div class="flow"><div>Confirm diagnosis (history, exam, BARS) + assess suicidality</div><div>Reduce dose / switch to low-propensity agent (low-potency FGA or quetiapine)</div><div class="s">First line: <b>β-blocker (propranolol)</b> – gold standard</div><div class="r">C/I: hypotension, bradycardia, DM, asthma, conduction defects → <b>Mirtazapine</b> (alt. first line) → then Vit B6</div></div>
+<div class="tw"><table><tr><th>Class</th><th>Drug (mg/day)</th></tr><tr><td>β-blocker</td><td>Propranolol 40–80</td></tr><tr><td>5-HT2A antagonists</td><td>Mirtazapine 15 · Mianserin 15 · Cyproheptadine 8–16 · Trazodone 100</td></tr><tr><td>Anticholinergics</td><td>Biperiden 2–6 · Benztropine 1.5–8 · Trihexyphenidyl 2–10</td></tr><tr><td>Benzodiazepines</td><td>Lorazepam 1–2 · Clonazepam 0.5–1 · Diazepam 5–15</td></tr><tr><td>GABAergic</td><td>Pregabalin 50–100 · Gabapentin 300–600</td></tr><tr><td>Antihistamine</td><td>Promethazine 25–50</td></tr><tr><td>Others</td><td>Vitamin B6 200 · NAC 1000–2000</td></tr></table></div>
+</section>
+
+<section id="nms" data-t="NMS"><h2>Neuroleptic Malignant Syndrome (NMS)</h2>
+<p>Rare, life-threatening idiosyncratic reaction; reported with almost all antipsychotics (also metoclopramide, mood stabilizers). Incidence 0.02–3.23%. Mechanism: <b>D2 blockade</b> → impaired thermoregulation (↓ heat loss, ↑ heat production).</p>
+<div class="box key"><b>Tetrad</b><mark>Fever · Lead-pipe rigidity · Altered sensorium · Autonomic instability</mark> (↑HR, ↑RR, sweating, labile/high BP, hypersalivation)</div>
+<p><b>Onset:</b> most within <mark>10 days</mark>, almost all within 30 days (can occur later). <b>Stage 5 (worst):</b> extreme rigidity, HR 130–150, SBP 140–210, DBP 100–110, temp 39–42 °C, catatonia, coma.</p>
+<h3>Risk factors</h3>
+<div class="g"><div class="card"><b>Treatment</b><ul><li>First week, fast titration, high dose</li><li>Parenteral, high-potency</li><li>Polypharmacy, antipsychotic + lithium</li></ul></div><div class="card"><b>Patient</b><ul><li>Young / old, male</li><li>Past/family history of NMS</li><li>Dehydration, malnutrition, iron deficiency, infection, trauma</li><li>Mood/psychotic disorder, catatonia, agitation</li><li>Postpartum; hot humid climate; physical restraint</li></ul></div></div>
+<p>Other drugs linked: sertraline, paroxetine, amitriptyline, lithium, carbamazepine, metoclopramide, antiparkinsonian withdrawal, tetrabenazine.</p>
+<h3>Diagnosis</h3>
+<div class="box info"><b>DSM-5</b>ALL 3 primary: dopamine-blocker exposure + severe rigidity + fever, PLUS ≥2 of: diaphoresis, dysphagia, tremor, incontinence, altered consciousness, mutism, tachycardia, labile/high BP, leukocytosis, ↑CPK. International Expert Consensus score: cutoff <b>74</b>.</div>
+<h3>Treatment</h3>
+<div class="tw"><table><tr><th>Drug</th><th>Dose</th><th>Notes / side effects</th></tr><tr><td><b>Bromocriptine</b> (most used)</td><td>10–40 mg/day divided, oral</td><td>Hypotension, psychosis</td></tr><tr><td>Dantrolene</td><td>Oral 50–200 mg/day; IV 2–3 mg/kg/day (max 10 mg/kg/day)</td><td>Hepatotoxicity</td></tr><tr><td>Amantadine</td><td>100–300 mg BD</td><td>Hepatotoxicity, psychosis, seizures</td></tr><tr><td>Levodopa/carbidopa</td><td>25–250 mg TDS–QID</td><td>Psychosis, MI, arrhythmia, dyskinesia</td></tr></table></div>
+<div class="box tip"><b>Refractory</b>Consider <b>ECT</b>. Use <mark>succinylcholine cautiously</mark> (shared pathophysiology with malignant hyperthermia).</div>
+<div class="box info"><b>Restart antipsychotic</b>Only ≥<mark>2 weeks</mark> after resolution, with close monitoring (recurrence risk).</div>
+</section>
+
+<section id="ss" data-t="Serotonin Syndrome"><h2>Serotonin Syndrome (serotonin toxicity)</h2>
+<p>Extreme end of serotonin toxicity. Seen with ≥2 serotonergic agents, SSRIs + CYP3A4 inhibitors, overdose; severe if <b>MAOI</b> combined with another agent. Onset typically <mark>6–24 h</mark>.</p>
+<div class="box key"><b>Triad</b>Altered mental status · Autonomic overactivity · Neuromuscular hyperactivity (<mark>clonus – cardinal; hyperreflexia/clonus more in lower limbs</mark>)</div>
+<div class="tw"><table><tr><th></th><th>Mild</th><th>Moderate</th><th>Severe</th></tr><tr><th>Mental</th><td>Anxiety</td><td>Agitation, pressured speech, hypervigilance</td><td>Confusion, delirium</td></tr><tr><th>Temp</th><td>May be normal</td><td>Hyperthermia</td><td>Severe hyperthermia</td></tr><tr><th>Autonomic</th><td>Mydriasis, sweating, flushing</td><td>Instability, ↑bowel sounds</td><td>—</td></tr><tr><th>Neuromuscular</th><td>Hyperreflexia, inducible clonus</td><td>Sustained clonus, opsoclonus, myoclonus, tremor</td><td>Rigidity, respiratory failure</td></tr></table></div>
+<h3>Hunter criteria (serotonergic agent + ONE of)</h3>
+<ul><li>Spontaneous clonus</li><li>Inducible clonus + agitation or diaphoresis</li><li>Ocular clonus + agitation or diaphoresis</li><li>Tremor + hyperreflexia</li><li>Hypertonia + temp &gt;38 °C + ocular or inducible clonus</li></ul>
+<p><b>Sternbach:</b> ≥3 of 10 (mental status change, agitation, myoclonus, hyperreflexia, diaphoresis, shivering, tremor, diarrhea, incoordination, fever); exclude other causes; no recent neuroleptic start/increase.</p>
+<h3>Implicated agents</h3>
+<span class="chip">MAOIs</span><span class="chip">SSRIs/SNRIs/TCAs</span><span class="chip">Trazodone/5-HT2A</span><span class="chip">St John’s wort</span><span class="chip">Buspirone</span><span class="chip">Lithium</span><span class="chip">CBZ / valproate</span><span class="chip">Aripiprazole, clozapine, olanzapine, quetiapine, risperidone</span><span class="chip">Metoclopramide, ondansetron</span><span class="chip">Triptans, ergots</span><span class="chip">Tramadol, fentanyl, pethidine, tapentadol, cyclobenzaprine</span><span class="chip">Amphetamines, MDMA, methylphenidate, cocaine</span><span class="chip">Dextromethorphan, linezolid, L-tryptophan, 5-HTP</span>
+<p><b>DDx extra:</b> carcinoid syndrome. Ask about OTC, illicit drugs, ginseng, tryptophan, appetite suppressants.</p>
+<h3>Management</h3>
+<div class="flow"><div class="r">Stop all serotonergic agents</div><div><b>Mild:</b> supportive care + benzodiazepines</div><div class="s"><b>Moderate–severe:</b> <b>Cyproheptadine</b> 12 mg loading (oral/NG) → 2 mg every 2 h until improved → 8 mg 6 h after settling</div><div class="r"><b>Severe:</b> ICU, treat hyperthermia / rhabdo / DIC / ARDS; paralysis with <b>vecuronium</b> (non-depolarizing)</div></div>
+<div class="box warn"><b>Avoid</b>Opioids in management. Restart antidepressant after 1–2 weeks; slow titration; psychoeducate on interacting drugs/supplements.</div>
+</section>
+
+<section id="ach" data-t="Anticholinergic Syndrome"><h2>Anticholinergic Syndrome</h2>
+<p>ACh antagonism in CNS + periphery (mainly muscarinic). From intentional/accidental intake or therapeutic drugs. <b>No diagnostic criteria</b> – relies on clinical awareness.</p>
+<div class="box key"><b>Mnemonic picture</b><mark>Dry mouth, dry red hot skin, dilated pupils, urinary retention, ↓bowel sounds, delirium, tachycardia, hyperthermia</mark></div>
+<div class="tw"><table><tr><th>System</th><th>Features</th></tr><tr><td>Central</td><td>Agitation, hallucinations, cognitive dysfunction, confusion/delirium, sedation, seizures</td></tr><tr><td>Temp</td><td>Hyperthermia</td></tr><tr><td>GI</td><td>Dry mouth, constipation, ↓bowel sounds, paralytic ileus</td></tr><tr><td>CVS</td><td>Tachycardia, arrhythmias, wide QRS, long QT, hypotension, widened pulse pressure</td></tr><tr><td>Eyes</td><td>Blurred vision, dilated pupils, ↓lacrimation, narrow-angle glaucoma</td></tr><tr><td>Urine / Skin</td><td>Retention · Dry, flushed, hot</td></tr></table></div>
+<p><b>Risks:</b> old age, additive anticholinergic burden, street drugs / herbals (Datura, angel’s trumpet, PCP, lupin). May worsen angina, CCF, constipation, retention, glaucoma in elderly.</p>
+<h3>Common culprits</h3>
+<span class="chip">TCAs, mirtazapine</span><span class="chip">Diphenhydramine, promethazine, hydroxyzine, cyproheptadine</span><span class="chip">Chlorpromazine, clozapine, olanzapine, quetiapine, thioridazine</span><span class="chip">Benztropine, trihexyphenidyl, biperiden</span><span class="chip">Oxybutynin, dicyclomine</span><span class="chip">Hyoscine, atropine</span><span class="chip">Carbamazepine, valproate</span><span class="chip">Cimetidine, ranitidine</span><span class="chip">Codeine, oxycodone</span><span class="chip">Cardiac: digoxin, nifedipine, furosemide</span>
+<h3>Management</h3>
+<ul><li>Review the <b>whole prescription</b> for anticholinergic burden (e.g. Anticholinergic Burden Scale); first stop last-added / dose-changed agent</li><li>In elderly with comorbidities: substitute with low/no anticholinergic drugs rather than abruptly stopping</li><li>Supportive: cooling, IV crystalloid bolus for hypotension, catheter for retention, benzodiazepines for agitation</li><li>Activated charcoal if overdose &lt;1 h</li></ul>
+<div class="box warn"><b>Physostigmine</b>May be considered but risky: worsens asthma, bronchitis, DM, cardiac disease, glaucoma, psychosis.</div>
+</section>
+
+<section id="compare" data-t="Compare & Differentiate"><h2>Distinguishing NMS · SS · Anticholinergic · Malignant Hyperthermia</h2>
+<div class="tw"><table><tr><th></th><th>NMS</th><th>Serotonin syn.</th><th>Anticholinergic</th><th>Malignant hyperthermia</th></tr>
+<tr><th>Drug</th><td>Dopamine antagonists</td><td>Serotonergic</td><td>Anticholinergic</td><td>Succinylcholine, inhalational anaesthetics</td></tr>
+<tr><th>Sensorium</th><td>Stupor, coma</td><td>Agitation, coma</td><td>Agitation, delirium</td><td>Agitation</td></tr>
+<tr><th>Temp</th><td>&gt;41.1 °C</td><td>&gt;41.1 °C</td><td>≤38.8 °C</td><td>≈46 °C</td></tr>
+<tr><th>BP/HR/RR</th><td>↑</td><td>↑</td><td>↑</td><td>↑</td></tr>
+<tr><th>Pupils</th><td>Normal</td><td><mark>Mydriasis</mark></td><td><mark>Mydriasis</mark></td><td>Normal</td></tr>
+<tr><th>Mucosa</th><td>Sialorrhea</td><td>Sialorrhea</td><td><mark>Dry</mark></td><td>Normal</td></tr>
+<tr><th>Skin</th><td>Pallor, sweating</td><td>Sweating</td><td><mark>Dry, red, hot</mark></td><td>Mottled, sweaty</td></tr>
+<tr><th>Bowel sounds</th><td>↑</td><td>↑</td><td><mark>↓</mark></td><td>↓</td></tr>
+<tr><th>Reflexes</th><td>Bradyreflexia</td><td><mark>Hyperreflexia, clonus</mark></td><td>Normal</td><td>Hyperreflexia</td></tr>
+<tr><th>Tone</th><td><mark>Lead-pipe, all muscles</mark></td><td>↑ mainly lower limbs</td><td>Normal</td><td>Rigor-mortis-like</td></tr>
+<tr><th>CPK / WBC / myoglobinuria</th><td>↑ / leukocytosis / present</td><td>↑ / leukocytosis / present</td><td>—</td><td>—</td></tr>
+<tr><th>Onset</th><td>Days</td><td>Hours (6–24 h)</td><td>Hours</td><td>Minutes–hours of exposure</td></tr></table></div>
+<div class="box tip"><b>Quick rule</b>Clonus/hyperreflexia → serotonin · Lead-pipe + slow onset + bradyreflexia → NMS · Dry + dilated + ↓bowel sounds, normal tone → anticholinergic.</div>
+<h3>Differential diagnosis (all three)</h3>
+<ul><li><b>Psychiatric:</b> worsening illness, catatonia / malignant catatonia, agitated delirium</li><li><b>Infection:</b> meningitis, encephalitis, sepsis, abscess, tetanus, botulism</li><li><b>Environmental:</b> heatstroke, head injury</li><li><b>Endocrine/metabolic:</b> thyrotoxicosis, pheochromocytoma, ↓Ca, ↓Mg, hypoglycemia</li><li><b>Neuro:</b> severe EPS, NCSE, midbrain lesion, stroke</li><li><b>Toxic:</b> salicylate, heavy metals, lithium/CBZ/valproate toxicity, strychnine, organophosphate/carbamate</li><li><b>Substances:</b> hallucinogens, amphetamine, cocaine, alcohol/benzodiazepine withdrawal</li><li><b>Others:</b> Parkinson hyperpyrexia (stopping antiparkinsonian), reserpine/tetrabenazine, porphyria, SLE, autoimmune encephalitis</li></ul>
+</section>
+
+<section id="work" data-t="Workup & Supportive"><h2>Investigations &amp; Supportive Care</h2>
+<h3>Investigations (NMS / SS / anticholinergic)</h3>
+<div class="g"><div class="card"><b>Core</b><ul><li>Hemogram (leukocytosis)</li><li><mark>CPK</mark> (≥4× normal supports NMS)</li><li>Urine myoglobin</li><li>RFT, electrolytes (Na, K, Ca, PO4), glucose</li><li>ABG, ECG, LFT, coagulation</li></ul></div><div class="card"><b>As indicated</b><ul><li>Iron profile (low = poor prognosis in NMS)</li><li>Blood culture; CSF if meningitis</li><li>EEG (diffuse slowing)</li><li>Neuroimaging (encephalitis/abscess)</li><li>Toxicology screen; chest X-ray (aspiration)</li><li>Doppler for DVT; autoimmune panel</li></ul></div></div>
+<h3>Supportive measures</h3>
+<ul><li>Stop offending agent; ICU or quiet room; <b>ABC</b>, monitor vitals</li><li>Hyperthermia: cooling blankets + antipyretics</li><li>IV fluids; strict input/output; catheter if retention; <mark>prevent renal failure in NMS</mark> (urine alkalinisation with sodium bicarbonate)</li><li>Prevent hypoglycemia / nutritional care; correct low iron (NMS)</li><li>Lorazepam for agitation; treat seizures</li><li>BP: antihypertensives in SS; crystalloid bolus in anticholinergic hypotension</li><li>Early mobilisation/physio; heparin if immobile (DVT prophylaxis)</li><li>Positioning to prevent aspiration</li></ul>
+</section>
+
+<section id="lithium" data-t="Lithium"><h2>Lithium Toxicity</h2>
+<div class="box key"><b>Narrow window</b>Therapeutic <mark>0.4–1.2 mEq/L</mark>; toxicity usually &gt;1.5; life-threatening &gt;2. Toxic effects can occur <u>even at therapeutic levels</u>.</div>
+<div class="tw"><table><tr><th>Type</th><th>Who</th><th>Presents with</th></tr><tr><td>Acute</td><td>Overdose in naïve patient</td><td>GI first; neuro after 2–3 days</td></tr><tr><td>Acute-on-chronic</td><td>Long-term user taking overdose</td><td>GI + neuro</td></tr><tr><td>Chronic</td><td>Long-term therapy (↓ elimination)</td><td>Mainly neuro</td></tr></table></div>
+<p><b>Risks (chronic):</b> old age, hypovolemia, diuretics, ACE inhibitors, NSAIDs, renal impairment.</p>
+<div class="tw"><table><tr><th>Severity (chronic)</th><th>Level</th><th>Features</th></tr><tr><td>Mild</td><td>1.5–2.5</td><td>Fine tremor, fatigue, weakness, hyperreflexia, gait abnormality, N/V/D; T-wave change, bradycardia, SA/AV block</td></tr><tr><td>Moderate</td><td>2.5–3.5</td><td>Coarse tremor, dysarthria, ataxia, tinnitus, hypertonia, myoclonus; N/V/D</td></tr><tr><td>Severe</td><td>&gt;3.5</td><td>Stupor, seizures, coma, fasciculation, rigidity, choreoathetosis, paralysis; QRS prolongation, hypotension, ventricular arrhythmias, renal failure</td></tr></table></div>
+<h3>Management</h3>
+<div class="flow"><div class="r">Stop lithium + interacting drugs (NSAID/ACEi/diuretic)</div><div>Serum Li level (repeat) + RFT; ECG; supportive care</div><div>IV fluids to restore GFR &amp; urine output</div><div>Recent large ingestion (&lt;1 h): whole-bowel irrigation (charcoal does not bind lithium)</div><div class="s"><b>Haemodialysis:</b> chronic &gt;2.5 · acute &gt;4 · or &lt;2.5 with renal impairment · or altered sensorium / seizures / life-threatening arrhythmia irrespective of level<br>Continue until level &lt;1 mEq/L</div></div>
+</section>
+
+<section id="vpacbz" data-t="Valproate & Carbamazepine"><h2>Valproate &amp; Carbamazepine Toxicity</h2>
+<div class="g"><div class="card"><h3>Valproate</h3><p>Intentional / accidental overdose; mainly neurological.</p><ul><li><b>CNS:</b> irritability, ataxia, confusion, coma, hallucinations, myoclonus, miosis, fever/hypothermia</li><li><b>CVS/resp:</b> hypotension, tachycardia, arrest, respiratory depression (massive)</li><li><b>GI/other:</b> vomiting, hepatotoxicity, pancreatitis</li><li><b>Dx:</b> history + ↑transaminases, ↑ammonia, high VPA level</li></ul></div>
+<div class="card"><h3>Carbamazepine</h3><p>Overdose, or interactions (enzyme inhibitors, food). Erratic absorption → delayed symptoms.</p><ul><li><b>CNS:</b> sedation, nystagmus, diplopia, ataxia, seizures, myoclonus, coma, mydriasis, resp. depression</li><li><b>CVS:</b> hypotension, sinus tachycardia, arrhythmia</li><li><b>Other:</b> anticholinergic ileus, rhabdomyolysis, anaemia</li><li><b>Dx:</b> serial CBZ levels</li></ul></div></div>
+<h3>Valproate management</h3>
+<ul><li>Stop drug; supportive; benzodiazepines for seizures/agitation; correct electrolytes</li><li>Activated charcoal 1 g/kg (max 50 g) if &lt;2 h – <mark>avoid if sedated / airway unprotected</mark></li><li><b>Haemodialysis / extracorporeal</b> if severe: level &gt;1300 mg/L, coma or ventilation, pH &lt;7.10, hyperammonaemic encephalopathy, shock</li><li><b>Naloxone</b> 0.8–2 mg (start 0.04 mg IV, titrate) – reverses CNS depression (weak evidence)</li><li><b>L-carnitine</b> 100 mg/kg IV over 30 min (max 6 g), then 50 mg/kg (max 3 g) 8-hourly – for hyperammonaemia / hepatotoxicity</li></ul>
+<h3>Carbamazepine management</h3>
+<ul><li>Dose- and symptom-guided; single activated charcoal if recent (protect airway)</li><li>Haemodialysis, charcoal haemoperfusion, IV lipid emulsion, CVVHDF in severe cases</li></ul>
+</section>
+
+<section id="od" data-t="Antipsychotic / AD / BZD OD"><h2>Overdose: Antipsychotics, Antidepressants, Benzodiazepines</h2>
+<div class="box info"><b>Initial steps (all)</b>Identify drug, dose, co-ingestants, <mark>time since ingestion</mark>; ABC; IV access; ECG; ask about suicidality; check empty strips; rule out other causes.</div>
+<h3>Antipsychotic overdose</h3>
+<p>Exaggerated pharmacology: D2 (EPS, NMS), M1 (anticholinergic), H1 (sedation), α1 (hypotension), 5-HT2A.</p>
+<div class="tw"><table><tr><th>Drug</th><th>Key features</th></tr><tr><td>Chlorpromazine</td><td>Sedation, coma, seizures, arrhythmia, hypotension, anticholinergic</td></tr><tr><td>Haloperidol</td><td>EPS, akathisia, QTc ↑, BP change</td></tr><tr><td>Clozapine</td><td>Sedation, tachycardia, sialorrhea, seizures, myocarditis, agranulocytosis, anticholinergic</td></tr><tr><td>Risperidone</td><td>Acute dystonia, hypotension</td></tr><tr><td>Olanzapine / Quetiapine</td><td>Sedation, hypotension, QTc ↑; quetiapine: tachycardia, delirium</td></tr><tr><td>Ziprasidone / Amisulpride</td><td>Sedation, CNS depression, QTc ↑; amisulpride: bradycardia, resp. depression</td></tr><tr><td>Aripiprazole</td><td>Sedation, tachycardia, GI upset, EPS</td></tr></table></div>
+<ul><li>Activated charcoal single dose if &lt;1 h and patient willing (never forced)</li><li>Seizures: IV lorazepam / diazepam first line</li><li><mark>QTc &gt;500 ms → IV magnesium sulfate 2–4 g</mark></li></ul>
+<h3>Antidepressant overdose</h3>
+<div class="tw"><table><tr><th>Class</th><th>Features</th></tr><tr><td>TCAs</td><td>Coma, convulsions, resp. depression; <b>cardiac</b>: wide QRS, QTc ↑, heart block, VF, asystole, shock; anticholinergic signs</td></tr><tr><td>SSRIs</td><td>Serotonin-syndrome picture</td></tr><tr><td>Venlafaxine</td><td>Serotonin syndrome, seizures, QTc ↑, tachycardia, hypotension, coma</td></tr><tr><td>Bupropion</td><td>Seizures, hypoxia, cardiac arrest</td></tr></table></div>
+<ul><li>Charcoal if 1–2 h and airway protected; avoid metabolic acidosis</li><li><b>Sodium bicarbonate</b>: haemodynamic instability, seizures, QRS prolongation</li><li><b>Intralipid</b>: lipophilic TCA + unstable</li><li>Seizures: IV benzodiazepines</li></ul>
+<h3>Benzodiazepine overdose</h3>
+<p>Usually not fatal in healthy adults; <mark>dangerous in elderly, COPD, liver disease</mark>, short-acting potent agents (midazolam, triazolam), co-ingestants. Features: drowsiness, ataxia, nystagmus, dysarthria, confusion, coma, hypotension, hypothermia, respiratory depression; paradoxical agitation/aggression; anterograde amnesia.</p>
+<ul><li>Airway protection, prevent aspiration; decontamination rarely – single charcoal if &lt;1 h, conscious, airway safe</li></ul>
+<div class="box warn"><b>Flumazenil – selective use only</b>Dose 0.1–0.2 mg/min IV over 30 min, repeat after ≥1 min if needed, max 1–2 mg; infusion to prevent resedation. Get baseline ECG.<br><b>Contraindicated:</b> long-term BZD users (therapeutic or abuse), epilepsy, ↑ICP, arrhythmia, prolonged QTc/abnormal ECG. Risks: withdrawal, seizures, SVT. Response is inconsistent.</div>
+</section>
+
+<section id="quick" data-t="Quick Revision"><h2>Quick Revision Sheet</h2>
+<div class="g">
+<div class="card"><b>Timelines</b><ul><li>Dystonia: ≤4 d (95%), ≤7 d</li><li>NMS: ≤10 d most, ≤30 d nearly all</li><li>Serotonin syndrome: 6–24 h</li><li>Restart antipsychotic: ≥2 wk after NMS</li><li>Restart antidepressant: 1–2 wk after SS</li></ul></div>
+<div class="card"><b>Antidotes / key drugs</b><ul><li>Dystonia → benztropine / biperiden / diphenhydramine; laryngospasm → BZD</li><li>Akathisia → propranolol / mirtazapine</li><li>NMS → bromocriptine, dantrolene, ECT</li><li>SS → cyproheptadine</li><li>Anticholinergic → physostigmine (cautious)</li><li>Valproate → L-carnitine, naloxone</li><li>BZD → flumazenil (selective)</li><li>TCA → NaHCO₃, lipid emulsion</li><li>Prolonged QTc → MgSO₄ 2–4 g</li></ul></div>
+<div class="card"><b>Dialysis triggers</b><ul><li>Lithium: chronic &gt;2.5; acute &gt;4; neuro/cardiac severity</li><li>Valproate: severe toxicity (&gt;1300 mg/L, coma, pH &lt;7.10)</li></ul><b>Charcoal windows</b><ul><li>Antipsychotic, lithium WBI, BZD: &lt;1 h</li><li>Antidepressant: 1–2 h · Valproate: &lt;2 h</li></ul></div></div>
+<div class="box warn"><b>Pitfalls</b><ul><li>Don’t miss <b>laryngeal dystonia</b>, <b>suicidality in akathisia</b></li><li>Don’t label before excluding sepsis, CNS infection, delirium, other toxins</li><li>Succinylcholine in NMS/ECT; opioids in serotonin syndrome; flumazenil in chronic BZD users</li><li>Abruptly stopping anticholinergic drugs in the elderly can destabilise comorbidities</li></ul></div>
+<details><summary>Self-test: which syndrome?</summary><ul><li>Clonus + diarrhoea + sweating after SSRI+tramadol → <b>Serotonin syndrome</b></li><li>Lead-pipe rigidity + fever + ↑CPK after IM haloperidol → <b>NMS</b></li><li>Dry flushed skin, dilated pupils, urinary retention after TCA + antihistamine → <b>Anticholinergic</b></li><li>Tremor, ataxia on lithium + NSAID → <b>Chronic lithium toxicity</b></li></ul></details>
+</section>
+</main>
+<script>
+var S=[].slice.call(document.querySelectorAll("section")),N=document.getElementById("nav");
+function show(id){S.forEach(function(s){s.classList.toggle("on",s.id===id)});[].forEach.call(N.children,function(b){b.classList.toggle("on",b.dataset.id===id)});scrollTo(0,0);try{history.replaceState(null,"","#"+id)}catch(e){}}
+S.forEach(function(s){var b=document.createElement("button");b.textContent=s.dataset.t;b.dataset.id=s.id;b.onclick=function(){show(s.id)};N.appendChild(b)});
+var h=location.hash.slice(1);show(S.some(function(s){return s.id===h})?h:"overview");
+document.getElementById("th").onclick=function(){var r=document.documentElement,d=matchMedia("(prefers-color-scheme:dark)").matches,c=r.dataset.theme||(d?"dark":"light");r.dataset.theme=c==="dark"?"light":"dark"};
+</script></body></html>
