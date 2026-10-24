@@ -27,6 +27,35 @@
 
 const GUIDELINES = [
 
+  {
+    title: "Systemic Medical Emergencies with Psychotropics",
+    shortTitle: "Psychotropic Medical Emergencies",
+    authors: "Grover, Sarkar, Avasthi",
+    year: "2022",
+    journal: "Indian Journal of Psychiatry",
+    category: "Psychopharmacology / Medical Emergencies",
+    description: "Bedside reference for recognising and managing systemic medical emergencies associated with psychotropics, including seizures, hyponatremia, QTc prolongation, clozapine-related cardiac effects, DKA, GI emergencies, hepatic injury and genitourinary emergencies.",
+    tags: [
+      "Psychotropic Emergencies",
+      "Clozapine",
+      "Hyponatremia",
+      "QTc Prolongation",
+      "Medical Emergencies"
+    ],
+    keywords: [
+      "systemic medical emergencies with psychotropics",
+      "psychotropic medical emergencies",
+      "psychotropic adverse effects",
+      "clozapine myocarditis",
+      "psychotropic hyponatremia",
+      "QTc prolongation",
+      "drug induced liver injury",
+      "psychiatric emergency"
+    ],
+    url: "cpg/systemic-medical-emergencies-with-psychotropics.html",
+    readTime: "20 min read"
+  },
+
   /* =====================================================
      NEW CPG SLOT — 01
      >>> ADD THE NEXT NEWEST CPG HERE <<<
