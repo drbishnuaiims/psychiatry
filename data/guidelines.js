@@ -28,6 +28,36 @@
 const GUIDELINES = [
 
   {
+    title: "Medical Emergencies with Psychotropics",
+    shortTitle: "Psychotropic Emergencies",
+    authors: "Grover, Sarkar, Avasthi",
+    year: "2022",
+    journal: "Indian Journal of Psychiatry",
+    category: "Psychopharmacology / Medical Emergencies",
+    description: "Bedside reference for acute psychotropic-related emergencies, covering acute dystonia, akathisia, neuroleptic malignant syndrome, serotonin syndrome, anticholinergic syndrome, lithium and mood stabilizer toxicity, and psychotropic overdose.",
+    tags: [
+      "Psychotropic Emergencies",
+      "Neuroleptic Malignant Syndrome",
+      "Serotonin Syndrome",
+      "Lithium Toxicity",
+      "Overdose"
+    ],
+    keywords: [
+      "medical emergencies with psychotropics",
+      "psychotropic emergency",
+      "neuroleptic malignant syndrome",
+      "serotonin syndrome",
+      "acute dystonia",
+      "akathisia",
+      "anticholinergic syndrome",
+      "lithium toxicity",
+      "psychotropic overdose"
+    ],
+    url: "cpg/psychotropic-emergency.html",
+    readTime: "15 min read"
+  },
+
+  {
     title: "Systemic Medical Emergencies with Psychotropics",
     shortTitle: "Psychotropic Medical Emergencies",
     authors: "Grover, Sarkar, Avasthi",
