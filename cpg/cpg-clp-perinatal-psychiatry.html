@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Perinatal Psychiatry – Bedside Note</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f8f5f7;--card:#fff;--tx:#241d22;--mu:#675e65;--bd:#e0d6dc;--ac:#b0306b;--acb:#fbe4ee;--wr:#fdeaea;--wrt:#9b1c1c;--ti:#e8f5e9;--tit:#1b5e20;--yl:#fff4c2;--yt:#5c4600;--bl:#e6eefc;--blt:#1c3d80}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171216;--card:#211a20;--tx:#efe7ec;--mu:#aa9ea6;--bd:#392d36;--ac:#f08fb8;--acb:#3b1f2d;--wr:#3a1c1c;--wrt:#ffb4b4;--ti:#173321;--tit:#9be3a8;--yl:#3b3410;--yt:#ffe48a;--bl:#1a2a4a;--blt:#a9c4ff}}
+:root[data-theme="dark"]{--bg:#171216;--card:#211a20;--tx:#efe7ec;--mu:#aa9ea6;--bd:#392d36;--ac:#f08fb8;--acb:#3b1f2d;--wr:#3a1c1c;--wrt:#ffb4b4;--ti:#173321;--tit:#9be3a8;--yl:#3b3410;--yt:#ffe48a;--bl:#1a2a4a;--blt:#a9c4ff}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:18px 16px 8px;max-width:1000px;margin:auto}h1{margin:0;font-size:1.3rem}header p{margin:4px 0 0;color:var(--mu);font-size:.85rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--bd);display:flex;gap:6px;overflow-x:auto;padding:8px 12px}
+nav button{flex:none;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:6px 12px;border-radius:999px;font:inherit;font-size:.82rem;cursor:pointer}
+nav button.on{background:var(--ac);color:var(--bg);border-color:var(--ac);font-weight:600}
+main{max-width:1000px;margin:auto;padding:12px 14px 60px}section{display:none}section.on{display:block}
+h2{font-size:1.15rem;margin:6px 0 10px;border-left:5px solid var(--ac);padding-left:10px}h3{font-size:.95rem;margin:16px 0 6px;color:var(--ac)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px 14px;margin:10px 0}
+.box{border-radius:8px;padding:9px 13px;margin:10px 0;border-left:5px solid}.warn{background:var(--wr);color:var(--wrt);border-color:var(--wrt)}.tip{background:var(--ti);color:var(--tit);border-color:var(--tit)}.key{background:var(--yl);color:var(--yt);border-color:var(--yt)}.info{background:var(--bl);color:var(--blt);border-color:var(--blt)}
+.box b:first-child{text-transform:uppercase;font-size:.72rem;letter-spacing:.05em;display:block}
+mark{background:var(--yl);color:var(--yt);padding:0 3px;border-radius:3px;font-weight:600}
+.g{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.chip{display:inline-block;background:var(--acb);color:var(--ac);border-radius:6px;padding:1px 7px;margin:2px 2px 2px 0;font-size:.8rem;font-weight:600}
+.stat{text-align:center}.stat big{display:block;font-size:1.5rem;font-weight:700;color:var(--ac)}.stat span{font-size:.78rem;color:var(--mu)}
+ul{margin:4px 0;padding-left:20px}li{margin:2px 0}
+.tw{overflow-x:auto;margin:8px 0}table{border-collapse:collapse;width:100%;min-width:480px;font-size:.84rem;background:var(--card)}
+th,td{border:1px solid var(--bd);padding:5px 8px;text-align:left;vertical-align:top}th{background:var(--acb);color:var(--ac)}
+.flow{display:flex;flex-direction:column;margin:10px 0}.flow div{background:var(--card);border:2px solid var(--ac);border-radius:8px;padding:7px 12px;text-align:center;font-size:.88rem}
+.flow div+div{margin-top:18px;position:relative}.flow div+div::before{content:"▼";position:absolute;top:-17px;left:50%;transform:translateX(-50%);color:var(--ac);font-size:.8rem}
+.flow .r{border-color:var(--wrt);background:var(--wr);color:var(--wrt)}.flow .s{border-color:var(--tit);background:var(--ti);color:var(--tit)}
+details{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:6px 12px;margin:8px 0}summary{cursor:pointer;font-weight:600;color:var(--ac)}
+.tg{float:right;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:6px;padding:3px 9px;cursor:pointer;font-size:.8rem}
+@media print{nav,.tg{display:none}section{display:block!important;page-break-inside:avoid}}
+</style></head><body>
+<header><button class="tg" id="th">◐ Theme</button><h1>🤰 Psychiatric Disorders in the Perinatal Period</h1>
+<p>Bedside / grand-round reference · Source: Bharadwaj, Endumathi, Parial, Chandra. <i>Indian J Psychiatry</i> 2022;64(Suppl 2):S414–S428 · Aid only; individualise every patient.</p></header>
+<nav id="nav"></nav>
+<main>
+
+<section id="over" data-t="Overview"><h2>Overview &amp; Referral Contexts</h2>
+<div class="box key"><b>Why it matters</b>With falling obstetric / medical maternal mortality, <mark>maternal mental health is now a major contributor to morbidity and mortality</mark>. Relationship with obstetrics is <b>bidirectional</b>.</div>
+<p><b>Referrals come from:</b> (i) antenatal / postnatal OPD, (ii) obstetric in-patient or labour room, (iii) obstetric emergency.</p>
+<div class="g"><div class="card stat"><big>60–80%</big><span>SMI relapse without prophylaxis</span></div><div class="card stat"><big>20–30%</big><span>SMI relapse with prophylaxis</span></div><div class="card stat"><big>10–15%</big><span>antenatal anxiety</span></div><div class="card stat"><big>15–20%</big><span>antenatal / postpartum depression</span></div><div class="card stat"><big>40–50%</big><span>postpartum blues</span></div><div class="card stat"><big>1–2 / 1000</big><span>live births: postpartum psychosis</span></div></div>
+<h3>By stage</h3>
+<div class="tw"><table><tr><th>Stage</th><th>Typical issues</th></tr>
+<tr><td><b>Preconception</b></td><td>Infertility / ART stress, anxiety, depression · previous traumatic birth (injury, disrespectful care, stillbirth, emergency C-section) · pre-existing SMI planning pregnancy (fear of teratogenicity, family pressure to stop drugs)</td></tr>
+<tr><td><b>Pregnancy</b></td><td>New-onset illness; pre-existing illness with accidental exposure; psychosocial: marital discord, domestic violence, spouse substance use, previous female child; tokophobia, PTSD</td></tr>
+<tr><td><b>Childbirth</b></td><td>Stillbirth / grief, NICU separation, infant illness, anticipatory grief, infant gender stress (can drive violence)</td></tr>
+<tr><td><b>Postpartum</b></td><td>Bonding disorders, blues, PPD, PPP, OCD</td></tr></table></div>
+<h3>Postpartum conditions</h3>
+<div class="tw"><table><tr><th>Condition (prevalence)</th><th>Presentation</th><th>Intervention</th></tr>
+<tr><td>Bonding difficulty (5% healthy; 40–60% with psychiatric illness)</td><td>Delay / loss of bonding; pathological anger; anxiety over infant care; rarely rejection</td><td>Reassure, encourage contact; anger → ensure safety + <mark>rule out mania / psychosis</mark></td></tr>
+<tr><td>Blues (40–50%)</td><td>Mild, self-limiting emotional changes</td><td>Reassurance, social support</td></tr>
+<tr><td>PPD (15–20%)</td><td>Insidious, first months; in bipolar: abrupt psychotic depression</td><td>Mild: psychotherapy; mod–severe: antidepressant</td></tr>
+<tr><td>PPP (1–2/1000)</td><td>Abrupt: psychotic mania, psychotic depression, acute psychosis, catatonia</td><td><mark>Suicide + infanticide risk assessment</mark>; in-patient care</td></tr>
+<tr><td>OCD</td><td>Contamination / cleaning, or intrusive urges to harm infant (without actual harm)</td><td>CBT; SSRI if severe</td></tr></table></div>
+</section>
+
+<section id="assess" data-t="Assessment"><h2>Clinical Assessment</h2>
+<div class="flow"><div><b>History</b> – psychiatric + perinatal specifics</div><div><b>Physical exam</b> – rule out organic cause</div><div><b>MSE</b> – confusion / disorientation → medical cause; infant-related delusions / hallucinations</div><div class="r"><b>Risk</b> – suicide, <b>infanticide</b>, harm to others</div><div class="s">Diagnosis (ICD-10 / DSM-5) + scales + plan</div></div>
+<div class="g"><div class="card"><b>History specifics</b><ul><li>Past pregnancies, outcomes, obstetric complications, perinatal loss</li><li>Trauma / obstetric violence; child sexual abuse</li><li>Planned / unplanned, wanted / unwanted, “precious” pregnancy; health worries</li><li>Spouse / family support; substance use (woman and spouse); domestic violence</li><li>Medical: thyroid, HTN, DM, seizures, headache, visual change, fever + altered sensorium, connective tissue disease</li><li>Ensure <mark>privacy</mark> – not in crowded ER</li></ul></div>
+<div class="card"><b>Examination</b><ul><li>Pallor, jaundice, BP, pedal oedema, thyroid, bleeding signs</li><li>CVS / respiratory, neurology, arthritis / CTD signs</li></ul><b>Organic mimics</b><br><span class="chip">Hypertension</span><span class="chip">Anaemia</span><span class="chip">Thyroid</span><span class="chip">CTD / SLE</span><span class="chip">Cerebrovascular</span><span class="chip">Movement disorders</span></div></div>
+<h3>Investigations by suspected cause</h3>
+<div class="tw"><table><tr><th>Diagnosis</th><th>Tests</th></tr><tr><td>Infection</td><td>CBC, blood / urine / wound cultures</td></tr><tr><td>Electrolytes / uraemia</td><td>Na, K, Ca ± PTH; urea, creatinine, eGFR</td></tr><tr><td>Diabetes / DKA / hypoglycaemia</td><td>Glucose, urine ketones, HbA1c</td></tr><tr><td>Anaemia</td><td>Hemogram + MCV, smear, iron, B12</td></tr><tr><td>Thyroid</td><td>TSH (± T3/T4), anti-thyroid antibodies</td></tr><tr><td>Hepatitis / encephalopathy</td><td>Bilirubin, SGOT / SGPT, ALP, USG, ammonia</td></tr><tr><td>Substances</td><td>Urine drug screen</td></tr><tr><td>CNS (stroke, PRES, CVT, Sheehan, Wernicke, ADEM, MS, anti-NMDAR, meningitis / encephalitis)</td><td>MRI (CT avoided in pregnancy), EEG, CSF</td></tr></table></div>
+<h3>Infant-related psychopathology</h3>
+<div class="tw"><table><tr><th>Psychopathology</th><th>Think / implication</th></tr><tr><td>Delusion fetus / infant dead, defective or hidden death (NICU)</td><td>Psychotic depression, acute psychosis; medical cause</td></tr><tr><td>Infant is divine / special; others will steal</td><td>Mania / acute psychosis → <mark>clinging, rough handling, injury risk</mark></td></tr><tr><td>Denial of pregnancy</td><td>Schizophrenia, psychotic depression, post-assault, ID; poor cooperation in labour</td></tr><tr><td>Command hallucinations</td><td>Harm to infant, or over-protectiveness</td></tr><tr><td>Negative / catatonic symptoms</td><td>Neglect, poor bonding, under-stimulation</td></tr><tr><td>Agitation, borderline / complex trauma</td><td>Anger toward infant, abuse, rough handling</td></tr></table></div>
+<div class="box warn"><b>Risk</b>Postpartum mania → rough handling and irritability-driven aggression. Depression + suicidality + infant-related psychosis → <mark>risk to infant</mark>. Use structured tools (e.g. <b>IS PATH WARM?</b>).</div>
+</section>
+
+<section id="scales" data-t="Screening & Scales"><h2>Screening &amp; Psychometric Tools</h2>
+<div class="box info"><b>Marcé Society</b>Universal screening can over-estimate (<mark>false positives ~35–40%</mark>). Basic inquiry (Whooley / PHQ-9 / EPDS + past &amp; family history) is useful <u>only if backed by services</u> and referral pathways.</div>
+<div class="box key"><b>Whooley (2 questions, past month)</b>1) Felt down, depressed or hopeless? 2) Little interest or pleasure in things?</div>
+<div class="tw"><table><tr><th>Tool</th><th>Purpose</th><th>Items / time</th><th>Setting</th></tr>
+<tr><td>GAD-7 (self)</td><td>Anxiety screen</td><td>7 / 5 min</td><td>OG / OP / IP</td></tr>
+<tr><td>HARS</td><td>Anxiety severity</td><td>14 / 10 min</td><td>IP / OP</td></tr>
+<tr><td>Whooley</td><td>Depression screen</td><td>2 / 2 min</td><td>OG</td></tr>
+<tr><td>EPDS</td><td>Depression screen + severity</td><td>10 / 10 min</td><td>OG / OP / IP</td></tr>
+<tr><td>PHQ-9</td><td>Depression screen + severity</td><td>9 / 10 min</td><td>OG / OP / IP</td></tr>
+<tr><td>HDRS</td><td>Depression severity</td><td>17 / 20 min</td><td>IP / OP</td></tr>
+<tr><td>YMRS</td><td>Mania severity</td><td>10 / 10 min</td><td>IP / OP</td></tr>
+<tr><td>PANSS · SAPS · SANS</td><td>Psychosis (positive / negative)</td><td>30 · 34 · 25 items</td><td>IP</td></tr>
+<tr><td>BPRS</td><td>SMI severity</td><td>18 / 20–30 min</td><td>IP</td></tr>
+<tr><td><b>NIMBUS</b></td><td>Maternal behavioural disturbance</td><td>16 / 10–15 min</td><td>IP / research</td></tr>
+<tr><td><b>PBQ</b></td><td>Mother-infant bonding</td><td>25 / 15–20 min</td><td>IP / research</td></tr>
+<tr><td>Stafford interview</td><td>Pregnancy → lactation (9 parts)</td><td>2–4 h</td><td>MBU / research</td></tr></table></div>
+<p>OG = antenatal / obstetric C-L; OP = psychiatry OPD; IP = in-patient; R = research. NIMBUS = NIMHANS Maternal Behaviour Scale.</p>
+</section>
+
+<section id="general" data-t="General Approach"><h2>General Approach by Stage</h2>
+<div class="flow"><div><b>Which stage?</b></div><div class="row"><b>Preconception</b> · folic acid <mark>5 mg/day</mark> · consider contraception (till 6–12 months of remission) · delay pregnancy if still symptomatic · trial of discontinuation if single mild past episode</div><div><b>Pregnancy</b> · early, regular antenatal care · anomaly scans at <mark>10–12 wk</mark> and <mark>16–18 wk</mark> · fetal echo if on lithium / SSRI · deliver in a centre with maternal + neonatal ICU</div><div class="s"><b>Lactation</b> · exclusive on-demand breastfeeding · RID &lt;10% preferred · no need to time feeds after dosing · clozapine incompatible · stimulate the infant</div></div>
+<div class="g"><div class="card"><b>Already on medication</b><ul><li>Monotherapy over polypharmacy</li><li>Taper <b>adjuncts</b>: BZDs, β-blockers, anticholinergics</li><li>Never stop abruptly</li><li>Switching only if current drug carries serious risk</li><li>SMI: prophylaxis preferred even when well</li></ul></div><div class="card"><b>Starting / restarting</b><ul><li>Mild: psychotherapy first</li><li>Choose drug with most safety data and RID &lt;10%</li><li>Prophylaxis if past SMI episodes</li><li>New illness in 1st trimester: psychotherapy for mild; drugs if persistent / worsening / severe</li></ul></div></div>
+<h3>Pharmacokinetic changes in pregnancy</h3>
+<ul><li>↓ gastric emptying, ↑ plasma volume, ↑ volume of distribution (lipophilic), ↑ CYP450 and UGT, ↑ GFR → <b>faster clearance</b>; doses may need adjusting.</li></ul>
+<div class="tw"><table><tr><th>Drug</th><th>Change</th><th>Precaution</th></tr><tr><td>Antidepressants</td><td>Levels may fall after ~20 weeks</td><td>Monitor symptoms ± drug levels</td></tr><tr><td><b>Lithium</b></td><td>↑ GFR + fluid → levels fall; return to pre-pregnancy right after delivery</td><td>Level <mark>monthly to 34 wk, then weekly</mark>; repeat before and 24 h after delivery if fluid balance poor; frequent in first postpartum weeks</td></tr><tr><td><b>Lamotrigine</b></td><td>↓ ~50% (↑ oestrogen, UGT); folic acid may lower effect</td><td>Level monitoring preconception → 1st postpartum month</td></tr></table></div>
+<h3>Lactation – infant monitoring</h3>
+<ul><li><b>Sedatives:</b> sedation, floppiness, respiratory depression, cyanosis.</li><li><b>Antidepressants:</b> crying, irritability, diarrhoea, jitteriness, seizures.</li><li><b>Antipsychotics:</b> rigidity, poor suck, poor feeding, irritability.</li><li>Withhold breastfeeding if toxicity; take paediatric advice for preterm / low-birth-weight / ill neonates.</li><li>Possible mild, <mark>reversible</mark> developmental delay (commoner in preterm / LBW / older mothers) → advise stimulation: massage, oil bath, lullabies, talking, toys, emotional attachment figure. Risk is outweighed by benefit of treating maternal SMI.</li></ul>
+</section>
+
+<section id="risk" data-t="Risk–Benefit & Drugs"><h2>Risk–Benefit &amp; Medication Safety</h2>
+<div class="box key"><b>Four-way weighing</b>(i) risks of untreated illness · (ii) benefits of avoiding exposure · (iii) benefits of good control · (iv) risks of medication. <mark>Confounding by indication</mark> – some risks come from the illness, not the drug.</div>
+<ul><li><b>Untreated illness risks:</b> poor antenatal adherence, self / infant neglect, suicide / infanticide, poor nutrition, domestic violence, substance use, preterm birth, low birth weight, stillbirth.</li><li><b>FDA letters (1979–2015)</b> replaced by <b>PLLR</b> (2015): pregnancy, lactation, and females / males of reproductive potential sections.</li></ul>
+<div class="tw"><table><tr><th>FDA cat.</th><th>Meaning</th><th>Examples</th></tr><tr><td>A</td><td>No risk in controlled studies</td><td>Folic acid, thyroxine</td></tr><tr><td>B</td><td>Animal no risk; no human data</td><td>Clozapine, zolpidem, bupropion, buspirone</td></tr><tr><td>C</td><td>Animal risk; no good human data</td><td>Most antipsychotics, most antidepressants (not paroxetine), lamotrigine</td></tr><tr><td>D</td><td>Human risk; use if benefit &gt; harm</td><td>Lithium, valproate, carbamazepine, paroxetine, most BZDs</td></tr><tr><td>X</td><td>Risk &gt; benefit</td><td>Temazepam, estazolam, flurazepam</td></tr></table></div>
+<h3>Drug-by-drug summary</h3>
+<div class="tw"><table><tr><th>Drug</th><th>Key risks</th><th>Pregnancy advice</th><th>Lactation</th></tr>
+<tr><td><b>SSRIs</b></td><td>Cardiac septal defects (1st trim, mostly paroxetine); <b>PPHN</b> (3rd trim, ~3/1000); small ↑ PPH; neonatal adaptation; no aneuploidy risk</td><td><b>Sertraline</b> (least placental exposure); <mark>avoid paroxetine</mark></td><td>Sertraline preferred; fluoxetine RID 1.6–14.6% – monitor</td></tr>
+<tr><td>TCAs</td><td>High fetal exposure</td><td>Avoid doxepin</td><td>Amitriptyline, nortriptyline, desipramine, clomipramine safe</td></tr>
+<tr><td>MAOIs</td><td>Malformation, hypertensive crisis</td><td>Avoid</td><td>Little data</td></tr>
+<tr><td><b>SGAs</b></td><td>↑ maternal weight, <b>gestational diabetes</b>, ↑ birth weight; clozapine: floppy infant, agranulocytosis</td><td>Monitor weight, OGTT, USG growth</td><td>Most compatible; <mark>clozapine contraindicated</mark></td></tr>
+<tr><td>FGAs</td><td>Low birth weight, preterm; 3rd trimester EPS / withdrawal</td><td>High-potency preferred</td><td>Relatively safe</td></tr>
+<tr><td><b>Lithium</b></td><td>Ebstein anomaly (~1/1000)</td><td>Use if benefit &gt; risk</td><td>Avoid, or infant levels (RID 12–30%)</td></tr>
+<tr><td><b>Valproate</b></td><td>Major anomalies, <b>neural tube defect 6–9%</b>, intellectual disability</td><td><mark>Avoid</mark></td><td>RID 1.5%, compatible</td></tr>
+<tr><td>Carbamazepine</td><td>↑ malformations</td><td>Avoid</td><td>RID 1–7%, compatible</td></tr>
+<tr><td>Lamotrigine</td><td>No ↑ major malformations (<mark>&lt;325 mg/day</mark>)</td><td>Level monitoring</td><td>RID 9.2–18.3%; with monitoring</td></tr>
+<tr><td>Benzodiazepines</td><td>Perinatal toxicity, low APGAR, hypotonia, poor feeding, cleft; floppy infant near delivery</td><td>Taper; intermittent use less likely to give withdrawal; lorazepam preferred</td><td>Short-acting; lorazepam RID 2.5–3%</td></tr></table></div>
+<p>All antidepressants: no ↑ major malformations; possible miscarriage, gestational HTN / pre-eclampsia, low APGAR, low birth weight, neonatal withdrawal (small, confounded by depression).</p>
+<h3>Counselling process (Box 2)</h3>
+<div class="flow"><div><b>When</b> – every woman of childbearing age on psychotropics; start preconception (even at marriage)</div><div><b>Whom</b> – woman + primary carer (spouse); representative only if she lacks capacity</div><div><b>How</b> – list options → benefits of prophylaxis (relapse rates) → risks of untreated illness → drug risks</div><div><b>What</b> – use visual aids; relative risk <i>and</i> absolute risk (common denominator); trimester-wise risks</div><div class="s"><b>Exposure</b> – first-trimester exposure: decide continue / change, screen for anomalies · <b>Document</b> the discussion</div></div>
+</section>
+
+<section id="cmd" data-t="Anxiety, Depression, OCD"><h2>Common Mental Disorders</h2>
+<div class="box key"><b>Principle</b><mark>Mild episodes → psychotherapy alone</mark> (CBT, IPT, ERP for OCD). Add drugs if persistent, recurrent, worsening, or poor response.</div>
+<h3>Anxiety (infertility, loss, tokophobia, trauma)</h3>
+<ul><li>Psychoeducation, supportive counselling, obstetrician reassurance after check-up → structured therapy → medication.</li><li><b>SSRIs (except paroxetine)</b> are first-line drugs. Buspirone (FDA B): little human data.</li></ul>
+<h3>Depression – prophylaxis decision</h3>
+<div class="g"><div class="card"><b>Trial of discontinuation OK</b><ul><li>Single, mild past episode</li><li>Asymptomatic for <mark>6–12 months</mark></li><li>Early review for relapse; supportive caregiver</li></ul></div><div class="card"><b>Continue prophylaxis</b><ul><li><mark>≥4 lifetime episodes</mark></li><li>Psychotic depression</li><li>Suicide attempts during episodes</li><li>Past hospitalisation or ECT</li></ul></div></div>
+<p>Risk ↑: domestic violence, past trauma. Protective: good social support. <b>Always rule out bipolarity</b> (hypomania, family history) before an antidepressant.</p>
+<h3>OCD</h3>
+<ul><li>Trial off SSRI: mild, good prior ERP / CBT response, prolonged remission, no comorbid depression.</li><li>Continue SSRI if severe, comorbid depression or suicide risk; clomipramine may continue with monitoring; add ERP / CBT.</li></ul>
+<h3>Management grid</h3>
+<div class="tw"><table><tr><th>Clinical state</th><th>First line</th><th>Second line</th></tr><tr><td>Adjustment / mild anxiety</td><td>Psychoeducation, CBT / IPT, monitoring</td><td>Drug if persistent, severe past episode, family history</td></tr><tr><td>Mild depression (active)</td><td>Psychotherapy</td><td>Antidepressant if persistent / severe history</td></tr><tr><td>Moderate–severe depression</td><td><b>SSRI</b></td><td>+ psychotherapy</td></tr><tr><td>≥4 episodes / recent remission of mod–severe</td><td>Antidepressant prophylaxis</td><td>Relapse prevention, coping skills, stress management</td></tr><tr><td>OCD mild</td><td>ERP / CBT boosters</td><td>SSRI</td></tr><tr><td>OCD severe / comorbid depression</td><td>SSRI (treatment + prophylaxis)</td><td>Add ERP / CBT</td></tr></table></div>
+</section>
+
+<section id="smi" data-t="SMI & Postpartum"><h2>Severe Mental Illness &amp; Postpartum Disorders</h2>
+<div class="box warn"><b>Relapse</b>Bipolar: <mark>~66% relapse if prophylaxis stopped vs ~25% if continued</mark>. Continue prophylaxis in schizophrenia too.</div>
+<h3>Bipolar disorder</h3>
+<ul><li><b>SGA monotherapy preferred</b> (monitor weight, OGTT).</li><li>Bipolar depression: olanzapine / other SGA; short-term antidepressant with caution; if severe and SGA fails → <b>fluoxetine + olanzapine</b>.</li><li>Add mood stabiliser only if SGA inadequate: <b>lithium</b> (if needed for wellness) or <b>lamotrigine</b>. <mark>Avoid valproate / carbamazepine.</mark></li><li>Relapse prevention: sleep, stress management, adherence, no substances, early warning signs.</li></ul>
+<h3>Schizophrenia</h3>
+<ul><li>SGA monotherapy; FGAs and <b>LAIs not started</b> in pregnancy (less data) – continue if stable on FGA and switching risks relapse. LAIs clear over weeks after stopping.</li><li>Acute: short-term BZD with non-sedating SGA. Remission / negative symptoms: low-dose SGA + psychosocial.</li></ul>
+<h3>Postpartum depression</h3>
+<ul><li>Onset usually within <b>4 weeks</b>; risk period up to <b>2 years</b>. Mild: antidepressant; psychotic: add antipsychotic; high suicide risk: in-patient care. Past PPD → postpartum prophylaxis.</li><li><b>Brexanolone</b> (allopregnanolone, GABA-A modulator) for mod–severe PPD, in-patient IV infusion: <b>30 → 60 → 90 → 60 → 30 µg/kg/h</b> (4 h, 20 h, 28 h, 4 h, 4 h). Side effects: headache, dizziness, syncope. FDA-approved, <u>not launched in India</u>.</li></ul>
+<h3>Postpartum psychosis (within 4–6 weeks)</h3>
+<div class="flow"><div class="r">Abrupt onset · mania / transient psychosis / catatonia / psychotic depression</div><div>Exclude medical mimics; assess suicide + infanticide risk; in-patient care</div><div class="s">Breastfeeding-compatible <b>SGA</b> · + antidepressant (psychotic depression) · + mood stabiliser (mania)</div></div>
+<h3>Catatonia (≈20% of perinatal admissions vs ~8% general)</h3>
+<div class="flow"><div>Lorazepam <b>3–8 mg/day</b> (1–2 mg three–four times)</div><div>No response in 24–48 h → <b>8–16 mg/day</b></div><div class="r">Hold if maternal pulse &lt;60, BP &lt;90/60, or fetal HR &lt;100</div><div class="s">Taper when possible; start treatment of underlying illness · non-response → <b>ECT</b></div></div>
+<p>Benefit usually exceeds risk: refusal to eat → dehydration, hypoglycaemia, electrolyte problems; immobility → <b>DVT</b>.</p>
+</section>
+
+<section id="subs" data-t="Substances, Suicide, Agitation"><h2>Substance Use · Suicide · Agitation</h2>
+<h3>Alcohol</h3>
+<ul><li>Fetal: growth restriction, facial anomalies, CNS dysfunction. <mark>No safe level.</mark></li><li>Low use: brief intervention / MI. Moderate–high risk: specialist de-addiction.</li><li>Severe withdrawal: short-course lorazepam or diazepam. Naltrexone / acamprosate: limited data (only if high relapse risk). <b>Disulfiram avoided.</b></li></ul>
+<h3>Other substances</h3>
+<ul><li><b>Cannabis:</b> offspring mood disorders, ASD, inattention-hyperactivity.</li><li><b>Tobacco:</b> preterm birth, low birth weight, lip / mouth malformations, maternal bleeding. Psychotherapy first; NRT and bupropion limited but reassuring data – individualise.</li></ul>
+<h3>Suicide</h3>
+<div class="box warn"><b>Key facts</b>Suicide risk is higher in the <mark>first year after childbirth</mark> than any other time; <b>more lethal methods</b> are used. Predictors: younger age, middle SES, poor perceived support, domestic violence, depressive symptoms, past suicidality. Suicide and infanticide may co-occur.</div>
+<ul><li>High-intensity in-patient unit; temporary mother–infant separation until risk falls; continue breast milk (expressed / supervised visits); restore joint admission later.</li><li>ECT if suicidality in depression / psychosis.</li><li>Family educated; <b>eyeball-to-eyeball monitoring</b>; <b>twice-daily</b> risk review (lethality, intent); remove sharps.</li><li>She may try to leave with the infant – ensure safety.</li></ul>
+<h3>Agitation</h3>
+<div class="flow"><div>Verbal de-escalation first</div><div>Oral: lorazepam 1–2 mg · promethazine 25–50 mg · olanzapine 5–10 mg · chlorpromazine 50–100 mg</div><div class="r">IM: lorazepam 2 mg · promethazine 25–50 mg · haloperidol 2.5–5 mg (<u>with promethazine</u> to prevent dystonia) · olanzapine 10 mg</div></div>
+<p>Monitor temperature, pulse, RR, BP, fetal well-being. Position <mark>supine with right hip elevated</mark> (avoid aorto-caval compression).</p>
+</section>
+
+<section id="ect" data-t="ECT, rTMS, Bonding, MHCA"><h2>ECT · rTMS · Bonding · Mental Healthcare Act</h2>
+<h3>ECT in pregnancy</h3>
+<p>Can be life-saving: catatonia or severe suicidality in depression unresponsive to drugs.</p>
+<div class="g"><div class="card"><b>Before</b><ul><li>Obstetric + pre-anaesthetic clearance</li><li>8 h fast</li><li>Avoid anticholinergics (↓ LES tone); oral antacid 15–20 min before</li><li>Hydrate (NS / Ringer)</li></ul></div><div class="card"><b>During</b><ul><li>Preoxygenate; avoid hyperventilation</li><li><b>Glycopyrrolate</b> (does not cross placenta)</li><li>Right hip elevated after 20 weeks</li><li>Fetal Doppler HR before / after; twice-weekly NST</li><li>Oxytocin release may cause painful contractions → tocolytics if persistent</li></ul></div><div class="card"><b>General / postpartum</b><ul><li>Setting with emergency obstetric + neonatal care</li><li>Feed infant before ECT; prioritise mother on list; keep expressed milk available</li></ul></div></div>
+<h3>rTMS</h3>
+<p>Limited studies; none report adverse maternal or infant outcomes.</p>
+<h3>Mother–infant bonding</h3>
+<ul><li>Early attachment problems → later internalising / externalising problems. Assess with PBQ + interview.</li><li>Interventions: education, infant-care training, modelling, <b>video feedback</b>, mother–infant psychotherapy (severe); involve another caregiver (grandmother / father).</li></ul>
+<h3>Mental Healthcare Act 2017 &amp; MBUs</h3>
+<div class="flow"><div>Least restrictive option: OPD for mild illness</div><div>In-patient when moderately severe, for mother / infant safety</div><div class="s">Low suicide / infanticide risk → <b>rooming-in</b> of infant (&lt;3 years) – <b>Section 21(2)</b></div><div class="r">If psychiatrist separates mother and baby → <b>review every 15 days</b>; beyond <b>30 days</b> → inform Mental Health Review Board and seek permission</div></div>
+<p><b>MBU:</b> in-patient unit with ≥4 beds, rooming-in of mother + infant / child &lt;3 y, run by a multidisciplinary team.</p>
+</section>
+
+<section id="quick" data-t="Quick Revision"><h2>Quick Revision</h2>
+<div class="g"><div class="card"><b>Numbers</b><ul><li>SMI relapse 60–80% vs 20–30%</li><li>Bipolar relapse 66% vs 25%</li><li>Blues 40–50%; PPD 15–20%; PPP 1–2/1000</li><li>Folic acid 5 mg</li><li>Scans 10–12 &amp; 16–18 wk</li><li>Li monthly → 34 wk → weekly</li><li>Lamotrigine ↓ ~50%; keep &lt;325 mg</li><li>Valproate NTD 6–9%</li><li>RID &lt;10%</li><li>Lorazepam 3–8 → 8–16 mg/day</li></ul></div>
+<div class="card"><b>Drug choices</b><ul><li>Antidepressant: <b>sertraline</b>; avoid paroxetine</li><li>SMI: <b>SGA monotherapy</b></li><li>Mood stabiliser: lithium / lamotrigine; <u>not</u> valproate / CBZ</li><li>BZD: lorazepam</li><li>Lactation: clozapine ✗; sertraline ✓</li><li>Agitation IM haloperidol + promethazine</li></ul></div>
+<div class="card"><b>Always</b><ul><li>Rule out organic cause &amp; bipolarity</li><li>Assess suicide + infanticide risk</li><li>Avoid abrupt stopping</li><li>Counsel woman and carer; document</li><li>Support bonding &amp; infant stimulation</li></ul></div></div>
+<details><summary>Self-test</summary><ul><li>Single mild depressive episode, well &gt;12 months, planning pregnancy? → <b>trial of stopping antidepressant</b> with early review.</li><li>Bipolar woman stable on valproate, planning pregnancy? → switch to SGA ± lithium / lamotrigine, folic acid 5 mg.</li><li>Day 10 postpartum, abrupt confusion, “baby is divine”? → <b>postpartum psychosis</b>: exclude medical causes, in-patient care, SGA.</li><li>Catatonic, pregnant, refusing food? → <b>lorazepam</b> (monitor maternal / fetal vitals), then ECT.</li></ul></details>
+<div class="box info"><b>Source notes</b>Table 8 says lithium: avoid breastfeeding or monitor infant levels (the text wrote “foetal”). Figure 1 asks for infant monitoring incl. investigations. Verify doses and local protocol before clinical use.</div>
+</section>
+</main>
+<script>
+var S=[].slice.call(document.querySelectorAll("section")),N=document.getElementById("nav");
+function show(id){S.forEach(function(s){s.classList.toggle("on",s.id===id)});[].forEach.call(N.children,function(b){b.classList.toggle("on",b.dataset.id===id)});scrollTo(0,0);try{history.replaceState(null,"","#"+id)}catch(e){}}
+S.forEach(function(s){var b=document.createElement("button");b.textContent=s.dataset.t;b.dataset.id=s.id;b.onclick=function(){show(s.id)};N.appendChild(b)});
+var h=location.hash.slice(1);show(S.some(function(s){return s.id===h})?h:"over");
+document.getElementById("th").onclick=function(){var r=document.documentElement,d=matchMedia("(prefers-color-scheme:dark)").matches,c=r.dataset.theme||(d?"dark":"light");r.dataset.theme=c==="dark"?"light":"dark"};
+</script></body></html>

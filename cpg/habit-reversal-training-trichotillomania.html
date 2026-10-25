@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Habit Reversal Training: Square Study Cards</title>
+<style>
+:root{box-sizing:border-box;--bg:#f3f1ec;--ink:#1d2230;--mut:#5b6275;--pill:#fff;--bd:#d9d5ca;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}}
+:root[data-theme="dark"]{--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.4}
+header{max-width:1100px;margin:0 auto;padding:20px 16px 8px}
+header h1{font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;margin:0 0 4px}
+header p{margin:0 0 12px;color:var(--mut);font-size:.9rem}
+.bar{display:flex;flex-wrap:wrap;gap:8px}
+.bar button{font:inherit;font-size:.85rem;padding:8px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--pill);color:var(--ink);cursor:pointer}
+.bar button.on{background:#2f5bd8;border-color:#2f5bd8;color:#fff}
+.bar button:focus-visible{outline:3px solid #f0a020;outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 40px}
+.hint{display:none;color:var(--mut);font-size:.85rem;padding:4px 0 12px;margin:0}body.recall #notes .hint{display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:20px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.1)}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 64px;display:flex;flex-direction:column;background:var(--b,#fffdf7);color:#1d2230;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;font-size:34px;line-height:1.3;text-align:left}
+.c h2{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:1.08;margin:0 0 10px;color:var(--a);font-weight:700;flex:none}
+.c .sub{font-size:29px;line-height:1.25;color:#4d5568;margin:0 0 16px;flex:none}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5em;overflow:hidden;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:24px;font-size:24px;color:#778}
+.in ul{padding-left:1.2em}.in li{margin:.2em 0}
+.c b{background:var(--h,#ffe38a);padding:0 .15em;border-radius:.2em;font-weight:700}
+.box{border-left:.22em solid var(--a);background:rgba(0,0,0,.06);padding:.4em .7em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.5em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.stats div{background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.35em .5em;text-align:center;font-size:.85em;line-height:1.2}
+.stats em{display:block;font-style:normal;font-family:Georgia,serif;font-size:1.9em;font-weight:700;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.92em;background:#fff;border-radius:.5em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.3em .55em}
+td{padding:.3em .55em;border-top:.06em solid #e3e0d6;vertical-align:top}
+.fl{display:flex;align-items:stretch;gap:.4em}.fl.v{flex-direction:column}
+.st{flex:1;background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.4em .6em;text-align:center;font-size:.9em;line-height:1.25}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.3em;line-height:1;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.1em .8em;font-size:.8em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.cols>div{background:#fff;border-radius:.6em;padding:.5em .7em;border-top:.25em solid var(--a)}
+.cols h3{margin:0 0 .2em;font-size:1em;color:var(--a)}
+.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:100px}.cover .sub{color:#e8ecff;font-size:38px}
+.cover .in{justify-content:center}
+body.recall .c b:not(.shown){background:#1d2230;color:transparent;cursor:pointer;user-select:none}
+body.recall .c b.shown{background:var(--h,#ffe38a)}
+body.recall .box.big b:not(.shown){background:#0003;color:transparent}
+.fc{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px}
+.f{position:relative;aspect-ratio:1/1;perspective:900px;cursor:pointer;border:0;background:none;padding:0;font:inherit;color:inherit}
+.f i{position:absolute;inset:0;border-radius:14px;padding:8%;display:flex;align-items:center;justify-content:center;text-align:center;backface-visibility:hidden;transition:transform .45s;font-style:normal;font-size:1.05rem;line-height:1.35}
+.f .q{background:#2f5bd8;color:#fff;font-weight:700}.f .a{background:#fff8d9;color:#1d2230;transform:rotateY(180deg);border:2px solid #e0b000}
+.f.flip .q{transform:rotateY(-180deg)}.f.flip .a{transform:rotateY(0)}
+.f:focus-visible{outline:3px solid #f0a020;outline-offset:3px;border-radius:14px}
+.sec{display:none}.sec.on{display:block}
+@media (prefers-reduced-motion:reduce){.f i{transition:none}}
+</style></head><body>
+<header><h1>Habit reversal training: square study cards</h1>
+<p>Workbook Ch. 2, Session 2: Habit Reversal Training and Stimulus Control (hair pulling / TTM). Every card is a 1:1 square. Screenshot and crop for Instagram.</p>
+<div class="bar"><button class="on" data-t="notes">Notes</button><button data-t="rev">Flashcards</button><button id="rc" aria-pressed="false">Recall mode: off</button></div></header>
+<main>
+<section class="sec on" id="notes"><p class="hint">Highlighted keywords are hidden. Tap one to reveal it and test yourself.</p><div class="grid" id="g"></div></section>
+<section class="sec" id="rev"><p class="hint" style="display:block">Tap a card to flip it.</p><div class="fc" id="fc"></div></section>
+</main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const cards=[
+C('#2a5bd7','#2a5bd7','Habit Reversal Training','Therapy for hair pulling disorder (trichotillomania, TTM): awareness, competing response, and stimulus control',`<div><span class="pill">Awareness</span><span class="pill">Warning signs</span><span class="pill">Competing response</span><span class="pill">Stimulus control</span><span class="pill">Homework</span></div>`,'cover'),
+C('#1f7a6d','#f2fbf8','Session goals and flow','Introduction',`<ul><li>Recognise <b>your pulling</b> and its <b>warning signs</b></li><li>Choose a <b>competing response</b>: something to do instead of pulling</li><li>Make pulling <b>difficult</b> in high-risk situations</li></ul><div class="fl"><div class="st">Weekly assessment</div><div class="ar">→</div><div class="st">Homework review</div><div class="ar">→</div><div class="st"><b>HRT</b></div><div class="ar">→</div><div class="st">Stimulus control</div></div><div class="box">Ends with new <b>homework</b> to practise during the week.</div>`),
+C('#b5472f','#fff7f3','Check-in: assessment and homework','The first two parts of the session',`<div class="cols"><div><h3>Weekly assessment</h3><ul><li>Complete it at the start</li><li>Discuss with your <b>therapist</b></li><li><b>Plot progress</b> on the workbook graph</li></ul></div><div><h3>Homework review</h3><ul><li>Bring homework <b>completed</b></li><li>Discuss your <b>reactions</b></li><li>Plot <b>daily self-report</b> data on the graph</li></ul></div></div><div class="box">The graph turns daily numbers into a visible <b>measure of progress</b>.</div>`),
+C('#7a4bc2','#f8f4ff','HRT: the big picture','Habit reversal training is built from two parts',`<div class="box big">HRT is the tool that helps you <b>stop pulling</b>.</div><div class="fl"><div class="st"><b>Part 1</b><br>Awareness training<br>“Notice it”</div><div class="ar">+</div><div class="st"><b>Part 2</b><br>Competing response training<br>“Replace it”</div></div><div class="box">Competing response training is <b>the centre of HRT</b>. Awareness comes first, because you can’t replace what you don’t notice.</div>`),
+C('#c2477e','#fff5f9','Awareness training: 4 steps','Learn to catch pulling as it happens',`<div class="st"><b>1. Describe</b> the pulling in detail</div><div class="ar">▼</div><div class="st"><b>2. Describe</b> the warning signs (signals)</div><div class="ar">▼</div><div class="st"><b>3. Point out</b> the therapist’s simulated pulling</div><div class="ar">▼</div><div class="st"><b>4. Acknowledge</b> your own real or simulated pulling</div>`),
+C('#d17a00','#fffaf0','Describing your pulling','Your therapist asks for a detailed description',`<table><tr><th>When</th><th>Example questions</th></tr><tr><td><b>Before</b></td><td>Where does your hand come from? Do you <b>search</b> or <b>stroke</b> your hair? Finger position?</td></tr><tr><td><b>During</b></td><td>Quick pull or <b>tug</b>? Tweezers? One hair or groups? One or both hands?</td></tr><tr><td><b>After</b></td><td>Do you <b>look at</b>, mouth, rub, save or drop the hair?</td></tr></table><div class="box">Cover what your body does <b>before, while, and after</b> you pull.</div>`),
+C('#2a6fb0','#f2f8ff','Pulling signals (warning signs)','Your body usually warns you before you pull',`<div class="cols"><div><h3>Things you DO</h3><ul><li>Stroking your hair</li><li>Hand moving toward your head</li></ul></div><div><h3>Things you FEEL</h3><ul><li>Thinking about pulling</li><li>Thinking about <b>which hair</b> to pull</li></ul></div></div><div class="box big">Write down <b>3 different pulling signals</b> that you notice before you pull.</div><div class="box">Knowing <b>when</b> it’s about to happen is as important as describing what happens.</div>`),
+C('#1f7a6d','#f2fbf8','Acknowledging pulling','Practise detecting real or simulated pulling',`<div class="fl v"><div class="st"><b>Therapist simulates</b> pulling and your signals; you point them out</div><div class="ar">▼</div><div class="st">Continue for a few minutes, until the therapist is <b>confident you can recognise them</b></div><div class="ar">▼</div><div class="st"><b>You</b> point out your own pulling or signals</div></div><div class="box big">Right after you pull or simulate, <b>raise your index finger</b>.</div><div class="box">Uncomfortable? Normal. Many people pull in private, so you may <b>act it out</b>.</div>`),
+C('#b5472f','#fff7f3','Competing response: 3 rules','The centre of HRT',`<div class="box big">A competing response is a behaviour that makes pulling <b>physically impossible</b> while you do it.</div><div class="stats"><div><em>1</em>Pulling is <b>physically impossible</b></div><div><em>2</em>Easy in <b>almost any situation</b></div></div><div class="stats"><div><em>3</em><b>Not noticeable</b> to others</div><div><em>1 min</em>duration each time</div></div>`),
+C('#7a4bc2','#f8f4ff','Using your competing response','Pick one with your therapist',`<div class="box"><b>Most common:</b> arms down at your sides, <b>gently clench fists for 1 minute</b>.</div><ul><li>Fold your arms</li><li>Put your hands in your pockets</li><li>Fold your hands</li></ul><div class="fl"><div class="st"><b>Trigger</b><br>you pull, or notice a warning sign or urge</div><div class="ar">→</div><div class="st"><b>Respond</b><br>do it for <b>1 full minute</b></div><div class="ar">→</div><div class="st"><b>Repeat</b><br>if it shows up again right after</div></div>`),
+C('#c2477e','#fff5f9','Competing response: what to expect','Keep going even when it feels like a lot',`<div class="box">Early on you may be <b>frustrated</b>, because it feels like you use it all the time. This is <b>normal</b>.</div><div class="fl"><div class="st"><b>Weeks 1 to 2</b><br>Frequent use</div><div class="ar">→</div><div class="st"><b>Over time</b><br>Need it <b>less often</b></div></div><div class="box big">Don’t drop it as soon as pulling improves. Keep using it <b>for as long as pulling is a problem</b>.</div>`),
+C('#2a6fb0','#f2f8ff','Stimulus control: 3 principles','Make pulling harder in your high-risk situations',`<div class="st"><b>1.</b> Not to <b>avoid</b> or prevent uncomfortable urges, feelings or thoughts</div><div class="st"><b>2.</b> <b>Simple</b>, easy to do, and not socially disruptive when possible</div><div class="st"><b>3.</b> Only purpose: make pulling <b>more difficult and burdensome</b></div><div class="box">Use the situations you identified <b>last week</b>. Pick techniques from the recommendations form with your therapist.</div>`),
+C('#d17a00','#fffaf0','Stimulus control ideas by setting','From the recommendations form',`<table><tr><th>Setting</th><th>Interventions</th></tr><tr><td><b>Bathroom</b></td><td>Door open, remove bright lights, <b>timer</b></td></tr><tr><td><b>TV or games</b></td><td>Sit mid-couch, <b>no armrests</b>, hold a <b>stress ball</b>, reset a timer</td></tr><tr><td><b>Reading</b></td><td>Hold book with <b>both hands</b>, or ball in one hand</td></tr><tr><td><b>Bedroom</b></td><td>Door open, <b>bed only for sleep</b></td></tr><tr><td><b>Tools, mirrors</b></td><td>Remove tweezers, <b>magnifying mirrors</b>; limit mirror to 1 min</td></tr><tr><td><b>Others</b></td><td>Recruit <b>support people</b> in high-risk times</td></tr></table>`),
+C('#1f7a6d','#f2fbf8','Homework this week','Four things to do',`<ul><li><b>Monitor pulling daily</b> with the TTM Self-Monitoring Form (minutes pulled, situation, feelings and thoughts)</li><li><b>Monitor urges</b> with the Monitoring Your Urge Form (2 to 3 times a day, and what you did with the urge)</li><li>Start your <b>competing response</b> when you pull, are about to pull, or notice a warning sign</li><li>Start <b>stimulus control</b> using your assignment sheet</li></ul><div class="box">Fill the sheet with <b>date developed, date implemented</b> and strategies for each pulling location.</div>`),
+C('#2a5bd7','#f3f6ff','Key takeaways','Remember these',`<ul><li>HRT = <b>awareness + competing response</b></li><li>Learn your <b>3 warning signs</b></li><li>Competing response: <b>1 minute</b>, invisible, makes pulling impossible</li><li>Keep it up <b>even when you improve</b></li><li>Stimulus control makes pulling <b>harder</b>, not avoided</li><li><b>Track</b> pulling and urges every day</li></ul><div class="box big">Frustration early on is normal; the need for the response <b>drops with practice</b>.</div>`)
+];
+const g=document.getElementById('g'),N=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${N}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return;let f=36;i.style.fontSize=f+'px';
+while(f>16&&(i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1)){f--;i.style.fontSize=f+'px'}}
+const fitAll=()=>g.querySelectorAll('.c').forEach(fit);
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+const qa=[["Two parts of HRT?","Awareness training and competing response training."],["Four awareness steps?","Describe the pulling, describe warning signs, point out therapist’s simulated pulling, acknowledge your own."],["How do you signal you noticed pulling?","Raise your index finger right after you pull or simulate."],["Two kinds of warning signs?","Things you do (stroking hair, hand toward head) and things you feel or think (thinking about which hair to pull)."],["How many signals do you write down?","Three different pulling signals."],["3 traits of a competing response?","Makes pulling physically impossible, easy in almost any situation, not noticeable to others."],["Most common competing response?","Arms at sides, gently clench fists for 1 minute."],["Signal shows up right after the minute?","Do the competing response again for another full minute."],["Frustration that it feels constant?","Normal; you’ll need it less often over time."],["When can you stop competing response?","Not when you first improve; keep using it as long as pulling is a problem."],["3 principles of stimulus control?","Not to avoid urges or feelings; simple and not socially disruptive; only make pulling harder."],["Name some stimulus control examples.","Bathroom door open, timer, no armrests, hold a stress ball, remove tweezers and magnifying mirrors."]];
+const fc=document.getElementById('fc');
+fc.innerHTML=qa.map(x=>`<button class="f"><i class="q">${x[0]}</i><i class="a">${x[1]}</i></button>`).join('');
+fc.addEventListener('click',e=>{const f=e.target.closest('.f');if(f)f.classList.toggle('flip')});
+document.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-t]').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.sec').forEach(s=>s.classList.toggle('on',s.id===b.dataset.t));fitAll()});
+const rc=document.getElementById('rc');
+rc.onclick=()=>{const o=document.body.classList.toggle('recall');rc.textContent='Recall mode: '+(o?'on':'off');rc.classList.toggle('on',o);rc.setAttribute('aria-pressed',o);g.querySelectorAll('b.shown').forEach(x=>x.classList.remove('shown'))};
+g.addEventListener('click',e=>{if(document.body.classList.contains('recall')&&e.target.tagName==='B')e.target.classList.toggle('shown')});
+</script></body></html>

@@ -28,6 +28,120 @@
 const GUIDELINES = [
 
   {
+    title: "Psychiatric Disorders in the Perinatal Period",
+    shortTitle: "Perinatal Psychiatry",
+    authors: "Bharadwaj, Endumathi, Parial, Chandra",
+    year: "2022",
+    journal: "Indian Journal of Psychiatry",
+    category: "Consultation-Liaison Psychiatry / Perinatal Psychiatry",
+    description: "Bedside reference for assessing and managing psychiatric disorders during pregnancy and the postpartum period, including medication safety, lactation, depression, anxiety, bipolar disorder, psychosis, substance use and acute risk.",
+    tags: [
+      "Perinatal Psychiatry",
+      "Pregnancy",
+      "Postpartum Psychiatry",
+      "Lactation"
+    ],
+    keywords: [
+      "perinatal psychiatry",
+      "psychiatric disorders in the perinatal period",
+      "pregnancy mental health",
+      "antenatal depression",
+      "postpartum depression",
+      "postpartum psychosis",
+      "psychotropic medication in pregnancy",
+      "breastfeeding psychotropics"
+    ],
+    url: "cpg/cpg-clp-perinatal-psychiatry.html",
+    readTime: "20 min read"
+  },
+
+  {
+    title: "Psychiatric Disorders in Epilepsy",
+    shortTitle: "Psychiatry in Epilepsy",
+    authors: "Kedare, Baliga",
+    year: "2022",
+    journal: "Indian Journal of Psychiatry",
+    category: "Consultation-Liaison Psychiatry / Neuropsychiatry",
+    description: "Clinical reference for recognising and treating depression, anxiety, psychosis and other psychiatric comorbidities in epilepsy, with attention to antiseizure medication interactions and seizure threshold.",
+    tags: [
+      "Epilepsy",
+      "Neuropsychiatry",
+      "Psychiatric Comorbidity",
+      "Antiseizure Medications"
+    ],
+    keywords: [
+      "psychiatric disorders in epilepsy",
+      "psychiatric morbidity in epilepsy",
+      "depression in epilepsy",
+      "anxiety in epilepsy",
+      "psychosis in epilepsy",
+      "seizure threshold",
+      "antiepileptic drug interactions",
+      "antiseizure medication psychiatric side effects"
+    ],
+    url: "cpg/cpg-clp-psychiatric-morbidities-in-epilepsy.html",
+    readTime: "20 min read"
+  },
+
+  {
+    title: "Habit Reversal Training for Trichotillomania",
+    shortTitle: "Habit Reversal Training",
+    authors: "Clinical Workbook",
+    year: "2026",
+    journal: "Study Cards / Clinical Skills",
+    category: "Psychotherapy / Obsessive-Compulsive Related Disorders",
+    description: "Interactive study cards for habit reversal training in trichotillomania, covering awareness training, warning signs, competing responses, stimulus control and structured homework.",
+    tags: [
+      "Habit Reversal Training",
+      "Trichotillomania",
+      "Body-Focused Repetitive Behaviors",
+      "CBT"
+    ],
+    keywords: [
+      "habit reversal training",
+      "HRT",
+      "trichotillomania",
+      "hair pulling disorder",
+      "TTM",
+      "competing response training",
+      "awareness training",
+      "stimulus control",
+      "body focused repetitive behavior"
+    ],
+    url: "cpg/habit-reversal-training-trichotillomania.html",
+    readTime: "10 min read"
+  },
+
+  {
+    title: "Psychosexual Health and Sexual Medicine in CL Psychiatry",
+    shortTitle: "Psychosexual Medicine",
+    authors: "Rao, Banerjee, Tandon, Sawant, Jha, Manohar, Rao",
+    year: "2022",
+    journal: "Indian Journal of Psychiatry",
+    category: "Consultation-Liaison Psychiatry / Sexual Medicine",
+    description: "Bedside reference for evaluating and managing sexual dysfunction and psychosexual concerns in medical settings, including chronic illness, medication-induced dysfunction, hypersexuality and gender dysphoria.",
+    tags: [
+      "Psychosexual Health",
+      "Sexual Medicine",
+      "Sexual Dysfunction",
+      "Consultation-Liaison Psychiatry"
+    ],
+    keywords: [
+      "psychosexual health",
+      "sexual medicine",
+      "sexual dysfunction",
+      "erectile dysfunction",
+      "drug induced sexual dysfunction",
+      "sexual side effects of psychotropics",
+      "hypersexual disorder",
+      "gender dysphoria",
+      "consultation liaison psychiatry"
+    ],
+    url: "cpg/cpg-clp-psychosexual-medicine.html",
+    readTime: "20 min read"
+  },
+
+  {
     title: "Medical Emergencies with Psychotropics",
     shortTitle: "Psychotropic Emergencies",
     authors: "Grover, Sarkar, Avasthi",
