@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psychiatry CPG Notes | Clinical Practice Guidelines</title>
+  <meta name="description" content="A practical, searchable library of psychiatry clinical practice guidelines, recommendations, scales and evidence-based clinical notes.">
+  <meta name="keywords" content="psychiatry clinical practice guidelines, CPG, psychiatry guidelines, clinical notes, mental health guidelines, consultation-liaison psychiatry, endocrine psychiatry, Parkinson disease psychiatry">
+  <link rel="canonical" href="https://drbishnuaiims.github.io/psychiatry/">
+  <meta property="og:title" content="Psychiatry CPG Notes">
+  <meta property="og:description" content="A practical library of psychiatry clinical practice guidelines and clinical notes.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Psychiatry CPG Notes",
+    "url":"https://drbishnuaiims.github.io/psychiatry/",
+    "description":"Searchable library of psychiatry clinical practice guidelines and clinical notes.",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://drbishnuaiims.github.io/psychiatry/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="brand-mark">P</span><span>Psychiatry <em>CPG Notes</em></span></a>
+    <nav><a href="#guidelines">Guidelines</a><a href="#about">About</a></nav>
+    <button id="themeToggle" class="icon-btn" aria-label="Toggle day and night mode" title="Toggle theme">☾</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container hero-inner">
+      <p class="eyebrow">CLINICAL PRACTICE GUIDELINE LIBRARY</p>
+      <h1>Psychiatry, <span>structured for practice.</span></h1>
+      <p class="hero-copy">A clean, searchable collection of psychiatry clinical practice guidelines, recommendations and evidence summaries — built for quick clinical reference.</p>
+      <div class="search-wrap">
+        <label class="sr-only" for="searchInput">Search guidelines</label>
+        <span class="search-icon">⌕</span>
+        <input id="searchInput" type="search" placeholder="Search endocrine, Parkinson’s, perinatal, epilepsy..." autocomplete="off">
+        <kbd>⌘ K</kbd>
+      </div>
+      <div id="searchMeta" class="search-meta" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="guidelines" class="container content-section">
+    <div class="section-head">
+      <div><p class="eyebrow">LIBRARY</p><h2>Recently added</h2></div>
+      <span id="resultCount" class="result-count"></span>
+    </div>
+    <div id="guidelineGrid" class="guideline-grid"></div>
+    <div id="emptyState" class="empty-state hidden">
+      <div class="empty-icon">⌕</div>
+      <h3>No guideline found</h3>
+      <p>Try a broader term such as <strong>psychosis</strong>, <strong>mood</strong>, or <strong>addiction</strong>.</p>
+    </div>
+  </section>
+
+  <section id="about" class="container about-section">
+    <div class="about-card">
+      <p class="eyebrow">ABOUT THIS LIBRARY</p>
+      <h2>Fast reference, without the clutter.</h2>
+      <p>Each guideline is presented as an individual, SEO-ready HTML article. Add a new page whenever you finish converting a guideline PDF, then add one entry to <code>data/guidelines.js</code>.</p>
+      <div class="mini-stats"><span><b>01</b> Searchable index</span><span><b>02</b> Individual CPG pages</span><span><b>03</b> Lightweight &amp; fast</span></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="container footer-inner"><span>© <span id="year"></span> Psychiatry CPG Notes</span><span>Clinical reference • Educational use</span></div></footer>
+<button id="topBtn" class="top-btn" aria-label="Go to top" title="Go to top">↑</button>
+<script src="data/guidelines.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
