@@ -28,6 +28,34 @@
 const GUIDELINES = [
 
   {
+    title: "Psychiatric Disorders and Endocrine Disorders",
+    shortTitle: "Psychiatry in Endocrine Disorders",
+    authors: "Mishra, Sawant, Garg",
+    year: "2022",
+    journal: "Indian Journal of Psychiatry",
+    category: "Consultation-Liaison Psychiatry / Endocrinology",
+    description: "Bedside reference for the bidirectional relationship between endocrine and psychiatric disorders, including thyroid and parathyroid disease, diabetes, metabolic syndrome, hyperprolactinaemia and steroid-induced psychiatric symptoms.",
+    tags: ["Endocrine Psychiatry", "Thyroid Disorders", "Diabetes", "Metabolic Syndrome"],
+    keywords: ["psychiatric disorders endocrine disorders", "endocrine psychiatry", "thyroid psychiatric symptoms", "hypothyroidism depression", "hyperthyroidism anxiety", "diabetes depression", "antipsychotic metabolic syndrome", "lithium thyroid monitoring", "steroid induced psychosis", "hyperprolactinaemia psychiatry"],
+    url: "cpg/cpg-clp/cpg-clp-psychiatry-in-endocrine-disorders.html",
+    readTime: "25 min read"
+  },
+
+  {
+    title: "Psychiatric Disorders in Parkinson’s Disease",
+    shortTitle: "Psychiatry in Parkinson’s Disease",
+    authors: "Tripathi, Gupta, Bansal",
+    year: "2022",
+    journal: "Indian Journal of Psychiatry",
+    category: "Consultation-Liaison Psychiatry / Neuropsychiatry",
+    description: "Bedside reference for assessment and management of depression, anxiety, psychosis, cognitive impairment, apathy, sleep disorders and impulse-control disorders in Parkinson’s disease.",
+    tags: ["Parkinson’s Disease", "Neuropsychiatry", "Parkinson’s Psychosis", "Cognitive Impairment"],
+    keywords: ["psychiatric disorders Parkinson disease", "Parkinson disease depression", "Parkinson disease anxiety", "Parkinson disease psychosis", "Parkinson disease dementia", "Parkinson disease apathy", "Parkinson disease sleep disorders", "dopamine agonist impulse control disorder", "Parkinson neuropsychiatry"],
+    url: "cpg/cpg-clp/psychiatric-disorders-in-parkinsons-disease.html",
+    readTime: "25 min read"
+  },
+
+  {
     title: "Psychiatric Disorders in the Perinatal Period",
     shortTitle: "Perinatal Psychiatry",
     authors: "Bharadwaj, Endumathi, Parial, Chandra",
@@ -51,7 +79,7 @@ const GUIDELINES = [
       "psychotropic medication in pregnancy",
       "breastfeeding psychotropics"
     ],
-    url: "cpg/cpg-clp-perinatal-psychiatry.html",
+    url: "cpg/cpg-clp/cpg-clp-perinatal-psychiatry.html",
     readTime: "20 min read"
   },
 
@@ -79,7 +107,7 @@ const GUIDELINES = [
       "antiepileptic drug interactions",
       "antiseizure medication psychiatric side effects"
     ],
-    url: "cpg/cpg-clp-psychiatric-morbidities-in-epilepsy.html",
+    url: "cpg/cpg-clp/cpg-clp-psychiatric-morbidities-in-epilepsy.html",
     readTime: "20 min read"
   },
 
@@ -137,7 +165,7 @@ const GUIDELINES = [
       "gender dysphoria",
       "consultation liaison psychiatry"
     ],
-    url: "cpg/cpg-clp-psychosexual-medicine.html",
+    url: "cpg/cpg-clp/cpg-clp-psychosexual-medicine.html",
     readTime: "20 min read"
   },
 
@@ -167,7 +195,7 @@ const GUIDELINES = [
       "lithium toxicity",
       "psychotropic overdose"
     ],
-    url: "cpg/psychotropic-emergency.html",
+    url: "cpg/cpg-clp/psychotropic-emergency.html",
     readTime: "15 min read"
   },
 
@@ -196,7 +224,7 @@ const GUIDELINES = [
       "drug induced liver injury",
       "psychiatric emergency"
     ],
-    url: "cpg/systemic-medical-emergencies-with-psychotropics.html",
+    url: "cpg/cpg-clp/systemic-medical-emergencies-with-psychotropics.html",
     readTime: "20 min read"
   },
 
