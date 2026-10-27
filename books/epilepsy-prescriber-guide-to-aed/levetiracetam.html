@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Levetiracetam: Square Clinical Cards</title>
+<style>
+:root{box-sizing:border-box;--bg:#f3f1ec;--ink:#1d2230;--mut:#5b6275;--pill:#fff;--bd:#d9d5ca;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}}
+:root[data-theme="dark"]{--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.4}
+header{max-width:1100px;margin:0 auto;padding:20px 16px 8px}
+header h1{font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;margin:0 0 4px}
+header p{margin:0 0 12px;color:var(--mut);font-size:.9rem}
+.bar{display:flex;flex-wrap:wrap;gap:8px}
+.bar button{font:inherit;font-size:.85rem;padding:8px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--pill);color:var(--ink);cursor:pointer}
+.bar button.on{background:#2f5bd8;border-color:#2f5bd8;color:#fff}
+.bar button:focus-visible{outline:3px solid #f0a020;outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 40px}
+.hint{display:none;color:var(--mut);font-size:.85rem;padding:4px 0 12px;margin:0}body.recall #notes .hint{display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:20px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.1)}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 64px;display:flex;flex-direction:column;background:var(--b,#fffdf7);color:#1d2230;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;font-size:34px;line-height:1.3;text-align:left}
+.c h2{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:1.08;margin:0 0 10px;color:var(--a);font-weight:700;flex:none}
+.c .sub{font-size:29px;line-height:1.25;color:#4d5568;margin:0 0 16px;flex:none}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5em;overflow:hidden;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:24px;font-size:24px;color:#778}
+.in ul{padding-left:1.2em}.in li{margin:.2em 0}
+.c b{background:var(--h,#ffe38a);padding:0 .15em;border-radius:.2em;font-weight:700}
+.box{border-left:.22em solid var(--a);background:rgba(0,0,0,.06);padding:.4em .7em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.5em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.stats div{background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.35em .5em;text-align:center;font-size:.85em;line-height:1.2}
+.stats em{display:block;font-style:normal;font-family:Georgia,serif;font-size:1.9em;font-weight:700;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.92em;background:#fff;border-radius:.5em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.3em .55em}
+td{padding:.3em .55em;border-top:.06em solid #e3e0d6;vertical-align:top}
+.fl{display:flex;align-items:stretch;gap:.4em}.fl.v{flex-direction:column}
+.st{flex:1;background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.4em .6em;text-align:center;font-size:.9em;line-height:1.25}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.3em;line-height:1;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.1em .8em;font-size:.8em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.cols>div{background:#fff;border-radius:.6em;padding:.5em .7em;border-top:.25em solid var(--a)}
+.cols h3{margin:0 0 .2em;font-size:1em;color:var(--a)}
+.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:104px}.cover .sub{color:#e8ecff;font-size:38px}
+.cover .in{justify-content:center}
+body.recall .c b:not(.shown){background:#1d2230;color:transparent;cursor:pointer;user-select:none}
+body.recall .c b.shown{background:var(--h,#ffe38a)}
+body.recall .box.big b:not(.shown){background:#0003;color:transparent}
+.fc{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px}
+.f{position:relative;aspect-ratio:1/1;perspective:900px;cursor:pointer;border:0;background:none;padding:0;font:inherit;color:inherit}
+.f i{position:absolute;inset:0;border-radius:14px;padding:8%;display:flex;align-items:center;justify-content:center;text-align:center;backface-visibility:hidden;transition:transform .45s;font-style:normal;font-size:1.05rem;line-height:1.35}
+.f .q{background:#2f5bd8;color:#fff;font-weight:700}.f .a{background:#fff8d9;color:#1d2230;transform:rotateY(180deg);border:2px solid #e0b000}
+.f.flip .q{transform:rotateY(-180deg)}.f.flip .a{transform:rotateY(0)}
+.f:focus-visible{outline:3px solid #f0a020;outline-offset:3px;border-radius:14px}
+.sec{display:none}.sec.on{display:block}
+@media (prefers-reduced-motion:reduce){.f i{transition:none}}
+</style></head><body>
+<header><h1>Levetiracetam: square clinical cards</h1>
+<p>Antiepileptic drug monograph summary for clinical decisions and grand rounds. Every card is a 1:1 square; screenshot and crop for Instagram. Educational summary of the source text: verify doses against current prescribing information.</p>
+<div class="bar"><button class="on" data-t="notes">Notes</button><button data-t="rev">Flashcards</button><button id="rc" aria-pressed="false">Recall mode: off</button></div></header>
+<main>
+<section class="sec on" id="notes"><p class="hint">Highlighted keywords are hidden. Tap one to reveal it and test yourself.</p><div class="grid" id="g"></div></section>
+<section class="sec" id="rev"><p class="hint" style="display:block">Tap a card to flip it.</p><div class="fc" id="fc"></div></section>
+</main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const cards=[
+C('#1b5e8f','#1b5e8f','Levetiracetam','Indications, pharmacology, safety, dosing and clinical role',`<div><span class="pill">SV2A binder</span><span class="pill">Broad spectrum</span><span class="pill">No CYP metabolism</span><span class="pill">Behavioural AEs</span><span class="pill">Renal dosing</span></div>`,'cover'),
+C('#1f7a6d','#f2fbf8','Drug snapshot','Identity, brands and formulations',`<table><tr><th>Item</th><th>Detail</th></tr><tr><td>Chemical</td><td>(S)-alpha-ethyl-2-oxo-1-pyrrolidine acetamide</td></tr><tr><td>Brands</td><td><b>Levera</b>, Levera XR, Levipil, Levepsy, Levesam</td></tr><tr><td>Generics</td><td><b>Yes</b></td></tr><tr><td>Tablets</td><td>250, 500, 750, 1000 mg</td></tr><tr><td>Oral solution / IV</td><td>100 mg/mL; 500 mg/5 mL</td></tr><tr><td>XR tablet</td><td>500 mg</td></tr></table><div class="box">Non-epilepsy licensed indications: <b>none</b>.</div>`),
+C('#b5472f','#fff7f3','Licensed indications','Epilepsy only (UK-SPC and FDA label)',`<table><tr><th>Seizure type</th><th>UK-SPC</th><th>FDA</th></tr><tr><td>Partial, monotherapy</td><td><b>16 y+</b></td><td>(not listed)</td></tr><tr><td>Partial, adjunct</td><td><b>4 y+</b></td><td><b>4 y+</b></td></tr><tr><td>Myoclonic (JME), adjunct</td><td><b>12 y+</b></td><td><b>12 y+</b></td></tr><tr><td>Primary generalised tonic-clonic (IGE), adjunct</td><td><b>12 y+</b></td><td><b>6 y+</b></td></tr></table><div class="box">No seizure type or epilepsy is a contraindication. Evidence is <b>very limited in neonatal seizures</b> and absent for febrile seizure prophylaxis.</div>`),
+C('#7a4bc2','#f8f4ff','Non-licensed uses','Off-label use in practice',`<div class="cols"><div><h3>Epilepsy</h3><ul><li>Absence seizures</li><li>Benign rolandic epilepsy</li><li>JME, myoclonic seizures</li><li>Progressive myoclonic epilepsy (Unverricht-Lundborg)</li><li>Dravet syndrome</li><li><b>Status epilepticus</b></li></ul></div><div><h3>Other</h3><ul><li>Post-hypoxic and post-encephalitic <b>myoclonus</b></li><li>Neuropathic or chronic <b>pain</b></li><li><b>Mania</b></li></ul></div></div>`),
+C('#2a6fb0','#f2f8ff','Mechanism of action','Precise mechanism unknown, but distinct',`<div class="box big">Binds <b>SV2A</b>, a synaptic vesicle protein involved in vesicle exocytosis.</div><ul><li>Does <b>not</b> use the 3 classic AED mechanisms: sodium-channel block, calcium-current inhibition, or increased GABA inhibition</li><li>Opposes <b>negative modulators</b> of GABA- and glycine-gated currents</li><li>Partly inhibits <b>N-type calcium</b> currents</li></ul><div class="box">CNS adverse effects may reflect excessive SV2A action or effects on voltage-sensitive ion channels.</div>`),
+C('#d17a00','#fffaf0','Efficacy profile','Goal: complete seizure remission',`<div class="stats"><div><em>2 weeks</em>most onset of efficacy</div><div><em>2 years</em>usual treatment after last seizure</div></div><ul><li>Similar to <b>carbamazepine</b> in partial seizures</li><li>Effective across all primary (idiopathic) <b>generalised epilepsies</b></li><li>Can suppress <b>interictal epileptiform activity</b></li></ul><div class="box">If ineffective or partly effective, <b>replace or add</b> another AED suited to the seizure type or syndrome.</div>`),
+C('#1f7a6d','#f2fbf8','Pharmacokinetics','Simple, linear and predictable',`<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Bioavailability</td><td><b>≥95%</b>; food delays but doesn’t reduce</td></tr><tr><td>Tmax / steady state</td><td><b>1 to 2 h</b> / <b>1 to 2 days</b></td></tr><tr><td>Protein binding; Vd</td><td><b>0%</b>; 0.5 to 0.7 L/kg</td></tr><tr><td>Metabolism</td><td>~30% by <b>blood esterase</b> hydrolysis; no CYP, no autoinduction, inactive metabolites</td></tr><tr><td>Half-life</td><td><b>6 to 8 h</b> adult; 5 to 6 h child; 10 to 11 h elderly</td></tr><tr><td>Excretion</td><td>~<b>66%</b> unchanged in urine; tracks CrCl</td></tr></table>`),
+C('#c2477e','#fff5f9','Drug interactions','No pharmacokinetic interactions reported',`<div class="box big"><b>No PK interactions</b> with other AEDs or non-AED drugs. Does <b>not</b> reduce hormonal contraceptive levels.</div><table><tr><th>Added to</th><th>Reported effect</th></tr><tr><td>Valproate</td><td><b>Encephalopathy</b></td></tr><tr><td>Carbamazepine</td><td>Toxicity-like symptoms</td></tr><tr><td>Topiramate</td><td>More AEs in <b>children</b></td></tr><tr><td>Alcohol, CNS depressants, MAOIs</td><td>Added <b>sedation</b></td></tr></table>`),
+C('#b5472f','#fff7f3','Adverse effects by severity','Risk is greatest in the first few months',`<table><tr><th>Tier</th><th>Effects</th></tr><tr><td><b>Common</b></td><td>Somnolence, asthenia, ataxia, dizziness; <b>behavioural</b> (agitation, hostility, aggression, anxiety, lability, depression), especially in children</td></tr><tr><td><b>Life-threatening</b></td><td>Very rare <b>liver failure</b>; rare <b>suicidal ideation and acts</b></td></tr><tr><td><b>Rare, non-fatal</b></td><td><b>Psychosis</b>, allergy, bone-marrow suppression</td></tr><tr><td>Weight</td><td>Not expected; gain reported</td></tr></table>`),
+C('#7a4bc2','#f8f4ff','Managing adverse effects','A practical sequence',`<div class="st"><b>Before starting:</b> counsel patient or parents on common AEs and which symptoms to report</div><div class="ar">▼</div><div class="st"><b>During titration:</b> go <b>slower</b> to lower incidence and severity</div><div class="ar">▼</div><div class="st"><b>Sedation:</b> give most of the dose at <b>night</b></div><div class="ar">▼</div><div class="st"><b>Persistent mood or behaviour change:</b> may need <b>discontinuation</b>. Vitamin B6 suggested for children but unproven</div>`),
+C('#2a6fb0','#f2f8ff','Dosing','Titrate every 1 to 2 weeks as tolerated',`<table><tr><th></th><th>Adults, 12 y+</th><th>Children under 12</th></tr><tr><td>Start</td><td><b>250 to 500 mg</b> twice daily</td><td>~<b>20 mg/kg/day</b> in 2 to 3 doses</td></tr><tr><td>Step up</td><td>+<b>500 mg/day</b></td><td>+<b>10 to 20 mg/kg/day</b></td></tr><tr><td>Maintenance</td><td><b>2000 to 3000 mg/day</b></td><td><b>30 to 40 mg/kg/day</b></td></tr><tr><td>Higher</td><td>&gt;3000 mg may be tolerated</td><td>Up to <b>100 mg/kg/day</b></td></tr></table><div class="box">Usual range: adults 1000 to 3000 mg/day; children 30 to 40 mg/kg/day.</div>`),
+C('#1f7a6d','#f2fbf8','Dosing tips and IV use','Practical points',`<ul><li>Children and high doses: consider <b>3 divided doses</b></li><li>IV loading dose <b>not established</b>; 20 to 40 mg/kg given safely in children with acute repetitive seizures or status epilepticus</li><li>IV infusion: dilute in <b>100 mL</b> isotonic fluid (saline, Ringer’s, 5% dextrose) over <b>15 minutes</b></li><li>Intolerable sedation: most of the dose <b>at night</b></li></ul><div class="box">IV forms: 100 mg/mL and 500 mg/5 mL solution.</div>`),
+C('#c2477e','#fff5f9','Withdrawal and overdose','Taper; overdose is rarely fatal',`<div class="cols"><div><h3>Withdrawal</h3><ul><li>No adjustment of other drugs needed</li><li>Rapid stop may raise <b>seizure risk</b></li><li>Taper over <b>1 to 3 months</b> if possible</li></ul></div><div><h3>Overdose</h3><ul><li>No fatalities reported</li><li><b>Sedation, agitation, aggression, respiratory depression, coma</b></li><li>Gastric lavage or emesis if indicated</li><li><b>Haemodialysis</b> removes drug</li></ul></div></div>`),
+C('#d17a00','#fffaf0','Monitoring and TDM','No routine lab monitoring needed',`<div class="stats"><div><em>12 to 46 mg/L</em>optimum monotherapy level</div><div><em>70 to 270 µmol/L</em>same range</div></div><ul><li>Conversion: <b>1 mg/L = 5.88 µmol/L</b></li><li>Same reference range used for children and adults, though <b>data are lacking</b></li><li><b>Saliva</b> reflects free, pharmacologically relevant concentration</li></ul><div class="box big">Monitor clinically for <b>depression or psychosis</b>.</div>`),
+C('#2a6fb0','#f2f8ff','Renal impairment','Dose by creatinine clearance',`<table><tr><th>CrCl (mL/min/1.73 m²)</th><th>Dose</th></tr><tr><td><b>50 to 79</b> mild</td><td>500 to 1000 mg twice daily</td></tr><tr><td><b>30 to 49</b> moderate</td><td>250 to 750 mg twice daily</td></tr><tr><td><b>&lt;30</b> severe</td><td>250 to 500 mg twice daily</td></tr><tr><td><b>Haemodialysis</b></td><td>500 to 1000 mg daily + <b>250 to 500 mg after dialysis</b></td></tr></table><div class="box">Renal disease may cut clearance by <b>35 to 60%</b>. Do not use with prior allergy to the drug or hereditary fructose intolerance (maltitol excipient).</div>`),
+C('#7a4bc2','#f8f4ff','Hepatic, children, elderly','Special populations',`<div class="st"><b>Hepatic impairment:</b> not liver-metabolised, so <b>no dose adjustment</b></div><div class="st"><b>Children:</b> higher metabolic capacity, so more <b>mg/kg/day</b> needed for the same level</div><div class="st"><b>Elderly:</b> more sedation and reduced renal function, so <b>lower doses</b> guided by CrCl; low interaction risk</div><div class="box big">Relatively safe profile: may be a <b>first-choice AED in the elderly</b>.</div>`),
+C('#c2477e','#fff5f9','Pregnancy and breastfeeding','Weigh benefit against fetal risk',`<div class="cols"><div><h3>Pregnancy</h3><ul><li>Legacy <b>FDA category C</b></li><li>Plasma level falls ~<b>60%</b>; dose increase may be needed</li><li><b>Monotherapy</b> has lower teratogenic risk than combinations</li><li>Avoid rapid stopping; seizures can harm the fetus</li></ul></div><div><h3>Breastfeeding</h3><ul><li>Milk: <b>80 to 130%</b> of maternal level</li><li>Infant level: <b>&lt;20%</b> of maternal</li><li>Watch for <b>irritability or sedation</b>; bottle-feed if seen</li></ul></div></div>`),
+C('#1b5e8f','#f2f8ff','Role in epilepsy','First- or second-line broad-spectrum AED',`<div class="cols"><div><h3>Advantages</h3><ul><li><b>Broad</b> seizure coverage</li><li>No organ toxicity</li><li>Simple PK, <b>few interactions</b></li></ul></div><div><h3>Disadvantages</h3><ul><li><b>Mood and behaviour</b> effects, may force stopping</li><li>Potential teratogen (similar to most AEDs)</li></ul></div></div><div class="box"><b>Primary:</b> partial seizures; JME myoclonic; IGE tonic-clonic. <b>Secondary:</b> absence, progressive myoclonic epilepsy, Dravet, myoclonus.</div><div class="box big">Main challenger to <b>carbamazepine</b> in partial seizures; likely valproate replacement in JME.</div>`),
+C('#b5472f','#fff7f3','Clinical decision flow','Grand-rounds checklist',`<div class="st"><b>1.</b> Seizure type: partial, JME, or IGE? <b>Fits an indication</b></div><div class="ar">▼</div><div class="st"><b>2.</b> Check <b>CrCl</b>, age, pregnancy potential</div><div class="ar">▼</div><div class="st"><b>3.</b> Screen <b>mood, behaviour, psychiatric history</b></div><div class="ar">▼</div><div class="st"><b>4.</b> Start low, titrate every 1 to 2 weeks; reassess at <b>2 weeks</b></div><div class="ar">▼</div><div class="st"><b>5.</b> Inadequate response? <b>Replace or combine</b>. Stopping? <b>Taper</b></div>`),
+C('#1b5e8f','#f3f6ff','Key takeaways','Clinical pearls',`<ul><li><b>SV2A</b> binding, a novel mechanism</li><li>Almost <b>no PK interactions</b>; ~66% renal, dose by <b>CrCl</b></li><li>No liver adjustment; <b>no routine labs</b></li><li>Main risk: <b>mood and behaviour</b>, rare psychosis and suicidality</li><li>Adults <b>2000 to 3000 mg/day</b>; children 30 to 40 mg/kg/day</li><li>Pregnancy: levels drop ~<b>60%</b>; <b>taper</b>, never stop abruptly</li></ul>`)
+];
+const g=document.getElementById('g'),N=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${N}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return;let f=36;i.style.fontSize=f+'px';
+while(f>16&&(i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1)){f--;i.style.fontSize=f+'px'}}
+const fitAll=()=>g.querySelectorAll('.c').forEach(fit);
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+const qa=[["Proposed target of levetiracetam?","Synaptic vesicle protein SV2A."],["Is it metabolised by CYP450?","No; ~30% hydrolysed by a blood type-B esterase."],["Half-life: adult, child, elderly?","6 to 8 h, 5 to 6 h, 10 to 11 h."],["Route of elimination?","~66% unchanged in urine; clearance tracks CrCl."],["Protein binding?","0%."],["Notable PD interaction with valproate?","Encephalopathic state reported."],["Most important common adverse effects?","Somnolence, asthenia, ataxia, dizziness, and behavioural or mood symptoms (esp. children)."],["Rare dangerous adverse effects?","Very rare liver failure; rare suicidal ideation and acts."],["Adult maintenance dose?","2000 to 3000 mg/day (some tolerate more)."],["Child maintenance dose?","30 to 40 mg/kg/day; up to 100 mg/kg/day sometimes."],["IV infusion method?","Dilute in 100 mL isotonic fluid, give over 15 minutes."],["Optimum monotherapy plasma range?","12 to 46 mg/L (70 to 270 µmol/L); 1 mg/L = 5.88 µmol/L."],["Dose in severe renal impairment?","250 to 500 mg twice daily (CrCl <30)."],["Pregnancy effect on levels?","Plasma concentration falls ~60%; dose may need to increase."],["How to withdraw?","Taper over 1 to 3 months if possible."]];
+const fc=document.getElementById('fc');
+fc.innerHTML=qa.map(x=>`<button class="f"><i class="q">${x[0]}</i><i class="a">${x[1]}</i></button>`).join('');
+fc.addEventListener('click',e=>{const f=e.target.closest('.f');if(f)f.classList.toggle('flip')});
+document.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-t]').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.sec').forEach(s=>s.classList.toggle('on',s.id===b.dataset.t));fitAll()});
+const rc=document.getElementById('rc');
+rc.onclick=()=>{const o=document.body.classList.toggle('recall');rc.textContent='Recall mode: '+(o?'on':'off');rc.classList.toggle('on',o);rc.setAttribute('aria-pressed',o);g.querySelectorAll('b.shown').forEach(x=>x.classList.remove('shown'))};
+g.addEventListener('click',e=>{if(document.body.classList.contains('recall')&&e.target.tagName==='B')e.target.classList.toggle('shown')});
+</script>
+
+<script>
+(function(){
+  const SCALE=2;   // 2 = 2160x2160 px; use 1 for exactly 1080x1080
+  const GAP=450;   // max ms between the two taps
+  const SOURCES=[
+    'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js',
+    'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js'
+  ];
+
+  const css=document.createElement('style');
+  css.textContent='.cw{touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}'+
+  '#shot-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d2230;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px system-ui,sans-serif;z-index:99999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}'+
+  '#shot-toast.on{opacity:1}';
+  document.head.appendChild(css);
+
+  const toast=document.createElement('div');toast.id='shot-toast';document.body.appendChild(toast);
+  let tt;
+  function say(m,ms){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)}
+
+  function addScript(src){
+    return new Promise((res,rej)=>{
+      const s=document.createElement('script');
+      s.src=src;s.onload=res;s.onerror=()=>{s.remove();rej(new Error('blocked: '+src))};
+      document.head.appendChild(s);
+    });
+  }
+  let lib;
+  function load(){
+    if(window.html2canvas)return Promise.resolve();
+    if(lib)return lib;
+    lib=(async()=>{
+      for(const src of SOURCES){
+        try{await addScript(src);if(window.html2canvas)return}catch(e){}
+      }
+      lib=null;
+      throw new Error('Could not load html2canvas (offline, or this page blocks external scripts). Open the downloaded HTML file in a normal browser tab.');
+    })();
+    return lib;
+  }
+
+  let busy=false;
+  async function shoot(card){
+    if(busy)return;busy=true;say('Creating image...',8000);
+    try{
+      await load();
+      if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+      card.setAttribute('data-shot','1');
+      const canvas=await html2canvas(card,{
+        scale:SCALE,width:1080,height:1080,
+        windowWidth:1300,windowHeight:1300,
+        scrollX:0,scrollY:0,
+        backgroundColor:null,logging:false,useCORS:true,
+        onclone:function(doc){
+          const c=doc.querySelector('.c[data-shot="1"]');
+          if(!c)return;
+          const w=c.parentElement;
+          doc.body.classList.remove('recall');          // export the clean card
+          w.style.cssText='position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:visible;border:0;border-radius:0;margin:0;padding:0;transform:none;aspect-ratio:auto';
+          c.style.transform='none';                     // full size, not the on-screen scale
+          c.style.left='0';c.style.top='0';
+        }
+      });
+      const blob=await new Promise((r,j)=>canvas.toBlob(b=>b?r(b):j(new Error('canvas is empty')),'image/png'));
+      const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+      const name=((card.querySelector('h2')||{}).textContent||'card').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+      const a=document.createElement('a');
+      a.href=URL.createObjectURL(blob);
+      a.download='card-'+String(idx).padStart(2,'0')+'-'+name+'.png';
+      document.body.appendChild(a);a.click();a.remove();
+      setTimeout(()=>URL.revokeObjectURL(a.href),5000);
+      say('Saved: '+a.download);
+    }catch(err){
+      console.error('Card export failed:',err);
+      say('Could not save: '+(err&&err.message?err.message:err),6000);
+    }finally{
+      card.removeAttribute('data-shot');
+      busy=false;
+    }
+  }
+
+  // double-tap (touch) and double-click (mouse)
+  let last={el:null,t:0,x:0,y:0};
+  document.addEventListener('pointerup',function(e){
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    const card=e.target.closest&&e.target.closest('.c');
+    if(!card){last.el=null;return}
+    const now=Date.now();
+    if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){
+      last.el=null;shoot(card);
+    }else{
+      last={el:card,t:now,x:e.clientX,y:e.clientY};
+    }
+  });
+})();
+</script>
+</body></html>
