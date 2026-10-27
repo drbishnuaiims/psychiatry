@@ -147,13 +147,19 @@ g.addEventListener('click',e=>{if(document.body.classList.contains('recall')&&e.
     })();
     return lib;
   }
+  const frames=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
 
   let busy=false;
   async function shoot(card){
     if(busy)return;busy=true;say('Creating image...',8000);
+    const wasRecall=document.body.classList.contains('recall');
     try{
       await load();
       if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+
+      // 1) turn recall mode off on the live page so nothing is hidden while capturing
+      if(wasRecall){document.body.classList.remove('recall');await frames();}
+
       card.setAttribute('data-shot','1');
       const canvas=await html2canvas(card,{
         scale:SCALE,width:1080,height:1080,
@@ -163,11 +169,21 @@ g.addEventListener('click',e=>{if(document.body.classList.contains('recall')&&e.
         onclone:function(doc){
           const c=doc.querySelector('.c[data-shot="1"]');
           if(!c)return;
+          doc.body.classList.remove('recall');
+          doc.documentElement.classList.remove('recall');
           const w=c.parentElement;
-          doc.body.classList.remove('recall');          // export the clean card
           w.style.cssText='position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:visible;border:0;border-radius:0;margin:0;padding:0;transform:none;aspect-ratio:auto';
-          c.style.transform='none';                     // full size, not the on-screen scale
+          c.style.transform='none';
           c.style.left='0';c.style.top='0';
+
+          // 2) belt and braces: force normal highlight colours on every keyword in the copy
+          c.querySelectorAll('b').forEach(function(b){
+            const onDark=!!b.closest('.box.big');
+            b.classList.remove('shown');
+            b.style.setProperty('background',onDark?'rgba(255,255,255,.25)':'#ffe38a','important');
+            b.style.setProperty('color',onDark?'#ffffff':'#1d2230','important');
+            b.style.setProperty('text-shadow','none','important');
+          });
         }
       });
       const blob=await new Promise((r,j)=>canvas.toBlob(b=>b?r(b):j(new Error('canvas is empty')),'image/png'));
@@ -184,6 +200,7 @@ g.addEventListener('click',e=>{if(document.body.classList.contains('recall')&&e.
       say('Could not save: '+(err&&err.message?err.message:err),6000);
     }finally{
       card.removeAttribute('data-shot');
+      if(wasRecall)document.body.classList.add('recall');   // restore recall mode
       busy=false;
     }
   }

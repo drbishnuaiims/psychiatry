@@ -28,6 +28,34 @@
 const GUIDELINES = [
 
   {
+    title: "Levetiracetam: Square Clinical Cards",
+    shortTitle: "Levetiracetam Clinical Cards",
+    authors: "Epilepsy Prescriber’s Guide",
+    year: "2026",
+    journal: "Epilepsy Prescriber’s Guide / Clinical Cards",
+    category: "Books / Epilepsy / Antiseizure Medications",
+    description: "Interactive clinical cards covering levetiracetam indications, dosing, renal adjustment, adverse effects, drug interactions, monitoring, pregnancy and practical prescribing decisions.",
+    tags: ["Levetiracetam", "Epilepsy", "Antiseizure Medication", "Clinical Cards"],
+    keywords: ["levetiracetam", "keppra", "antiepileptic drug", "antiseizure medication", "SV2A", "epilepsy", "seizure", "renal dose adjustment", "behavioural adverse effects", "levetiracetam dosing"],
+    url: "books/epilepsy-prescriber-guide-to-aed/levetiracetam.html",
+    readTime: "15 min read"
+  },
+
+  {
+    title: "CBT in Anxiety Disorders and OC-Related Disorders",
+    shortTitle: "CBT for Anxiety and OCRDs",
+    authors: "Reddy, Sudhir, Manjula, Arumugham, Narayanaswamy",
+    year: "2020",
+    journal: "Indian Journal of Psychiatry",
+    category: "Psychotherapy / Anxiety Disorders / OCRDs",
+    description: "Bedside reference to cognitive behavioural therapy for anxiety disorders and obsessive-compulsive related disorders, including assessment, formulation, exposure and disorder-specific interventions.",
+    tags: ["CBT", "Anxiety Disorders", "OCD", "Exposure Therapy"],
+    keywords: ["cognitive behavioural therapy", "CBT", "anxiety disorders", "obsessive compulsive disorder", "OCD", "OCRD", "panic disorder", "generalised anxiety disorder", "GAD", "social anxiety", "phobia", "exposure therapy", "habit reversal training"],
+    url: "cpg/cpg-cbt-in-anxiety-disorders-and-ocrd.html",
+    readTime: "25 min read"
+  },
+
+  {
     title: "Psychiatric Disorders and Endocrine Disorders",
     shortTitle: "Psychiatry in Endocrine Disorders",
     authors: "Mishra, Sawant, Garg",
@@ -1087,7 +1115,7 @@ const GUIDELINES = [
       "movement disorder treatment"
     ],
 
-    url: "/psychiatry/cpg/parkinsons_note.html",
+    url: "cpg/parkinsons_note.html",
 
     readTime: "25 min read"
   },

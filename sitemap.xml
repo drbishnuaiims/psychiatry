@@ -5,9 +5,11 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url><loc>https://drbishnuaiims.github.io/psychiatry/books/epilepsy-prescriber-guide-to-aed/levetiracetam.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/adhd-cpg-shah-2019.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/autism-spectrum-disorder-subramanyam-2019.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/canmat-isbd-bipolar-disorder-2018.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/cpg-cbt-in-anxiety-disorders-and-ocrd.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/cpg-clp/cpg-clp-perinatal-psychiatry.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/cpg-clp/cpg-clp-psychiatric-morbidities-in-epilepsy.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/cpg-clp/cpg-clp-psychiatry-in-endocrine-disorders.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>

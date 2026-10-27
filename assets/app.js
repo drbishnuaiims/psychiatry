@@ -17,7 +17,7 @@ function render(query=""){
       <h3>${g.title}</h3><p>${g.description}</p>
       <div class="card-bottom"><span>${g.tags.slice(0,3).join(" · ")}</span><span class="read">Read →</span></div>
     </a>`).join("");
-  count.textContent=`${results.length} ${results.length===1?"guideline":"guidelines"}`;
+  count.textContent=`${results.length} ${results.length===1?"resource":"resources"}`;
   empty.classList.toggle("hidden",results.length!==0);
   meta.textContent=q ? `${results.length} result${results.length===1?"":"s"} for “${query}”` : "";
 }
