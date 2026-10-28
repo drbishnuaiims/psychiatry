@@ -28,6 +28,26 @@
 const GUIDELINES = [
 
   {
+    title: "Lithium: Square Clinical Cards",
+    shortTitle: "Lithium Clinical Cards",
+    authors: "The Prescriber's Guide: Psychiatry",
+    year: "2026",
+    journal: "The Prescriber's Guide: Psychiatry / Clinical Cards",
+    category: "Books / Prescriber's Guide: Psychiatry / Mood Stabilizers",
+    description: "Interactive clinical cards covering lithium indications, dosing, therapeutic drug monitoring, adverse effects, toxicity, interactions, special populations and practical prescribing decisions.",
+    tags: ["Lithium", "Mood Stabilizer", "Bipolar Disorder", "Clinical Cards"],
+    keywords: [
+      "lithium", "lithium carbonate", "mood stabilizer", "mood stabiliser",
+      "bipolar disorder", "acute mania", "lithium dose", "lithium level",
+      "therapeutic drug monitoring", "lithium toxicity", "lithium interactions",
+      "renal monitoring", "thyroid monitoring", "prescriber's guide psychiatry",
+      "psychiatry prescriber guide", "clinical cards"
+    ],
+    url: "books/prescribers-guide-psychiatry/lithium.html",
+    readTime: "15 min read"
+  },
+
+  {
     title: "Levetiracetam: Square Clinical Cards",
     shortTitle: "Levetiracetam Clinical Cards",
     authors: "Epilepsy Prescriber’s Guide",
@@ -518,70 +538,6 @@ const GUIDELINES = [
   },
   */
 
-  /* =====================================================
-     NEW CPG SLOT — 10
-  ===================================================== */
-  {
-    title: "Lithium Clinical Guide: Prescribing, Monitoring, Toxicity & Clinical Decision-Making",
-    shortTitle: "Lithium Clinical Guide",
-    authors: "Clinical Psychiatry Reference",
-    year: "2026",
-    journal: "Clinical Psychiatry Practice Guide",
-    category: "Mood Disorders / Bipolar Disorder",
-    description:
-        "Comprehensive practical guide to lithium prescribing and therapeutic drug monitoring, including indications, baseline investigations, dosing and titration, serum lithium levels, acute mania, maintenance treatment, bipolar depression, adverse effects, toxicity, drug interactions, renal and thyroid monitoring, pregnancy, breastfeeding, discontinuation, OPD review and IPD ward-round checklists. Includes a searchable reference table of selected Indian lithium brands, formulations and indicative online prices.",
-    tags: [
-        "Lithium",
-        "Lithium Carbonate",
-        "Bipolar Disorder",
-        "Acute Mania",
-        "Mood Stabilizer",
-        "Therapeutic Drug Monitoring",
-        "Lithium Toxicity",
-        "Renal Monitoring",
-        "Thyroid Monitoring",
-        "Lithium Interactions",
-        "Psychiatry OPD",
-        "Psychiatry IPD",
-        "Indian Lithium Brands"
-    ],
-    keywords: [
-        "lithium clinical guide",
-        "lithium psychiatry",
-        "lithium carbonate",
-        "lithium dose",
-        "lithium therapeutic range",
-        "lithium serum level",
-        "12 hour lithium level",
-        "lithium monitoring",
-        "lithium toxicity",
-        "lithium overdose",
-        "lithium renal monitoring",
-        "lithium thyroid monitoring",
-        "lithium bipolar disorder",
-        "lithium acute mania",
-        "lithium maintenance treatment",
-        "lithium bipolar depression",
-        "lithium drug interactions",
-        "lithium NSAID interaction",
-        "lithium ACE inhibitor interaction",
-        "lithium ARB interaction",
-        "lithium thiazide interaction",
-        "lithium pregnancy",
-        "lithium breastfeeding",
-        "lithium discontinuation",
-        "lithium brands India",
-        "lithium carbonate brands India",
-        "lithosun",
-        "licab",
-        "intalith",
-        "lithium 300 mg India",
-        "lithium 400 mg SR India",
-        "lithium 450 mg SR India"
-    ],
-    url: "cpg/lithium-clinical-guide.html",
-    readTime: "25 min"
-},
   /* =====================================================
    BIPOLAR DISORDER — DIAGNOSTIC WORKUP PROFORMA
    CANMAT / ISBD 2018–BASED CLINICAL TOOL

@@ -9,7 +9,7 @@ const themeBtn=document.getElementById("themeToggle");
 function render(query=""){
   const q=query.trim().toLowerCase();
   const results=GUIDELINES.filter(g=>
-    [g.title,g.shortTitle,g.category,g.description,...g.tags,...(g.keywords||[])].join(" ").toLowerCase().includes(q)
+    [g.title,g.shortTitle,g.authors,g.journal,g.category,g.description,...g.tags,...(g.keywords||[])].join(" ").toLowerCase().includes(q)
   );
   grid.innerHTML=results.map((g,i)=>`
     <a class="card" href="${g.url}" style="animation-delay:${i*45}ms">
