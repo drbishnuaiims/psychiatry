@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lithium: Square Clinical Cards</title>
+<style>
+:root{box-sizing:border-box;--bg:#f3f1ec;--ink:#1d2230;--mut:#5b6275;--pill:#fff;--bd:#d9d5ca;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}}
+:root[data-theme="dark"]{--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.4}
+header{max-width:1100px;margin:0 auto;padding:20px 16px 8px}
+header h1{font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;margin:0 0 4px}
+header p{margin:0 0 12px;color:var(--mut);font-size:.9rem}
+.bar{display:flex;flex-wrap:wrap;gap:8px}
+.bar button{font:inherit;font-size:.85rem;padding:8px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--pill);color:var(--ink);cursor:pointer}
+.bar button.on{background:#2f5bd8;border-color:#2f5bd8;color:#fff}
+.bar button:focus-visible{outline:3px solid #f0a020;outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 40px}
+.hint{color:var(--mut);font-size:.85rem;padding:4px 0 12px;margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:20px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.1)}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 64px;display:flex;flex-direction:column;background:var(--b,#fffdf7);color:#1d2230;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;font-size:34px;line-height:1.3;text-align:left}
+.c h2{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:1.08;margin:0 0 10px;color:var(--a);font-weight:700;flex:none}
+.c .sub{font-size:29px;line-height:1.25;color:#4d5568;margin:0 0 16px;flex:none}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5em;overflow:hidden;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:24px;font-size:24px;color:#778}
+.in ul{padding-left:1.2em}.in li{margin:.2em 0}
+.c b{background:var(--h,#ffe38a);padding:0 .15em;border-radius:.2em;font-weight:700}
+.box{border-left:.22em solid var(--a);background:rgba(0,0,0,.06);padding:.4em .7em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.5em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.stats div{background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.35em .5em;text-align:center;font-size:.85em;line-height:1.2}
+.stats em{display:block;font-style:normal;font-family:Georgia,serif;font-size:1.9em;font-weight:700;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.92em;background:#fff;border-radius:.5em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.3em .55em}
+td{padding:.3em .55em;border-top:.06em solid #e3e0d6;vertical-align:top}
+.fl{display:flex;align-items:stretch;gap:.4em}.fl.v{flex-direction:column}
+.st{flex:1;background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.4em .6em;text-align:center;font-size:.9em;line-height:1.25}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.3em;line-height:1;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.1em .8em;font-size:.8em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.cols>div{background:#fff;border-radius:.6em;padding:.5em .7em;border-top:.25em solid var(--a)}
+.cols h3{margin:0 0 .2em;font-size:1em;color:var(--a)}
+.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:104px}.cover .sub{color:#e8ecff;font-size:38px}
+.cover .in{justify-content:center}
+.fc{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px}
+.f{position:relative;aspect-ratio:1/1;perspective:900px;cursor:pointer;border:0;background:none;padding:0;font:inherit;color:inherit}
+.f i{position:absolute;inset:0;border-radius:14px;padding:8%;display:flex;align-items:center;justify-content:center;text-align:center;backface-visibility:hidden;transition:transform .45s;font-style:normal;font-size:1.05rem;line-height:1.35}
+.f .q{background:#2f5bd8;color:#fff;font-weight:700}.f .a{background:#fff8d9;color:#1d2230;transform:rotateY(180deg);border:2px solid #e0b000}
+.f.flip .q{transform:rotateY(-180deg)}.f.flip .a{transform:rotateY(0)}
+.f:focus-visible{outline:3px solid #f0a020;outline-offset:3px;border-radius:14px}
+.sec{display:none}.sec.on{display:block}
+@media (prefers-reduced-motion:reduce){.f i{transition:none}}
+</style></head><body>
+<header><h1>Lithium: square clinical cards</h1>
+<p>Antiepileptic drug monograph summary for clinical decisions and grand rounds. Every card is a 1:1 square. Double-tap (or double-click) any card to save it as a PNG. Educational summary of the source text: verify doses against current prescribing information.</p>
+<div class="bar"><button class="on" data-t="notes">Notes</button><button data-t="rev">Flashcards</button></div></header>
+<main>
+<section class="sec on" id="notes"><p class="hint">Double-tap or double-click any card to save it as an image.</p><div class="grid" id="g"></div></section>
+<section class="sec" id="rev"><p class="hint" style="display:block">Tap a card to flip it.</p><div class="fc" id="fc"></div></section>
+</main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const cards=[
+C('#2a7f62','#2a7f62','Lithium','The original mood stabiliser: pharmacology, monitoring, safety and clinical role',`<div><span class="pill">Mood stabiliser</span><span class="pill">Narrow therapeutic index</span><span class="pill">Renal excretion</span><span class="pill">Level monitoring</span><span class="pill">Anti-suicide effect</span></div>`,'cover'),
+C('#1f7a6d','#f2fbf8','Drug snapshot','Identity and class',`<table><tr><th>Item</th><th>Detail</th></tr><tr><td>Brands</td><td><b>Lithosun</b>, Licab, Intalith, Li SR</td></tr><tr><td>Generic</td><td><b>Yes</b></td></tr><tr><td>Class</td><td><b>Mood stabiliser</b></td></tr><tr><td>Neuroscience-based nomenclature</td><td>Domain: <b>lithium</b>; mode of action: <b>enzyme modulator</b></td></tr></table><div class="box">First psychiatric drug that required <b>blood-level monitoring</b>.</div>`),
+C('#b5472f','#fff7f3','Indications','Treatment and prophylaxis (adults; children over 12 years)',`<ul><li><b>Mania</b></li><li><b>Bipolar disorder</b></li><li><b>Recurrent depression</b></li><li><b>Aggressive or self-harming behaviour</b></li><li><b>Neutropenia</b>: raises white cell count in patients on <b>clozapine</b></li></ul><div class="box">Lithium citrate and some lithium carbonate brands are <b>not licensed for children</b>.</div>`),
+C('#2a6fb0','#f2f8ff','How lithium works','Unknown and complex',`<ul><li>Alters <b>sodium transport</b> across nerve and muscle cell membranes</li><li>Alters <b>catecholamine and serotonin</b> metabolism</li><li>Inhibits <b>inositol monophosphatase</b>: phosphatidyl inositol second-messenger system</li><li>Reduces <b>protein kinase C</b> activity: gene expression</li><li>Increases <b>cytoprotective proteins</b>, activates growth-factor signalling, raises grey matter (<b>neurogenesis, trophic effects</b>)</li></ul>`),
+C('#d17a00','#fffaf0','Onset and treatment goal','How long until it works',`<div class="stats"><div><em>1 to 3 wk</em>onset in mania</div><div><em>3+ months</em>to judge maintenance</div></div><ul><li>Goal: <b>complete remission</b> and prevention of recurrence</li><li>Continue until improvement is stable, then <b>indefinitely</b></li></ul><div class="box big">Continuing treatment indefinitely avoids <b>recurrence of mania or depression</b>.</div>`),
+C('#c2477e','#fff5f9','If it does not work','Partial response or non-response',`<div class="st"><b>Check</b> serum level, <b>concordance</b>, and diagnosis or comorbidity (medical, substance use, anxiety)</div><div class="ar">▼</div><div class="st"><b>Optimise:</b> raise dose, add psychoeducation or psychotherapy</div><div class="ar">▼</div><div class="st"><b>Switch</b> mood stabiliser or <b>augment</b></div><div class="box"><b>Best augmenters:</b> quetiapine, olanzapine, aripiprazole, risperidone; <b>lamotrigine</b>; <b>valproate</b>. Antidepressants only with caution (SSRIs, SNRIs; avoid TCAs, MAOIs).</div>`),
+C('#7a4bc2','#f8f4ff','Baseline checks before starting','Narrow therapeutic ratio: prescribe only with level monitoring available',`<ul><li><b>eGFR</b> and kidney function; <b>calcium</b>; <b>thyroid</b> tests</li><li><b>U&amp;E</b> and <b>full blood count</b></li><li><b>ECG</b> if over 50, cardiac disease or risk factors</li><li><b>Weight and BMI</b> (overweight 25.0 to 29.9; obese ≥30)</li></ul><div class="box">If overweight or obese: check for <b>pre-diabetes</b> (fasting glucose 5.5 to 6.9 mmol/L; HbA1c 42 to 47 mmol/mol), <b>diabetes</b> (&gt;7.0 mmol/L; ≥48 mmol/mol) and <b>dyslipidaemia</b>.</div>`),
+C('#2a7f62','#f1faf6','Target serum lithium levels','Sample 12 hours after the last dose (10 to 14 h)',`<table><tr><th>Situation</th><th>Level (mmol/L)</th></tr><tr><td><b>Maintenance</b> in bipolar</td><td><b>0.6 to 1.0</b> (lower safer, higher more effective)</td></tr><tr><td><b>Acute mania</b>, or prior relapse</td><td><b>0.8 to 1.2</b> (sometimes up to 1.5)</td></tr><tr><td><b>Depression</b></td><td><b>0.6 to 1.0</b></td></tr><tr><td><b>Elderly</b></td><td><b>0.4 to 0.6</b></td></tr></table><div class="box">Some patients respond below <b>0.5 mmol/L</b>. Use the <b>lowest effective dose</b>.</div>`),
+C('#b5472f','#fff7f3','Monitoring schedule','A practical timeline',`<div class="st"><b>Weekly</b> after starting and after each dose change, until stable</div><div class="ar">▼</div><div class="st"><b>Every 3 months</b> for the first year</div><div class="ar">▼</div><div class="st"><b>Every 6 months</b> thereafter</div><div class="box"><b>Extra levels:</b> after dose change, intercurrent illness, or change in <b>sodium or fluid intake</b>. Every 6 months also check <b>weight/BMI, electrolytes, eGFR, thyroid</b> (more often if impaired); <b>calcium</b> before and annually.</div>`),
+C('#c2477e','#fff5f9','Notable side effects','Usually dose-related',`<table><tr><th>Effect</th><th>Detail</th></tr><tr><td><b>Tremor</b></td><td>Essential tremor, usually mild</td></tr><tr><td><b>Thirst, polyuria, polydipsia</b></td><td>Nephrogenic diabetes insipidus</td></tr><tr><td><b>GI</b></td><td>Diarrhoea, nausea</td></tr><tr><td><b>Weight gain</b></td><td>Common; may raise appetite or thirst</td></tr><tr><td><b>Thyroid</b></td><td>Goitre or hypothyroidism, raised TSH, low thyroxine</td></tr><tr><td><b>Skin, blood</b></td><td>Acne, rash, alopecia, <b>worse psoriasis</b>; leucocytosis</td></tr></table><div class="box">Sedation is common but may <b>wear off</b>. Nephropathy is rare.</div>`),
+C('#2a6fb0','#f2f8ff','Other side effects by system','Frequency not known',`<table><tr><th>System</th><th>Effects</th></tr><tr><td><b>CNS/PNS</b></td><td>Cerebellar syndrome, delirium, encephalopathy, <b>intracranial hypertension</b>, memory loss, movement disorders, myasthenia, nystagmus, neuropathy, seizure</td></tr><tr><td><b>CVS</b></td><td>Arrhythmia, AV block, <b>QT prolongation</b>, hypotension</td></tr><tr><td><b>Endocrine</b></td><td>Hyperglycaemia, <b>hyperparathyroidism</b>, hypo- or thyrotoxicosis</td></tr><tr><td><b>GI, renal</b></td><td>Altered taste, dry mouth, gastritis; renal impairment</td></tr><tr><td><b>Other</b></td><td>Angioedema, electrolyte imbalance, <b>rhabdomyolysis</b>, sexual dysfunction</td></tr></table>`),
+C('#b5472f','#fff7f3','Dangerous side effects','Toxicity is close to the therapeutic range',`<div class="box big"><b>Lithium toxicity:</b> vomiting, diarrhoea, <b>ataxia</b>, confusion. Early signs: tremor, sedation.</div><ul><li><b>Renal:</b> interstitial nephritis; nephrogenic diabetes insipidus</li><li><b>Cardiac:</b> arrhythmia, bradycardia, <b>sick sinus syndrome</b>, hypotension, T-wave flattening or inversion</li><li><b>Neuro:</b> seizures; rare <b>pseudotumour cerebri</b></li></ul>`),
+C('#7a4bc2','#f8f4ff','Managing side effects','A practical sequence',`<div class="st"><b>Wait</b>, and check the level is accurate (<b>12 h post-dose</b>)</div><div class="ar">▼</div><div class="st"><b>Lower the dose</b>; split doses or use <b>modified-release</b> at night</div><div class="ar">▼</div><div class="st"><b>Tremor:</b> avoid caffeine; <b>propranolol 20 to 30 mg 2 to 3 times daily</b></div><div class="ar">▼</div><div class="st">Stomach upset: with food. <b>Toxicity signs: stop and check level</b>. Otherwise switch agent</div>`),
+C('#1f7a6d','#f2fbf8','Dosing','Levels guide dose',`<table><tr><th>Step</th><th>Detail</th></tr><tr><td>Start</td><td><b>400 mg at night</b> (<b>200 mg</b> in the elderly)</td></tr><tr><td>Check level</td><td>After <b>7 days</b>, then <b>7 days after every dose change</b></td></tr><tr><td>Long term</td><td><b>Once daily</b> once stable</td></tr></table><div class="box"><b>Forms:</b> carbonate tablet 250 mg; modified-release 200, 400, 450 mg; citrate liquid 509 mg/5 mL, 520 mg/5 mL, 1.018 g/5 mL.</div><div class="box"><b>Equivalence:</b> Li-Liquid 509 mg citrate = 200 mg carbonate; Priadel liquid 520 mg = 204 mg. <b>Specify the strength.</b></div>`),
+C('#d17a00','#fffaf0','Dosing tips','Practical points',`<ul><li><b>Modified-release</b> is standard: less gastric irritation, lower peaks</li><li>Mania response can take <b>7 to 14 days</b> even at adequate levels</li><li>Elderly: lower doses and levels (<b>&lt;0.6 mmol/L</b>)</li><li>Changing preparation needs the <b>same precautions as starting</b></li></ul><div class="box"><b>Liquids, adults:</b> Li-Liquid 509 mg/day (&lt;50 kg) or 1.018 to 3.054 g/day (&gt;50 kg); Priadel 520 mg twice daily (&lt;50 kg) or 1.04 to 3.12 g/day (&gt;50 kg), then adjust to levels.</div>`),
+C('#c2477e','#fff5f9','Overdose and toxicity','Recognise early',`<div class="cols"><div><h3>Intoxication signs</h3><ul><li>Increasing <b>GI upset</b></li><li>Visual disturbance, polyuria</li><li>Muscle weakness, <b>tremor</b></li><li>Abnormal reflexes, <b>myoclonus</b></li><li>Incontinence, hypernatraemia</li></ul></div><div><h3>Severe overdose</h3><ul><li><b>Seizures</b></li><li>Cardiac arrhythmias</li><li>Autonomic instability</li><li><b>Renal failure</b>, coma</li><li>Sudden death</li></ul></div></div><div class="box"><b>Haemodialysis</b> can eliminate lithium.</div>`),
+C('#2a7f62','#f1faf6','Long-term use and stopping','Never stop abruptly',`<div class="cols"><div><h3>Long term</h3><ul><li><b>Most effective</b> drug for relapse prevention in bipolar</li><li>May <b>reduce kidney function</b></li><li>Levels every 3 to 6 months</li><li>Kidney, thyroid and calcium <b>annually</b></li><li>Not habit forming</li></ul></div><div><h3>Stopping</h3><ul><li>Taper over <b>at least 4 weeks</b>, ideally <b>2 to 3 months</b></li><li>Rapid stop: <b>relapse and possibly suicide</b></li><li>If abrupt: switch to an <b>atypical antipsychotic or valproate</b></li><li>Intermittent use may <b>worsen</b> the illness course</li></ul></div></div>`),
+C('#b5472f','#fff7f3','Pharmacokinetics and key interactions','Renal sodium handling drives most interactions',`<div class="box"><b>&gt;95%</b> excreted by the kidneys; half-life <b>12 to 24 h</b>; lower absorption on an empty stomach.</div><table><tr><th>Effect</th><th>Drugs</th></tr><tr><td><b>Raise</b> lithium</td><td><b>NSAIDs</b> (incl. COX-2), <b>thiazide diuretics</b>, <b>ACE inhibitors</b>, metronidazole</td></tr><tr><td><b>Lower</b> lithium</td><td>Acetazolamide, alkalising agents, xanthines, urea</td></tr><tr><td>Add toxicity</td><td>Methyldopa, carbamazepine, phenytoin, <b>calcium channel blockers</b>, SSRIs, <b>haloperidol</b> (encephalopathy)</td></tr></table>`),
+C('#7a4bc2','#f8f4ff','Warnings and contraindications','Toxic levels are near therapeutic levels',`<div class="cols"><div><h3>Do not use if</h3><ul><li><b>Addison’s disease</b></li><li>Severe kidney or cardiovascular disease</li><li>Personal or family <b>Brugada</b> syndrome</li><li>Severe <b>dehydration</b> or sodium depletion</li><li>Untreated <b>hypothyroidism</b></li><li>Proven allergy</li></ul></div><div><h3>Take care</h3><ul><li><b>Dehydration</b>: lower dose in infection, sweating, diarrhoea</li><li><b>Thyroid</b> disorders</li><li>Syncope or palpitations: unmask <b>Brugada</b>, see a cardiologist</li><li>Prolongs <b>neuromuscular blockers</b></li></ul></div></div>`),
+C('#2a6fb0','#f2f8ff','Special populations','Adjust for organ function and age',`<div class="st"><b>Renal:</b> avoid in severe impairment; in mild to moderate, <b>monitor levels closely</b></div><div class="st"><b>Cardiac:</b> avoid in severe impairment; reversible T-wave change, bradycardia, <b>heart block</b></div><div class="st"><b>Hepatic:</b> no special indications</div><div class="st"><b>Elderly:</b> lower doses; <b>neurotoxicity even at therapeutic levels</b>; target 0.4 to 0.6 mmol/L</div>`),
+C('#c2477e','#fff5f9','Children and adolescents','Specialist prescribing only',`<ul><li>Lithium is <b>not first-line for acute mania</b>: offer aripiprazole, olanzapine or risperidone</li><li>Consider for <b>longer-term prophylaxis</b>, with monitoring available</li><li><b>Bipolar depression:</b> structured psychological therapy first (3+ months)</li><li>Weekly levels until stable, then every <b>2 to 3 months</b> for 6 months, then 6-monthly; plot <b>weight</b> on a growth chart</li></ul><div class="box">Younger children get <b>more frequent and severe</b> side effects. Advise on <b>fluids</b>, toxicity signs, and give a <b>lithium treatment pack</b>.</div>`),
+C('#b5472f','#fff7f3','Pregnancy and breastfeeding','Weigh benefit against fetal risk',`<div class="cols"><div><h3>Pregnancy</h3><ul><li>No clear rise in <b>major malformations</b>; Ebstein’s anomaly not replicated</li><li>Not offered if planning pregnancy unless <b>antipsychotics failed</b></li><li>Levels <b>every 4 weeks</b>, weekly from <b>36 weeks</b></li><li>Hospital birth; <b>stop in labour</b>, check levels, fluid balance</li><li>Check <b>infant level</b> after birth</li><li>Restart straight after delivery</li></ul></div><div><h3>Breastfeeding</h3><ul><li>Milk levels may reach <b>full therapeutic</b> level</li><li>Reports of infant toxicity</li><li>Stop the drug or <b>bottle feed</b></li></ul></div></div>`),
+C('#2a7f62','#f1faf6','Role: advantages and disadvantages','Where lithium fits best',`<div class="cols"><div><h3>Advantages</h3><ul><li><b>Euphoric mania</b>, episodic pattern</li><li>Treatment-resistant depression</li><li><b>Reduces suicide risk</b></li><li>Works with atypicals or valproate</li></ul></div><div><h3>Disadvantages</h3><ul><li>Dysphoric, <b>mixed, rapid-cycling</b> mania</li><li>Poor concordance</li><li>Depressed phase</li><li>Tremor, GI, renal, weight gain</li><li>Needs <b>blood monitoring</b></li></ul></div></div><div class="box"><b>Target symptoms:</b> relapsing bipolar episodes; mania.</div>`),
+C('#d17a00','#fffaf0','Clinical pearls','From the art of psychopharmacology',`<ul><li>Treats <b>from above</b> better than from below: stronger for mania than depression</li><li><b>1 in 3</b> bipolar patients: major benefit; 1 in 3: little change</li><li>Less effective than <b>antipsychotics</b> in severe, excited or psychotic mania; often added to them</li><li>Strong evidence for <b>fewer suicides</b> in bipolar and unipolar depression</li><li>Useful to <b>augment antidepressants</b> in resistant unipolar depression</li><li>Weight gain may be more common in <b>women</b></li></ul>`),
+C('#b5472f','#fff7f3','Clinical decision flow','Grand-rounds checklist',`<div class="st"><b>1.</b> Bipolar relapse prevention or mania? <b>Euphoric, episodic</b> pattern suits</div><div class="ar">▼</div><div class="st"><b>2.</b> Baseline <b>eGFR, calcium, thyroid, U&amp;E, FBC, ECG, BMI</b></div><div class="ar">▼</div><div class="st"><b>3.</b> Start <b>400 mg at night</b>; level at <b>7 days</b>, 12 h post-dose</div><div class="ar">▼</div><div class="st"><b>4.</b> Counsel on <b>fluids, NSAIDs, toxicity signs</b></div><div class="ar">▼</div><div class="st"><b>5.</b> Monitor long term; <b>taper</b> over 2 to 3 months if stopping</div>`),
+C('#2a7f62','#f1faf6','Key takeaways','Clinical pearls',`<ul><li>Narrow <b>therapeutic index</b>: levels near toxic range</li><li>Target <b>0.6 to 1.0</b> maintenance; <b>0.8 to 1.2</b> acute mania</li><li><b>NSAIDs, thiazides, ACE inhibitors</b> raise levels</li><li>Watch <b>kidney and thyroid</b> every 6 to 12 months</li><li><b>Never stop abruptly</b>: relapse and suicide risk</li><li>Avoid in <b>pregnancy</b> where antipsychotics work; stop in labour</li></ul>`)
+];
+const g=document.getElementById('g'),N=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${N}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return;let f=36;i.style.fontSize=f+'px';
+while(f>16&&(i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1)){f--;i.style.fontSize=f+'px'}}
+const fitAll=()=>g.querySelectorAll('.c').forEach(fit);
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+const qa=[["Therapeutic maintenance level?","0.6 to 1.0 mmol/L, sampled 12 hours post-dose."],["Level for acute mania?","0.8 to 1.2 mmol/L (sometimes up to 1.5)."],["Target level in the elderly?","0.4 to 0.6 mmol/L."],["Starting dose?","400 mg at night (200 mg in the elderly)."],["When to check the first level?","After 7 days, then 7 days after every dose change."],["Routine level schedule?","Weekly until stable, then every 3 months for year 1, then every 6 months."],["Which drug classes raise lithium levels?","NSAIDs, thiazide diuretics, ACE inhibitors, metronidazole."],["Main route of excretion?","Kidneys (>95%); half-life 12 to 24 h."],["Common side effects?","Tremor, thirst and polyuria, GI upset, weight gain, thyroid changes."],["Early signs of toxicity?","Tremor, ataxia, vomiting, diarrhoea, sedation, confusion."],["Tremor treatment?","Avoid caffeine; propranolol 20 to 30 mg 2 to 3 times daily."],["Baseline tests?","eGFR, calcium, thyroid, U&E, FBC, ECG if over 50 or cardiac risk, weight/BMI."],["How to stop lithium?","Taper over at least 4 weeks, ideally 2 to 3 months."],["Pregnancy monitoring?","Levels every 4 weeks, weekly from 36 weeks; stop in labour; check infant level."],["Which bipolar types respond less well?","Dysphoric, mixed and rapid-cycling."],["What does lithium treat in clozapine patients?","Neutropenia: raises white cell count."]];
+const fc=document.getElementById('fc');
+fc.innerHTML=qa.map(x=>`<button class="f"><i class="q">${x[0]}</i><i class="a">${x[1]}</i></button>`).join('');
+fc.addEventListener('click',e=>{const f=e.target.closest('.f');if(f)f.classList.toggle('flip')});
+document.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-t]').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.sec').forEach(s=>s.classList.toggle('on',s.id===b.dataset.t));fitAll()});
+</script>
+<script>
+(function(){
+  const SCALE=2,GAP=450;
+  const SOURCES=['https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js','https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js'];
+  const css=document.createElement('style');
+  css.textContent='.cw{touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}#shot-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d2230;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px system-ui,sans-serif;z-index:99999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#shot-toast.on{opacity:1}';
+  document.head.appendChild(css);
+  const toast=document.createElement('div');toast.id='shot-toast';document.body.appendChild(toast);
+  let tt;function say(m,ms){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)}
+  function addScript(src){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>{s.remove();rej(new Error('blocked: '+src))};document.head.appendChild(s)})}
+  let lib;function load(){if(window.html2canvas)return Promise.resolve();if(lib)return lib;
+    lib=(async()=>{for(const src of SOURCES){try{await addScript(src);if(window.html2canvas)return}catch(e){}}lib=null;throw new Error('Could not load html2canvas (offline, or external scripts blocked). Open the downloaded HTML file in a normal browser tab.')})();return lib}
+  const frames=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+  let busy=false;
+  async function shoot(card){
+    if(busy)return;busy=true;say('Creating image...',8000);
+    try{
+      await load();if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+      card.setAttribute('data-shot','1');
+      const canvas=await html2canvas(card,{scale:SCALE,width:1080,height:1080,windowWidth:1300,windowHeight:1300,scrollX:0,scrollY:0,backgroundColor:null,logging:false,useCORS:true,
+        onclone:function(doc){const c=doc.querySelector('.c[data-shot="1"]');if(!c)return;
+          const w=c.parentElement;w.style.cssText='position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:visible;border:0;border-radius:0;margin:0;padding:0;transform:none;aspect-ratio:auto';
+          c.style.transform='none';c.style.left='0';c.style.top='0';
+          c.querySelectorAll('b').forEach(function(b){const d=!!b.closest('.box.big');
+            b.style.setProperty('background',d?'rgba(255,255,255,.25)':'#ffe38a','important');
+            b.style.setProperty('color',d?'#ffffff':'#1d2230','important');b.style.setProperty('text-shadow','none','important')})}});
+      const blob=await new Promise((r,j)=>canvas.toBlob(b=>b?r(b):j(new Error('canvas is empty')),'image/png'));
+      const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+      const name=((card.querySelector('h2')||{}).textContent||'card').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='card-'+String(idx).padStart(2,'0')+'-'+name+'.png';
+      document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+a.download);
+    }catch(err){console.error('Card export failed:',err);say('Could not save: '+(err&&err.message?err.message:err),6000)}
+    finally{card.removeAttribute('data-shot');busy=false}
+  }
+  let last={el:null,t:0,x:0,y:0};
+  document.addEventListener('pointerup',function(e){
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    const card=e.target.closest&&e.target.closest('.c');
+    if(!card){last.el=null;return}
+    const now=Date.now();
+    if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card)}
+    else{last={el:card,t:now,x:e.clientX,y:e.clientY}}
+  });
+})();
+</script>
+</body></html>
