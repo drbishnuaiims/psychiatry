@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clobazam: Square Clinical Cards</title>
+<style>
+:root{box-sizing:border-box;--bg:#f3f1ec;--ink:#1d2230;--mut:#5b6275;--pill:#fff;--bd:#d9d5ca;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}}
+:root[data-theme="dark"]{--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.4}
+header{max-width:1100px;margin:0 auto;padding:20px 16px 8px}
+header h1{font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;margin:0 0 4px}
+header p{margin:0 0 12px;color:var(--mut);font-size:.9rem}
+.bar{display:flex;flex-wrap:wrap;gap:8px}
+.bar button{font:inherit;font-size:.85rem;padding:8px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--pill);color:var(--ink);cursor:pointer}
+.bar button.on{background:#2f5bd8;border-color:#2f5bd8;color:#fff}
+.bar button:focus-visible{outline:3px solid #f0a020;outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 40px}
+.hint{display:none;color:var(--mut);font-size:.85rem;padding:4px 0 12px;margin:0}body.recall #notes .hint{display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:20px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.1)}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 64px;display:flex;flex-direction:column;background:var(--b,#fffdf7);color:#1d2230;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;font-size:34px;line-height:1.3;text-align:left}
+.c h2{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:1.08;margin:0 0 10px;color:var(--a);font-weight:700;flex:none}
+.c .sub{font-size:29px;line-height:1.25;color:#4d5568;margin:0 0 16px;flex:none}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5em;overflow:hidden;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:24px;font-size:24px;color:#778}
+.in ul{padding-left:1.2em}.in li{margin:.2em 0}
+.c b{background:var(--h,#ffe38a);padding:0 .15em;border-radius:.2em;font-weight:700}
+.box{border-left:.22em solid var(--a);background:rgba(0,0,0,.06);padding:.4em .7em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.5em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.stats div{background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.35em .5em;text-align:center;font-size:.85em;line-height:1.2}
+.stats em{display:block;font-style:normal;font-family:Georgia,serif;font-size:1.9em;font-weight:700;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.92em;background:#fff;border-radius:.5em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.3em .55em}
+td{padding:.3em .55em;border-top:.06em solid #e3e0d6;vertical-align:top}
+.fl{display:flex;align-items:stretch;gap:.4em}.fl.v{flex-direction:column}
+.st{flex:1;background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.4em .6em;text-align:center;font-size:.9em;line-height:1.25}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.3em;line-height:1;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.1em .8em;font-size:.8em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.cols>div{background:#fff;border-radius:.6em;padding:.5em .7em;border-top:.25em solid var(--a)}
+.cols h3{margin:0 0 .2em;font-size:1em;color:var(--a)}
+.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:104px}.cover .sub{color:#e8ecff;font-size:38px}
+.cover .in{justify-content:center}
+body.recall .c b:not(.shown){background:#1d2230;color:transparent;cursor:pointer;user-select:none}
+body.recall .c b.shown{background:var(--h,#ffe38a)}
+body.recall .box.big b:not(.shown){background:#0003;color:transparent}
+.fc{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px}
+.f{position:relative;aspect-ratio:1/1;perspective:900px;cursor:pointer;border:0;background:none;padding:0;font:inherit;color:inherit}
+.f i{position:absolute;inset:0;border-radius:14px;padding:8%;display:flex;align-items:center;justify-content:center;text-align:center;backface-visibility:hidden;transition:transform .45s;font-style:normal;font-size:1.05rem;line-height:1.35}
+.f .q{background:#2f5bd8;color:#fff;font-weight:700}.f .a{background:#fff8d9;color:#1d2230;transform:rotateY(180deg);border:2px solid #e0b000}
+.f.flip .q{transform:rotateY(-180deg)}.f.flip .a{transform:rotateY(0)}
+.f:focus-visible{outline:3px solid #f0a020;outline-offset:3px;border-radius:14px}
+.sec{display:none}.sec.on{display:block}
+@media (prefers-reduced-motion:reduce){.f i{transition:none}}
+</style></head><body>
+<header><h1>Clobazam: square clinical cards</h1>
+<p>Antiepileptic drug monograph summary for clinical decisions and grand rounds. Every card is a 1:1 square. Double-tap (or double-click) any card to save it as a PNG. Educational summary of the source text: verify doses against current prescribing information.</p>
+<div class="bar"><button class="on" data-t="notes">Notes</button><button data-t="rev">Flashcards</button><button id="rc" aria-pressed="false">Recall mode: off</button></div></header>
+<main>
+<section class="sec on" id="notes"><p class="hint">Highlighted keywords are hidden. Tap one to reveal it and test yourself.</p><div class="grid" id="g"></div></section>
+<section class="sec" id="rev"><p class="hint" style="display:block">Tap a card to flip it.</p><div class="fc" id="fc"></div></section>
+</main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const cards=[
+C('#5b3fa8','#5b3fa8','Clobazam','1,5-benzodiazepine antiepileptic: pharmacology, safety, dosing and clinical role',`<div><span class="pill">GABA-A modulator</span><span class="pill">Adjunctive use</span><span class="pill">Active metabolite</span><span class="pill">Tolerance</span><span class="pill">Slow withdrawal</span></div>`,'cover'),
+C('#1f7a6d','#f2fbf8','Drug snapshot','Identity, brands and formulations',`<table><tr><th>Item</th><th>Detail</th></tr><tr><td>Chemical</td><td>7-chloro-1-methyl-5-phenyl-1,5-benzodiazepine-2,4-dione; MW <b>300.74</b></td></tr><tr><td>Brands</td><td><b>Frisium</b>, Urbanyl, Noiafren, Castilium, Clobamax, Asabium, others</td></tr><tr><td>Generics</td><td><b>Yes</b></td></tr><tr><td>Formulations</td><td><b>10 mg</b> tablets and capsules</td></tr><tr><td>Control</td><td><b>Schedule IV</b>; dependence risk rises with dose and duration</td></tr></table>`),
+C('#b5472f','#fff7f3','Licensed indications','UK-SPC',`<table><tr><th>Use</th><th>Detail</th></tr><tr><td><b>Epilepsy</b></td><td>Adjunctive <b>intermittent</b> therapy of partial or generalised seizures, patients <b>&gt;3 years</b></td></tr><tr><td><b>Epilepsy</b></td><td><b>Nonconvulsive status epilepticus</b></td></tr><tr><td><b>Non-epilepsy</b></td><td><b>Anxiolytic</b></td></tr></table><div class="box">No non-licensed non-epilepsy uses listed. Data on seizure types where it is <b>ineffective or contraindicated</b> are not available.</div>`),
+C('#7a4bc2','#f8f4ff','Non-licensed uses in epilepsy','Off-label use in practice',`<ul><li><b>Lennox-Gastaut syndrome</b></li><li><b>Catamenial</b> epilepsy (intermittent use)</li><li><b>Febrile</b> seizures</li><li><b>Reading</b> epilepsy and <b>startle</b> epilepsy</li><li><b>Alcohol withdrawal</b> seizures</li><li><b>Benign childhood partial</b> epilepsies</li></ul><div class="box big">Also tried as first-line monotherapy in <b>newly diagnosed childhood partial epilepsy</b>.</div>`),
+C('#2a6fb0','#f2f8ff','Mechanism of action','Enhances GABA inhibition',`<div class="st"><b>Binds</b> benzodiazepine site on the <b>GABA-A</b> ligand-gated chloride channel complex</div><div class="ar">▼</div><div class="st"><b>Enhances</b> the inhibitory effect of GABA</div><div class="ar">▼</div><div class="st"><b>Boosts chloride conductance</b> through GABA-regulated channels</div><div class="box">Adverse effects share the <b>same mechanism</b>: excessive action at benzodiazepine receptors. Long-term receptor adaptation may explain <b>dependence, tolerance and withdrawal</b>.</div>`),
+C('#d17a00','#fffaf0','Efficacy profile','Goal: complete seizure remission',`<div class="stats"><div><em>Days</em>onset may occur in first few days</div><div><em>Years</em>benefit usually continues indefinitely</div></div><ul><li>Commonly <b>combined</b> with other AEDs</li><li>Continue until symptoms resolve or improvement is stable, then <b>indefinitely</b> to avoid recurrence</li></ul><div class="box">If ineffective or partly effective, <b>replace or combine</b> with an AED suited to the seizure type or syndrome.</div>`),
+C('#1f7a6d','#f2fbf8','Pharmacokinetics','Absorption and distribution',`<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Bioavailability</td><td><b>&gt;95%</b>; food slows rate, not extent</td></tr><tr><td>Tmax</td><td><b>1 to 3 h</b></td></tr><tr><td>Steady state</td><td><b>2 to 7 days</b> (7 to 10 days incl. active metabolite)</td></tr><tr><td>Kinetics</td><td><b>Linear</b></td></tr><tr><td>Protein binding; Vd</td><td><b>85%</b>; 0.87 to 1.83 L/kg</td></tr><tr><td>Saliva</td><td>Reflects <b>unbound</b> plasma level</td></tr></table>`),
+C('#c2477e','#fff5f9','Metabolism and elimination','The metabolite matters',`<div class="fl"><div class="st"><b>Clobazam</b><br>liver, desmethylation</div><div class="ar">→</div><div class="st"><b>N-desmethylclobazam</b><br>active; contributes to efficacy</div></div><div class="box">Also hydroxylated to <b>4-hydroxyclobazam</b> and <b>4-hydroxy desmethylclobazam</b>. No autoinduction. Unchanged drug in urine is <b>insignificant</b>.</div><table><tr><th>Half-life</th><th>Clobazam</th></tr><tr><td>Adults</td><td><b>10 to 30 h</b> (N-desmethyl 36 to 46 h)</td></tr><tr><td>Children</td><td>~<b>16 h</b></td></tr><tr><td>Elderly</td><td><b>30 to 48 h</b></td></tr></table>`),
+C('#b5472f','#fff7f3','Drug interactions','Significant pharmacokinetic interactions',`<table><tr><th>Drug</th><th>Effect</th></tr><tr><td>Carbamazepine, phenobarbital, phenytoin, primidone</td><td><b>Lower clobazam</b>, higher N-desmethyl level</td></tr><tr><td>Felbamate</td><td><b>Raises</b> clobazam and N-desmethyl level</td></tr><tr><td>Stiripentol</td><td>Raises both <b>severalfold</b></td></tr><tr><td>Cimetidine</td><td>Raises clobazam only</td></tr><tr><td>Clobazam added to</td><td>Raises <b>phenytoin, primidone, valproate</b></td></tr><tr><td>Alcohol, barbiturates, neuroleptics</td><td><b>Potentiated</b> CNS depression</td></tr></table><div class="box">Does <b>not</b> lower hormonal contraceptive levels.</div>`),
+C('#7a4bc2','#f8f4ff','Adverse effects by severity','Mostly dose-related CNS effects',`<table><tr><th>Tier</th><th>Effects</th></tr><tr><td><b>Common</b></td><td><b>Sedation</b>, drowsiness, fatigue, dry mouth, poor appetite, constipation, cognitive and behavioural impairment, restlessness, ataxia</td></tr><tr><td><b>In children</b></td><td>Aggressive outbursts, hyperactivity, insomnia, depression with <b>suicidal ideation</b></td></tr><tr><td><b>Dangerous</b></td><td><b>Withdrawal syndrome</b> in chronic use; <b>respiratory depression</b> at high dose or with CNS depressants</td></tr><tr><td><b>Rare</b></td><td>Amnesia with odd behaviour, hallucination, nightmares, nystagmus, low libido</td></tr></table>`),
+C('#2a6fb0','#f2f8ff','Managing adverse effects','A practical sequence',`<div class="st"><b>Before starting:</b> counsel on common and severe AEs and what to report</div><div class="ar">▼</div><div class="st"><b>Start low, go slow</b>: immediate AEs often fade over time</div><div class="ar">▼</div><div class="st"><b>Sedation:</b> small doses about <b>1 hour before sleep</b></div><div class="ar">▼</div><div class="st"><b>Persisting:</b> <b>lower the dose</b>. Dependence develops faster at larger doses</div>`),
+C('#1f7a6d','#f2fbf8','Dosing','Titrate weekly, start at night',`<table><tr><th></th><th>Over 12 y</th><th>Under 12 y</th></tr><tr><td>Start</td><td><b>5 to 10 mg/day</b> at night</td><td><b>0.1 to 0.2 mg/kg/day</b></td></tr><tr><td>Step up</td><td>+<b>5 mg/day</b> weekly</td><td>+<b>0.1 mg/kg/day</b> weekly</td></tr><tr><td>Maximum</td><td><b>40 mg/day</b></td><td><b>0.8 mg/kg/day</b></td></tr><tr><td>Usual range</td><td><b>20 to 40 mg/day</b></td><td><b>0.4 to 0.8 mg/kg/day</b></td></tr></table>`),
+C('#d17a00','#fffaf0','Dosing tips','Practical points',`<ul><li>Adjunct in drug-resistant epilepsy: <b>20 to 30 mg at night</b>; <b>half dose</b> if under 5 years</li><li><b>Twice daily</b> is fine: smaller dose by day, larger dose just before sleep</li><li>Tolerance may develop, but <b>over a third of patients</b> do not develop it</li><li>When effective, most benefit <b>for years</b> without dependence or unwanted AEs</li></ul><div class="box">Intermittent use (e.g. catamenial) is a strategy to <b>avoid tolerance</b>.</div>`),
+C('#c2477e','#fff5f9','Withdrawal and overdose','Taper very slowly',`<div class="cols"><div><h3>Withdrawal</h3><ul><li>Taper over <b>4 to 6 months</b></li><li>Rapid stop: <b>withdrawal symptoms, seizures, status epilepticus</b></li><li>Other drug doses may need adjusting</li></ul></div><div><h3>Overdose</h3><ul><li>No cases reported to date</li><li>Empty stomach by lavage or emesis</li><li><b>Supportive care</b> and <b>flumazenil</b></li><li>Dialysis benefit <b>unknown</b></li></ul></div></div>`),
+C('#2a6fb0','#f2f8ff','Monitoring and TDM','Periodic liver tests and blood counts may be prudent',`<table><tr><th>Analyte</th><th>Reference range</th><th>mg/L to µmol/L</th></tr><tr><td><b>Clobazam</b></td><td>0.03 to 0.30 mg/L (0.1 to 1.0 µmol/L)</td><td>×<b>3.33</b></td></tr><tr><td><b>N-desmethylclobazam</b></td><td>0.30 to 3.00 mg/L (1 to 10 µmol/L)</td><td>×<b>3.49</b></td></tr></table><ul><li>Same ranges used for children and adults, though <b>data are lacking</b></li><li><b>Saliva</b> reflects free, active concentration</li></ul>`),
+C('#b5472f','#fff7f3','Cautions and contraindications','Respiratory and hepatic risks',`<div class="cols"><div><h3>Do not use if</h3><ul><li>Respiratory depression</li><li>Acute pulmonary insufficiency</li><li><b>Sleep apnoea</b> syndrome</li><li>Marked neuromuscular respiratory weakness, e.g. <b>unstable myasthenia gravis</b></li><li><b>Severe liver disease</b></li><li>Allergy to any benzodiazepine</li></ul></div><div><h3>Use with caution</h3><ul><li><b>Pulmonary disease</b>; obstructive sleep apnoea (extreme caution)</li><li><b>Depression</b>: may worsen suicidal ideation</li><li>Abnormal thinking or <b>disinhibition</b></li></ul></div></div>`),
+C('#7a4bc2','#f8f4ff','Special populations','Adjust for organ function and age',`<div class="st"><b>Renal impairment:</b> renally secreted, so the dose <b>may need lowering</b></div><div class="st"><b>Hepatic impairment:</b> extensively metabolised, so <b>lower doses</b> may be needed</div><div class="st"><b>Children:</b> higher metabolic capacity needs more <b>mg/kg</b>; interactions are usually <b>larger</b></div><div class="st"><b>Elderly:</b> more sensitive; <b>lower doses</b>; moderate interaction risk</div>`),
+C('#c2477e','#fff5f9','Pregnancy and breastfeeding','Weigh benefit against fetal risk',`<div class="cols"><div><h3>Pregnancy</h3><ul><li>Likely FDA <b>category D</b> (unclassified)</li><li>Possible <b>birth defects</b>; neonatal withdrawal and <b>floppiness</b></li><li>If continued: <b>folate 1 mg/day</b> early</li><li><b>Monotherapy</b> safer than combinations; <b>taper</b> if stopping</li></ul></div><div><h3>Breastfeeding</h3><ul><li>Milk: <b>13 to 36%</b> of maternal level</li><li>Infant levels unknown</li><li>Watch for <b>sedation, poor suckling</b></li><li>Bottle-feed if sedated</li></ul></div></div>`),
+C('#5b3fa8','#f3f1ff','Role in epilepsy','Adjunct in drug-resistant epilepsy',`<div class="cols"><div><h3>Advantages</h3><ul><li>&gt;30% do <b>not</b> develop tolerance</li><li>~<b>20%</b> dramatic reduction or seizure-free</li></ul></div><div><h3>Disadvantages</h3><ul><li><b>Sedation</b>, tolerance</li><li>Significant <b>PK interactions</b></li><li>Teratogen, like most AEDs</li></ul></div></div><div class="box">Less effective in <b>symptomatic</b> than focal epilepsy; much less than <b>clonazepam</b> in myoclonic jerks and absences. Comparable to <b>carbamazepine and phenytoin</b> as first-line in childhood partial epilepsy.</div>`),
+C('#b5472f','#fff7f3','Clinical decision flow','Grand-rounds checklist',`<div class="st"><b>1.</b> Drug-resistant epilepsy needing an <b>adjunct</b>?</div><div class="ar">▼</div><div class="st"><b>2.</b> Check <b>respiratory disease, sleep apnoea, liver, renal</b>, pregnancy</div><div class="ar">▼</div><div class="st"><b>3.</b> Review co-medication for <b>interactions</b></div><div class="ar">▼</div><div class="st"><b>4.</b> Start <b>5 to 10 mg at night</b>, step up weekly; reassess in days to weeks</div><div class="ar">▼</div><div class="st"><b>5.</b> Responding? Continue. Stopping? <b>Taper over 4 to 6 months</b></div>`),
+C('#5b3fa8','#f3f1ff','Key takeaways','Clinical pearls',`<ul><li>GABA-A benzodiazepine-site <b>modulator</b>; mostly <b>adjunctive</b></li><li><b>N-desmethylclobazam</b> is active and long-lived</li><li>Many <b>PK interactions</b>: inducers, felbamate, stiripentol</li><li>Sedation, <b>tolerance, dependence</b>; Schedule IV</li><li>Adults <b>20 to 40 mg/day</b>; children 0.4 to 0.8 mg/kg/day</li><li>Never stop abruptly: <b>4 to 6 months</b> taper</li></ul>`)
+];
+const g=document.getElementById('g'),N=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${N}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return;let f=36;i.style.fontSize=f+'px';
+while(f>16&&(i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1)){f--;i.style.fontSize=f+'px'}}
+const fitAll=()=>g.querySelectorAll('.c').forEach(fit);
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+const qa=[["Mechanism of clobazam?","Binds the benzodiazepine site of GABA-A, enhancing GABA and chloride conductance."],["Active metabolite?","N-desmethylclobazam; contributes significantly to efficacy."],["Half-life: clobazam vs N-desmethyl (adults)?","10 to 30 h vs 36 to 46 h."],["Protein binding?","85%."],["Which AEDs lower clobazam levels?","Carbamazepine, phenobarbital, phenytoin, primidone."],["Which drugs raise clobazam levels?","Felbamate, stiripentol (severalfold), cimetidine."],["Levels of which AEDs does clobazam raise?","Phenytoin, primidone, valproic acid."],["Common adverse effects?","Sedation, drowsiness, fatigue, dry mouth, cognitive and behavioural impairment, ataxia."],["Dangerous adverse effects?","Withdrawal syndrome; respiratory depression with high doses or CNS depressants."],["Adult starting dose and maximum?","5 to 10 mg/day at night; up to 40 mg/day (+5 mg weekly)."],["Child dosing?","Start 0.1 to 0.2 mg/kg/day; +0.1 weekly; max 0.8 mg/kg/day."],["How to withdraw?","Very slowly over 4 to 6 months."],["Overdose treatment?","Supportive care and flumazenil; empty stomach."],["Clobazam reference range?","0.03 to 0.30 mg/L (0.1 to 1.0 µmol/L); factor 3.33."],["Pregnancy advice?","Likely category D; folate 1 mg/day; monotherapy preferred; taper if stopping."]];
+const fc=document.getElementById('fc');
+fc.innerHTML=qa.map(x=>`<button class="f"><i class="q">${x[0]}</i><i class="a">${x[1]}</i></button>`).join('');
+fc.addEventListener('click',e=>{const f=e.target.closest('.f');if(f)f.classList.toggle('flip')});
+document.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-t]').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.sec').forEach(s=>s.classList.toggle('on',s.id===b.dataset.t));fitAll()});
+const rc=document.getElementById('rc');
+rc.onclick=()=>{const o=document.body.classList.toggle('recall');rc.textContent='Recall mode: '+(o?'on':'off');rc.classList.toggle('on',o);rc.setAttribute('aria-pressed',o);g.querySelectorAll('b.shown').forEach(x=>x.classList.remove('shown'))};
+g.addEventListener('click',e=>{if(document.body.classList.contains('recall')&&e.target.tagName==='B')e.target.classList.toggle('shown')});
+</script>
+<script>
+(function(){
+  const SCALE=2,GAP=450;
+  const SOURCES=['https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js','https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js'];
+  const css=document.createElement('style');
+  css.textContent='.cw{touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}#shot-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d2230;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px system-ui,sans-serif;z-index:99999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#shot-toast.on{opacity:1}';
+  document.head.appendChild(css);
+  const toast=document.createElement('div');toast.id='shot-toast';document.body.appendChild(toast);
+  let tt;function say(m,ms){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)}
+  function addScript(src){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>{s.remove();rej(new Error('blocked: '+src))};document.head.appendChild(s)})}
+  let lib;function load(){if(window.html2canvas)return Promise.resolve();if(lib)return lib;
+    lib=(async()=>{for(const src of SOURCES){try{await addScript(src);if(window.html2canvas)return}catch(e){}}lib=null;throw new Error('Could not load html2canvas (offline, or external scripts blocked). Open the downloaded HTML file in a normal browser tab.')})();return lib}
+  const frames=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+  let busy=false;
+  async function shoot(card){
+    if(busy)return;busy=true;say('Creating image...',8000);
+    const wasRecall=document.body.classList.contains('recall');
+    try{
+      await load();if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+      if(wasRecall){document.body.classList.remove('recall');await frames()}
+      card.setAttribute('data-shot','1');
+      const canvas=await html2canvas(card,{scale:SCALE,width:1080,height:1080,windowWidth:1300,windowHeight:1300,scrollX:0,scrollY:0,backgroundColor:null,logging:false,useCORS:true,
+        onclone:function(doc){const c=doc.querySelector('.c[data-shot="1"]');if(!c)return;
+          doc.body.classList.remove('recall');doc.documentElement.classList.remove('recall');
+          const w=c.parentElement;w.style.cssText='position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:visible;border:0;border-radius:0;margin:0;padding:0;transform:none;aspect-ratio:auto';
+          c.style.transform='none';c.style.left='0';c.style.top='0';
+          c.querySelectorAll('b').forEach(function(b){const d=!!b.closest('.box.big');b.classList.remove('shown');
+            b.style.setProperty('background',d?'rgba(255,255,255,.25)':'#ffe38a','important');
+            b.style.setProperty('color',d?'#ffffff':'#1d2230','important');b.style.setProperty('text-shadow','none','important')})}});
+      const blob=await new Promise((r,j)=>canvas.toBlob(b=>b?r(b):j(new Error('canvas is empty')),'image/png'));
+      const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+      const name=((card.querySelector('h2')||{}).textContent||'card').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='card-'+String(idx).padStart(2,'0')+'-'+name+'.png';
+      document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+a.download);
+    }catch(err){console.error('Card export failed:',err);say('Could not save: '+(err&&err.message?err.message:err),6000)}
+    finally{card.removeAttribute('data-shot');if(wasRecall)document.body.classList.add('recall');busy=false}
+  }
+  let last={el:null,t:0,x:0,y:0};
+  document.addEventListener('pointerup',function(e){
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    const card=e.target.closest&&e.target.closest('.c');
+    if(!card){last.el=null;return}
+    const now=Date.now();
+    if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card)}
+    else{last={el:card,t:now,x:e.clientX,y:e.clientY}}
+  });
+})();
+</script>
+</body></html>
