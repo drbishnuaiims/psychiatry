@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Phenytoin: Square Clinical Cards</title>
+<style>
+:root{box-sizing:border-box;--bg:#f3f1ec;--ink:#1d2230;--mut:#5b6275;--pill:#fff;--bd:#d9d5ca;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}}
+:root[data-theme="dark"]{--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.4}
+header{max-width:1100px;margin:0 auto;padding:20px 16px 8px}
+header h1{font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;margin:0 0 4px}
+header p{margin:0 0 12px;color:var(--mut);font-size:.9rem}
+.bar{display:flex;flex-wrap:wrap;gap:8px}
+.bar button{font:inherit;font-size:.85rem;padding:8px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--pill);color:var(--ink);cursor:pointer}
+.bar button.on{background:#2f5bd8;border-color:#2f5bd8;color:#fff}
+.bar button:focus-visible{outline:3px solid #f0a020;outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 40px}
+.hint{display:none;color:var(--mut);font-size:.85rem;padding:4px 0 12px;margin:0}body.recall #notes .hint{display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:20px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.1)}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 64px;display:flex;flex-direction:column;background:var(--b,#fffdf7);color:#1d2230;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;font-size:34px;line-height:1.3;text-align:left}
+.c h2{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:1.08;margin:0 0 10px;color:var(--a);font-weight:700;flex:none}
+.c .sub{font-size:29px;line-height:1.25;color:#4d5568;margin:0 0 16px;flex:none}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5em;overflow:hidden;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:24px;font-size:24px;color:#778}
+.in ul{padding-left:1.2em}.in li{margin:.2em 0}
+.c b{background:var(--h,#ffe38a);padding:0 .15em;border-radius:.2em;font-weight:700}
+.box{border-left:.22em solid var(--a);background:rgba(0,0,0,.06);padding:.4em .7em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.5em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.stats div{background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.35em .5em;text-align:center;font-size:.85em;line-height:1.2}
+.stats em{display:block;font-style:normal;font-family:Georgia,serif;font-size:1.9em;font-weight:700;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.92em;background:#fff;border-radius:.5em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.3em .55em}
+td{padding:.3em .55em;border-top:.06em solid #e3e0d6;vertical-align:top}
+.fl{display:flex;align-items:stretch;gap:.4em}.fl.v{flex-direction:column}
+.st{flex:1;background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.4em .6em;text-align:center;font-size:.9em;line-height:1.25}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.3em;line-height:1;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.1em .8em;font-size:.8em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.cols>div{background:#fff;border-radius:.6em;padding:.5em .7em;border-top:.25em solid var(--a)}
+.cols h3{margin:0 0 .2em;font-size:1em;color:var(--a)}
+.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:104px}.cover .sub{color:#e8ecff;font-size:38px}
+.cover .in{justify-content:center}
+body.recall .c b:not(.shown){background:#1d2230;color:transparent;cursor:pointer;user-select:none}
+body.recall .c b.shown{background:var(--h,#ffe38a)}
+body.recall .box.big b:not(.shown){background:#0003;color:transparent}
+.fc{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px}
+.f{position:relative;aspect-ratio:1/1;perspective:900px;cursor:pointer;border:0;background:none;padding:0;font:inherit;color:inherit}
+.f i{position:absolute;inset:0;border-radius:14px;padding:8%;display:flex;align-items:center;justify-content:center;text-align:center;backface-visibility:hidden;transition:transform .45s;font-style:normal;font-size:1.05rem;line-height:1.35}
+.f .q{background:#2f5bd8;color:#fff;font-weight:700}.f .a{background:#fff8d9;color:#1d2230;transform:rotateY(180deg);border:2px solid #e0b000}
+.f.flip .q{transform:rotateY(-180deg)}.f.flip .a{transform:rotateY(0)}
+.f:focus-visible{outline:3px solid #f0a020;outline-offset:3px;border-radius:14px}
+.sec{display:none}.sec.on{display:block}
+@media (prefers-reduced-motion:reduce){.f i{transition:none}}
+</style></head><body>
+<header><h1>Phenytoin: square clinical cards</h1>
+<p>Antiepileptic drug monograph summary for clinical decisions and grand rounds. Every card is a 1:1 square. Double-tap (or double-click) any card to save it as a PNG. Educational summary of the source text: verify doses against current prescribing information.</p>
+<div class="bar"><button class="on" data-t="notes">Notes</button><button data-t="rev">Flashcards</button><button id="rc" aria-pressed="false">Recall mode: off</button></div></header>
+<main>
+<section class="sec on" id="notes"><p class="hint">Highlighted keywords are hidden. Tap one to reveal it and test yourself.</p><div class="grid" id="g"></div></section>
+<section class="sec" id="rev"><p class="hint" style="display:block">Tap a card to flip it.</p><div class="fc" id="fc"></div></section>
+</main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const cards=[
+C('#a64b2a','#a64b2a','Phenytoin','Classic sodium-channel antiepileptic: pharmacology, safety, dosing and clinical role',`<div><span class="pill">Na+ channel blocker</span><span class="pill">Non-linear PK</span><span class="pill">CYP inducer</span><span class="pill">TDM essential</span><span class="pill">Status epilepticus</span></div>`,'cover'),
+C('#1f7a6d','#f2fbf8','Drug snapshot','Identity, brands and formulations',`<table><tr><th>Item</th><th>Detail</th></tr><tr><td>Chemical</td><td>5,5-diphenyl-2,4-imidazolidinedione; C15H12N2O2</td></tr><tr><td>Brands</td><td><b>Eptoin, Epsolin</b>, Dilantin, Celetoin, many others</td></tr><tr><td>Oral</td><td>Capsules 25, 50, 100, <b>300 mg</b>; Infatabs 50 mg; suspension 30 mg/5 mL</td></tr><tr><td>Parenteral</td><td><b>250 mg/5 mL</b></td></tr></table>`),
+C('#b5472f','#fff7f3','Licensed indications','UK-SPC and FDA',`<table><tr><th>Use</th><th>Detail</th></tr><tr><td><b>Epilepsy</b></td><td>Mono or adjunct, any age: <b>tonic-clonic</b> and <b>focal</b> seizures</td></tr><tr><td><b>Neurosurgery</b></td><td>Seizures during or after <b>neurosurgery or severe head injury</b></td></tr><tr><td><b>Status epilepticus</b></td><td><b>IV</b>, established status (UK)</td></tr><tr><td><b>Trigeminal neuralgia</b></td><td>If <b>carbamazepine</b> failed or not tolerated (UK)</td></tr><tr><td>Off-label</td><td><b>Arrhythmias</b></td></tr></table>`),
+C('#c2477e','#fff5f9','Seizure types to avoid','Contraindicated or ineffective',`<div class="box big">Phenytoin is <b>contraindicated</b> in these seizure types and syndromes.</div><ul><li><b>Absence</b> seizures</li><li><b>Myoclonic</b> jerks</li><li><b>Progressive myoclonic epilepsies</b> (Unverricht)</li><li>Probably <b>Lennox-Gastaut</b> and other childhood epileptic encephalopathies</li></ul><div class="box">It may still help in <b>tonic seizures</b>.</div>`),
+C('#2a6fb0','#f2f8ff','Mechanism of action','Use-dependent sodium-channel block',`<div class="st"><b>Blocks voltage-sensitive Na+ channels</b>, use-dependent, open-channel state</div><div class="ar">▼</div><div class="st"><b>Modulates sustained repetitive firing</b></div><div class="ar">▼</div><div class="st">Also regulates <b>calmodulin</b> and second messengers, and inhibits <b>calcium channels</b> and sequestration</div><div class="box">CNS adverse effects theoretically reflect <b>excess sodium-channel action</b>; rash is thought to be <b>allergic</b>.</div>`),
+C('#d17a00','#fffaf0','Efficacy profile','Goal: complete seizure remission',`<div class="stats"><div><em>4 weeks</em>efficacy should be apparent</div><div><em>6 to 8 weeks</em>no benefit: raise dose or it may not work</div></div><div class="box">If ineffective or partial, <b>replace or combine</b> with an AED suited to the seizure type.</div><div class="box big">No AED has proven <b>superior efficacy</b> in focal and tonic-clonic seizures.</div>`),
+C('#1f7a6d','#f2fbf8','Pharmacokinetics','Formulation-dependent absorption',`<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Bioavailability</td><td>≥<b>80%</b>; formulation dependent</td></tr><tr><td>Food</td><td>Tube feeding and some foods <b>reduce absorption</b></td></tr><tr><td>Tmax</td><td><b>1 to 12 h</b></td></tr><tr><td>Steady state</td><td><b>6 to 21 days</b></td></tr><tr><td>Kinetics</td><td><b>Non-linear</b> (saturable metabolism)</td></tr><tr><td>Protein binding; Vd</td><td><b>90%</b>; 0.5 to 0.8 L/kg</td></tr><tr><td>Saliva</td><td>Reflects <b>unbound</b> level</td></tr></table>`),
+C('#c2477e','#fff5f9','Metabolism and elimination','Extensive hepatic hydroxylation',`<div class="fl"><div class="st"><b>CYP2C9</b> ~80%<br><b>CYP2C19</b> ~20%</div><div class="ar">→</div><div class="st"><b>p-HPPH</b> 67 to 88%<br>dihydrodiol 7 to 11%</div><div class="ar">→</div><div class="st"><b>Glucuronide</b><br>urine (&gt;60%)</div></div><ul><li>Metabolites are <b>inactive</b></li><li><b>Autoinduction</b> (mainly CYP2C19): dose may need raising on monotherapy</li><li>Half-life <b>30 to 100 h</b>, rising with concentration</li><li>~<b>5%</b> unchanged in urine</li></ul>`),
+C('#7a4bc2','#f8f4ff','Non-linear kinetics and dosing tips','Small dose change, big level change',`<div class="fl"><div class="st">Dose <b>rises</b></div><div class="ar">→</div><div class="st">Enzyme <b>saturates</b></div><div class="ar">→</div><div class="st">Level rises <b>disproportionately</b></div></div><ul><li>Wide inter-patient variability: check <b>plasma levels</b> regularly</li><li>Change doses no sooner than <b>7 to 10 days</b>; usually every <b>3 to 4 weeks</b></li><li>Capsules = phenytoin <b>sodium</b>; 100 mg sodium ≈ <b>92 mg</b> phenytoin. Monitor when switching forms</li></ul>`),
+C('#b5472f','#fff7f3','Interactions with other AEDs','Effects on phenytoin',`<table><tr><th>Effect</th><th>AEDs</th></tr><tr><td><b>Lower</b> levels</td><td>Carbamazepine, phenobarbital (induction); vigabatrin (unknown)</td></tr><tr><td><b>Raise</b> levels</td><td>Carbamazepine, clobazam, felbamate, oxcarbazepine, phenobarbital, rufinamide, stiripentol, topiramate, zonisamide</td></tr><tr><td><b>Raises free fraction</b></td><td><b>Valproate</b> (displaces and inhibits clearance)</td></tr></table><div class="box">Carbamazepine and phenobarbital can push levels <b>either way</b>.</div>`),
+C('#2a6fb0','#f2f8ff','Phenytoin as an inducer','Lowers many other drugs',`<div class="box big">More PK interactions than <b>any other AED</b>.</div><ul><li><b>AEDs lowered:</b> carbamazepine, clobazam, clonazepam, ethosuximide, felbamate, lamotrigine, oxcarbazepine, phenobarbital, primidone, rufinamide, tiagabine, topiramate, valproate, zonisamide</li><li><b>Non-AEDs lowered:</b> warfarin-type dicoumarol, digoxin, cyclosporin, tacrolimus, corticosteroids, methadone, many antipsychotics, antidepressants and antivirals</li></ul><div class="box"><b>Oral contraceptives fail</b>: breakthrough bleeding, pregnancy. Use medium or high-dose preparations.</div>`),
+C('#d17a00','#fffaf0','Non-AED interactions','Common examples that change phenytoin levels',`<table><tr><th>Effect</th><th>Examples</th></tr><tr><td><b>Raise</b> level</td><td>Amiodarone, fluconazole, omeprazole, isoniazid, metronidazole, cimetidine, fluoxetine, sertraline, diltiazem, verapamil, clarithromycin</td></tr><tr><td><b>Lower</b> level</td><td>Antacids, <b>rifampicin</b>, <b>St. John’s wort</b>, theophylline, dexamethasone, sucralfate, some chemotherapy</td></tr><tr><td><b>Displace</b> (free fraction up)</td><td><b>Salicylates</b>, tolbutamide, phenylbutazone</td></tr></table><div class="box">No pharmacodynamic interactions reported.</div>`),
+C('#7a4bc2','#f8f4ff','Adverse effects by severity','Dose-related CNS, chronic cosmetic, rare serious',`<table><tr><th>Tier</th><th>Effects</th></tr><tr><td><b>Common</b></td><td><b>Ataxia, nystagmus</b>, slurred speech, confusion, dizziness, nausea, constipation, toxic hepatitis</td></tr><tr><td><b>Cosmetic</b></td><td><b>Gingival hyperplasia</b>, hirsutism, coarse features</td></tr><tr><td><b>Dangerous</b></td><td><b>SJS/TEN</b>, lymphadenopathy and lymphoma, <b>blood dyscrasias</b>, irreversible <b>cerebellar</b> dysfunction, suicidality, newborn <b>vitamin K</b> bleeding</td></tr><tr><td><b>Rare</b></td><td>Chorea, dystonia, hypoglycaemia, delirium or encephalopathy</td></tr></table>`),
+C('#b5472f','#fff7f3','Rash decision flow','Act at the first sign of rash',`<div class="st"><b>Rash appears:</b> stop phenytoin; check <b>liver, kidney, blood</b></div><div class="ar">▼</div><div class="fl"><div class="st"><b>Severe</b> (SJS or Lyell)<br><b>Never resume</b></div><div class="st"><b>Mild</b> (measles-like, scarlatiniform)<br>Resume only after it <b>fully clears</b></div></div><div class="ar">▼</div><div class="st">Rash <b>recurs</b> on rechallenge: phenytoin <b>contraindicated</b></div><div class="box">Highest risk in the <b>first few months</b>. Take care with prior rash on other AEDs.</div>`),
+C('#1f7a6d','#f2fbf8','Dosing','Start low; adjust slowly',`<table><tr><th></th><th>Adults</th><th>Children</th></tr><tr><td>Start</td><td><b>150 to 300 mg/day</b>, once at night or in 2 doses</td><td><b>5 mg/kg/day</b></td></tr><tr><td>Step up</td><td>≤<b>50 mg/day</b> every 3 to 4 weeks</td><td>≤<b>5 mg/kg/day</b> every 3 to 4 weeks</td></tr><tr><td>Maintenance</td><td><b>200 to 400 mg/day</b> (up to 500)</td><td><b>5 to 10 mg/kg/day</b></td></tr></table><div class="box"><b>Neonates:</b> oral absorption is unreliable. IV load <b>15 to 20 mg/kg</b>; maintenance may exceed 10 mg/kg/day. Monitor levels.</div>`),
+C('#2a6fb0','#f2f8ff','IV use in status epilepticus','Established status',`<div class="stats"><div><em>≤50 mg/min</em>maximum rate (avoid hypotension)</div><div><em>~1000 mg</em>typical adult dose, ~20 min</div></div><ul><li>Elderly: <b>20 to 30 mg/min</b>; children: <b>&lt;25 mg/min</b></li><li><b>ECG, BP and respiration</b> monitored; resuscitation kit ready</li><li>Give via side arm or pump; <b>do not mix</b> or add to drip bottles</li><li><b>Never IM</b>: slow peak (up to 24 h), crystallises, painful</li></ul>`),
+C('#c2477e','#fff5f9','Withdrawal and overdose','Taper over many weeks',`<div class="cols"><div><h3>Withdrawal</h3><ul><li>Taper over <b>many weeks</b></li><li>Rapid stop only for <b>safety</b>, e.g. serious rash</li><li>Adjust other drugs as levels shift</li></ul></div><div><h3>Overdose</h3><ul><li>Lethal adult dose ~<b>2 to 5 g</b></li><li>Ataxia, nystagmus, dysarthria, then <b>coma, hypotension, apnoea</b></li><li>Lavage or emesis</li><li><b>Haemodialysis</b> helps</li></ul></div></div>`),
+C('#d17a00','#fffaf0','Monitoring and TDM','Levels guide dosing',`<div class="stats"><div><em>10 to 20 mg/L</em>optimum level</div><div><em>40 to 80 µmol/L</em>×<b>3.96</b> from mg/L</div></div><ul><li>Before starting: <b>liver and kidney</b> tests</li><li>Every <b>12 months</b>: liver and kidney; <b>folate every 6 months</b></li><li><b>Free level</b> when binding changes: valproate, salicylates, low albumin (children, elderly, pregnancy, renal or hepatic disease, malnutrition, post-surgery)</li><li><b>Saliva</b> reflects the free level</li></ul>`),
+C('#7a4bc2','#f8f4ff','Warnings and contraindications','Long-term and metabolic cautions',`<div class="cols"><div><h3>Do not use if</h3><ul><li>Allergy to phenytoin or excipients</li><li>Galactose intolerance, Lapp lactase deficiency, glucose-galactose malabsorption (lactose)</li></ul></div><div><h3>Take care with</h3><ul><li><b>Vitamin D</b>: osteomalacia, rickets, hypocalcaemia</li><li><b>Porphyria</b> (worsened)</li><li><b>Hyperglycaemia</b> at high levels</li><li><b>Low folate</b>: supplement</li></ul></div></div><div class="box">Persistently high levels: <b>delirium, psychosis, encephalopathy</b>, rarely irreversible cerebellar damage.</div>`),
+C('#b5472f','#fff7f3','Special populations','Adjust for organ function and age',`<div class="st"><b>Renal:</b> dose may need lowering; dialysis may need <b>supplements</b></div><div class="st"><b>Hepatic:</b> extensively metabolised, so <b>lower doses</b></div><div class="st"><b>Children:</b> more mg/kg; interactions larger; <b>neonates</b> have unreliable absorption, so monitor levels</div><div class="st"><b>Elderly:</b> lower doses; <b>higher free fraction</b> (low albumin); very high interaction risk</div>`),
+C('#c2477e','#fff5f9','Pregnancy and breastfeeding','Weigh benefit against fetal risk',`<div class="cols"><div><h3>Pregnancy</h3><ul><li>FDA <b>category D</b></li><li>Total level falls <b>39 to 56%</b>; free level <b>31 to 82%</b></li><li>Dose increase may be needed</li><li><b>Vitamin K</b> to the mother before delivery</li><li>Monotherapy; <b>taper</b> if stopping</li></ul></div><div><h3>Breastfeeding</h3><ul><li>Milk: <b>10 to 60%</b> of maternal level</li><li>Infant plasma: <b>&lt;10%</b></li><li>Watch for irritability or sedation</li></ul></div></div>`),
+C('#a64b2a','#fff6f1','Role in epilepsy','Still widely used, hard to use',`<div class="cols"><div><h3>Advantages</h3><ul><li>No AED proven <b>more effective</b> in focal and tonic-clonic seizures</li><li>Drug of choice for <b>established status epilepticus</b></li><li>Useful in <b>neonatal seizures</b> if phenobarbital fails</li></ul></div><div><h3>Disadvantages</h3><ul><li><b>Non-linear PK</b>; needs TDM</li><li><b>Most interactions</b> of any AED</li><li>Cosmetic effects limit long-term use in women</li><li>Teratogen</li></ul></div></div><div class="box"><b>Primary:</b> partial and generalised tonic-clonic seizures. No secondary types.</div>`),
+C('#b5472f','#fff7f3','Clinical decision flow','Grand-rounds checklist',`<div class="st"><b>1.</b> Focal or tonic-clonic? <b>Not</b> absence or myoclonic</div><div class="ar">▼</div><div class="st"><b>2.</b> Check <b>liver, kidney, albumin</b>, pregnancy, interacting drugs</div><div class="ar">▼</div><div class="st"><b>3.</b> Start low; change dose every <b>3 to 4 weeks</b></div><div class="ar">▼</div><div class="st"><b>4.</b> Check <b>levels</b> (free if binding is altered); aim 10 to 20 mg/L</div><div class="ar">▼</div><div class="st"><b>5.</b> Rash? <b>Stop</b>. Stopping the drug? <b>Taper</b></div>`),
+C('#a64b2a','#fff6f1','Key takeaways','Clinical pearls',`<ul><li><b>Na+ channel</b> blocker for focal and tonic-clonic seizures</li><li><b>Non-linear PK</b>: small dose rise, big level rise</li><li><b>10 to 20 mg/L</b>; use <b>free level</b> if albumin is low</li><li>Strong <b>inducer</b>; contraceptives fail</li><li><b>Stop</b> at first sign of serious rash</li><li>IV: ≤<b>50 mg/min</b>, ECG monitored, <b>never IM</b></li></ul>`)
+];
+const g=document.getElementById('g'),N=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${N}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return;let f=36;i.style.fontSize=f+'px';
+while(f>16&&(i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1)){f--;i.style.fontSize=f+'px'}}
+const fitAll=()=>g.querySelectorAll('.c').forEach(fit);
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+const qa=[["Mechanism of phenytoin?","Use-dependent block of voltage-sensitive sodium channels; also affects calcium channels and calmodulin."],["Seizure types where it is contraindicated?","Absence, myoclonic jerks, progressive myoclonic epilepsy, probably Lennox-Gastaut."],["Why is the PK non-linear?","Saturable hepatic metabolism, so levels rise disproportionately with dose."],["Enzymes that metabolise phenytoin?","CYP2C9 (~80%) and CYP2C19 (~20%)."],["Half-life?","30 to 100 h, increasing with concentration."],["Protein binding and what displaces it?","~90%; valproate, salicylates, phenylbutazone, tolbutamide raise the free fraction."],["Therapeutic range and conversion?","10 to 20 mg/L (40 to 80 µmol/L); 1 mg/L = 3.96 µmol/L."],["When use free phenytoin level?","Low albumin states (children, elderly, pregnancy, renal or hepatic disease, malnutrition) or displacing drugs."],["Classic cosmetic adverse effects?","Gingival hyperplasia, hirsutism, coarse features."],["Serious rash action?","Stop; if SJS or Lyell never resume; if mild, resume only after clearing."],["Maximum IV rate?","50 mg/min (20 to 30 elderly; <25 children)."],["Why never IM?","Slow absorption (up to 24 h), crystallises in muscle and is painful."],["Adult maintenance dose?","200 to 400 mg/day (some need 500)."],["Contraceptive effect?","Induces metabolism; contraceptive failure; use medium or high-dose pills."],["Pregnancy change in levels?","Total fall 39 to 56%; free 31 to 82%; give vitamin K to mother before delivery."],["Dosing change interval?","Not sooner than 7 to 10 days; usually every 3 to 4 weeks."]];
+const fc=document.getElementById('fc');
+fc.innerHTML=qa.map(x=>`<button class="f"><i class="q">${x[0]}</i><i class="a">${x[1]}</i></button>`).join('');
+fc.addEventListener('click',e=>{const f=e.target.closest('.f');if(f)f.classList.toggle('flip')});
+document.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-t]').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.sec').forEach(s=>s.classList.toggle('on',s.id===b.dataset.t));fitAll()});
+const rc=document.getElementById('rc');
+rc.onclick=()=>{const o=document.body.classList.toggle('recall');rc.textContent='Recall mode: '+(o?'on':'off');rc.classList.toggle('on',o);rc.setAttribute('aria-pressed',o);g.querySelectorAll('b.shown').forEach(x=>x.classList.remove('shown'))};
+g.addEventListener('click',e=>{if(document.body.classList.contains('recall')&&e.target.tagName==='B')e.target.classList.toggle('shown')});
+</script>
+<script>
+(function(){
+  const SCALE=2,GAP=450;
+  const SOURCES=['https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js','https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js'];
+  const css=document.createElement('style');
+  css.textContent='.cw{touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}#shot-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d2230;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px system-ui,sans-serif;z-index:99999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#shot-toast.on{opacity:1}';
+  document.head.appendChild(css);
+  const toast=document.createElement('div');toast.id='shot-toast';document.body.appendChild(toast);
+  let tt;function say(m,ms){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)}
+  function addScript(src){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>{s.remove();rej(new Error('blocked: '+src))};document.head.appendChild(s)})}
+  let lib;function load(){if(window.html2canvas)return Promise.resolve();if(lib)return lib;
+    lib=(async()=>{for(const src of SOURCES){try{await addScript(src);if(window.html2canvas)return}catch(e){}}lib=null;throw new Error('Could not load html2canvas (offline, or external scripts blocked). Open the downloaded HTML file in a normal browser tab.')})();return lib}
+  const frames=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+  let busy=false;
+  async function shoot(card){
+    if(busy)return;busy=true;say('Creating image...',8000);
+    const wasRecall=document.body.classList.contains('recall');
+    try{
+      await load();if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+      if(wasRecall){document.body.classList.remove('recall');await frames()}
+      card.setAttribute('data-shot','1');
+      const canvas=await html2canvas(card,{scale:SCALE,width:1080,height:1080,windowWidth:1300,windowHeight:1300,scrollX:0,scrollY:0,backgroundColor:null,logging:false,useCORS:true,
+        onclone:function(doc){const c=doc.querySelector('.c[data-shot="1"]');if(!c)return;
+          doc.body.classList.remove('recall');doc.documentElement.classList.remove('recall');
+          const w=c.parentElement;w.style.cssText='position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:visible;border:0;border-radius:0;margin:0;padding:0;transform:none;aspect-ratio:auto';
+          c.style.transform='none';c.style.left='0';c.style.top='0';
+          c.querySelectorAll('b').forEach(function(b){const d=!!b.closest('.box.big');b.classList.remove('shown');
+            b.style.setProperty('background',d?'rgba(255,255,255,.25)':'#ffe38a','important');
+            b.style.setProperty('color',d?'#ffffff':'#1d2230','important');b.style.setProperty('text-shadow','none','important')})}});
+      const blob=await new Promise((r,j)=>canvas.toBlob(b=>b?r(b):j(new Error('canvas is empty')),'image/png'));
+      const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+      const name=((card.querySelector('h2')||{}).textContent||'card').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='card-'+String(idx).padStart(2,'0')+'-'+name+'.png';
+      document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+a.download);
+    }catch(err){console.error('Card export failed:',err);say('Could not save: '+(err&&err.message?err.message:err),6000)}
+    finally{card.removeAttribute('data-shot');if(wasRecall)document.body.classList.add('recall');busy=false}
+  }
+  let last={el:null,t:0,x:0,y:0};
+  document.addEventListener('pointerup',function(e){
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    const card=e.target.closest&&e.target.closest('.c');
+    if(!card){last.el=null;return}
+    const now=Date.now();
+    if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card)}
+    else{last={el:card,t:now,x:e.clientX,y:e.clientY}}
+  });
+})();
+</script>
+</body></html>
