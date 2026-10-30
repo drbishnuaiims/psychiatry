@@ -9,7 +9,8 @@
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/adhd-cpg-shah-2019.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/autism-spectrum-disorder-subramanyam-2019.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/canmat-isbd-bipolar-disorder-2018.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/cpg-cbt-in-anxiety-disorders-and-ocrd.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://drbishnuaiims.github.io/psychiatry/disorders/anxiety-spectrum/cpg-cbt-in-anxiety-disorders-and-ocrd.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://drbishnuaiims.github.io/psychiatry/disorders/anxiety-spectrum/illness-anxiety-disorder-management-guidelines.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/cpg-clp/cpg-clp-perinatal-psychiatry.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/cpg-clp/cpg-clp-psychiatric-morbidities-in-epilepsy.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/cpg-clp/cpg-clp-psychiatry-in-endocrine-disorders.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -17,7 +18,8 @@
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/cpg-clp/psychiatric-disorders-in-parkinsons-disease.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/cpg-clp/psychotropic-emergency.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/cpg-clp/systemic-medical-emergencies-with-psychotropics.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/habit-reversal-training-trichotillomania.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://drbishnuaiims.github.io/psychiatry/disorders/ocrd/habit-reversal-training-trichotillomania.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://drbishnuaiims.github.io/psychiatry/disorders/ocrd/ocd-guidelines-ips-cpg.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/lithium-clinical-guide.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/organic_differentials_anxiety.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drbishnuaiims.github.io/psychiatry/cpg/parkinsons_note.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>

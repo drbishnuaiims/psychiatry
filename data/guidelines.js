@@ -28,6 +28,44 @@
 const GUIDELINES = [
 
   {
+    title: "Illness Anxiety Disorder: Square Clinical Cards",
+    shortTitle: "Illness Anxiety Disorder",
+    authors: "Clinical Management Guide",
+    year: "2026",
+    journal: "Clinical Cards / Anxiety Spectrum",
+    category: "Anxiety Spectrum / Illness Anxiety Disorder",
+    description: "Interactive clinical cards on recognising and managing illness anxiety disorder, including assessment, health-related checking and reassurance seeking, CBT/ACT approaches, medication and functional recovery.",
+    tags: ["Illness Anxiety Disorder", "Health Anxiety", "CBT", "ACT"],
+    keywords: [
+      "illness anxiety disorder", "health anxiety", "hypochondriasis", "hypochondriacal disorder",
+      "health anxiety treatment", "reassurance seeking", "cyberchondria", "medical reassurance",
+      "cognitive behavioural therapy", "CBT", "acceptance and commitment therapy", "ACT",
+      "somatic symptom disorder", "health anxiety management"
+    ],
+    url: "disorders/anxiety-spectrum/illness-anxiety-disorder-management-guidelines.html",
+    readTime: "15 min read"
+  },
+
+  {
+    title: "Clinical Practice Guidelines for Obsessive-Compulsive Disorder",
+    shortTitle: "OCD Clinical Practice Guidelines",
+    authors: "Janardhan Reddy et al.",
+    year: "2017",
+    journal: "Indian Journal of Psychiatry",
+    category: "Obsessive-Compulsive and Related Disorders / OCD",
+    description: "Interactive clinical cards summarising OCD assessment and treatment, including SSRIs, CBT with exposure and response prevention, augmentation, neuromodulation and care for special populations.",
+    tags: ["Obsessive-Compulsive Disorder", "OCD", "CBT", "Exposure and Response Prevention"],
+    keywords: [
+      "obsessive compulsive disorder", "OCD", "OCD clinical practice guidelines", "OCD management",
+      "Y-BOCS", "Yale Brown Obsessive Compulsive Scale", "SSRIs for OCD", "clomipramine",
+      "exposure and response prevention", "ERP", "cognitive behavioural therapy", "CBT",
+      "OCD augmentation", "risperidone", "aripiprazole", "treatment resistant OCD"
+    ],
+    url: "disorders/ocrd/ocd-guidelines-ips-cpg.html",
+    readTime: "25 min read"
+  },
+
+  {
     title: "Lithium: Square Clinical Cards",
     shortTitle: "Lithium Clinical Cards",
     authors: "The Prescriber's Guide: Psychiatry",
@@ -71,7 +109,7 @@ const GUIDELINES = [
     description: "Bedside reference to cognitive behavioural therapy for anxiety disorders and obsessive-compulsive related disorders, including assessment, formulation, exposure and disorder-specific interventions.",
     tags: ["CBT", "Anxiety Disorders", "OCD", "Exposure Therapy"],
     keywords: ["cognitive behavioural therapy", "CBT", "anxiety disorders", "obsessive compulsive disorder", "OCD", "OCRD", "panic disorder", "generalised anxiety disorder", "GAD", "social anxiety", "phobia", "exposure therapy", "habit reversal training"],
-    url: "cpg/cpg-cbt-in-anxiety-disorders-and-ocrd.html",
+    url: "disorders/anxiety-spectrum/cpg-cbt-in-anxiety-disorders-and-ocrd.html",
     readTime: "25 min read"
   },
 
@@ -184,7 +222,7 @@ const GUIDELINES = [
       "stimulus control",
       "body focused repetitive behavior"
     ],
-    url: "cpg/habit-reversal-training-trichotillomania.html",
+    url: "disorders/ocrd/habit-reversal-training-trichotillomania.html",
     readTime: "10 min read"
   },
 
