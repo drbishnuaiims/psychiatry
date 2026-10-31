@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Epilepsy Classification: Square Clinical Cards</title>
+<style>
+:root{box-sizing:border-box;--bg:#f3f1ec;--ink:#1d2230;--mut:#5b6275;--pill:#fff;--bd:#d9d5ca;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}}
+:root[data-theme="dark"]{--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.4}
+header{max-width:1100px;margin:0 auto;padding:20px 16px 8px}
+header h1{font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;margin:0 0 4px}
+header p{margin:0 0 12px;color:var(--mut);font-size:.9rem}
+.bar{display:flex;flex-wrap:wrap;gap:8px}
+.bar button{font:inherit;font-size:.85rem;padding:8px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--pill);color:var(--ink);cursor:pointer}
+.bar button.on{background:#2f5bd8;border-color:#2f5bd8;color:#fff}
+.bar button:focus-visible{outline:3px solid #f0a020;outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 40px}
+.hint{color:var(--mut);font-size:.85rem;padding:4px 0 12px;margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:20px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.1)}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 64px;display:flex;flex-direction:column;background:var(--b,#fffdf7);color:#1d2230;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;font-size:34px;line-height:1.3;text-align:left}
+.c h2{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:1.08;margin:0 0 10px;color:var(--a);font-weight:700;flex:none}
+.c .sub{font-size:29px;line-height:1.25;color:#4d5568;margin:0 0 16px;flex:none}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5em;overflow:hidden;padding-bottom:12px;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:24px;font-size:24px;color:#778}
+.in ul{padding-left:1.2em}.in li{margin:.2em 0}
+.c b{background:#ffe38a;padding:0 .15em;border-radius:.2em;font-weight:700}
+.box{border-left:.22em solid var(--a);background:rgba(0,0,0,.06);padding:.4em .7em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.5em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.stats div{background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.35em .5em;text-align:center;font-size:.85em;line-height:1.2}
+.stats em{display:block;font-style:normal;font-family:Georgia,serif;font-size:1.9em;font-weight:700;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.92em;background:#fff;border-radius:.5em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.3em .55em}
+td{padding:.3em .55em;border-top:.06em solid #e3e0d6;vertical-align:top}
+.fl{display:flex;align-items:stretch;gap:.4em}.fl.v{flex-direction:column}
+.st{flex:1;background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.4em .6em;text-align:center;font-size:.9em;line-height:1.25}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.3em;line-height:1;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.1em .8em;font-size:.8em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.cols>div{background:#fff;border-radius:.6em;padding:.5em .7em;border-top:.25em solid var(--a)}
+.cols h3{margin:0 0 .2em;font-size:1em;color:var(--a)}
+.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:104px}.cover .sub{color:#e8ecff;font-size:38px}
+.cover .in{justify-content:center}
+.sec{display:none}.sec.on{display:block}
+@media (prefers-reduced-motion:reduce){</style></head><body>
+<header><h1>Describing and classifying epilepsy: square cards</h1>
+<p>Summary of Ferrie and Walker, ABC of Epilepsy, Chapter 2, for clinical decisions and grand rounds. Every card is a 1:1 square. Double-tap or double-click any card to save it as a PNG.</p>
+</header>
+<main>
+<section id="notes"><p class="hint">Double-tap or double-click any card to save it as an image.</p><div class="grid" id="g"></div></section>
+</main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const cards=[
+C('#1f5fa8','#1f5fa8','Describing and classifying epilepsy','Seizure types, epilepsy syndromes and encephalopathies',`<div><span class="pill">Focal vs generalised</span><span class="pill">ILAE 1981 classification</span><span class="pill">Febrile seizures</span><span class="pill">Epilepsy syndromes</span><span class="pill">Encephalopathies</span></div><div style="font-size:.7em;margin-top:.6em;opacity:.9">Source: Ferrie CD, Walker MC. ABC of Epilepsy, Chapter 2 (Blackwell, 2012)</div>`,'cover'),
+C('#1f7a6d','#f2fbf8','Key ideas','Overview',`<div class="stats"><div><em>60%</em>focal (partial) seizures</div><div><em>40%</em>generalised seizures</div></div><ul><li>Seizure expression depends on <b>where it starts</b> and <b>how far and fast it spreads</b></li><li><b>Focal:</b> localised cortical onset. <b>Generalised:</b> initial synchronous discharge over <b>both hemispheres</b></li><li>An <b>epilepsy syndrome</b> = clinical + seizure + EEG features forming a distinct entity</li></ul><div class="box big">A syndrome guides <b>prognosis and management</b>, but does <b>not</b> imply a single cause.</div>`),
+C('#b5472f','#fff7f3','What classification tells you','Aetiology alone is not enough',`<ul><li>Epilepsy is best seen as a <b>symptom of an underlying brain disorder</b></li><li>Classifying by <b>aetiology</b> says little about seizure expression, prognosis or EEG</li><li>That information lives in the classification of <b>seizures and epilepsy</b></li></ul><div class="box">The current <b>ILAE (1981)</b> seizure classification is under revision. It is partly out of date: it ignores recent advances in <b>genetics and neuroimaging</b>, but its basic concepts will stay.</div><div class="box big">Tonic-clonic seizures in adults can be hard to classify: <b>focal onset with rapid spread</b>, or <b>generalised from the start</b>.</div>`),
+C('#7a4bc2','#f8f4ff','The seizure classification map','Table 2.1 (ILAE 1981), simplified',`<div class="cols"><div><h3>I. Partial (focal)</h3><ul><li><b>Simple:</b> consciousness preserved</li><li><b>Complex:</b> consciousness impaired</li><li><b>Secondarily generalised</b> to tonic-clonic</li></ul></div><div><h3>II. Generalised</h3><ul><li><b>Absence:</b> typical, atypical</li><li><b>Myoclonic</b></li><li><b>Clonic</b>, <b>tonic</b></li><li><b>Tonic-clonic</b></li><li><b>Atonic</b></li></ul></div></div><div class="box">Simple partial subtypes: <b>motor</b> (e.g. Jacksonian march, versive), <b>sensory</b> (visual, auditory, olfactory, gustatory, vertiginous), <b>autonomic</b>, <b>psychic</b> (dysphasia, déjà vu, affective, illusions, hallucinations).</div>`),
+C('#c2477e','#fff5f9','Focal seizures: where and what','Three subgroups',`<div class="stats"><div><em>60%</em>of focal seizures start in the <b>temporal lobes</b></div><div><em>Rare</em>parietal and occipital onset</div></div><ul><li>Most of the rest start in the <b>frontal lobes</b></li><li>Subgroups: <b>simple partial</b>, <b>complex partial</b>, <b>partial with secondary generalisation</b></li><li>Simple partial = <b>consciousness fully preserved</b>; brief, stereotyped, intense</li></ul><div class="box">Phenomena like déjà vu occur in people <b>without epilepsy</b>, but in epilepsy are more frequent, more intense, and linked to other seizures with impaired consciousness.</div>`),
+C('#d17a00','#fffaf0','Simple partial seizures by lobe','Symptoms point to the focus',`<table><tr><th>Lobe</th><th>Typical symptoms</th></tr><tr><td><b>Temporal</b></td><td><b>Déjà vu</b>, “butterflies”, fear, illusions; auditory, olfactory, gustatory and complex visual hallucinations</td></tr><tr><td><b>Frontal</b></td><td>Focal jerking, <b>Jacksonian march</b>, motor posturing, odd head feeling, <b>forced thinking</b></td></tr><tr><td><b>Occipital</b></td><td>Simple visual hallucinations: <b>coloured blobs</b> in part of the visual field</td></tr><tr><td><b>Parietal</b></td><td>Tingling (sometimes painful), somatic illusions (distorted mouth or limb), <b>vertigo</b></td></tr></table>`),
+C('#2a6fb0','#f2f8ff','Complex partial seizures','Focal seizures with impaired consciousness',`<ul><li>May start as a simple partial seizure (the <b>aura</b>) or with impaired awareness from the outset</li><li><b>Temporal:</b> motor arrest, then <b>chewing, lip smacking, swallowing</b> (oro-alimentary), then <b>hand fiddling</b> (limb automatisms)</li><li><b>Frontal:</b> bizarre, complex movements: fencing posture, pushing away, rocking, running, <b>cycling or scissoring legs</b></li></ul><div class="box">Movements are <b>stereotyped</b>: witnesses say the same pattern each time.</div><div class="box big">Brief (usually under a few minutes), then <b>confusion and amnesia</b> for the event.</div>`),
+C('#1f7a6d','#f2fbf8','Secondary generalisation','Focal onset, bilateral spread',`<div class="st"><b>Focal discharge</b> (may be experienced as an <b>aura</b>)</div><div class="ar">▼</div><div class="st">Spreads to <b>both hemispheres</b></div><div class="ar">▼</div><div class="st"><b>Tonic-clonic seizure</b> (convulsion)</div><div class="box">If spread is very rapid (e.g. in <b>sleep</b>), the patient may have <b>no aura</b> and the focal onset is easily missed.</div>`),
+C('#b5472f','#fff7f3','Generalised tonic-clonic seizure','The convulsion, step by step',`<div class="st"><b>Tonic</b> (stiff): <b>epileptic cry</b>, fall, tongue bite, jaw clench, cyanosis</div><div class="ar">▼</div><div class="st"><b>Clonic:</b> regular jerks, mainly upper limbs, slowing then stopping; <b>incontinence</b></div><div class="ar">▼</div><div class="st"><b>Post-ictal:</b> sleepy and confused up to <b>20 minutes</b>; longer recovery with lethargy, aches, headache, bitten tongue</div><div class="box">Most last <b>under 2 minutes</b>. Usually <b>no warning</b>, though increasing myoclonic jerks or absences may precede one.</div>`),
+C('#7a4bc2','#f8f4ff','Absence seizures','Typical versus atypical',`<table><tr><th></th><th>Typical</th><th>Atypical</th></tr><tr><td>Onset</td><td><b>Childhood or adolescence</b></td><td>Part of <b>severe syndromes</b> (e.g. Lennox-Gastaut)</td></tr><tr><td>Features</td><td>Motor arrest, <b>staring</b>; eyelid flutter, swallowing, head drop; <b>few seconds</b>, many per day</td><td>Onset and end <b>less clear</b>; tone changes</td></tr><tr><td>Recovery</td><td><b>Immediate</b>, no post-ictal phase</td><td>—</td></tr><tr><td>EEG</td><td><b>3 per second</b> generalised spike-and-wave</td><td><b>Slower, irregular</b> spike-and-wave</td></tr></table><div class="box">Often <b>unrecognised</b> (delayed diagnosis). Differentiate from <b>complex partial seizures</b>, which can also look like blank spells.</div>`),
+C('#c2477e','#fff5f9','Myoclonic, tonic and atonic seizures','Other generalised types',`<div class="cols"><div><h3>Myoclonic</h3><ul><li>Sudden jerks of part or all of the body</li><li>Typically <b>within hours of waking</b> in idiopathic generalised epilepsy</li><li>Rarely linked to <b>progressive myoclonic epilepsies</b> with cognitive decline</li><li>Not all myoclonus is epileptic: <b>hypnic jerks</b></li></ul></div><div><h3>Atonic and tonic</h3><ul><li>“<b>Drop attacks</b>”: sudden loss (atonic) or rise (tonic) of tone, causing a fall</li><li>Rapid recovery, despite possible head injury</li><li>Usually in severe epilepsies with learning difficulty (<b>Lennox-Gastaut</b>)</li></ul></div></div>`),
+C('#d17a00','#fffaf0','Epilepsy syndromes and encephalopathy','Definitions',`<ul><li>Syndromes are mainly <b>generalised</b>, mainly <b>focal</b>, or a few with <b>both</b></li><li>Some are always or nearly always <b>idiopathic</b>; others <b>symptomatic</b>; some occur in all forms (e.g. <b>West syndrome</b>)</li></ul><div class="box big"><b>Epileptic encephalopathy:</b> ongoing epileptic activity (clinical seizures <b>or</b> EEG discharges alone) causes <b>progressive but potentially reversible</b> neurological dysfunction.</div><div class="box">Shows as <b>learning and behavioural</b> problems, occasionally motor problems. Only a <b>few</b> epilepsies follow this pattern.</div>`),
+C('#1f7a6d','#f2fbf8','Febrile seizures','Common, and not “epilepsy”',`<div class="stats"><div><em>2 to 5%</em>of the general population</div><div><em>6 mo to 6 y</em>usual age</div></div><ul><li>Seizure with <b>fever</b>, <b>no CNS infection</b>, and no prior non-febrile seizure or known cause</li><li>Not called epilepsy because of the <b>external provoking factor</b></li><li>Mostly <b>GTCS</b>; family history common</li><li>Usually self-limiting; <b>one third recur</b></li><li><b>Febrile status</b> is the commonest cause of convulsive status epilepticus in children</li></ul>`),
+C('#b5472f','#fff7f3','Febrile seizures: simple versus complex','And the later risk of epilepsy',`<table><tr><th>Type</th><th>Definition</th></tr><tr><td><b>Simple</b></td><td>No focal features, brief, single episode</td></tr><tr><td><b>Complex</b></td><td><b>Focal features</b>, <b>prolonged (≥15 min)</b>, or <b>repeated</b> in the same illness</td></tr></table><div class="stats"><div><em>7%</em>risk of epilepsy by age 25</div></div><div class="box"><b>Risk factors:</b> family history of epilepsy, <b>complex</b> febrile seizures, pre-existing <b>neurodevelopmental</b> problems. Many epilepsy types can follow; there is particular interest in <b>temporal lobe epilepsy</b> after prolonged febrile seizures.</div>`),
+C('#7a4bc2','#f8f4ff','Idiopathic generalised epilepsies (IGE)','Three seizure types in combination',`<div class="fl"><div class="st"><b>Typical absences</b></div><div class="ar">+</div><div class="st"><b>Myoclonic seizures</b></div><div class="ar">+</div><div class="st"><b>GTCS</b></div></div><ul><li>Childhood, adolescence and adult onset</li><li><b>Family history</b> of epilepsy and infantile febrile seizures is common</li><li>EEG: generalised <b>spike-and-wave</b>, or <b>spikes/multiple spikes</b> (typical when myoclonic seizures are present)</li><li>Genetic basis still unclear despite linkage reports</li></ul>`),
+C('#2a6fb0','#f2f8ff','Childhood vs juvenile absence epilepsy','Two absence syndromes',`<table><tr><th></th><th>Childhood (CAE)</th><th>Juvenile (JAE)</th></tr><tr><td>Onset</td><td><b>4 to 9 years</b>; girls more than boys</td><td>Later childhood or adolescence; rarer</td></tr><tr><td>Absences</td><td>Typical, <b>&lt;20 s</b>, many per day</td><td>Less frequent</td></tr><tr><td>Other seizures</td><td>GTCS in a minority</td><td><b>GTCS common</b>; occasional myoclonus</td></tr><tr><td>EEG</td><td><b>3-Hz</b> spike-and-wave</td><td>Generalised spike-and-wave</td></tr><tr><td>Course</td><td>Excellent response; usually resolves <b>before age 12</b></td><td>Good response; <b>persists</b> into adult life</td></tr></table>`),
+C('#c2477e','#fff5f9','Myoclonic syndromes','JME, infantile and Doose',`<table><tr><th>Syndrome</th><th>Key points</th></tr><tr><td><b>Juvenile myoclonic epilepsy</b></td><td>Onset <b>10 to 18 y</b>; early-morning or late-evening <b>myoclonic jerks</b>; GTCS in most; absences in a third; ≥<b>20% photosensitive</b>; genetic; <b>lifelong</b>, well controlled with treatment</td></tr><tr><td><b>Benign myoclonic epilepsy of infancy</b></td><td><b>6 months to 3 y</b>; myoclonic seizures (single or clusters), can be provoked by noise or touch; remits 6 months to 5 years after onset</td></tr><tr><td><b>Doose syndrome</b></td><td>Myoclonic-astatic <b>drop attacks</b>, eyelid myoclonia with absences; about <b>half</b> develop learning difficulties</td></tr></table>`),
+C('#1f7a6d','#f2fbf8','Idiopathic focal epilepsies of childhood','Benign Rolandic vs Panayiotopoulos',`<table><tr><th></th><th>Rolandic (centro-temporal)</th><th>Panayiotopoulos</th></tr><tr><td>Age</td><td>Mid to late childhood</td><td><b>4 to 6 years</b></td></tr><tr><td>Seizure</td><td><b>Tingling or numbness of lips and tongue</b>, mouth-corner twitching; may spread</td><td><b>Autonomic:</b> nausea, retching, vomiting, in clear consciousness; may become flaccid</td></tr><tr><td>Duration</td><td>Brief</td><td>Often <b>&gt;30 minutes</b></td></tr><tr><td>Sleep</td><td>Most seizures in sleep</td><td>Most in sleep; often <b>misdiagnosed</b></td></tr><tr><td>EEG</td><td><b>Centro-temporal spikes</b></td><td><b>Multifocal</b> spike-and-wave</td></tr><tr><td>Outcome</td><td>Remits <b>before 16 y</b></td><td>Few seizures; remits in a few years</td></tr></table>`),
+C('#b5472f','#fff7f3','West syndrome','Infantile spasms',`<div class="stats"><div><em>3 to 9 mo</em>peak onset (first year)</div><div><em>~90%</em>have an identifiable cause</div></div><ul><li><b>Spasms:</b> brief truncal and limb contractions, in <b>clusters</b>, after waking, feeding or defecation; may be subtle</li><li>EEG: <b>hypsarrhythmia</b></li><li>Causes: structural brain abnormality, <b>tuberous sclerosis</b> (commonest), <b>Down syndrome</b> and other chromosomal disorders, metabolic disease (treatable)</li></ul><div class="box">Developmental <b>slowing or regression</b> at onset; up to <b>20%</b> reach the normal range (more likely if idiopathic). May evolve to <b>Lennox-Gastaut</b>.</div>`),
+C('#7a4bc2','#f8f4ff','Lennox-Gastaut syndrome','The classic triad',`<div class="fl"><div class="st"><b>Multiple seizure types</b><br>tonic, atonic, atypical absences</div><div class="ar">+</div><div class="st"><b>Slow spike-and-wave</b> (&lt;2.5 Hz), fast polyspikes in sleep</div><div class="ar">+</div><div class="st"><b>Learning difficulty</b></div></div><ul><li>Early to mid childhood; often follows West syndrome</li><li><b>Drop attacks</b>; convulsive and non-convulsive <b>status</b> common</li><li>Usually symptomatic (genetic, structural, metabolic); can be idiopathic</li></ul><div class="box"><b>Poor prognosis</b>; better in idiopathic cases, older onset and rapid treatment response.</div>`),
+C('#d17a00','#fffaf0','Dravet syndrome','Severe myoclonic epilepsy of infancy',`<div class="st"><b>2nd half of year 1:</b> normal child; <b>prolonged, focal febrile seizure</b> (may follow vaccination)</div><div class="ar">▼</div><div class="st"><b>Months later:</b> more seizures, often with low-grade fever or illness</div><div class="ar">▼</div><div class="st"><b>Year 2 to 3:</b> multiple types (myoclonic, atypical absence, GTCS, focal, <b>non-convulsive status</b>); stagnation or regression</div><div class="ar">▼</div><div class="st"><b>Outcome:</b> severe learning difficulty, autistic behaviour, ataxia, spasticity; seizures ease with time</div><div class="box"><b>SCN1A</b> mutation (sodium channel) in most. EEG normal early; photosensitivity in a minority.</div>`),
+C('#2a6fb0','#f2f8ff','Landau-Kleffner and other encephalopathies','Rare but important',`<table><tr><th>Syndrome</th><th>Features</th></tr><tr><td><b>Landau-Kleffner</b></td><td>Previously normal child; mild, non-specific epilepsy with <b>language regression</b> and marked behavioural problems; often <b>suspected deaf</b>; EEG <b>CSWSS</b>; superior temporal gyri involved</td></tr><tr><td><b>Ohtahara</b></td><td>Neonatal or early infantile; often with <b>structural malformations</b></td></tr><tr><td><b>Early myoclonic encephalopathy</b></td><td>Neonatal; often <b>metabolic</b></td></tr><tr><td><b>Doose</b></td><td>Sometimes behaves as an encephalopathy</td></tr></table><div class="box">Language or behaviour regression can also appear in other epilepsies, sometimes <b>precipitated by AEDs</b>.</div>`),
+C('#1f5fa8','#f3f6ff','Syndrome age map','Where to think what',`<table><tr><th>Age</th><th>Think of</th></tr><tr><td>Neonatal</td><td>Ohtahara, early myoclonic encephalopathy</td></tr><tr><td>6 mo to 6 y</td><td><b>Febrile seizures</b>; West (3 to 9 mo); Dravet; benign infantile myoclonic</td></tr><tr><td>Early to mid childhood</td><td><b>Lennox-Gastaut</b>, Doose, Panayiotopoulos (4 to 6 y), childhood absence (4 to 9 y)</td></tr><tr><td>Mid to late childhood</td><td><b>Rolandic epilepsy</b>, juvenile absence</td></tr><tr><td>10 to 18 y</td><td><b>Juvenile myoclonic epilepsy</b>, juvenile absence</td></tr><tr><td>Any age</td><td>Symptomatic and cryptogenic <b>focal</b> epilepsies</td></tr></table>`),
+C('#1f5fa8','#f3f6ff','Clinical decision pathway','Grand-rounds checklist',`<div class="st"><b>1.</b> Event description: aura? awareness? automatisms? <b>post-ictal</b> state?</div><div class="ar">▼</div><div class="st"><b>2.</b> Focal vs generalised; <b>blank spells</b>: absence or complex partial?</div><div class="ar">▼</div><div class="st"><b>3.</b> EEG pattern + age + development: <b>name the syndrome</b></div><div class="ar">▼</div><div class="st"><b>4.</b> Look for <b>cause</b> (tuberous sclerosis, SCN1A, metabolic, structural)</div><div class="ar">▼</div><div class="st"><b>5.</b> Use the syndrome for <b>prognosis and treatment</b>; watch for encephalopathy</div>`),
+C('#1f5fa8','#f3f6ff','Key takeaways','Remember these',`<ul><li><b>Focal</b> (60%, mostly temporal) vs <b>generalised</b> (40%)</li><li>Simple partial = <b>aware</b>; complex partial = <b>impaired awareness</b></li><li>Typical absence: <b>3-Hz spike-and-wave</b>, instant recovery</li><li><b>Febrile seizures</b> are not epilepsy; <b>7%</b> develop epilepsy by 25</li><li>IGE = <b>absence + myoclonic + GTCS</b>; JME is lifelong</li><li>West, Lennox-Gastaut, Dravet: <b>encephalopathies</b>, poor outcome</li><li>A syndrome does <b>not</b> mean a single cause</li></ul>`)
+];
+const g=document.getElementById('g'),N=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${N}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return;let f=36;i.style.fontSize=f+'px';
+while(f>16&&(i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1)){f--;i.style.fontSize=f+'px'}}
+const fitAll=()=>g.querySelectorAll('.c').forEach(fit);
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+</script>
+<script>
+(function(){
+  const SCALE=2;   // 2 = 2160x2160 px; use 1 for exactly 1080x1080
+  const GAP=450;   // max ms between the two taps
+  const SOURCES=['https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js','https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js'];
+
+  const css=document.createElement('style');
+  css.id='shot-css';
+  css.textContent='.cw{touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}#shot-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d2230;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px system-ui,sans-serif;z-index:99999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#shot-toast.on{opacity:1}';
+  document.head.appendChild(css);
+  const toast=document.createElement('div');toast.id='shot-toast';document.body.appendChild(toast);
+  let tt;function say(m,ms){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)}
+
+  const toBlob=c=>new Promise((res,rej)=>{try{c.toBlob(b=>b?res(b):rej(new Error('canvas is empty')),'image/png')}catch(e){rej(e)}});
+
+  /* Method 1 (default): the browser itself draws the card (SVG foreignObject).
+     Exactly what you see on screen: no re-implementation of CSS, no missing text. */
+  async function viaSvg(card){
+    const wrap=document.createElement('div');
+    wrap.setAttribute('style','position:relative;box-sizing:border-box;width:1080px;height:1080px;overflow:hidden;margin:0;padding:0;background:#fff');
+    document.querySelectorAll('style').forEach(s=>{if(s.id!=='shot-css')wrap.appendChild(s.cloneNode(true))});
+    const clone=card.cloneNode(true);
+    clone.removeAttribute('data-shot');
+    clone.style.transform='none';clone.style.left='0';clone.style.top='0';
+    wrap.appendChild(clone);
+    const xml=new XMLSerializer().serializeToString(wrap);
+    const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080"><foreignObject x="0" y="0" width="1080" height="1080">'+xml+'</foreignObject></svg>';
+    const img=new Image();
+    await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('svg render failed'));img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+    const canvas=document.createElement('canvas');canvas.width=1080*SCALE;canvas.height=1080*SCALE;
+    const ctx=canvas.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    return canvas;
+  }
+
+  /* Method 2 (fallback, e.g. some Safari versions): html2canvas */
+  function addScript(src){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>{s.remove();rej(new Error('blocked: '+src))};document.head.appendChild(s)})}
+  let lib;function load(){if(window.html2canvas)return Promise.resolve();if(lib)return lib;
+    lib=(async()=>{for(const src of SOURCES){try{await addScript(src);if(window.html2canvas)return}catch(e){}}lib=null;throw new Error('Could not load the fallback library (offline?). Open the downloaded HTML file in Chrome, Edge or Firefox.')})();return lib}
+  async function viaH2C(card){
+    await load();
+    card.setAttribute('data-shot','1');
+    try{
+      return await html2canvas(card,{scale:SCALE,width:1080,height:1080,windowWidth:1300,windowHeight:1300,scrollX:0,scrollY:0,backgroundColor:null,logging:false,useCORS:true,
+        onclone:function(doc){const c=doc.querySelector('.c[data-shot="1"]');if(!c)return;
+          const w=c.parentElement;w.style.cssText='position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:visible;border:0;border-radius:0;margin:0;padding:0;transform:none;aspect-ratio:auto';
+          c.style.transform='none';c.style.left='0';c.style.top='0'}});
+    }finally{card.removeAttribute('data-shot')}
+  }
+
+  let busy=false;
+  async function shoot(card){
+    if(busy)return;busy=true;say('Creating image...',8000);
+    try{
+      if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+      let blob;
+      try{blob=await toBlob(await viaSvg(card))}
+      catch(e1){console.warn('SVG export failed, using fallback:',e1);blob=await toBlob(await viaH2C(card))}
+      const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+      const name=((card.querySelector('h2')||{}).textContent||'card').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='card-'+String(idx).padStart(2,'0')+'-'+name+'.png';
+      document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+a.download);
+    }catch(err){console.error('Card export failed:',err);say('Could not save: '+(err&&err.message?err.message:err),6000)}
+    finally{busy=false}
+  }
+
+  let last={el:null,t:0,x:0,y:0};
+  document.addEventListener('pointerup',function(e){
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    const card=e.target.closest&&e.target.closest('.c');
+    if(!card){last.el=null;return}
+    const now=Date.now();
+    if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card)}
+    else{last={el:card,t:now,x:e.clientX,y:e.clientY}}
+  });
+})();
+</script>
+</body></html>
