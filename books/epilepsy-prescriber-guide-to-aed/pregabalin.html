@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pregabalin: Square Clinical Cards</title>
+<style>
+:root{box-sizing:border-box;--bg:#f3f1ec;--ink:#1d2230;--mut:#5b6275;--pill:#fff;--bd:#d9d5ca;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}}
+:root[data-theme="dark"]{--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.4}
+header{max-width:1100px;margin:0 auto;padding:20px 16px 8px}
+header h1{font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;margin:0 0 4px}
+header p{margin:0 0 12px;color:var(--mut);font-size:.9rem}
+.bar{display:flex;flex-wrap:wrap;gap:8px}
+.bar button{font:inherit;font-size:.85rem;padding:8px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--pill);color:var(--ink);cursor:pointer}
+.bar button.on{background:#2f5bd8;border-color:#2f5bd8;color:#fff}
+.bar button:focus-visible{outline:3px solid #f0a020;outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 40px}
+.hint{color:var(--mut);font-size:.85rem;padding:4px 0 12px;margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:20px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.1)}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 64px;display:flex;flex-direction:column;background:var(--b,#fffdf7);color:#1d2230;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;font-size:34px;line-height:1.3;text-align:left}
+.c h2{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:1.08;margin:0 0 10px;color:var(--a);font-weight:700;flex:none}
+.c .sub{font-size:29px;line-height:1.25;color:#4d5568;margin:0 0 16px;flex:none}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5em;overflow:hidden;padding-bottom:12px;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:24px;font-size:24px;color:#778}
+.in ul{padding-left:1.2em}.in li{margin:.2em 0}
+.c b{background:#ffe38a;padding:0 .15em;border-radius:.2em;font-weight:700}
+.box{border-left:.22em solid var(--a);background:rgba(0,0,0,.06);padding:.4em .7em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.5em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.stats div{background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.35em .5em;text-align:center;font-size:.85em;line-height:1.2}
+.stats em{display:block;font-style:normal;font-family:Georgia,serif;font-size:1.9em;font-weight:700;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.92em;background:#fff;border-radius:.5em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.3em .55em}
+td{padding:.3em .55em;border-top:.06em solid #e3e0d6;vertical-align:top}
+.fl{display:flex;align-items:stretch;gap:.4em}.fl.v{flex-direction:column}
+.st{flex:1;background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.4em .6em;text-align:center;font-size:.9em;line-height:1.25}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.3em;line-height:1;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.1em .8em;font-size:.8em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.cols>div{background:#fff;border-radius:.6em;padding:.5em .7em;border-top:.25em solid var(--a)}
+.cols h3{margin:0 0 .2em;font-size:1em;color:var(--a)}
+.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:104px}.cover .sub{color:#e8ecff;font-size:38px}
+.cover .in{justify-content:center}
+.sec{display:none}.sec.on{display:block}
+@media (prefers-reduced-motion:reduce){</style></head><body>
+<header><h1>Pregabalin: square clinical cards</h1>
+<p>Antiepileptic drug monograph summary for clinical decisions and grand rounds. Every card is a 1:1 square. Double-tap or double-click any card to save it as a PNG. Educational summary of the source text: verify doses against current prescribing information.</p>
+</header>
+<main>
+<section id="notes"><p class="hint">Double-tap or double-click any card to save it as an image.</p><div class="grid" id="g"></div></section>
+</main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const cards=[
+C('#3a5bb8','#3a5bb8','Pregabalin','Calcium-channel α2-δ ligand: pharmacology, safety, dosing and clinical role',`<div><span class="pill">α2-δ ligand</span><span class="pill">Adjunct for partial seizures</span><span class="pill">Renal elimination</span><span class="pill">Neuropathic pain, GAD</span><span class="pill">May worsen myoclonus</span></div>`,'cover'),
+C('#1f7a6d','#f2fbf8','Drug snapshot','Identity and formulations',`<table><tr><th>Item</th><th>Detail</th></tr><tr><td>Chemical</td><td>S-3-(aminomethyl)-5-methylhexanoic acid; C9H17NO2; MW <b>159.2</b></td></tr><tr><td>Brand</td><td><b>Pregeb, Pregalin, Maxgalin & many others</b></td></tr><tr><td>Generics</td><td><b>No</b> (per source)</td></tr><tr><td>Capsules</td><td>25, 50, 75, 100, 150, 200, 225, <b>300 mg</b></td></tr></table><div class="box">Structurally related to <b>GABA</b>, but does <b>not</b> act on GABA or its receptors.</div>`),
+C('#b5472f','#fff7f3','Indications','Licensed and non-licensed uses',`<table><tr><th>Use</th><th>Detail</th></tr><tr><td><b>Epilepsy</b> (UK-SPC, FDA)</td><td><b>Adjunct</b> for partial seizures, with or without secondary generalisation, in <b>adults</b></td></tr><tr><td><b>UK-SPC</b></td><td>Peripheral and central <b>neuropathic pain</b>; <b>generalised anxiety disorder</b></td></tr><tr><td><b>FDA</b></td><td><b>Diabetic neuropathy</b>, <b>postherpetic neuralgia</b>, <b>fibromyalgia</b></td></tr><tr><td>Unlicensed</td><td><b>Panic disorder</b>, <b>social anxiety</b>; none in epilepsy</td></tr></table>`),
+C('#c2477e','#fff5f9','Seizure types to avoid','Myoclonus warning',`<div class="box big">Pregabalin may <b>exaggerate myoclonus</b>.</div><ul><li><b>Treatment-emergent myoclonic jerks</b>, even in focal epilepsy, are a warning against use</li><li>Avoid in <b>generalised</b> and other <b>myoclonic epilepsies</b> where myoclonus is prominent</li></ul><div class="box">Role is limited to <b>partial seizures</b>: narrow spectrum.</div>`),
+C('#2a6fb0','#f2f8ff','Mechanism of action','α2-δ subunit binding',`<div class="st"><b>Binds</b> the <b>α2-δ</b> subunit of voltage-gated calcium channels</div><div class="ar">▼</div><div class="st"><b>Closes</b> N and P/Q <b>presynaptic</b> calcium channels</div><div class="ar">▼</div><div class="st"><b>Less excessive firing</b> and less neurotransmitter release</div><div class="box">CNS adverse effects may reflect <b>excessive calcium-channel blockade</b>.</div>`),
+C('#d17a00','#fffaf0','Efficacy profile','Early onset',`<div class="stats"><div><em>2 weeks</em>efficacy should be apparent</div><div><em>6 to 8 weeks</em>no benefit: raise dose or it may not work</div></div><ul><li>Goal: <b>complete remission</b> of seizures</li><li>If ineffective or partial, <b>replace or combine</b> with an AED suited to the seizure type</li></ul>`),
+C('#1f7a6d','#f2fbf8','Pharmacokinetics','Linear and renal',`<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Bioavailability</td><td>≥<b>90%</b></td></tr><tr><td>Food</td><td><b>Reduces</b> extent of absorption (25 to 30%), delays it ~<b>2.5 h</b></td></tr><tr><td>Tmax; steady state</td><td><b>1 to 2 h</b>; <b>1 to 2 days</b></td></tr><tr><td>Kinetics</td><td><b>Linear</b></td></tr><tr><td>Protein binding; Vd</td><td><b>0%</b>; 0.57 L/kg</td></tr><tr><td>Metabolism</td><td><b>None</b></td></tr><tr><td>Half-life</td><td><b>5 to 7 h</b></td></tr><tr><td>Excretion</td><td>~<b>98% unchanged</b> in urine; clearance tracks <b>CrCl</b></td></tr></table><div class="box">Carried by <b>system L</b> transporter (leucine analogue) and others, in gut and across the blood-brain barrier.</div>`),
+C('#c2477e','#fff5f9','Drug interactions','No PK interactions; CNS additive',`<div class="box big"><b>No pharmacokinetic interactions</b> with AEDs or other drugs. <b>No</b> reduction of hormonal contraceptive levels.</div><table><tr><th>With</th><th>Reported effect</th></tr><tr><td><b>Ethanol, lorazepam</b></td><td>Effects <b>potentiated</b></td></tr><tr><td><b>Other CNS depressants</b></td><td><b>Respiratory failure and coma</b> reported</td></tr><tr><td><b>Oxycodone</b></td><td>Additive <b>cognitive and motor</b> impairment</td></tr><tr><td><b>Anti-spasticity agents</b></td><td>More <b>somnolence</b></td></tr></table>`),
+C('#b5472f','#fff7f3','Common adverse effects','Mostly CNS',`<table><tr><th>System</th><th>Effects</th></tr><tr><td><b>Neurological</b></td><td><b>Somnolence, dizziness</b>, ataxia, fatigue, tremor, dysarthria, paraesthesia, abnormal coordination</td></tr><tr><td><b>Cognitive, mood</b></td><td>Impaired attention, memory loss, confusion, <b>euphoria</b>, irritability</td></tr><tr><td><b>GI</b></td><td>Vomiting, dry mouth, constipation, <b>increased appetite</b>, flatulence</td></tr><tr><td><b>Visual</b></td><td>Blurred vision, <b>diplopia</b></td></tr><tr><td>Other</td><td><b>Peripheral oedema</b>; reduced libido, erectile dysfunction; <b>weight gain common</b></td></tr></table>`),
+C('#7a4bc2','#f8f4ff','Dangerous and rare adverse effects','Know when to stop',`<div class="box big"><b>Angioedema</b> (facial, perioral, upper airway) or hypersensitivity: <b>withdraw immediately</b>.</div><ul><li><b>Rare:</b> neutropenia, hypoglycaemia, <b>AV block</b>, <b>congestive heart failure</b></li><li><b>Renal failure</b> reported; reversed on stopping</li><li>Rare, non-fatal: ageusia, pancreatitis, <b>myoclonus</b>, dyskinesia, oscillopsia, peripheral vision loss, syncope, stupor, amenorrhoea</li></ul>`),
+C('#2a6fb0','#f2f8ff','Managing side effects','A practical sequence',`<div class="st"><b>Before starting:</b> counsel on common and severe effects and what to report</div><div class="ar">▼</div><div class="st"><b>Sedation</b> is dose-related and may <b>fade with time</b></div><div class="ar">▼</div><div class="st">Give <b>more of the dose at night</b> to cut daytime sedation</div><div class="ar">▼</div><div class="st"><b>Lower the dose</b> if effects persist</div><div class="box">Weight gain: diabetic patients may need to <b>adjust hypoglycaemic drugs</b>.</div>`),
+C('#1f7a6d','#f2fbf8','Dosing','Titrate every 7 days',`<table><tr><th>Step</th><th>Dose</th></tr><tr><td>Usual range</td><td><b>150 to 600 mg/day</b></td></tr><tr><td>Start</td><td><b>50 mg/day</b> in 2 divided doses</td></tr><tr><td>Step up</td><td>+<b>50 mg/day</b> every <b>7 days</b>, to 300 mg/day in 2 to 3 doses</td></tr><tr><td>Maximum</td><td>Not above <b>600 mg/day</b>, in 2 or 3 equal doses</td></tr></table><div class="box">Titrate by <b>individual tolerability and response</b>. Children: <b>not licensed</b>.</div>`),
+C('#d17a00','#fffaf0','Withdrawal','Taper at least 1 week',`<div class="box big">Taper over a <b>minimum of 1 week</b>. Rapid stop may induce <b>withdrawal seizures</b>.</div><ul><li>Withdrawal symptoms: <b>insomnia, headache, nausea, diarrhoea</b>, flu-like illness, nervousness, depression, pain, sweating, dizziness</li><li>Warn patients <b>before</b> starting</li><li>No need to adjust other drugs (levels do not change)</li></ul>`),
+C('#c2477e','#fff5f9','Overdose','Generally safe up to 15 g',`<ul><li>Up to <b>15 g</b>: no unexpected adverse effects</li><li>Common: <b>somnolence, confusion, agitation, restlessness</b></li><li>Lavage or emesis if indicated</li><li><b>Haemodialysis</b> removes ~<b>50% over 4 hours</b></li></ul><div class="box">Risk rises when combined with other <b>CNS depressants</b> (respiratory failure, coma).</div>`),
+C('#b5472f','#fff7f3','Monitoring and TDM','Checks and weight',`<ul><li><b>Before starting:</b> liver and kidney function</li><li><b>During:</b> same, every <b>6 to 12 months</b></li><li><b>No data</b> linking plasma level to seizure control; routine levels not recommended, but may check <b>compliance</b></li><li>Monitor <b>weight and BMI</b></li><li>If overweight: look for <b>prediabetes</b> (fasting glucose 100 to 125 mg/dL), diabetes (&gt;126) and dyslipidaemia</li></ul>`),
+C('#7a4bc2','#f8f4ff','Warnings and contraindications','Safety checks',`<div class="cols"><div><h3>Do not use if</h3><ul><li><b>Allergy</b> to pregabalin, <b>gabapentin</b>, or excipients</li><li>Lactose problems: galactose intolerance, Lapp lactase deficiency, glucose-galactose malabsorption (lactose in tablets)</li></ul></div><div><h3>Take care</h3><ul><li><b>Driving</b> and machinery: dizziness, somnolence</li><li>Diabetes with weight gain</li><li>Heart failure risk</li><li><b>Myoclonus</b> emerging on treatment</li></ul></div></div>`),
+C('#2a6fb0','#f2f8ff','Renal dose adjustment','Dose by creatinine clearance',`<table><tr><th>CrCl (mL/min)</th><th>Start</th><th>Max</th></tr><tr><td>≥<b>60</b></td><td>150 mg/day (2 to 3 doses)</td><td><b>600 mg/day</b></td></tr><tr><td><b>30 to &lt;60</b></td><td>75 mg/day (2 to 3 doses)</td><td><b>300 mg/day</b></td></tr><tr><td><b>15 to &lt;30</b></td><td>25 to 50 mg/day (1 to 2 doses)</td><td><b>150 mg/day</b></td></tr><tr><td>&lt;<b>15</b></td><td>25 mg/day (once)</td><td><b>75 mg/day</b></td></tr></table><div class="box"><b>Haemodialysis</b> removes it: supplemental doses may be needed.</div>`),
+C('#1f7a6d','#f2fbf8','Hepatic, children and elderly','Special populations',`<div class="st"><b>Hepatic:</b> not metabolised, so <b>no dose adjustment</b></div><div class="st"><b>Children:</b> <b>not licensed</b></div><div class="st"><b>Elderly:</b> more sensitive; <b>lower doses</b> by CrCl; higher <b>fall risk</b>, loss of consciousness, confusion; <b>heart failure</b> risk in cardiac patients</div><div class="box">PK interaction risk is <b>low or nil</b> in the elderly.</div>`),
+C('#c2477e','#fff5f9','Pregnancy and breastfeeding','Limited data',`<div class="cols"><div><h3>Pregnancy</h3><ul><li>FDA <b>category C</b></li><li>Counsel women of childbearing potential</li><li><b>Monotherapy</b> safer than combinations</li><li><b>Taper</b> if stopping</li><li>No PK data in pregnancy</li></ul></div><div><h3>Breastfeeding</h3><ul><li>Milk excretion <b>unknown</b></li><li>Monitor the infant</li><li>Bottle-feed if effects appear</li></ul></div></div>`),
+C('#3a5bb8','#f2f5ff','Role in epilepsy','Adjunct for intractable partial seizures',`<div class="box">Narrow-spectrum; role in partial seizures <b>not fully defined</b>. Use as <b>add-on</b> after other AED combinations fail.</div><div class="cols"><div><h3>Advantages</h3><ul><li>Well tolerated, mild effects</li><li>More <b>potent</b> than gabapentin, probably better tolerated</li><li><b>No PK interactions</b></li><li>More consistent absorption at high doses (several transporters)</li></ul></div><div><h3>Disadvantages</h3><ul><li><b>Exaggerates myoclonus</b></li><li>2 to 3 doses per day</li><li>Potential teratogen</li></ul></div></div>`),
+C('#b5472f','#fff7f3','Clinical decision flow','Grand-rounds checklist',`<div class="st"><b>1.</b> Refractory <b>partial</b> seizures? <b>No myoclonus</b> or generalised epilepsy</div><div class="ar">▼</div><div class="st"><b>2.</b> Check <b>CrCl</b>, fall risk, heart failure, diabetes, other CNS depressants</div><div class="ar">▼</div><div class="st"><b>3.</b> Start <b>50 mg/day</b>; +50 mg every 7 days; max <b>600 mg/day</b></div><div class="ar">▼</div><div class="st"><b>4.</b> Reassess at <b>2 weeks</b> and <b>6 to 8 weeks</b>; watch for new jerks</div><div class="ar">▼</div><div class="st"><b>5.</b> Stopping: <b>taper over ≥1 week</b></div>`),
+C('#3a5bb8','#f2f5ff','Key takeaways','Remember these',`<ul><li><b>α2-δ</b> calcium-channel ligand; adjunct for <b>partial seizures</b></li><li>Also <b>neuropathic pain</b> and <b>GAD</b></li><li><b>Not metabolised</b>; ~98% renal; half-life <b>5 to 7 h</b>; dose by <b>CrCl</b></li><li>Common: <b>somnolence, dizziness, weight gain, oedema</b></li><li><b>May worsen myoclonus</b></li><li>Taper over ≥<b>1 week</b>; add-up CNS depression with opioids and alcohol</li></ul>`)
+];
+const g=document.getElementById('g'),N=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${N}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return;let f=36;i.style.fontSize=f+'px';
+while(f>16&&(i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1)){f--;i.style.fontSize=f+'px'}}
+const fitAll=()=>g.querySelectorAll('.c').forEach(fit);
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+</script>
+<script>
+(function(){
+  const SCALE=2;   // 2 = 2160x2160 px; use 1 for exactly 1080x1080
+  const GAP=450;   // max ms between the two taps
+  const SOURCES=['https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js','https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js'];
+
+  const css=document.createElement('style');
+  css.id='shot-css';
+  css.textContent='.cw{touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}#shot-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d2230;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px system-ui,sans-serif;z-index:99999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#shot-toast.on{opacity:1}';
+  document.head.appendChild(css);
+  const toast=document.createElement('div');toast.id='shot-toast';document.body.appendChild(toast);
+  let tt;function say(m,ms){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)}
+
+  const toBlob=c=>new Promise((res,rej)=>{try{c.toBlob(b=>b?res(b):rej(new Error('canvas is empty')),'image/png')}catch(e){rej(e)}});
+
+  /* Method 1 (default): the browser itself draws the card (SVG foreignObject).
+     Exactly what you see on screen: no re-implementation of CSS, no missing text. */
+  async function viaSvg(card){
+    const wrap=document.createElement('div');
+    wrap.setAttribute('style','position:relative;box-sizing:border-box;width:1080px;height:1080px;overflow:hidden;margin:0;padding:0;background:#fff');
+    document.querySelectorAll('style').forEach(s=>{if(s.id!=='shot-css')wrap.appendChild(s.cloneNode(true))});
+    const clone=card.cloneNode(true);
+    clone.removeAttribute('data-shot');
+    clone.style.transform='none';clone.style.left='0';clone.style.top='0';
+    wrap.appendChild(clone);
+    const xml=new XMLSerializer().serializeToString(wrap);
+    const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080"><foreignObject x="0" y="0" width="1080" height="1080">'+xml+'</foreignObject></svg>';
+    const img=new Image();
+    await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('svg render failed'));img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+    const canvas=document.createElement('canvas');canvas.width=1080*SCALE;canvas.height=1080*SCALE;
+    const ctx=canvas.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    return canvas;
+  }
+
+  /* Method 2 (fallback, e.g. some Safari versions): html2canvas */
+  function addScript(src){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>{s.remove();rej(new Error('blocked: '+src))};document.head.appendChild(s)})}
+  let lib;function load(){if(window.html2canvas)return Promise.resolve();if(lib)return lib;
+    lib=(async()=>{for(const src of SOURCES){try{await addScript(src);if(window.html2canvas)return}catch(e){}}lib=null;throw new Error('Could not load the fallback library (offline?). Open the downloaded HTML file in Chrome, Edge or Firefox.')})();return lib}
+  async function viaH2C(card){
+    await load();
+    card.setAttribute('data-shot','1');
+    try{
+      return await html2canvas(card,{scale:SCALE,width:1080,height:1080,windowWidth:1300,windowHeight:1300,scrollX:0,scrollY:0,backgroundColor:null,logging:false,useCORS:true,
+        onclone:function(doc){const c=doc.querySelector('.c[data-shot="1"]');if(!c)return;
+          const w=c.parentElement;w.style.cssText='position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:visible;border:0;border-radius:0;margin:0;padding:0;transform:none;aspect-ratio:auto';
+          c.style.transform='none';c.style.left='0';c.style.top='0'}});
+    }finally{card.removeAttribute('data-shot')}
+  }
+
+  let busy=false;
+  async function shoot(card){
+    if(busy)return;busy=true;say('Creating image...',8000);
+    try{
+      if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+      let blob;
+      try{blob=await toBlob(await viaSvg(card))}
+      catch(e1){console.warn('SVG export failed, using fallback:',e1);blob=await toBlob(await viaH2C(card))}
+      const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+      const name=((card.querySelector('h2')||{}).textContent||'card').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='card-'+String(idx).padStart(2,'0')+'-'+name+'.png';
+      document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+a.download);
+    }catch(err){console.error('Card export failed:',err);say('Could not save: '+(err&&err.message?err.message:err),6000)}
+    finally{busy=false}
+  }
+
+  let last={el:null,t:0,x:0,y:0};
+  document.addEventListener('pointerup',function(e){
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    const card=e.target.closest&&e.target.closest('.c');
+    if(!card){last.el=null;return}
+    const now=Date.now();
+    if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card)}
+    else{last={el:card,t:now,x:e.clientX,y:e.clientY}}
+  });
+})();
+</script>
+</body></html>
