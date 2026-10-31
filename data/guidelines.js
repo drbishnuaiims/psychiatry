@@ -28,6 +28,90 @@
 const GUIDELINES = [
 
   {
+    title: "Pregabalin: Square Clinical Cards",
+    shortTitle: "Pregabalin Clinical Cards",
+    authors: "Epilepsy Prescriber’s Guide",
+    year: "2026",
+    journal: "Epilepsy Prescriber’s Guide / Clinical Cards",
+    category: "Books / Epilepsy / Antiseizure Medications",
+    description: "Interactive clinical cards covering pregabalin indications, dosing, renal adjustment, adverse effects, interactions and practical prescribing decisions.",
+    tags: ["Pregabalin", "Epilepsy", "Antiseizure Medication", "Clinical Cards"],
+    keywords: ["pregabalin", "lyrica", "antiepileptic drug", "antiseizure medication", "epilepsy", "seizure", "neuropathic pain", "renal dose adjustment", "pregabalin dosing", "pregabalin adverse effects"],
+    url: "books/epilepsy-prescriber-guide-to-aed/pregabalin.html",
+    readTime: "15 min read"
+  },
+
+  {
+    title: "Piracetam: Square Clinical Cards",
+    shortTitle: "Piracetam Clinical Cards",
+    authors: "Epilepsy Prescriber’s Guide",
+    year: "2026",
+    journal: "Epilepsy Prescriber’s Guide / Clinical Cards",
+    category: "Books / Epilepsy / Antiseizure Medications",
+    description: "Interactive clinical cards covering piracetam use, dosing, adverse effects, precautions, interactions and practical prescribing decisions.",
+    tags: ["Piracetam", "Epilepsy", "Antiseizure Medication", "Clinical Cards"],
+    keywords: ["piracetam", "antiepileptic drug", "antiseizure medication", "epilepsy", "seizure", "cortical myoclonus", "piracetam dosing", "piracetam adverse effects", "piracetam interactions"],
+    url: "books/epilepsy-prescriber-guide-to-aed/piracetam.html",
+    readTime: "15 min read"
+  },
+
+  {
+    title: "Epilepsy Classification: Square Clinical Cards",
+    shortTitle: "Epilepsy Classification Cards",
+    authors: "Ferrie and Walker",
+    year: "2026",
+    journal: "ABC of Epilepsy / Clinical Cards",
+    category: "Books / Epilepsy / Classification",
+    description: "Interactive cards on describing and classifying epilepsy, seizure types and epilepsy syndromes for clinical decisions and teaching.",
+    tags: ["Epilepsy", "Seizure Classification", "Epilepsy Syndromes", "Clinical Cards"],
+    keywords: ["epilepsy classification", "seizure classification", "focal seizures", "generalized seizures", "epilepsy syndromes", "ILAE classification", "ABC of Epilepsy", "Ferrie Walker"],
+    url: "books/abc-of-epilepsy-bmjbooks/ch2-epilepsy-classification-cards.html",
+    readTime: "15 min read"
+  },
+
+  {
+    title: "Psychotropics in the Perianesthesia Period",
+    shortTitle: "Perianesthesia Psychotropics",
+    authors: "Trigo-Blanco and Oprea",
+    year: "2019",
+    journal: "Perioperative Psychiatry / Bedside Note",
+    category: "Books / Perioperative Psychiatry",
+    description: "Bedside reference for managing psychotropic medications in the perianesthesia period, including continuation, withholding, interactions and perioperative safety considerations.",
+    tags: ["Perioperative Psychiatry", "Anesthesia", "Psychotropics", "Medication Safety"],
+    keywords: ["psychotropics perianesthesia", "psychotropic medications perioperative period", "perioperative psychiatry", "anesthesia psychotropic interactions", "preoperative psychotropic medication management", "Trigo-Blanco", "Oprea"],
+    url: "books/perioperative-psychiatry/psychotropics-in-perianaesthesia-period.html",
+    readTime: "20 min read"
+  },
+
+  {
+    title: "Phenytoin: Square Clinical Cards",
+    shortTitle: "Phenytoin Clinical Cards",
+    authors: "Epilepsy Prescriber’s Guide",
+    year: "2026",
+    journal: "Epilepsy Prescriber’s Guide / Clinical Cards",
+    category: "Books / Epilepsy / Antiseizure Medications",
+    description: "Interactive clinical cards covering phenytoin indications, dosing, therapeutic drug monitoring, adverse effects, interactions and practical prescribing decisions.",
+    tags: ["Phenytoin", "Epilepsy", "Antiseizure Medication", "Clinical Cards"],
+    keywords: ["phenytoin", "diphenylhydantoin", "antiepileptic drug", "antiseizure medication", "epilepsy", "seizure", "phenytoin level", "therapeutic drug monitoring", "phenytoin dosing", "phenytoin interactions"],
+    url: "books/epilepsy-prescriber-guide-to-aed/phenytoin.html",
+    readTime: "15 min read"
+  },
+
+  {
+    title: "Clobazam: Square Clinical Cards",
+    shortTitle: "Clobazam Clinical Cards",
+    authors: "Epilepsy Prescriber’s Guide",
+    year: "2026",
+    journal: "Epilepsy Prescriber’s Guide / Clinical Cards",
+    category: "Books / Epilepsy / Antiseizure Medications",
+    description: "Interactive clinical cards covering clobazam indications, dosing, adverse effects, interactions, withdrawal considerations and practical prescribing decisions.",
+    tags: ["Clobazam", "Epilepsy", "Antiseizure Medication", "Clinical Cards"],
+    keywords: ["clobazam", "frisium", "benzodiazepine", "antiepileptic drug", "antiseizure medication", "epilepsy", "seizure", "Lennox Gastaut syndrome", "clobazam dosing", "clobazam withdrawal"],
+    url: "books/epilepsy-prescriber-guide-to-aed/clobazam.html",
+    readTime: "15 min read"
+  },
+
+  {
     title: "Illness Anxiety Disorder: Square Clinical Cards",
     shortTitle: "Illness Anxiety Disorder",
     authors: "Clinical Management Guide",
