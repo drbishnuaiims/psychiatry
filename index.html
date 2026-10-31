@@ -159,30 +159,54 @@
     .result-count{font-size:13px;color:var(--text-3)}
     .result-count:empty{display:none}
 
+    /* Original grid stays in the DOM as the data source for app.js, but is not shown */
     .guideline-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+    .grouped .guideline-grid{display:none}
+
+    /* ---------- Category shelves (separate rows) ---------- */
+    .shelf{margin-bottom:26px}
+    .shelf-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 4px 8px}
+    .shelf-title-wrap{display:flex;align-items:baseline;gap:10px;min-width:0}
+    .shelf-kind{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--blue)}
+    .shelf-title{font-size:19px;font-weight:650;letter-spacing:-.02em;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .shelf-count{font-size:12px;color:var(--text-3);padding:3px 10px;border-radius:var(--r-pill);background:var(--glass);border:1px solid var(--stroke-2)}
+    .shelf-tools{display:flex;align-items:center;gap:8px;flex:none}
+    .shelf-btn{
+      width:30px;height:30px;border-radius:50%;border:1px solid var(--stroke-2);cursor:pointer;
+      background:var(--glass-strong);color:var(--text);font-size:14px;display:grid;place-items:center;
+      transition:transform .2s,background .2s,color .2s;
+    }
+    .shelf-btn:hover{background:var(--blue-soft);color:var(--blue)}
+    .shelf-btn:active{transform:scale(.92)}
+    .shelf-track{
+      display:flex;gap:14px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;
+      padding:6px 4px 14px;margin:0 -4px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+    }
+    .shelf-track::-webkit-scrollbar{display:none}
+    .shelf-track > *{flex:0 0 min(300px,82%);scroll-snap-align:start}
 
     /* Cards: styled generically so they work with whatever app.js renders */
-    #guidelineGrid > *, #liveResults > article, #liveResults > a, #liveResults > div.card{
+    :is(#guidelineGrid,.shelf-track) > *, #liveResults > article, #liveResults > a, #liveResults > div.card{
       position:relative;display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:var(--r-md);
       background:var(--glass); border:1px solid var(--stroke-2); box-shadow:var(--shine);
       -webkit-backdrop-filter:blur(20px) saturate(170%); backdrop-filter:blur(20px) saturate(170%);
       color:var(--text); transition:transform .22s ease, border-color .22s, background .22s;
     }
     #liveResults > article, #liveResults > a, #liveResults > div.card{padding:14px 16px;background:var(--glass)}
-    #guidelineGrid > *:hover, #liveResults > *:hover{transform:translateY(-2px);border-color:var(--blue)}
-    #guidelineGrid a, #liveResults a{color:inherit;text-decoration:none}
-    #guidelineGrid h2, #guidelineGrid h3, #guidelineGrid h4,
+    :is(#guidelineGrid,.shelf-track) > *:hover, #liveResults > *:hover{transform:translateY(-2px);border-color:var(--blue)}
+    :is(#guidelineGrid,.shelf-track) a, #liveResults a{color:inherit;text-decoration:none}
+    :is(#guidelineGrid,.shelf-track) :is(h2,h3,h4),
     #liveResults h2, #liveResults h3, #liveResults h4{font-size:17px;font-weight:600;letter-spacing:-.015em;line-height:1.3;color:var(--text)}
-    #guidelineGrid p, #liveResults p{font-size:14px;line-height:1.45;color:var(--text-2)}
-    #guidelineGrid span, #guidelineGrid small, #guidelineGrid li,
+    :is(#guidelineGrid,.shelf-track) p, #liveResults p{font-size:14px;line-height:1.45;color:var(--text-2)}
+    :is(#guidelineGrid,.shelf-track) :is(span,small,li),
     #liveResults span, #liveResults small, #liveResults li{font-size:12px;color:var(--text-3)}
-    #guidelineGrid [class*="tag"], #guidelineGrid [class*="badge"], #guidelineGrid [class*="chip"], #guidelineGrid [class*="cat"],
+    :is(#guidelineGrid,.shelf-track) :is([class*="tag"],[class*="badge"],[class*="chip"],[class*="cat"]),
     #liveResults [class*="tag"], #liveResults [class*="badge"], #liveResults [class*="chip"], #liveResults [class*="cat"]{
       display:inline-block;width:fit-content;padding:3px 10px;border-radius:var(--r-pill);
       background:var(--blue-soft);color:var(--blue);font-weight:500;
     }
-    #guidelineGrid ul, #liveResults ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px}
-    #guidelineGrid > * > a:first-child::after, #liveResults > * > a:first-child::after{content:"";position:absolute;inset:0;border-radius:inherit}
+    :is(#guidelineGrid,.shelf-track) ul, #liveResults ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+    :is(#guidelineGrid,.shelf-track) > * > a:first-child::after, #liveResults > * > a:first-child::after{content:"";position:absolute;inset:0;border-radius:inherit}
 
     .empty-state{text-align:center;padding:56px 16px;color:var(--text-2)}
     .empty-icon{font-size:32px;color:var(--text-3);transform:scaleX(-1);display:inline-block}
@@ -219,6 +243,8 @@
       kbd{display:none}
       .search-wrap{height:50px}
       .guideline-grid{grid-template-columns:1fr}
+      .shelf-btn{display:none}
+      .shelf-title{font-size:18px}
     }
     @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
   </style>
@@ -253,10 +279,16 @@
 
   <section id="guidelines" class="container content-section">
     <div class="section-head">
-      <div><p class="eyebrow">CLINICAL LIBRARY</p><h2>Recently added</h2></div>
+      <div><p class="eyebrow">CLINICAL LIBRARY</p><h2>Browse by category</h2></div>
       <span id="resultCount" class="result-count"></span>
     </div>
+
+    <!-- Category rows (Books, each disorder folder, etc.) are built here -->
+    <div id="categoryRows" class="category-rows"></div>
+
+    <!-- Source grid filled by app.js (hidden once rows are built) -->
     <div id="guidelineGrid" class="guideline-grid"></div>
+
     <div id="emptyState" class="empty-state hidden">
       <div class="empty-icon">⌕</div>
       <h3>No resource found</h3>
@@ -331,6 +363,172 @@
     if (e.key === 'Escape') { live.classList.add('hidden'); input.blur(); }
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); input.focus(); input.select(); }
   });
+})();
+</script>
+
+<!-- Category rows: groups the cards from app.js into separate horizontal shelves -->
+<script>
+(function () {
+  var grid = document.getElementById('guidelineGrid');
+  var host = document.getElementById('categoryRows');
+  var section = document.getElementById('guidelines');
+  if (!grid || !host || !section) return;
+
+  /* ---- Edit these if your folder names differ ---- */
+  var BOOK_KEYS = ['book', 'books', 'book-notes', 'book-note', 'notes'];
+  var DISORDER_KEYS = ['disorder', 'disorders', 'disease', 'diseases', 'conditions'];
+  var ACRONYMS = { cpg: 'CPG', cpgs: 'CPGs', ocd: 'OCD', adhd: 'ADHD', ptsd: 'PTSD', cbt: 'CBT', ect: 'ECT', tms: 'TMS', cl: 'CL', ipt: 'IPT', dbt: 'DBT' };
+  var MAX_ROW_ORDER = { books: 0 }; // Books row first, the rest keep their original order
+
+  function pretty(s) {
+    return String(s).replace(/\.[a-z0-9]+$/i, '').replace(/[-_]+/g, ' ').trim()
+      .split(/\s+/).map(function (w) {
+        var l = w.toLowerCase();
+        return ACRONYMS[l] || (w.charAt(0).toUpperCase() + w.slice(1));
+      }).join(' ');
+  }
+
+  function firstLink(card) {
+    return card.matches && card.matches('a[href]') ? card : card.querySelector('a[href]');
+  }
+
+  function folders(card) {
+    var a = firstLink(card);
+    if (!a) return [];
+    var u;
+    try { u = new URL(a.getAttribute('href'), location.href); } catch (e) { return []; }
+    if (u.origin !== location.origin) return [];
+    var base = location.pathname.replace(/[^\/]*$/, '');
+    var path = u.pathname;
+    if (path.indexOf(base) === 0) path = path.slice(base.length);
+    var segs = path.split('/').filter(Boolean).map(function (s) { try { return decodeURIComponent(s); } catch (e) { return s; } });
+    if (segs.length && /\.[a-z0-9]+$/i.test(segs[segs.length - 1])) segs.pop();
+    return segs;
+  }
+
+  function classify(card) {
+    var explicit = card.getAttribute('data-category') || (card.dataset && card.dataset.cat);
+    if (explicit) return { key: explicit.toLowerCase(), label: pretty(explicit), kind: 'Category' };
+
+    var segs = folders(card);
+    var first = (segs[0] || '').toLowerCase();
+
+    if (first && BOOK_KEYS.indexOf(first) > -1) return { key: 'books', label: 'Books', kind: 'Library' };
+
+    if (first && DISORDER_KEYS.indexOf(first) > -1) {
+      if (segs[1]) return { key: 'disorder:' + segs[1].toLowerCase(), label: pretty(segs[1]), kind: 'Disorder' };
+      return { key: 'disorders', label: 'Disorders', kind: 'Library' };
+    }
+
+    if (first) return { key: 'folder:' + first, label: pretty(segs[0]), kind: 'Folder' };
+
+    var badge = card.querySelector('[class*="cat"],[class*="tag"],[class*="badge"],[class*="chip"]');
+    var t = badge && badge.textContent.trim();
+    if (t) return { key: 'tag:' + t.toLowerCase(), label: pretty(t), kind: 'Category' };
+
+    return { key: 'more', label: 'More resources', kind: 'Library' };
+  }
+
+  function visibleCards() {
+    return Array.prototype.filter.call(grid.children, function (el) {
+      return !el.hidden && getComputedStyle(el).display !== 'none';
+    });
+  }
+
+  function makeShelf(group) {
+    var shelf = document.createElement('section');
+    shelf.className = 'shelf';
+
+    var head = document.createElement('div');
+    head.className = 'shelf-head';
+
+    var tw = document.createElement('div');
+    tw.className = 'shelf-title-wrap';
+    var kind = document.createElement('span');
+    kind.className = 'shelf-kind';
+    kind.textContent = group.kind;
+    var title = document.createElement('h3');
+    title.className = 'shelf-title';
+    title.textContent = group.label;
+    tw.appendChild(kind); tw.appendChild(title);
+
+    var tools = document.createElement('div');
+    tools.className = 'shelf-tools';
+    var count = document.createElement('span');
+    count.className = 'shelf-count';
+    count.textContent = group.cards.length + (group.cards.length === 1 ? ' item' : ' items');
+    var prev = document.createElement('button');
+    prev.type = 'button'; prev.className = 'shelf-btn'; prev.textContent = '‹'; prev.setAttribute('aria-label', 'Scroll left');
+    var next = document.createElement('button');
+    next.type = 'button'; next.className = 'shelf-btn'; next.textContent = '›'; next.setAttribute('aria-label', 'Scroll right');
+    tools.appendChild(count); tools.appendChild(prev); tools.appendChild(next);
+
+    head.appendChild(tw); head.appendChild(tools);
+
+    var track = document.createElement('div');
+    track.className = 'shelf-track';
+    group.cards.forEach(function (card) {
+      var c = card.cloneNode(true);
+      c.removeAttribute('id');
+      Array.prototype.forEach.call(c.querySelectorAll('[id]'), function (n) { n.removeAttribute('id'); });
+      c.hidden = false;
+      c.style.display = '';
+      track.appendChild(c);
+    });
+
+    prev.addEventListener('click', function () { track.scrollBy({ left: -track.clientWidth * 0.8, behavior: 'smooth' }); });
+    next.addEventListener('click', function () { track.scrollBy({ left: track.clientWidth * 0.8, behavior: 'smooth' }); });
+
+    shelf.appendChild(head); shelf.appendChild(track);
+    return shelf;
+  }
+
+  function build() {
+    var cards = visibleCards();
+    var all = Array.prototype.slice.call(grid.children);
+    if (!all.length) { host.innerHTML = ''; section.classList.remove('grouped'); return; }
+
+    var map = {}, order = [];
+    cards.forEach(function (card) {
+      var info = classify(card);
+      if (!map[info.key]) { map[info.key] = { key: info.key, label: info.label, kind: info.kind, cards: [] }; order.push(info.key); }
+      map[info.key].cards.push(card);
+    });
+
+    order.sort(function (a, b) {
+      var ra = MAX_ROW_ORDER.hasOwnProperty(a) ? MAX_ROW_ORDER[a] : 1;
+      var rb = MAX_ROW_ORDER.hasOwnProperty(b) ? MAX_ROW_ORDER[b] : 1;
+      return ra - rb; // stable for equal ranks in modern browsers
+    });
+
+    // keep scroll positions of existing rows when re-rendering during search
+    host.innerHTML = '';
+    var frag = document.createDocumentFragment();
+    order.forEach(function (k) { frag.appendChild(makeShelf(map[k])); });
+    host.appendChild(frag);
+    section.classList.add('grouped');
+  }
+
+  var queued = false;
+  function schedule() {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(function () { queued = false; build(); });
+  }
+
+  // Rebuild whenever app.js renders or filters cards
+  new MutationObserver(schedule).observe(grid, {
+    childList: true, subtree: true, attributes: true, attributeFilter: ['hidden', 'style', 'class']
+  });
+
+  var input = document.getElementById('searchInput');
+  if (input) input.addEventListener('input', function () { setTimeout(schedule, 30); });
+
+  // Initial passes (covers cards rendered synchronously or after data loads)
+  schedule();
+  setTimeout(schedule, 150);
+  setTimeout(schedule, 600);
+  window.addEventListener('load', schedule);
 })();
 </script>
 </body>
