@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quetiapine: Square Clinical Cards</title>
+<style>
+:root{box-sizing:border-box;--bg:#f3f1ec;--ink:#1d2230;--mut:#5b6275;--pill:#fff;--bd:#d9d5ca;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}}
+:root[data-theme="dark"]{--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.4}
+header{max-width:1100px;margin:0 auto;padding:20px 16px 8px}
+header h1{font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;margin:0 0 4px}
+header p{margin:0 0 12px;color:var(--mut);font-size:.9rem}
+.bar{display:flex;flex-wrap:wrap;gap:8px}
+.bar button{font:inherit;font-size:.85rem;padding:8px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--pill);color:var(--ink);cursor:pointer}
+.bar button.on{background:#2f5bd8;border-color:#2f5bd8;color:#fff}
+.bar button:focus-visible{outline:3px solid #f0a020;outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 40px}
+.hint{color:var(--mut);font-size:.85rem;padding:4px 0 12px;margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:20px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.1)}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 64px;display:flex;flex-direction:column;background:var(--b,#fffdf7);color:#1d2230;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;font-size:34px;line-height:1.3;text-align:left}
+.c h2{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:1.08;margin:0 0 10px;color:var(--a);font-weight:700;flex:none}
+.c .sub{font-size:29px;line-height:1.25;color:#4d5568;margin:0 0 16px;flex:none}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5em;overflow:hidden;padding-bottom:12px;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:24px;font-size:24px;color:#778}
+.in ul{padding-left:1.2em}.in li{margin:.2em 0}
+.c b{background:#ffe38a;padding:0 .15em;border-radius:.2em;font-weight:700}
+.box{border-left:.22em solid var(--a);background:rgba(0,0,0,.06);padding:.4em .7em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.5em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.stats div{background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.35em .5em;text-align:center;font-size:.85em;line-height:1.2}
+.stats em{display:block;font-style:normal;font-family:Georgia,serif;font-size:1.9em;font-weight:700;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.92em;background:#fff;border-radius:.5em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.3em .55em}
+td{padding:.3em .55em;border-top:.06em solid #e3e0d6;vertical-align:top}
+.fl{display:flex;align-items:stretch;gap:.4em}.fl.v{flex-direction:column}
+.st{flex:1;background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.4em .6em;text-align:center;font-size:.9em;line-height:1.25}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.3em;line-height:1;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.1em .8em;font-size:.8em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.cols>div{background:#fff;border-radius:.6em;padding:.5em .7em;border-top:.25em solid var(--a)}
+.cols h3{margin:0 0 .2em;font-size:1em;color:var(--a)}
+.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:104px}.cover .sub{color:#e8ecff;font-size:38px}
+.cover .in{justify-content:center}
+.sec{display:none}.sec.on{display:block}
+@media (prefers-reduced-motion:reduce){</style></head><body>
+<header><h1>Quetiapine: square clinical cards</h1>
+<p>Antiepileptic drug monograph summary for clinical decisions and grand rounds. Every card is a 1:1 square. Double-tap or double-click any card to save it as a PNG. Educational summary of the source text: verify doses against current prescribing information.</p>
+</header>
+<main>
+<section id="notes"><p class="hint">Double-tap or double-click any card to save it as an image.</p><div class="grid" id="g"></div></section>
+</main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const cards=[
+C('#5a3fb0','#5a3fb0','Quetiapine','Atypical antipsychotic and mood stabiliser: pharmacology, monitoring, dosing and clinical role',`<div><span class="pill">D2 + 5HT2A antagonist</span><span class="pill">Dose-dependent actions</span><span class="pill">Bipolar depression</span><span class="pill">Metabolic monitoring</span><span class="pill">CYP3A4 substrate</span></div><div style="font-size:.7em;margin-top:.6em;opacity:.9">Source: Prescriber’s Guide</div>`,'cover'),
+C('#1f7a6d','#f2fbf8','Drug snapshot','Identity and class',`<table><tr><th>Item</th><th>Detail</th></tr><tr><td>Brands</td><td><b>Qutipin</b>, Qutan; Quel, Q-Pin, and many more</td></tr><tr><td>Generic</td><td><b>Yes</b></td></tr><tr><td>Class</td><td><b>Atypical antipsychotic</b> (SDA, second-generation); also a mood stabiliser</td></tr><tr><td>Neuroscience-based nomenclature</td><td><b>Low dose:</b> histamine, receptor antagonist. <b>Middle:</b> norepinephrine, reuptake inhibitor. <b>High:</b> dopamine, serotonin, norepinephrine, multimodal</td></tr></table>`),
+C('#b5472f','#fff7f3','Indications','Commonly prescribed for',`<ul><li><b>Schizophrenia</b></li><li><b>Mania</b>, <b>bipolar depression</b>, prevention of mania and depression, mixed mania</li><li><b>Adjunctive</b> treatment of major depression</li><li>Behavioural disturbance in <b>dementia</b> and <b>Lewy body disease</b></li><li>Psychosis from <b>levodopa</b> in Parkinson’s disease</li><li>Behavioural disturbance in children and adolescents; <b>impulse-control</b> problems; severe treatment-resistant anxiety</li></ul>`),
+C('#2a6fb0','#f2f8ff','How quetiapine works','Receptors and dose-dependent mechanisms',`<ul><li>Blocks <b>D2</b> (positive symptoms, affect), <b>5HT2A</b> (raises dopamine release, fewer motor effects)</li><li>Also antagonises D1, 5HT2, <b>alpha-1</b> and <b>H1</b></li><li><b>Norquetiapine</b> (active): NET reuptake block, 5HT2C and 5HT7 antagonism, <b>5HT1A partial agonism</b></li></ul><table><tr><th>Dose</th><th>Dominant action</th></tr><tr><td><b>Low</b></td><td>H1 antagonism, 5HT1A partial agonism</td></tr><tr><td><b>Middle</b></td><td>NET inhibition + 5HT2C antagonism + 5HT1A</td></tr><tr><td><b>High</b></td><td><b>D2 occupancy &gt;60%</b> + 5HT2A blockade</td></tr></table>`),
+C('#d17a00','#fffaf0','Onset and expected benefit','How long and how much',`<div class="stats"><div><em>1 week</em>psychotic and manic symptoms may improve</div><div><em>4 to 6 wk</em>classic wait; up to 16 to 20 weeks for cognition</div></div><ul><li>Reduces <b>positive symptoms</b> but does not eliminate them; helps negative, aggressive, cognitive and affective symptoms</li><li>Usual schizophrenia gain: about <b>a third</b> reduction</li><li><b>5 to 15%</b> improve &gt;50 to 60% (“<b>awakeners</b>”) after &gt;1 year of stable treatment</li><li>Bipolar: symptom reduction of <b>half or more</b></li></ul>`),
+C('#c2477e','#fff5f9','If it works and if it doesn’t','Continuation and escalation',`<div class="box"><b>Works:</b> continue to a plateau, then at least <b>1 year</b> after a first episode; often <b>indefinitely</b>.</div><div class="st"><b>1.</b> Another atypical: <b>risperidone or olanzapine first</b>, then aripiprazole, amisulpride, lurasidone</div><div class="ar">▼</div><div class="st"><b>2.</b> After <b>2 failed antipsychotics</b>: consider <b>clozapine</b></div><div class="ar">▼</div><div class="st"><b>3.</b> Higher dose; augment with <b>valproate or lamotrigine</b>; check <b>non-concordance</b> (consider depot), substance misuse; add rehabilitation</div><div class="box">Augmenters: valproate, other anticonvulsant mood stabilisers, <b>lithium</b>, benzodiazepines.</div>`),
+C('#7a4bc2','#f8f4ff','Baseline tests','Before starting an atypical antipsychotic',`<ul><li><b>Weight, BMI, waist</b>; personal and family history of diabetes, obesity, dyslipidaemia, hypertension, CVD</li><li><b>Pulse and BP</b>; <b>fasting glucose or HbA1c</b>; <b>lipids</b>; <b>prolactin</b></li><li><b>FBC, U&amp;E (eGFR), LFTs</b>; nutrition and activity</li><li><b>ECG</b> for inpatients and anyone with cardiac history or risk (QT prolongation)</li></ul><div class="box">Classify: overweight (BMI 25.0 to 29.9), obese (≥30), <b>pre-diabetes</b> (fasting glucose 5.5 to 6.9 mmol/L; HbA1c 42 to 47 mmol/mol), <b>diabetes</b> (&gt;7.0 mmol/L; HbA1c ≥48 mmol/mol), hypertension (&gt;140/90), dyslipidaemia. <b>Treat or refer</b>.</div>`),
+C('#b5472f','#fff7f3','Monitoring schedule','After starting',`<table><tr><th>Test</th><th>When</th></tr><tr><td><b>Weight, BMI, waist</b></td><td><b>Weekly</b> for 6 weeks, then 12 weeks, 1 year, then annually</td></tr><tr><td><b>Pulse and BP</b></td><td>12 weeks, 1 year, then annually</td></tr><tr><td><b>Glucose or HbA1c, lipids</b></td><td>12 weeks, 1 year, then annually</td></tr><tr><td>Type 2 diabetes: HbA1c</td><td>Every <b>3 to 6 months</b> until stable, then 6-monthly</td></tr><tr><td><b>FBC, U&amp;E, LFTs</b></td><td><b>Annually</b>; stop if neutrophils &lt;<b>1.5 × 10⁹/L</b>; specialist if &lt;0.5</td></tr><tr><td><b>Prolactin</b></td><td>6 months, then annually (quetiapine rarely raises it)</td></tr></table><div class="box">Persistent HbA1c ≥48 mmol/mol: offer <b>metformin</b>. Watch for <b>ketoacidosis</b> (polyuria, polydipsia, weight loss, vomiting).</div>`),
+C('#2a6fb0','#f2f8ff','Receptor blockade and side effects','How the drug causes them',`<table><tr><th>Blockade</th><th>Effect</th></tr><tr><td><b>H1</b></td><td>Sedation, probably weight gain</td></tr><tr><td><b>Alpha-1</b></td><td>Dizziness, sedation, <b>orthostatic hypotension</b></td></tr><tr><td><b>M1</b></td><td>Dry mouth, constipation, sedation</td></tr><tr><td><b>D2</b> (striatum)</td><td>Motor side effects (rare)</td></tr><tr><td>Metabolic effects</td><td>Mechanism <b>unknown</b></td></tr></table><div class="box">Weight gain is <b>dose-dependent</b>; may raise risk of <b>diabetes and dyslipidaemia</b>.</div>`),
+C('#c2477e','#fff5f9','Notable and common side effects','Frequency tiers',`<table><tr><th>Tier</th><th>Effects</th></tr><tr><td><b>Notable</b></td><td>Weight gain, <b>dizziness, sedation</b>, dry mouth, constipation, dyspepsia, <b>tachycardia</b>, orthostatic hypotension (esp. during titration); theoretical <b>tardive dyskinesia</b></td></tr><tr><td><b>Common</b></td><td>Blurred vision, dysarthria, headache, irritability, sleep disorders, <b>suicidal ideation and behaviour</b> (at initiation), palpitations, syncope, hyperglycaemia, oedema, withdrawal syndrome</td></tr><tr><td><b>Uncommon</b></td><td>Anaemia, thrombocytopenia, <b>diabetes</b>, hyponatraemia, hypothyroidism, sexual dysfunction</td></tr><tr><td><b>Rare</b></td><td>Pancreatitis, hepatic disorders, angioedema, <b>metabolic syndrome</b>, rhabdomyolysis, <b>SCARs</b>, SIADH</td></tr></table>`),
+C('#b5472f','#fff7f3','Dangerous side effects','When to act',`<ul><li><b>Hyperglycaemia</b>, sometimes extreme, with <b>ketoacidosis</b> or hyperosmolar coma, even death</li><li>Rare <b>neuroleptic malignant syndrome</b>; rare <b>seizures</b></li><li><b>Agranulocytosis</b>; embolism and thrombosis; sudden death</li><li>Elderly with dementia-related psychosis: <b>higher death and stroke</b> risk</li><li><b>Neonatal withdrawal syndrome</b></li></ul><div class="box big">Sedation: frequent, may fade, can reappear on dose rise. Weight gain: may be <b>less than some, more than others</b>.</div>`),
+C('#7a4bc2','#f8f4ff','Managing side effects','A practical sequence',`<div class="st"><b>Wait</b> (many effects settle); then <b>reduce the dose</b></div><div class="ar">▼</div><div class="st"><b>Sedation:</b> more of the dose at <b>bedtime</b></div><div class="ar">▼</div><div class="st"><b>Weight, glucose, lipids:</b> lifestyle, medical management; consider switching</div><div class="ar">▼</div><div class="st"><b>Tardive dyskinesia:</b> switch to <b>quetiapine or clozapine</b>; stop antimuscarinics; consider tetrabenazine</div><div class="box">Low-dose benzodiazepine or beta blocker may ease akathisia.</div>`),
+C('#1f7a6d','#f2fbf8','Treating side effects','Augmenting agents',`<table><tr><th>Problem</th><th>Option</th></tr><tr><td><b>Dystonia, parkinsonism</b></td><td>Antimuscarinic (procyclidine); botulinum toxin if needed</td></tr><tr><td><b>Akathisia</b></td><td><b>Propranolol</b> 30 to 80 mg/day, or low-dose clonazepam 0.5 to 3 mg; cyproheptadine 16 mg, mirtazapine 15 mg (caution in bipolar), clonidine 0.2 to 0.8 mg</td></tr><tr><td><b>Tardive dyskinesia</b></td><td>Stop antimuscarinic; tetrabenazine</td></tr><tr><td><b>Hyperprolactinaemia</b></td><td>Add <b>aripiprazole</b> 2.5 to 5 mg</td></tr><tr><td><b>Weight gain</b> (olanzapine, clozapine)</td><td>Aripiprazole 5 to 15 mg or <b>metformin</b> 500 to 2000 mg/day</td></tr></table>`),
+C('#d17a00','#fffaf0','Usual dose by indication','IR = immediate release; MR = modified release',`<table><tr><th>Indication</th><th>Dose</th></tr><tr><td><b>Schizophrenia</b></td><td>IR <b>300 to 750 mg/day</b> (2 doses); MR <b>300 to 800 mg</b> once daily</td></tr><tr><td><b>Mania</b></td><td>IR <b>400 to 800 mg/day</b> (2 doses); MR 400 to 800 mg once daily</td></tr><tr><td><b>Bipolar depression</b></td><td><b>300 to 600 mg/day</b></td></tr><tr><td><b>Prevention</b> in bipolar</td><td><b>300 to 800 mg/day</b></td></tr><tr><td><b>Adjunct in MDD</b></td><td>MR <b>150 to 300 mg</b> once daily</td></tr></table><div class="box"><b>Forms:</b> IR 25 to 400 mg; MR 50 to 600 mg; suspension 20 mg/mL.</div>`),
+C('#c2477e','#fff5f9','Titration: schizophrenia and mania (adults)','Start low, go up fast enough',`<table><tr><th>Use</th><th>Schedule</th></tr><tr><td>Schizophrenia, IR</td><td>25 mg twice daily; +25 to 50 mg twice daily per day; max <b>750 mg</b></td></tr><tr><td>Schizophrenia, MR</td><td><b>300 mg</b> day 1, <b>600 mg</b> day 2, usual 600 mg; max 800 mg (specialist)</td></tr><tr><td>Mania, IR</td><td>100 mg day 1 to <b>400 mg day 4</b> (+≤100/day); up to 800 by day 6 (+≤200/day)</td></tr><tr><td>Mania, MR</td><td>300 mg day 1, 600 mg day 2, usual 400 to 800 mg</td></tr></table><div class="box"><b>Elderly:</b> start 50 mg/day (MR), +50 mg/day; mania IR start 12.5 to 25 mg, maintenance 75 to 125 mg/day.</div>`),
+C('#2a6fb0','#f2f8ff','Titration: depression and children','Other schedules',`<table><tr><th>Use</th><th>Schedule</th></tr><tr><td>Bipolar depression</td><td><b>50 mg at bedtime</b>, titrate to <b>300 mg by day 4</b>; max 600 mg</td></tr><tr><td>Adjunct MDD (MR)</td><td>50 mg evening ×2 days, 150 mg ×2 days, then 150 to 300 mg; elderly: do not reach 300 mg before <b>day 22</b></td></tr><tr><td>Children: schizophrenia</td><td>IR 25 mg twice daily; MR 50 mg once daily, +50 mg; usual MR 400 to 800 mg</td></tr><tr><td>Children: mania (IR)</td><td>Day 1: 25 mg twice daily, doubling stepwise; usual <b>400 to 600 mg/day</b></td></tr></table>`),
+C('#1f7a6d','#f2fbf8','Dosing tips','Avoid under-dosing',`<ul><li>Minimum effective dose: first episode ~<b>150 mg/day</b>; later episodes <b>300 mg/day</b></li><li>Target <b>400 to 800 mg/day</b> in most cases; max 750 (schizophrenia), 800 (bipolar)</li><li><b>More may be much more:</b> often under-dosed, then switched too early</li><li>At low doses it acts as a <b>sedative-hypnotic</b>, but with antipsychotic side effects</li><li>MR: swallow <b>whole</b>; IR to MR at the <b>same daily dose</b></li><li>Switch from other antipsychotic for <b>akathisia</b></li><li>Suspend if neutrophils &lt;<b>1.5 × 10⁹/L</b></li></ul>`),
+C('#b5472f','#fff7f3','Overdose and stopping','Do not stop abruptly',`<div class="cols"><div><h3>Overdose</h3><ul><li>Can be <b>fatal</b></li><li>Lethargy, delirium, hypotension, hypothermia, <b>tachycardia, arrhythmia, QT prolongation</b>, respiratory depression, rhabdomyolysis, NMS</li><li>Arrhythmia: correct hypoxia and acidosis; <b>specialist advice</b> if QT-related</li><li>Dystonia: procyclidine or diazepam</li></ul></div><div><h3>Stopping</h3><ul><li><b>Not habit forming</b></li><li>Rapid stop: rebound psychosis, insomnia</li><li>High <b>relapse risk</b> after 1 to 2 years off</li><li>Taper <b>gradually</b>; monitor <b>2 years</b></li></ul></div></div>`),
+C('#7a4bc2','#f8f4ff','Pharmacokinetics and interactions','CYP3A4 substrate',`<div class="stats"><div><em>7 h</em>half-life of quetiapine</div><div><em>12 h</em>norquetiapine</div></div><table><tr><th>Interacting drug</th><th>Effect</th></tr><tr><td><b>CYP3A4 inhibitors</b> (ketoconazole, HIV protease inhibitors, azoles, erythromycin, clarithromycin); <b>grapefruit juice</b></td><td>Raise levels: <b>contraindicated</b> / avoid</td></tr><tr><td><b>CYP2D6 inhibitors</b></td><td>May raise levels</td></tr><tr><td><b>Carbamazepine</b> (inducer)</td><td><b>Lowers</b> levels</td></tr><tr><td><b>Antihypertensives</b>; QT-prolonging or electrolyte-disturbing drugs</td><td>Added hypotension; <b>QT risk</b></td></tr></table><div class="box">Food slightly increases absorption.</div>`),
+C('#c2477e','#fff5f9','Warnings and contraindications','Check before and during use',`<div class="cols"><div><h3>Do not use if</h3><ul><li>With <b>CYP3A4 inhibitors</b> (HIV protease inhibitors, azoles, macrolides)</li><li>Proven <b>allergy</b></li></ul></div><div><h3>Use with caution</h3><ul><li><b>Cardiovascular or cerebrovascular</b> disease; hypotension risk (dehydration)</li><li>Epilepsy; <b>dysphagia, aspiration</b>; <b>sleep apnoea</b></li><li>Diabetes; <b>QT risk factors</b></li><li>Angle-closure glaucoma, blood disorders, Parkinson’s, prostate hypertrophy</li><li><b>Suicidal ideation</b> (esp. young); priapism reported</li></ul></div></div>`),
+C('#2a6fb0','#f2f8ff','Renal, hepatic and cardiac impairment','Dose adjustment',`<div class="st"><b>Renal:</b> <b>no dose adjustment</b> required</div><div class="st"><b>Hepatic:</b> extensively metabolised; clearance down ~<b>30%</b>. Start IR <b>25 mg/day</b> (+25 to 50 mg/day) or MR <b>50 mg/day</b> (+50 mg/day)</div><div class="st"><b>Cardiac:</b> caution: <b>orthostatic hypotension</b>, <b>QT prolongation</b>; <b>ECG</b> if risk factors or inpatient</div>`),
+C('#d17a00','#fffaf0','Elderly and dementia','Lower doses, higher risk',`<ul><li>Usual doses lower: <b>25 to 100 mg twice daily</b></li><li><b>Delirium:</b> 12.5 to 50 mg twice daily, up to 200 mg/day</li><li><b>Dementia agitation or psychosis:</b> start 12.5 to 25 mg/day; maintain 50 to 100; max 100 to 300 mg/day</li></ul><div class="box big">No antipsychotic is approved for dementia-related psychosis. Atypicals raise <b>death</b> and <b>cerebrovascular events</b> versus placebo.</div>`),
+C('#1f7a6d','#f2fbf8','Children and adolescents: before prescribing','Specialist, cautious use',`<ul><li><b>Not licensed</b> in the UK for children, but used under expert supervision for schizophrenia or mania aged <b>12 to 17</b>; licensed abroad for 13 to 17 (schizophrenia) and 10 to 17 (mania)</li><li>Do <b>not</b> offer for transient or attenuated symptoms; consider <b>individual CBT</b> ± family therapy</li><li><b>First-episode psychosis:</b> specialist start with psychological interventions; first line aripiprazole, olanzapine or risperidone</li><li>Support sleep, exercise, diet; give a <b>risk plan</b> for suicidal ideation</li></ul>`),
+C('#c2477e','#fff5f9','Children and adolescents: monitoring','Practical notes',`<table><tr><th>Item</th><th>Schedule</th></tr><tr><td><b>Weight, BMI, waist</b> (growth chart)</td><td><b>Weekly</b> ×6, 12 weeks, then every 6 months</td></tr><tr><td>Pulse, BP; glucose or HbA1c; lipids; prolactin</td><td>12 weeks, then every 6 months</td></tr><tr><td><b>ECG</b> (QTc)</td><td>Before start and <b>2 weeks after dose rise</b></td></tr><tr><td>Height, sexual maturation</td><td>Every 6 months</td></tr></table><div class="box">Children are more sensitive: exposure linked to <b>three-fold</b> diabetes risk, lipid changes; weight gain tracks time on treatment. Warn families of <b>suicidal ideation</b> at the start.</div>`),
+C('#b5472f','#fff7f3','Pregnancy and breastfeeding','Weigh benefit against risk',`<div class="cols"><div><h3>Pregnancy</h3><ul><li>No clear rise in malformations, but data <b>not conclusive</b></li><li><b>Third trimester:</b> neonatal agitation, tone changes, tremor, feeding or breathing difficulty</li><li>Atypicals may cause <b>maternal hyperglycaemia</b></li><li>Switching raises <b>relapse</b> risk</li><li>Often <b>preferred</b> to anticonvulsant mood stabilisers</li></ul></div><div><h3>Breastfeeding</h3><ul><li>Very small amounts in milk</li><li><b>Quetiapine</b> is the preferred second-generation antipsychotic</li><li>Monitor the infant</li></ul></div></div>`),
+C('#5a3fb0','#f6f3ff','Advantages and disadvantages','Where quetiapine fits',`<div class="cols"><div><h3>Advantages</h3><ul><li><b>Bipolar depression</b></li><li>Refractory psychosis or bipolar disorder</li><li><b>Parkinson’s</b> and <b>Lewy body</b> patients</li><li>Few <b>EPS</b>, little prolactin effect</li><li>Sedation when wanted (children)</li></ul></div><div><h3>Disadvantages</h3><ul><li>Needs <b>rapid onset</b>: slower</li><li>Poor tolerance of <b>sedation</b></li><li>Unwanted sedation in children</li></ul></div></div><div class="box"><b>Target symptoms:</b> positive, negative and cognitive symptoms; unstable mood; aggression; insomnia and anxiety.</div>`),
+C('#d17a00','#fffaf0','Pearls: bipolar disorder','Strong evidence',`<ul><li><b>Robust efficacy</b> across bipolar disorder, including <b>preventing depression</b></li><li>Best data in <b>rapid-cycling</b> bipolar: may be the treatment of choice</li><li><b>300 to 600 mg/day</b> monotherapy for bipolar depression: may beat lithium and paroxetine</li><li>Prevents relapse into <b>depression and mania</b></li><li><b>Not associated with switching</b> to mania</li><li>Possible benefit for <b>chorea in Huntington’s</b></li></ul>`),
+C('#2a6fb0','#f2f8ff','Pearls: clinical practice','From the art of psychopharmacology',`<ul><li>May be the <b>preferred antipsychotic for Lewy body psychosis</b></li><li>Efficacy in psychosis and mania may be <b>under-estimated</b> through under-dosing</li><li>Low doses commonly augment other antipsychotics or ease <b>agitation</b> in anxiety and emotionally unstable personality disorder</li><li>Inadequate response: check <b>plasma levels</b>; if low, raise the dose</li><li>Resistant, impulsive or violent patients may need <b>2 antipsychotics</b> or oral + <b>depot</b></li><li>Anecdotal use in <b>PTSD</b> (sleep, anxiety)</li></ul>`),
+C('#1f7a6d','#f2fbf8','Switching to quetiapine','The art of switching',`<table><tr><th>From</th><th>How</th></tr><tr><td><b>Aripiprazole, amisulpride, paliperidone, cariprazine</b></td><td>Stop at once; start quetiapine at <b>middle dose</b></td></tr><tr><td><b>Risperidone, lurasidone</b></td><td>Titrate quetiapine over <b>≥2 weeks</b> (build tolerance to sedation)</td></tr><tr><td><b>Clozapine, olanzapine, asenapine</b></td><td>Cross-taper; taper clozapine over <b>4 weeks or more</b></td></tr><tr><td><b>IR to MR</b></td><td>Same <b>total daily dose</b>, once daily</td></tr></table>`),
+C('#b5472f','#fff7f3','Clinical decision flow','Grand-rounds checklist',`<div class="st"><b>1.</b> Right indication: schizophrenia, <b>bipolar depression or mania</b>, Lewy body or Parkinson’s psychosis?</div><div class="ar">▼</div><div class="st"><b>2.</b> Baseline: <b>BMI, BP, glucose/HbA1c, lipids, prolactin, FBC, LFTs, ECG</b> if at risk; check <b>CYP3A4</b> drugs</div><div class="ar">▼</div><div class="st"><b>3.</b> Titrate to an <b>adequate dose</b> (e.g. 400 to 800 mg); allow <b>4 to 6 weeks</b></div><div class="ar">▼</div><div class="st"><b>4.</b> Monitor <b>weight weekly ×6</b>, then 12 weeks, annually; treat metabolic change</div><div class="ar">▼</div><div class="st"><b>5.</b> No response: other atypical, <b>clozapine</b>; stop slowly</div>`),
+C('#5a3fb0','#f6f3ff','Key takeaways','Remember these',`<ul><li>Multi-receptor drug; <b>actions change with dose</b></li><li>Strongest role: <b>bipolar depression</b>, mania, schizophrenia; low motor and prolactin effects</li><li>Avoid <b>under-dosing</b>: target 400 to 800 mg/day</li><li><b>Metabolic and QT monitoring</b>; sedation and weight gain are the main burdens</li><li><b>CYP3A4</b> inhibitors contraindicated; carbamazepine lowers levels</li><li>Taper slowly; avoid in <b>dementia</b> unless essential</li></ul>`)
+];
+const g=document.getElementById('g'),N=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${N}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return;let f=36;i.style.fontSize=f+'px';
+while(f>16&&(i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1)){f--;i.style.fontSize=f+'px'}}
+const fitAll=()=>g.querySelectorAll('.c').forEach(fit);
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+</script>
+<script>
+(function(){
+  const SCALE=2;   // 2 = 2160x2160 px; use 1 for exactly 1080x1080
+  const GAP=450;   // max ms between the two taps
+  const SOURCES=['https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js','https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js'];
+
+  const css=document.createElement('style');
+  css.id='shot-css';
+  css.textContent='.cw{touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}#shot-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d2230;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px system-ui,sans-serif;z-index:99999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#shot-toast.on{opacity:1}';
+  document.head.appendChild(css);
+  const toast=document.createElement('div');toast.id='shot-toast';document.body.appendChild(toast);
+  let tt;function say(m,ms){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)}
+
+  const toBlob=c=>new Promise((res,rej)=>{try{c.toBlob(b=>b?res(b):rej(new Error('canvas is empty')),'image/png')}catch(e){rej(e)}});
+
+  /* Method 1 (default): the browser itself draws the card (SVG foreignObject).
+     Exactly what you see on screen: no re-implementation of CSS, no missing text. */
+  async function viaSvg(card){
+    const wrap=document.createElement('div');
+    wrap.setAttribute('style','position:relative;box-sizing:border-box;width:1080px;height:1080px;overflow:hidden;margin:0;padding:0;background:#fff');
+    document.querySelectorAll('style').forEach(s=>{if(s.id!=='shot-css')wrap.appendChild(s.cloneNode(true))});
+    const clone=card.cloneNode(true);
+    clone.removeAttribute('data-shot');
+    clone.style.transform='none';clone.style.left='0';clone.style.top='0';
+    wrap.appendChild(clone);
+    const xml=new XMLSerializer().serializeToString(wrap);
+    const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080"><foreignObject x="0" y="0" width="1080" height="1080">'+xml+'</foreignObject></svg>';
+    const img=new Image();
+    await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('svg render failed'));img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+    const canvas=document.createElement('canvas');canvas.width=1080*SCALE;canvas.height=1080*SCALE;
+    const ctx=canvas.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    return canvas;
+  }
+
+  /* Method 2 (fallback, e.g. some Safari versions): html2canvas */
+  function addScript(src){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>{s.remove();rej(new Error('blocked: '+src))};document.head.appendChild(s)})}
+  let lib;function load(){if(window.html2canvas)return Promise.resolve();if(lib)return lib;
+    lib=(async()=>{for(const src of SOURCES){try{await addScript(src);if(window.html2canvas)return}catch(e){}}lib=null;throw new Error('Could not load the fallback library (offline?). Open the downloaded HTML file in Chrome, Edge or Firefox.')})();return lib}
+  async function viaH2C(card){
+    await load();
+    card.setAttribute('data-shot','1');
+    try{
+      return await html2canvas(card,{scale:SCALE,width:1080,height:1080,windowWidth:1300,windowHeight:1300,scrollX:0,scrollY:0,backgroundColor:null,logging:false,useCORS:true,
+        onclone:function(doc){const c=doc.querySelector('.c[data-shot="1"]');if(!c)return;
+          const w=c.parentElement;w.style.cssText='position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:visible;border:0;border-radius:0;margin:0;padding:0;transform:none;aspect-ratio:auto';
+          c.style.transform='none';c.style.left='0';c.style.top='0'}});
+    }finally{card.removeAttribute('data-shot')}
+  }
+
+  let busy=false;
+  async function shoot(card){
+    if(busy)return;busy=true;say('Creating image...',8000);
+    try{
+      if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+      let blob;
+      try{blob=await toBlob(await viaSvg(card))}
+      catch(e1){console.warn('SVG export failed, using fallback:',e1);blob=await toBlob(await viaH2C(card))}
+      const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+      const name=((card.querySelector('h2')||{}).textContent||'card').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='card-'+String(idx).padStart(2,'0')+'-'+name+'.png';
+      document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+a.download);
+    }catch(err){console.error('Card export failed:',err);say('Could not save: '+(err&&err.message?err.message:err),6000)}
+    finally{busy=false}
+  }
+
+  let last={el:null,t:0,x:0,y:0};
+  document.addEventListener('pointerup',function(e){
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    const card=e.target.closest&&e.target.closest('.c');
+    if(!card){last.el=null;return}
+    const now=Date.now();
+    if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card)}
+    else{last={el:card,t:now,x:e.clientX,y:e.clientY}}
+  });
+})();
+</script>
+</body></html>
