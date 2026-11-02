@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vortioxetine: Square Clinical Cards</title>
+<style>
+:root{box-sizing:border-box;--bg:#f3f1ec;--ink:#1d2230;--mut:#5b6275;--pill:#fff;--bd:#d9d5ca;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}}
+:root[data-theme="dark"]{--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.4}
+header{max-width:1100px;margin:0 auto;padding:20px 16px 8px}
+header h1{font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;margin:0 0 4px}
+header p{margin:0 0 12px;color:var(--mut);font-size:.9rem}
+.bar{display:flex;flex-wrap:wrap;gap:8px}
+.bar button{font:inherit;font-size:.85rem;padding:8px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--pill);color:var(--ink);cursor:pointer}
+.bar button.on{background:#2f5bd8;border-color:#2f5bd8;color:#fff}
+.bar button:focus-visible{outline:3px solid #f0a020;outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 40px}
+.hint{color:var(--mut);font-size:.85rem;padding:4px 0 12px;margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:20px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.1)}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 64px;display:flex;flex-direction:column;background:var(--b,#fffdf7);color:#1d2230;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;font-size:34px;line-height:1.3;text-align:left}
+.c h2{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:1.08;margin:0 0 10px;color:var(--a);font-weight:700;flex:none}
+.c .sub{font-size:29px;line-height:1.25;color:#4d5568;margin:0 0 16px;flex:none}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5em;overflow:hidden;padding-bottom:12px;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:24px;font-size:24px;color:#778}
+.in ul{padding-left:1.2em}.in li{margin:.2em 0}
+.c b{background:#ffe38a;padding:0 .15em;border-radius:.2em;font-weight:700}
+.box{border-left:.22em solid var(--a);background:rgba(0,0,0,.06);padding:.4em .7em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.5em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.stats div{background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.35em .5em;text-align:center;font-size:.85em;line-height:1.2}
+.stats em{display:block;font-style:normal;font-family:Georgia,serif;font-size:1.9em;font-weight:700;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.92em;background:#fff;border-radius:.5em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.3em .55em}
+td{padding:.3em .55em;border-top:.06em solid #e3e0d6;vertical-align:top}
+.fl{display:flex;align-items:stretch;gap:.4em}.fl.v{flex-direction:column}
+.st{flex:1;background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.4em .6em;text-align:center;font-size:.9em;line-height:1.25}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.3em;line-height:1;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.1em .8em;font-size:.8em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.cols>div{background:#fff;border-radius:.6em;padding:.5em .7em;border-top:.25em solid var(--a)}
+.cols h3{margin:0 0 .2em;font-size:1em;color:var(--a)}
+.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:104px}.cover .sub{color:#e8ecff;font-size:38px}
+.cover .in{justify-content:center}
+.sec{display:none}.sec.on{display:block}
+@media (prefers-reduced-motion:reduce){</style></head><body>
+<header><h1>Vortioxetine: square clinical cards</h1>
+<p>Antiepileptic drug monograph summary for clinical decisions and grand rounds. Every card is a 1:1 square. Double-tap or double-click any card to save it as a PNG. Educational summary of the source text: verify doses against current prescribing information.</p>
+</header>
+<main>
+<section id="notes"><p class="hint">Double-tap or double-click any card to save it as an image.</p><div class="grid" id="g"></div></section>
+</main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const cards=[
+C('#1b6f8f','#1b6f8f','Vortioxetine','Multimodal antidepressant: pharmacology, safety, dosing and clinical role',`<div><span class="pill">Multimodal</span><span class="pill">Pro-cognitive</span><span class="pill">Low sexual side effects</span><span class="pill">No weight gain</span><span class="pill">Long half-life</span></div><div style="font-size:.7em;margin-top:.6em;opacity:.9">Source: Prescriber’s Guide </div>`,'cover'),
+C('#1f7a6d','#f2fbf8','Drug snapshot','Identity and class',`<table><tr><th>Item</th><th>Detail</th></tr><tr><td>Brand</td><td><b>Xomet</b></td></tr><tr><td>Generic</td><td><b>No</b> (not in the UK)</td></tr><tr><td>Class</td><td><b>Multimodal antidepressant</b></td></tr><tr><td>Neuroscience-based nomenclature</td><td>Domain: <b>serotonin</b>; mode of action: <b>multimodal</b></td></tr><tr><td>Tablets</td><td><b>5, 10, 20 mg</b></td></tr></table>`),
+C('#b5472f','#fff7f3','Indications','Commonly prescribed for',`<ul><li><b>Major depression</b></li><li><b>Generalised anxiety disorder</b></li><li><b>Cognitive symptoms</b> associated with depression</li><li><b>Depression in the elderly</b></li></ul><div class="box">Primary target symptoms: <b>depressed mood, cognitive symptoms, anxiety</b>.</div>`),
+C('#2a6fb0','#f2f8ff','Three modes of action','How it works',`<div class="st"><b>Mode 1:</b> blocks the <b>serotonin transporter</b> (SERT)</div><div class="st"><b>Mode 2:</b> G-protein receptors: <b>5HT1A full agonist</b>, <b>5HT1B partial agonist</b>, <b>5HT1D and 5HT7 antagonist</b></div><div class="st"><b>Mode 3:</b> ion-channel receptor: <b>5HT3 antagonist</b></div><div class="box">Net effect: raises serotonin, noradrenaline, dopamine, glutamate, acetylcholine, histamine; <b>lowers GABA</b> release.</div>`),
+C('#7a4bc2','#f8f4ff','What each receptor may add','Theoretical benefits',`<table><tr><th>Receptor action</th><th>Possible benefit</th></tr><tr><td><b>5HT1A agonist</b> (pre- and post-synaptic)</td><td>More serotonergic activity; <b>less sexual dysfunction</b></td></tr><tr><td><b>5HT3 antagonist</b></td><td>More noradrenaline, ACh, glutamate; <b>pro-cognitive</b>; less nausea and vomiting</td></tr><tr><td><b>5HT7 antagonist</b></td><td>Antidepressant, pro-cognitive; <b>less insomnia</b></td></tr><tr><td><b>5HT1B partial agonist</b></td><td>More serotonin, ACh and histamine release</td></tr><tr><td><b>5HT1D antagonist</b></td><td>More serotonin release; pro-cognitive</td></tr></table>`),
+C('#d17a00','#fffaf0','Onset of action','Delayed, with a week-2 claim',`<div class="stats"><div><em>2 to 4 wk</em>usual delay</div><div><em>Week 2</em>specific claim of onset</div></div><ul><li>No response in <b>3 to 4 weeks</b>: raise the dose, or it may not work</li><li>May keep working for <b>many years</b> to prevent relapse</li><li>Recognise <b>non-response early</b></li></ul>`),
+C('#c2477e','#fff5f9','If it works: duration','Continuation',`<ul><li>Goal: <b>complete remission</b> and prevention of relapse; not a cure</li><li>Continue until all symptoms are gone</li></ul><table><tr><th>Situation</th><th>Continue</th></tr><tr><td>First episode</td><td>At least <b>6 to 9 months</b> after remission</td></tr><tr><td>Relapse indicators</td><td>&gt;<b>12 months</b></td></tr><tr><td>&gt;5 episodes, or 2 recently</td><td>≥<b>2 years</b> or indefinitely</td></tr></table><div class="box">Anxiety disorders may also need <b>indefinite</b> treatment. Long-term treatment of MDD is generally needed.</div>`),
+C('#7a4bc2','#f8f4ff','If it doesn’t work','Partial response and non-response',`<div class="st"><b>Recognise early</b> (3 to 4 weeks); partial response often leaves <b>insomnia, fatigue, poor concentration</b></div><div class="ar">▼</div><div class="st"><b>Raise the dose</b>, switch, or <b>augment</b>; lithium if suicidal or high relapse risk; psychotherapy; ECT</div><div class="ar">▼</div><div class="st">Check <b>other diagnoses</b>, comorbidity, substance misuse</div><div class="ar">▼</div><div class="st"><b>Manic switch:</b> stop and start a mood stabiliser</div>`),
+C('#1f7a6d','#f2fbf8','Augmentation options','Experience is limited',`<div class="box big">Use caution with <b>CYP2D6 inhibitors</b> (bupropion, duloxetine, fluoxetine, paroxetine): they raise vortioxetine and may need a <b>dose cut</b>.</div><table><tr><th>Line</th><th>Agent</th></tr><tr><td><b>First</b></td><td>Quetiapine MR 300 mg or aripiprazole 2.5 to 10 mg</td></tr><tr><td><b>Second</b></td><td>Risperidone 0.5 to 2 mg; olanzapine 2.5 to 10 mg; <b>mirtazapine 30 to 45 mg</b>; T3 20 to 50 mcg (best with TCAs)</td></tr><tr><td>Less evidence</td><td>Bupropion ≤400, buspirone ≤60, lamotrigine ≤400 mg</td></tr><tr><td><b>Lithium</b></td><td>Level <b>0.6 to 1.0 mmol/L</b>; very effective in the elderly</td></tr></table>`),
+C('#b5472f','#fff7f3','How side effects arise','And the main ones',`<ul><li>Theoretically from <b>serotonin acting at receptors elsewhere</b> in brain and body (e.g. nausea, sexual dysfunction)</li><li>Mostly <b>immediate</b> and fade; many are dose- and time-dependent</li></ul><table><tr><th>Group</th><th>Effects</th></tr><tr><td><b>Notable</b></td><td><b>Nausea, vomiting, constipation</b>; <b>sexual dysfunction</b></td></tr><tr><td><b>Common</b></td><td>Abnormal dreams, dizziness, diarrhoea, skin reactions</td></tr><tr><td><b>Uncommon</b></td><td>Flushing, night sweats</td></tr><tr><td>Weight, sedation</td><td>Reported but <b>not expected</b></td></tr></table>`),
+C('#c2477e','#fff5f9','Rare and dangerous effects','Frequency not known and warnings',`<ul><li>Angioedema, <b>haemorrhage</b>, <b>hyponatraemia</b>, <b>neuroleptic malignant syndrome</b>, <b>serotonin syndrome</b></li><li>Rare <b>seizures</b>; rare <b>mania</b></li><li>Rare rise in <b>suicidal ideation</b> in adolescents and young adults (to age 25): <b>warn patients</b></li></ul><div class="box big">Activation or agitation may mean a <b>mixed bipolar state</b>: add lithium, a mood stabiliser or an atypical antipsychotic, and/or stop vortioxetine.</div>`),
+C('#2a6fb0','#f2f8ff','Managing side effects','Wait first, then target',`<div class="st"><b>Wait</b> (several weeks): many settle; try another antidepressant before add-ons</div><div class="ar">▼</div><table><tr><th>Problem</th><th>Option</th></tr><tr><td><b>Sexual dysfunction</b></td><td>Bupropion (women), sildenafil (men), or switch</td></tr><tr><td>Emotional flattening, apathy</td><td><b>Bupropion</b> (raises vortioxetine via 2D6)</td></tr><tr><td>Insomnia, agitation, GI upset</td><td><b>Mirtazapine</b>; trazodone or a hypnotic</td></tr><tr><td>Jitteriness, anxiety (start)</td><td>Benzodiazepine</td></tr></table>`),
+C('#1f7a6d','#f2fbf8','Dosing','5 to 20 mg per day',`<table><tr><th>Group</th><th>Schedule</th></tr><tr><td><b>Adults</b></td><td>Start <b>10 mg/day</b>; can go down to 5 mg or up to <b>20 mg</b>; max <b>20 mg/day</b></td></tr><tr><td><b>Elderly</b></td><td>Start <b>5 mg/day</b>; raise if needed up to 20 mg</td></tr></table><ul><li>With or without <b>food</b></li><li>Do <b>not divide, crush or dissolve</b> tablets</li><li>Higher doses are <b>more effective</b></li></ul><div class="box">Intolerable anxiety, insomnia, agitation, akathisia or activation on starting or stopping: think <b>bipolar activation</b>.</div>`),
+C('#d17a00','#fffaf0','Overdose, stopping and pharmacokinetics','Safe in overdose; long half-life',`<div class="stats"><div><em>~66 h</em>terminal half-life</div><div><em>~2 weeks</em>to steady state</div></div><ul><li><b>Overdose:</b> no fatalities; nausea, dizziness, diarrhoea, abdominal discomfort, itch, somnolence, flushing</li><li><b>Not habit forming</b>; long-term use often needed</li><li><b>Taper not necessary</b> at recommended doses; take some care after 15 to 20 mg</li><li>Metabolised by <b>CYP2D6</b>, 3A4/5, 2C19, 2C9, 2A6, 2C8, 2B6</li></ul>`),
+C('#b5472f','#fff7f3','Drug interactions','Serotonergic and CYP2D6',`<table><tr><th>Drug</th><th>Effect</th></tr><tr><td><b>MAOIs</b></td><td>Fatal <b>serotonin syndrome</b>: wait 14 to 21 days after MAOI; 14 days before starting an MAOI</td></tr><tr><td><b>Tramadol</b></td><td>Higher <b>seizure</b> risk</td></tr><tr><td><b>Strong CYP2D6 inhibitors</b></td><td><b>Raise</b> levels: lower the dose</td></tr><tr><td><b>CYP2D6 inducers</b></td><td><b>Lower</b> levels: may need a higher dose</td></tr><tr><td><b>Triptans</b></td><td>Weakness, hyperreflexia, incoordination (theoretical)</td></tr><tr><td><b>Warfarin, NSAIDs</b></td><td>More <b>bleeding</b></td></tr></table>`),
+C('#7a4bc2','#f8f4ff','Warnings and contraindications','Safety checks',`<div class="cols"><div><h3>Do not use</h3><ul><li>With an <b>MAOI</b></li><li>Proven <b>allergy</b></li></ul></div><div><h3>Caution</h3><ul><li><b>Seizure</b> history: stop if seizures rise</li><li><b>Bleeding disorders</b>; angle-closure glaucoma</li><li><b>Cirrhosis</b>: hyponatraemia</li><li><b>SIADH</b> with serotonergic drugs</li><li><b>Bipolar</b> unless on a mood stabiliser</li><li>Children: <b>document</b> risk-benefit</li></ul></div></div>`),
+C('#2a6fb0','#f2f8ff','Special populations','Organ function and age',`<div class="st"><b>Renal:</b> caution in <b>severe</b> impairment</div><div class="st"><b>Hepatic:</b> no adjustment for mild to moderate; caution in <b>severe</b></div><div class="st"><b>Cardiac:</b> not systematically evaluated; SSRI cardiac benefit not known for vortioxetine</div><div class="st"><b>Elderly:</b> more caution with doses <b>&gt;10 mg/day</b>; higher SIADH risk</div><div class="box">Children and adolescents: <b>not licensed</b>; safety and efficacy not established.</div>`),
+C('#c2477e','#fff5f9','Pregnancy','Weigh benefit against risk',`<ul><li>No controlled studies; <b>not generally recommended</b>, especially first trimester</li><li>Continuing treatment <b>may be necessary</b> and has not been proven harmful</li><li>Early exposure: small increase in <b>septal heart defects</b>; after week 20: possible <b>PPHN</b></li><li>Late exposure: gestational hypertension and pre-eclampsia; <b>postpartum haemorrhage</b> (small increase)</li><li>Neonate: respiratory distress, apnoea, seizures, feeding difficulty, jitteriness, irritability</li></ul>`),
+C('#1f7a6d','#f2fbf8','Breastfeeding','Unknown milk levels',`<ul><li>Not known whether vortioxetine is in milk; <b>assume psychotropics are</b></li><li>If the infant is <b>irritable or sedated</b>, stop breastfeeding or the drug</li><li>Postpartum is a <b>high-risk time</b> for depression: restart late in the third trimester or soon after birth</li><li>Other antidepressants may be preferable: <b>paroxetine, sertraline, imipramine, nortriptyline</b></li></ul>`),
+C('#1b6f8f','#f2f8fb','Advantages and disadvantages','Where vortioxetine fits',`<div class="cols"><div><h3>Advantages</h3><ul><li><b>Lower sexual dysfunction</b> than SSRIs</li><li><b>Cognitive</b> symptoms of depression</li><li>Elderly patients</li><li>Non-response to other antidepressants</li><li>Wanting to avoid <b>weight gain</b></li></ul></div><div><h3>Disadvantages</h3><ul><li><b>Cost</b></li><li>Nausea is common</li></ul></div></div>`),
+C('#d17a00','#fffaf0','Pearls: use in practice','Who benefits',`<ul><li>Recommended for major depressive episodes with <b>inadequate response to at least 2 antidepressants</b></li><li>Consider after <b>SSRI sexual dysfunction</b></li><li>Pro-cognitive effects greater than a comparator antidepressant in several studies</li><li>Effective in <b>elderly</b> depression, improving cognition and mood</li><li>Unique claim of <b>preventing recurrence</b></li></ul>`),
+C('#c2477e','#fff5f9','Pearls: pharmacology','Key points',`<ul><li><b>No weight gain</b> in trials; <b>higher doses work better</b></li><li>Despite 5HT3 antagonism, <b>nausea is common</b>, probably via 5HT1A agonism</li><li>Long half-life: can <b>usually be stopped abruptly</b> (some caution after 15 to 20 mg)</li><li>Non-response in the elderly: consider <b>mild cognitive impairment or Alzheimer’s</b></li></ul>`),
+C('#b5472f','#fff7f3','Clinical decision flow','Grand-rounds checklist',`<div class="st"><b>1.</b> Depression, GAD or <b>cognitive complaints</b>; SSRI sexual dysfunction or weight worry? Rule out <b>bipolar</b></div><div class="ar">▼</div><div class="st"><b>2.</b> Check <b>MAOIs, CYP2D6 drugs, bleeding risk, sodium</b> in the elderly</div><div class="ar">▼</div><div class="st"><b>3.</b> Start <b>10 mg</b> (5 mg elderly); aim 10 to 20 mg</div><div class="ar">▼</div><div class="st"><b>4.</b> Reassess at <b>2 to 4 weeks</b>; raise dose before switching</div><div class="ar">▼</div><div class="st"><b>5.</b> Continue ≥<b>6 to 9 months</b> after remission</div>`),
+C('#1b6f8f','#f2f8fb','Key takeaways','Remember these',`<ul><li><b>Multimodal</b>: SERT block plus 5HT receptor actions</li><li>Good for <b>cognitive symptoms</b>, the elderly, and SSRI sexual side effects</li><li>Dose <b>5 to 20 mg</b>; start 10 mg (5 mg elderly)</li><li>Nausea common; <b>no weight gain</b>; half-life ~<b>66 h</b></li><li>Avoid <b>MAOIs</b>; lower the dose with <b>CYP2D6 inhibitors</b></li><li>Watch bleeding, hyponatraemia and bipolar activation</li></ul>`)
+];
+const g=document.getElementById('g'),N=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${N}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return;let f=36;i.style.fontSize=f+'px';
+while(f>16&&(i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1)){f--;i.style.fontSize=f+'px'}}
+const fitAll=()=>g.querySelectorAll('.c').forEach(fit);
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+</script>
+<script>
+(function(){
+  const SCALE=2;   // 2 = 2160x2160 px; use 1 for exactly 1080x1080
+  const GAP=450;   // max ms between the two taps
+  const SOURCES=['https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js','https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js'];
+
+  const css=document.createElement('style');
+  css.id='shot-css';
+  css.textContent='.cw{touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}#shot-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d2230;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px system-ui,sans-serif;z-index:99999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#shot-toast.on{opacity:1}';
+  document.head.appendChild(css);
+  const toast=document.createElement('div');toast.id='shot-toast';document.body.appendChild(toast);
+  let tt;function say(m,ms){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)}
+
+  const toBlob=c=>new Promise((res,rej)=>{try{c.toBlob(b=>b?res(b):rej(new Error('canvas is empty')),'image/png')}catch(e){rej(e)}});
+
+  /* Method 1 (default): the browser itself draws the card (SVG foreignObject).
+     Exactly what you see on screen: no re-implementation of CSS, no missing text. */
+  async function viaSvg(card){
+    const wrap=document.createElement('div');
+    wrap.setAttribute('style','position:relative;box-sizing:border-box;width:1080px;height:1080px;overflow:hidden;margin:0;padding:0;background:#fff');
+    document.querySelectorAll('style').forEach(s=>{if(s.id!=='shot-css')wrap.appendChild(s.cloneNode(true))});
+    const clone=card.cloneNode(true);
+    clone.removeAttribute('data-shot');
+    clone.style.transform='none';clone.style.left='0';clone.style.top='0';
+    wrap.appendChild(clone);
+    const xml=new XMLSerializer().serializeToString(wrap);
+    const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080"><foreignObject x="0" y="0" width="1080" height="1080">'+xml+'</foreignObject></svg>';
+    const img=new Image();
+    await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('svg render failed'));img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+    const canvas=document.createElement('canvas');canvas.width=1080*SCALE;canvas.height=1080*SCALE;
+    const ctx=canvas.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    return canvas;
+  }
+
+  /* Method 2 (fallback, e.g. some Safari versions): html2canvas */
+  function addScript(src){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>{s.remove();rej(new Error('blocked: '+src))};document.head.appendChild(s)})}
+  let lib;function load(){if(window.html2canvas)return Promise.resolve();if(lib)return lib;
+    lib=(async()=>{for(const src of SOURCES){try{await addScript(src);if(window.html2canvas)return}catch(e){}}lib=null;throw new Error('Could not load the fallback library (offline?). Open the downloaded HTML file in Chrome, Edge or Firefox.')})();return lib}
+  async function viaH2C(card){
+    await load();
+    card.setAttribute('data-shot','1');
+    try{
+      return await html2canvas(card,{scale:SCALE,width:1080,height:1080,windowWidth:1300,windowHeight:1300,scrollX:0,scrollY:0,backgroundColor:null,logging:false,useCORS:true,
+        onclone:function(doc){const c=doc.querySelector('.c[data-shot="1"]');if(!c)return;
+          const w=c.parentElement;w.style.cssText='position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:visible;border:0;border-radius:0;margin:0;padding:0;transform:none;aspect-ratio:auto';
+          c.style.transform='none';c.style.left='0';c.style.top='0'}});
+    }finally{card.removeAttribute('data-shot')}
+  }
+
+  let busy=false;
+  async function shoot(card){
+    if(busy)return;busy=true;say('Creating image...',8000);
+    try{
+      if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+      let blob;
+      try{blob=await toBlob(await viaSvg(card))}
+      catch(e1){console.warn('SVG export failed, using fallback:',e1);blob=await toBlob(await viaH2C(card))}
+      const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+      const name=((card.querySelector('h2')||{}).textContent||'card').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='card-'+String(idx).padStart(2,'0')+'-'+name+'.png';
+      document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+a.download);
+    }catch(err){console.error('Card export failed:',err);say('Could not save: '+(err&&err.message?err.message:err),6000)}
+    finally{busy=false}
+  }
+
+  let last={el:null,t:0,x:0,y:0};
+  document.addEventListener('pointerup',function(e){
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    const card=e.target.closest&&e.target.closest('.c');
+    if(!card){last.el=null;return}
+    const now=Date.now();
+    if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card)}
+    else{last={el:card,t:now,x:e.clientX,y:e.clientY}}
+  });
+})();
+</script>
+</body></html>
