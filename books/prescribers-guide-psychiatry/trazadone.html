@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trazodone: Square Clinical Cards</title>
+<style>
+:root{box-sizing:border-box;--bg:#f3f1ec;--ink:#1d2230;--mut:#5b6275;--pill:#fff;--bd:#d9d5ca;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}}
+:root[data-theme="dark"]{--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.4}
+header{max-width:1100px;margin:0 auto;padding:20px 16px 8px}
+header h1{font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;margin:0 0 4px}
+header p{margin:0 0 12px;color:var(--mut);font-size:.9rem}
+.bar{display:flex;flex-wrap:wrap;gap:8px}
+.bar button{font:inherit;font-size:.85rem;padding:8px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--pill);color:var(--ink);cursor:pointer}
+.bar button.on{background:#2f5bd8;border-color:#2f5bd8;color:#fff}
+.bar button:focus-visible{outline:3px solid #f0a020;outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 40px}
+.hint{color:var(--mut);font-size:.85rem;padding:4px 0 12px;margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:20px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.1)}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 64px;display:flex;flex-direction:column;background:var(--b,#fffdf7);color:#1d2230;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;font-size:34px;line-height:1.3;text-align:left}
+.c h2{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:1.08;margin:0 0 10px;color:var(--a);font-weight:700;flex:none}
+.c .sub{font-size:29px;line-height:1.25;color:#4d5568;margin:0 0 16px;flex:none}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5em;overflow:hidden;padding-bottom:12px;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:24px;font-size:24px;color:#778}
+.in ul{padding-left:1.2em}.in li{margin:.2em 0}
+.c b{background:#ffe38a;padding:0 .15em;border-radius:.2em;font-weight:700}
+.box{border-left:.22em solid var(--a);background:rgba(0,0,0,.06);padding:.4em .7em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.5em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.stats div{background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.35em .5em;text-align:center;font-size:.85em;line-height:1.2}
+.stats em{display:block;font-style:normal;font-family:Georgia,serif;font-size:1.9em;font-weight:700;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.92em;background:#fff;border-radius:.5em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.3em .55em}
+td{padding:.3em .55em;border-top:.06em solid #e3e0d6;vertical-align:top}
+.fl{display:flex;align-items:stretch;gap:.4em}.fl.v{flex-direction:column}
+.st{flex:1;background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.4em .6em;text-align:center;font-size:.9em;line-height:1.25}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.3em;line-height:1;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.1em .8em;font-size:.8em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.cols>div{background:#fff;border-radius:.6em;padding:.5em .7em;border-top:.25em solid var(--a)}
+.cols h3{margin:0 0 .2em;font-size:1em;color:var(--a)}
+.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:104px}.cover .sub{color:#e8ecff;font-size:38px}
+.cover .in{justify-content:center}
+.sec{display:none}.sec.on{display:block}
+@media (prefers-reduced-motion:reduce){</style></head><body>
+<header><h1>Trazodone: square clinical cards</h1>
+<p>Antiepileptic drug monograph summary for clinical decisions and grand rounds. Every card is a 1:1 square. Double-tap or double-click any card to save it as a PNG. Educational summary of the source text: verify doses against current prescribing information.</p>
+</header>
+<main>
+<section id="notes"><p class="hint">Double-tap or double-click any card to save it as an image.</p><div class="grid" id="g"></div></section>
+</main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const cards=[
+C('#2f6f9f','#2f6f9f','Trazodone','SARI antidepressant and hypnotic: pharmacology, safety, dosing and clinical role',`<div><span class="pill">5HT2A antagonist</span><span class="pill">Sedating</span><span class="pill">Insomnia and depression</span><span class="pill">Priapism risk</span><span class="pill">CYP3A4 substrate</span></div><div style="font-size:.7em;margin-top:.6em;opacity:.9">Source: Prescriber’s Guide</div>`,'cover'),
+C('#1f7a6d','#f2fbf8','Drug snapshot','Identity and class',`<table><tr><th>Item</th><th>Detail</th></tr><tr><td>Brand</td><td><b>Trazanil, Tripax</b></td></tr><tr><td>Generic</td><td><b>Yes</b></td></tr><tr><td>Class</td><td><b>SARI</b> (serotonin 2 antagonist / reuptake inhibitor); antidepressant; <b>hypnotic</b></td></tr><tr><td>Neuroscience-based nomenclature</td><td>Domain: <b>serotonin</b>; mode of action: <b>multimodal</b></td></tr><tr><td>Forms</td><td>Tablets 50, 100, 150 mg; capsules 50, 100 mg; solution 50 mg/5 mL, 100 mg/5 mL</td></tr></table>`),
+C('#b5472f','#fff7f3','Indications','Commonly prescribed for',`<ul><li><b>Depressive illness</b>, particularly where <b>sedation</b> is needed (BNF indication)</li><li><b>Anxiety</b></li><li>Insomnia (off-label hypnotic use) and insomnia in other psychiatric disorders</li><li>Augmenting agent in <b>depression</b></li></ul><div class="box">Target symptoms: <b>depression, anxiety, sleep disturbance</b>.</div>`),
+C('#2a6fb0','#f2f8ff','How trazodone works','Multimodal serotonin action',`<div class="st"><b>Potent 5HT2A antagonist</b></div><div class="ar">+</div><div class="st"><b>Weaker</b> serotonin transporter (SERT) blockade</div><div class="ar">+</div><div class="st"><b>5HT1A agonist</b></div><div class="box">Sedation reflects <b>antihistamine</b> action; dizziness and hypotension reflect <b>alpha-1 blockade</b>.</div>`),
+C('#d17a00','#fffaf0','Onset of action','Insomnia is immediate; depression is not',`<table><tr><th>Target</th><th>Onset</th></tr><tr><td><b>Insomnia</b></td><td><b>Immediate</b> if dosed correctly</td></tr><tr><td><b>Depression</b></td><td>Delayed <b>2 to 4 weeks</b> (monotherapy or adjunct)</td></tr><tr><td><b>Generalised anxiety</b></td><td>May keep improving after <b>8 weeks</b>, up to <b>6 months</b></td></tr></table><div class="box">No response in <b>3 to 4 weeks</b> in depression: raise the dose, or it may not work. May continue to work for <b>years</b> to prevent relapse.</div>`),
+C('#c2477e','#fff5f9','If it works: how long to continue','Duration of treatment',`<ul><li><b>Insomnia:</b> use may be indefinite; no reliable evidence of tolerance, dependence or withdrawal (few long-term studies)</li><li><b>Secondary insomnia:</b> stop if the underlying condition remits and insomnia does not return</li><li><b>Depression goal:</b> complete remission and relapse prevention</li></ul><table><tr><th>Situation</th><th>Continue</th></tr><tr><td>First episode</td><td>At least <b>6 to 9 months</b> after remission</td></tr><tr><td>Relapse indicators</td><td>&gt;<b>12 months</b></td></tr><tr><td>&gt;5 episodes, or 2 recently</td><td>≥<b>2 years</b> or indefinitely</td></tr></table>`),
+C('#7a4bc2','#f8f4ff','If it doesn’t work','Escalation',`<div class="st"><b>Recognise non-response early</b> (3 to 4 weeks); many have partial response (insomnia, fatigue, poor concentration)</div><div class="ar">▼</div><div class="st"><b>Increase dose</b>, switch agent, or <b>augment</b>; consider psychotherapy and ECT</div><div class="ar">▼</div><div class="st"><b>Lithium</b> for suicidal or high-relapse-risk patients</div><div class="ar">▼</div><div class="st">Re-evaluate: <b>another diagnosis</b>, comorbidity, substance misuse; <b>manic switch</b> needs stopping and a mood stabiliser</div>`),
+C('#1f7a6d','#f2fbf8','Augmenting strategies in depression','Partial response or resistance',`<table><tr><th>Line</th><th>Agent and dose</th></tr><tr><td><b>First-line</b></td><td>Atypical antipsychotic: <b>quetiapine MR 300 mg/day</b> or <b>aripiprazole 2.5 to 10 mg/day</b></td></tr><tr><td><b>Second-line</b></td><td>Risperidone 0.5 to 2 mg; olanzapine 2.5 to 10 mg; <b>T3 20 to 50 mcg</b> (best with TCAs)</td></tr><tr><td>Less evidence</td><td>Bupropion ≤400 mg; buspirone ≤60 mg; lamotrigine ≤400 mg</td></tr><tr><td><b>Lithium</b></td><td>Level <b>0.6 to 1.0 mmol/L</b>; useful in the elderly and suicidal patients</td></tr><tr><td>Specialist</td><td>Modafinil, stimulants, oestrogens, testosterone; omega-3, SAM-e, L-methylfolate</td></tr></table>`),
+C('#2a6fb0','#f2f8ff','Trazodone as the augmenter','Its most frequent role',`<ul><li>Most often used in depression as an <b>add-on</b> to other psychotropics</li><li>Improves <b>insomnia</b> in depressed patients on antidepressants, and can <b>boost</b> their effect</li><li>Helps insomnia in <b>bipolar disorder, schizophrenia, alcohol withdrawal</b>; added to lithium, mood stabilisers, antipsychotics</li><li>Can be combined with <b>benzodiazepine hypnotics</b> in difficult cases</li></ul><div class="box">Antidepressant combinations: caution, they may <b>activate bipolar disorder and suicidal ideation</b>.</div><div class="box big">Residual symptoms after response: <b>cognition, energy, sleep</b>.</div>`),
+C('#b5472f','#fff7f3','Side effects: notable','Mostly immediate, often settle',`<div class="box"><b>Tests:</b> none needed for healthy individuals.</div><ul><li><b>Sedation, dizziness</b>, fatigue, headache, incoordination, tremor</li><li>Nausea, vomiting, <b>oedema</b>, blurred vision, constipation, dry mouth</li><li><b>Hypotension, syncope</b>; occasional <b>sinus bradycardia</b> (long term)</li><li>Weight gain: reported but <b>not expected</b></li></ul><div class="box big">Sedation can be <b>significant</b>; many patients experience it.</div>`),
+C('#c2477e','#fff5f9','Side effects: frequency not known','By system',`<table><tr><th>System</th><th>Effects</th></tr><tr><td><b>Blood</b></td><td>Agranulocytosis, anaemia, eosinophilia, leucopenia, thrombocytopenia</td></tr><tr><td><b>CNS</b></td><td>Aggression, confusion, delirium, delusions, hallucination, <b>mania</b>, memory loss, seizure, <b>suicidal behaviour</b></td></tr><tr><td><b>CVS</b></td><td>Arrhythmia, hypertension, palpitations, <b>QT prolongation</b></td></tr><tr><td><b>GI</b></td><td>Taste change, hepatic disorder, <b>jaundice (stop)</b>, paralytic ileus</td></tr><tr><td><b>Other</b></td><td><b>Priapism (stop)</b>, hyponatraemia, SIADH, <b>serotonin syndrome</b>, NMS, skin reactions, decreased libido</td></tr></table>`),
+C('#b5472f','#fff7f3','Dangerous side effects','Warn patients',`<div class="box big"><b>Priapism</b>: painful erection lasting <b>over 1 hour</b> needs urgent medical attention.</div><ul><li><b>Seizures</b></li><li>Rare <b>rash</b></li><li>Rare <b>induction of mania</b></li><li>Rare rise in <b>suicidal ideation</b> in adolescents and young adults (to age 25)</li></ul>`),
+C('#7a4bc2','#f8f4ff','Managing side effects','A practical sequence',`<div class="st"><b>Wait</b>: most settle with time</div><div class="ar">▼</div><div class="st"><b>Titrate slowly</b> to the minimum effective dose (every 2 to 3 days); lower start in the elderly</div><div class="ar">▼</div><div class="st"><b>Larger dose at night</b> to prevent daytime sedation; reduce and re-titrate if needed</div><div class="ar">▼</div><div class="st">Persistent or severe: <b>switch</b> antidepressant or use non-drug measures</div>`),
+C('#1f7a6d','#f2fbf8','Dosing','Usual range 150 to 600 mg/day',`<table><tr><th>Use</th><th>Schedule</th></tr><tr><td><b>Depression, adults</b></td><td>Start <b>150 mg/day</b> in divided doses after food or at bedtime; +<b>50 mg/day</b> every 3 to 4 days; max <b>400 mg</b> outpatient, <b>600 mg</b> inpatient (2 doses)</td></tr><tr><td><b>Depression, elderly</b></td><td>Start <b>100 mg/day</b>; up to 300 mg outpatient, 600 mg inpatient</td></tr><tr><td><b>Anxiety</b></td><td><b>75 mg/day</b>, up to <b>300 mg/day</b></td></tr></table>`),
+C('#d17a00','#fffaf0','Dosing tips','Start low, go slow, but do not under-dose',`<ul><li>Aggressive dosing causes <b>carry-over sedation</b>, ataxia, an “intoxicated” feeling</li><li>Do <b>not</b> abandon trials at low doses (&lt;50 mg): difficult cases may respond to <b>150 to 300 mg</b>, even <b>600 mg</b></li><li>Daytime anxiety: part of the dose by day if not too sedating</li><li>Monotherapy in depression: <b>divided doses</b> (short half-life)</li><li>As an adjunct: <b>once daily at bedtime</b> is often effective and best tolerated</li></ul>`),
+C('#c2477e','#fff5f9','Overdose, long-term use and stopping','Relatively safe',`<div class="cols"><div><h3>Overdose</h3><ul><li><b>Rarely lethal</b></li><li>Sedation, vomiting, <b>priapism</b>, respiratory arrest, seizure, <b>ECG changes</b></li></ul></div><div><h3>Long term and stopping</h3><ul><li>Long-term use: <b>safe</b>; not habit forming</li><li><b>Taper</b> is prudent</li><li>Dependence and withdrawal not reliably shown</li></ul></div></div><div class="box"><b>PK:</b> metabolised by <b>CYP3A4</b>; biphasic elimination, terminal half-life <b>5 to 13 h</b>.</div>`),
+C('#2a6fb0','#f2f8ff','Drug interactions','Mostly CYP3A4 and additive effects',`<table><tr><th>Drug</th><th>Effect</th></tr><tr><td><b>MAOIs</b> (and 14 days after)</td><td>Generally <b>avoid</b></td></tr><tr><td><b>Tramadol</b></td><td>Higher <b>seizure</b> risk</td></tr><tr><td><b>Fluoxetine, other SSRIs</b></td><td>May <b>raise trazodone</b> levels</td></tr><tr><td><b>Antihypertensives, clonidine</b></td><td>Trazodone may <b>block</b> the effect</td></tr><tr><td><b>Digoxin, phenytoin</b></td><td>Levels may <b>rise</b></td></tr><tr><td><b>Warfarin</b></td><td>Prothrombin time may <b>rise or fall</b></td></tr><tr><td>Other <b>CNS depressants</b></td><td>Additive</td></tr></table><div class="box">Activation or agitation may signal a <b>mixed bipolar state</b>: add lithium, a mood stabiliser or antipsychotic, or stop.</div>`),
+C('#b5472f','#fff7f3','Priapism','Know it, warn about it',`<div class="stats"><div><em>1 in 8000</em>men affected</div><div><em>&gt;1 hour</em>painful erection: seek care</div></div><ul><li><b>Early sign:</b> slow detumescence on waking from REM sleep</li><li><b>Stop trazodone</b> if erection is prolonged: risk of permanent erectile dysfunction</li><li>Usually reverses spontaneously with monitoring; urgent cases: <b>phenylephrine injection</b> or surgery</li><li><b>Boys</b> may be more sensitive than men</li></ul>`),
+C('#7a4bc2','#f8f4ff','Warnings and contraindications','Safety checks',`<div class="cols"><div><h3>Do not use</h3><ul><li>During a <b>manic phase</b></li><li>Recovery from <b>acute myocardial infarction</b></li><li>With an <b>MAOI</b></li><li>Proven <b>allergy</b></li></ul></div><div><h3>Caution</h3><ul><li><b>Seizure</b> history</li><li><b>Arrhythmia</b>, cardiovascular disease, hyperthyroidism</li><li>Constipation, glaucoma, prostate, urinary retention</li><li><b>Bipolar</b> (needs a mood stabiliser), psychosis, suicide risk</li></ul></div></div>`),
+C('#2a6fb0','#f2f8ff','Special populations','Renal, hepatic, cardiac, elderly',`<div class="st"><b>Renal:</b> caution; <b>start low</b> in severe impairment</div><div class="st"><b>Hepatic:</b> caution, esp. severe (more side effects)</div><div class="st"><b>Cardiac:</b> may be <b>arrhythmogenic</b>; avoid after MI</div><div class="st"><b>Elderly:</b> more sensitive, <b>lower doses</b>; antidepressants cut suicidality vs placebo at 65+</div>`),
+C('#1f7a6d','#f2fbf8','Children and adolescents','Unlicensed',`<ul><li><b>Not licensed</b>; safety and efficacy not established</li><li>Used for <b>behavioural disturbance, depression, night terrors</b></li><li>Lower start, <b>slow titration</b>; boys are more at risk of <b>priapism</b></li><li>Weigh treatment against no treatment and <b>document</b> it</li></ul><div class="box">Review <b>face to face</b> often in the first weeks. Watch for <b>activation, bipolar emergence and suicidal ideation</b>; inform parents.</div>`),
+C('#c2477e','#fff5f9','Pregnancy and breastfeeding','Weigh benefit against risk',`<div class="cols"><div><h3>Pregnancy</h3><ul><li>No controlled studies</li><li>Limited data: no clear rise in <b>malformation</b>, preterm birth, low birth weight</li><li>Poor neonatal adaptation or withdrawal reported with antidepressants</li><li>Untreated depression has risks: often <b>continue</b></li></ul></div><div><h3>Breastfeeding</h3><ul><li><b>Small amounts</b> in milk</li><li>If the infant is irritable or sedated, stop one of them</li><li>Postpartum is high risk: restart late in the third trimester or soon after birth</li><li>Imipramine or nortriptyline may be preferable</li></ul></div></div>`),
+C('#2f6f9f','#f2f7fb','Advantages and disadvantages','Where trazodone fits',`<div class="cols"><div><h3>Advantages</h3><ul><li>Insomnia, avoiding <b>dependence-forming</b> drugs</li><li>Adjunct for residual <b>anxiety and insomnia</b></li><li>Depression with anxiety</li><li>Concern about <b>sexual effects or weight gain</b></li></ul></div><div><h3>Disadvantages</h3><ul><li>Fatigue, <b>hypersomnia</b></li><li>Intolerance of <b>sedation</b></li></ul></div></div>`),
+C('#d17a00','#fffaf0','Clinical pearls','From the art of psychopharmacology',`<ul><li>Less likely than some antidepressants to cause <b>hypomania or mania</b></li><li>Few <b>sexual</b> side effects</li><li>Poorly tolerated as monotherapy in moderate to severe depression (&gt;150 mg), but <b>try up to 600 mg</b> if low doses tolerated and ineffective</li><li>May help <b>drug-induced dyskinesias</b> and <b>agitation in dementia</b></li><li>Experts may use it for <b>insomnia with MAOIs</b>, with close monitoring</li><li>Rarely: visual <b>trails</b> or after-images</li><li>Remember insomnia may be <b>secondary</b>: look for a primary disorder</li></ul>`),
+C('#b5472f','#fff7f3','Clinical decision flow','Grand-rounds checklist',`<div class="st"><b>1.</b> Depression with sedation need, anxiety, or <b>insomnia</b>? Exclude <b>mania</b> and recent MI</div><div class="ar">▼</div><div class="st"><b>2.</b> Review <b>MAOIs, CYP3A4/serotonergic drugs, warfarin, digoxin</b>; ask about <b>priapism</b> history</div><div class="ar">▼</div><div class="st"><b>3.</b> Start low (e.g. <b>150 mg/day</b>, or 25 to 50 mg for sleep); titrate every 3 to 4 days; larger dose at night</div><div class="ar">▼</div><div class="st"><b>4.</b> Reassess at <b>3 to 4 weeks</b>; increase dose before abandoning</div><div class="ar">▼</div><div class="st"><b>5.</b> Continue 6 to 9 months after remission; <b>taper</b> to stop</div>`),
+C('#2f6f9f','#f2f7fb','Key takeaways','Remember these',`<ul><li><b>5HT2A antagonist</b> with weak SERT block; sedating</li><li>Insomnia: <b>immediate</b>; depression: <b>2 to 4 weeks</b></li><li>Range <b>150 to 600 mg/day</b>; do not under-dose</li><li><b>Priapism</b>: urgent if &gt;1 hour</li><li>Often used as an <b>augmenter</b> or hypnotic add-on</li><li>Avoid with <b>MAOIs</b>; caution in cardiac disease and bipolar</li></ul>`)
+];
+const g=document.getElementById('g'),N=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${N}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return;let f=36;i.style.fontSize=f+'px';
+while(f>16&&(i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1)){f--;i.style.fontSize=f+'px'}}
+const fitAll=()=>g.querySelectorAll('.c').forEach(fit);
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+</script>
+<script>
+(function(){
+  const SCALE=2;   // 2 = 2160x2160 px; use 1 for exactly 1080x1080
+  const GAP=450;   // max ms between the two taps
+  const SOURCES=['https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js','https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js'];
+
+  const css=document.createElement('style');
+  css.id='shot-css';
+  css.textContent='.cw{touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}#shot-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d2230;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px system-ui,sans-serif;z-index:99999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#shot-toast.on{opacity:1}';
+  document.head.appendChild(css);
+  const toast=document.createElement('div');toast.id='shot-toast';document.body.appendChild(toast);
+  let tt;function say(m,ms){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)}
+
+  const toBlob=c=>new Promise((res,rej)=>{try{c.toBlob(b=>b?res(b):rej(new Error('canvas is empty')),'image/png')}catch(e){rej(e)}});
+
+  /* Method 1 (default): the browser itself draws the card (SVG foreignObject).
+     Exactly what you see on screen: no re-implementation of CSS, no missing text. */
+  async function viaSvg(card){
+    const wrap=document.createElement('div');
+    wrap.setAttribute('style','position:relative;box-sizing:border-box;width:1080px;height:1080px;overflow:hidden;margin:0;padding:0;background:#fff');
+    document.querySelectorAll('style').forEach(s=>{if(s.id!=='shot-css')wrap.appendChild(s.cloneNode(true))});
+    const clone=card.cloneNode(true);
+    clone.removeAttribute('data-shot');
+    clone.style.transform='none';clone.style.left='0';clone.style.top='0';
+    wrap.appendChild(clone);
+    const xml=new XMLSerializer().serializeToString(wrap);
+    const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080"><foreignObject x="0" y="0" width="1080" height="1080">'+xml+'</foreignObject></svg>';
+    const img=new Image();
+    await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('svg render failed'));img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+    const canvas=document.createElement('canvas');canvas.width=1080*SCALE;canvas.height=1080*SCALE;
+    const ctx=canvas.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    return canvas;
+  }
+
+  /* Method 2 (fallback, e.g. some Safari versions): html2canvas */
+  function addScript(src){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>{s.remove();rej(new Error('blocked: '+src))};document.head.appendChild(s)})}
+  let lib;function load(){if(window.html2canvas)return Promise.resolve();if(lib)return lib;
+    lib=(async()=>{for(const src of SOURCES){try{await addScript(src);if(window.html2canvas)return}catch(e){}}lib=null;throw new Error('Could not load the fallback library (offline?). Open the downloaded HTML file in Chrome, Edge or Firefox.')})();return lib}
+  async function viaH2C(card){
+    await load();
+    card.setAttribute('data-shot','1');
+    try{
+      return await html2canvas(card,{scale:SCALE,width:1080,height:1080,windowWidth:1300,windowHeight:1300,scrollX:0,scrollY:0,backgroundColor:null,logging:false,useCORS:true,
+        onclone:function(doc){const c=doc.querySelector('.c[data-shot="1"]');if(!c)return;
+          const w=c.parentElement;w.style.cssText='position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:visible;border:0;border-radius:0;margin:0;padding:0;transform:none;aspect-ratio:auto';
+          c.style.transform='none';c.style.left='0';c.style.top='0'}});
+    }finally{card.removeAttribute('data-shot')}
+  }
+
+  let busy=false;
+  async function shoot(card){
+    if(busy)return;busy=true;say('Creating image...',8000);
+    try{
+      if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+      let blob;
+      try{blob=await toBlob(await viaSvg(card))}
+      catch(e1){console.warn('SVG export failed, using fallback:',e1);blob=await toBlob(await viaH2C(card))}
+      const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+      const name=((card.querySelector('h2')||{}).textContent||'card').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='card-'+String(idx).padStart(2,'0')+'-'+name+'.png';
+      document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+a.download);
+    }catch(err){console.error('Card export failed:',err);say('Could not save: '+(err&&err.message?err.message:err),6000)}
+    finally{busy=false}
+  }
+
+  let last={el:null,t:0,x:0,y:0};
+  document.addEventListener('pointerup',function(e){
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    const card=e.target.closest&&e.target.closest('.c');
+    if(!card){last.el=null;return}
+    const now=Date.now();
+    if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card)}
+    else{last={el:card,t:now,x:e.clientX,y:e.clientY}}
+  });
+})();
+</script>
+</body></html>
