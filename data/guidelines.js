@@ -28,6 +28,59 @@
 const GUIDELINES = [
 
   {
+    title: "Vortioxetine: Square Clinical Cards",
+    shortTitle: "Vortioxetine Clinical Cards",
+    authors: "The Prescriber's Guide: Psychiatry",
+    year: "2026",
+    journal: "The Prescriber's Guide: Psychiatry / Clinical Cards",
+    category: "Books / Prescriber's Guide: Psychiatry / Antidepressants",
+    description: "Interactive clinical cards covering vortioxetine indications, multimodal pharmacology, dosing, adverse effects, interactions and practical prescribing decisions.",
+    tags: ["Vortioxetine", "Antidepressant", "Major Depression", "Clinical Cards"],
+    keywords: [
+      "vortioxetine", "brintellix", "multimodal antidepressant", "major depressive disorder",
+      "major depression", "cognitive symptoms depression", "SSRI sexual dysfunction",
+      "serotonin transporter", "SERT", "5HT3 antagonist", "CYP2D6", "vortioxetine dosing"
+    ],
+    url: "books/prescribers-guide-psychiatry/vortioxetine.html",
+    readTime: "15 min read"
+  },
+
+  {
+    title: "Trazodone: Square Clinical Cards",
+    shortTitle: "Trazodone Clinical Cards",
+    authors: "The Prescriber's Guide: Psychiatry",
+    year: "2026",
+    journal: "The Prescriber's Guide: Psychiatry / Clinical Cards",
+    category: "Books / Prescriber's Guide: Psychiatry / Antidepressants",
+    description: "Interactive clinical cards covering trazodone indications, SARI pharmacology, dosing, adverse effects, interactions and practical prescribing decisions.",
+    tags: ["Trazodone", "Antidepressant", "Insomnia", "Clinical Cards"],
+    keywords: [
+      "trazodone", "trazadone", "SARI", "serotonin antagonist reuptake inhibitor",
+      "antidepressant", "insomnia", "hypnotic", "priapism", "CYP3A4", "trazodone dosing"
+    ],
+    url: "books/prescribers-guide-psychiatry/trazadone.html",
+    readTime: "15 min read"
+  },
+
+  {
+    title: "Quetiapine: Square Clinical Cards",
+    shortTitle: "Quetiapine Clinical Cards",
+    authors: "The Prescriber's Guide: Psychiatry",
+    year: "2026",
+    journal: "The Prescriber's Guide: Psychiatry / Clinical Cards",
+    category: "Books / Prescriber's Guide: Psychiatry / Antipsychotics",
+    description: "Interactive clinical cards covering quetiapine indications, dose-dependent pharmacology, dosing, metabolic monitoring, adverse effects and practical prescribing decisions.",
+    tags: ["Quetiapine", "Antipsychotic", "Bipolar Disorder", "Clinical Cards"],
+    keywords: [
+      "quetiapine", "seroquel", "atypical antipsychotic", "second generation antipsychotic",
+      "schizophrenia", "bipolar disorder", "bipolar depression", "mania", "metabolic monitoring",
+      "weight gain", "CYP3A4", "quetiapine dosing"
+    ],
+    url: "books/prescribers-guide-psychiatry/quetiapine.html",
+    readTime: "15 min read"
+  },
+
+  {
     title: "Pregabalin: Square Clinical Cards",
     shortTitle: "Pregabalin Clinical Cards",
     authors: "Epilepsy Prescriber’s Guide",
