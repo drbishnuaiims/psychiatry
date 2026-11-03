@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Delirium: Square Clinical Cards</title>
+<style>
+:root{box-sizing:border-box;--bg:#f3f1ec;--ink:#1d2230;--mut:#5b6275;--pill:#fff;--bd:#d9d5ca;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}}
+:root[data-theme="dark"]{--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.4}
+header{max-width:1100px;margin:0 auto;padding:20px 16px 8px}
+header h1{font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;margin:0 0 4px}
+header p{margin:0 0 12px;color:var(--mut);font-size:.9rem}
+.bar{display:flex;flex-wrap:wrap;gap:8px}
+.bar button{font:inherit;font-size:.85rem;padding:8px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--pill);color:var(--ink);cursor:pointer}
+.bar button.on{background:#2f5bd8;border-color:#2f5bd8;color:#fff}
+.bar button:focus-visible{outline:3px solid #f0a020;outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 40px}
+.hint{color:var(--mut);font-size:.85rem;padding:4px 0 12px;margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:20px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.1)}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 64px;display:flex;flex-direction:column;background:var(--b,#fffdf7);color:#1d2230;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;font-size:34px;line-height:1.3;text-align:left}
+.c h2{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:1.08;margin:0 0 10px;color:var(--a);font-weight:700;flex:none}
+.c .sub{font-size:29px;line-height:1.25;color:#4d5568;margin:0 0 16px;flex:none}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5em;overflow:hidden;padding-bottom:12px;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:24px;font-size:24px;color:#778}
+.in ul{padding-left:1.2em}.in li{margin:.2em 0}
+.c b{background:#ffe38a;padding:0 .15em;border-radius:.2em;font-weight:700}
+.box{border-left:.22em solid var(--a);background:rgba(0,0,0,.06);padding:.4em .7em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.5em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.stats div{background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.35em .5em;text-align:center;font-size:.85em;line-height:1.2}
+.stats em{display:block;font-style:normal;font-family:Georgia,serif;font-size:1.9em;font-weight:700;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.92em;background:#fff;border-radius:.5em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.3em .55em}
+td{padding:.3em .55em;border-top:.06em solid #e3e0d6;vertical-align:top}
+.fl{display:flex;align-items:stretch;gap:.4em}.fl.v{flex-direction:column}
+.st{flex:1;background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.4em .6em;text-align:center;font-size:.9em;line-height:1.25}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.3em;line-height:1;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.1em .8em;font-size:.8em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.cols>div{background:#fff;border-radius:.6em;padding:.5em .7em;border-top:.25em solid var(--a)}
+.cols h3{margin:0 0 .2em;font-size:1em;color:var(--a)}
+.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:104px}.cover .sub{color:#e8ecff;font-size:38px}
+.cover .in{justify-content:center}
+.sec{display:none}.sec.on{display:block}
+@media (prefers-reduced-motion:reduce){</style></head><body>
+<header><h1>Delirium: square clinical cards</h1>
+<p>Summary of Oldham MA, Delirium (Perioperative Psychiatry, Chapter 4), for clinical decisions and grand rounds. Every card is a 1:1 square. Double-tap or double-click any card to save it as a PNG. Verify drug doses against current guidance.</p>
+</header>
+<main>
+<section id="notes"><p class="hint">Double-tap or double-click any card to save it as an image.</p><div class="grid" id="g"></div></section>
+</main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const cards=[
+C('#a0432f','#a0432f','Delirium','Definition, detection, risk, causes, prevention and management, with a surgical focus',`<div><span class="pill">Attention + awareness</span><span class="pill">CAM, CAM-ICU, NuDESC</span><span class="pill">Hypoactive missed</span><span class="pill">Prevent first</span><span class="pill">Treat the cause</span></div><div style="font-size:.7em;margin-top:.6em;opacity:.9">Source: Oldham MA. Delirium. In: Perioperative Psychiatry (Springer 2019), Chapter 4</div>`,'cover'),
+C('#1f7a6d','#f2fbf8','Delirium defined','A neurocognitive disorder of acute confusion',`<div class="box big">Acute confusion from a <b>medicosurgical condition or substance</b>. DSM-5 cardinal features: <b>impaired attention</b> and <b>reduced awareness</b>.</div><ul><li>Symptoms <b>fluctuate</b> over hours to days: needs serial mental status checks</li><li><b>Altered arousal</b> in most cases (not a DSM criterion) is a quick cue</li><li>Also: anterograde amnesia, thought disorganisation, withdrawal, <b>sleep-wake disturbance</b>, lability, hallucinations, delusions</li></ul>`),
+C('#b5472f','#fff7f3','Why delirium matters','Common, costly, and a red flag',`<div class="stats"><div><em>Up to 80%</em>in the sickest, most vulnerable settings</div><div><em>$164 bn</em>yearly cost, US adults ≥65 (2011)</div></div><ul><li>May be the <b>commonest postoperative complication</b> in older adults</li><li>Predicts <b>cognitive decline</b>, complications, institutionalisation, longer stay, <b>higher mortality</b></li><li>An <b>ancillary vital sign</b> for underlying, often missed illness</li><li>Affects <b>capacity</b> for consent; may need a surrogate</li><li>About <b>a third</b> is preventable by non-drug measures</li></ul>`),
+C('#7a4bc2','#f8f4ff','Terms and specifiers','Keep the vocabulary precise',`<table><tr><th>Term</th><th>Meaning</th></tr><tr><td><b>Hypoactive</b></td><td>Psychomotor slowing (“lethargus”)</td></tr><tr><td><b>Hyperactive</b></td><td>Psychomotor activation (“phrenitis”)</td></tr><tr><td><b>Mixed</b></td><td>Both; activity level shifts</td></tr><tr><td><b>Acute vs persistent</b></td><td>Hours to days vs <b>weeks to months</b></td></tr></table><div class="box">Old labels (ICU psychosis, acute brain failure, toxic-metabolic encephalopathy) lack criteria: <b>use “delirium”</b> when criteria are met. Most studies assess on a <b>24-hour</b> basis.</div>`),
+C('#2a6fb0','#f2f8ff','The four A’s','Core features of delirium',`<div class="st"><b>Acute</b> change in mentation over hours to days</div><div class="ar">+</div><div class="st"><b>Attention</b> impaired: reduced ability to direct, focus, sustain or shift</div><div class="ar">+</div><div class="st"><b>Awareness</b> reduced (confusion)</div><div class="ar">+</div><div class="st"><b>Another</b> cognitive deficit: memory, orientation, language, visuospatial, perception</div><div class="box">Also needs a <b>medical or substance cause</b>; not better explained by pre-existing dementia; <b>not</b> coma. Know the <b>baseline</b>: ask collateral informants.</div>`),
+C('#d17a00','#fffaf0','Testing attention and awareness','Bedside tests',`<table><tr><th>Easier to harder</th><th>Task</th></tr><tr><td><b>Vigilance “A”</b></td><td>Tap when the letter A is read</td></tr><tr><td>Forward, reverse <b>digit span</b></td><td>Repeat numbers (8-5-2 to 2-5-8)</td></tr><tr><td><b>WORLD</b> backward; days of week backward</td><td>D-L-R-O-W; Sunday to Monday</td></tr><tr><td><b>Months backward</b>, serial 3s, serial 7s</td><td>Sustained concentration</td></tr></table><div class="box"><b>Awareness:</b> use <b>open-ended</b> questions (“Tell me about your pain”). Perseveration (same answer to different questions) shows poor shifting. One normal test does <b>not</b> exclude delirium.</div>`),
+C('#c2477e','#fff5f9','Arousal and sleep-wake cycle','Fast clues',`<ul><li><b>Altered arousal</b> is seen in most delirium; check in <b>seconds</b> with the <b>modified RASS</b>; the further from alert, the more likely delirium (except extremes where evaluation is impossible)</li><li><b>Sleep and circadian rhythms</b> are universally disrupted: fragmented sleep, daytime napping</li></ul><div class="box"><b>ICD-10</b> needs a sleep-wake disturbance: insomnia or reversal, <b>nocturnal worsening</b>, or vivid dreams continuing as hallucinations. A nearly universal, non-cognitive feature.</div>`),
+C('#b5472f','#fff7f3','Confusion Assessment Method (CAM)','Most used delirium instrument',`<div class="st"><b>1.</b> Acute change in mental status (with fluctuation)</div><div class="ar">+</div><div class="st"><b>2.</b> Inattention</div><div class="ar">+</div><div class="st"><b>3.</b> Disorganised thinking <b>or</b> altered arousal (not alert)</div><div class="box">Used in &gt;200 studies. Must be given with a <b>standard cognitive screen</b> (Mini-Cog, MMSE); <b>without it, sensitivity may be &lt;50%</b>. 3D-CAM standardises the cognitive tasks. Free with attribution (hospitalelderlifeprogram.org).</div>`),
+C('#1f7a6d','#f2fbf8','ICU and recovery-room screens','Performance varies',`<table><tr><th>Tool</th><th>Notes</th></tr><tr><td><b>CAM-ICU</b></td><td>Pooled sens 80%, spec 96% (2013); later studies as low as <b>50%</b> (even 28% in post-surgical elderly)</td></tr><tr><td><b>ICDSC</b></td><td>Checklist after the shift; pooled 74% / 82%; one cohort 63% sens, 95% spec</td></tr><tr><td><b>NuDESC</b></td><td>Best in the <b>PACU</b>: sens <b>95%</b>, spec <b>87%</b>; nurse-rated over the shift</td></tr></table><div class="box">Arousal level affects the accuracy of CAM-ICU and ICDSC. The reference standard chosen changes the figures.</div>`),
+C('#7a4bc2','#f8f4ff','Instrument menu','Table 4.3 (selected)',`<table><tr><th>Tool</th><th>Time</th><th>Use</th></tr><tr><td><b>mRASS</b> (≠0)</td><td>≤30 s</td><td>Specific for delirium</td></tr><tr><td><b>bCAM, 3D-CAM, short CAM</b></td><td>1 to 3 min</td><td>ED and ward screens</td></tr><tr><td>CAM-ICU</td><td>1 to 2 min</td><td>Non-verbal patients</td></tr><tr><td>NEECHAM, NuDESC</td><td>5 to 10 min; ≤3 min</td><td>Nursing</td></tr><tr><td><b>MDAS, DRS-R-98, CAM-S</b></td><td>5 to 15 min</td><td><b>Severity</b> rating</td></tr></table><div class="box">All need <b>training</b>. Gold standard: psychiatric evaluation by DSM.</div>`),
+C('#2a6fb0','#f2f8ff','The detection gap','Delirium is missed without screening',`<div class="stats"><div><em>3% vs 12%</em>cardiac surgery: clinical record vs daily research assessment</div><div><em>3 of 4</em>cases undiagnosed in routine care</div></div><ul><li><b>Hypoactive</b> delirium is most overlooked (“just resting”)</li><li><b>Guideline consensus:</b> screen at-risk patients <b>at least daily</b>, ideally every shift, from admission</li><li>Unit-wide screening programmes improve detection and delirium-informed care; after hip fracture they improved <b>length of stay, disposition and satisfaction</b></li></ul>`),
+C('#d17a00','#fffaf0','Natural history after surgery','Four phases',`<div class="st"><b>1. Emergence:</b> agitation or hypoactive emergence on waking (not formal delirium); risk: <b>benzodiazepine premedication</b></div><div class="ar">▼</div><div class="st"><b>2. PACU:</b> ~<b>45%</b> of older hip-fracture patients; 60-min delirium had 100% sensitivity for later delirium</div><div class="ar">▼</div><div class="st"><b>3. POD 1:</b> early delirium heralds more; subsyndromal POD 1 predicts later</div><div class="ar">▼</div><div class="st"><b>4. POD 2 on:</b> <b>peaks on POD 2</b> (inflammatory peak); typically lasts <b>2 to 5 days</b></div><div class="box">~<b>three quarters</b> detected on POD 1 or 2; two fifths of POD 1 cases resolve by POD 2.</div>`),
+C('#c2477e','#fff5f9','Delirium subtypes','Behaviour changes over time',`<table><tr><th>Subtype</th><th>Key points</th></tr><tr><td><b>Hypoactive</b></td><td>Predominates after surgery (about <b>two thirds</b>; &gt;90% in trauma ICU); overlooked; more likely with dementia; maybe higher 6-month mortality</td></tr><tr><td><b>Hyperactive</b></td><td>Risk of injury to self, staff</td></tr><tr><td><b>Mixed</b></td><td><b>Unpredictable</b>: calm then agitated; linked to <b>tube and line removal</b></td></tr></table><div class="box">Subtype can change in the same patient: screen <b>proactively</b>.</div>`),
+C('#1f7a6d','#f2fbf8','Subsyndromal delirium','An early warning',`<ul><li>Too few features for a diagnosis; <b>more common</b> than delirium (about <b>a third</b> after CABG vs 10 to 20% delirium)</li><li>Same <b>risk factors</b> as delirium</li><li>Often a <b>prodrome</b>, with residual dysfunction after</li><li>Outcomes <b>worse</b> than intact cognition, <b>better</b> than full delirium</li></ul><div class="box big">Manage promptly: it often signals <b>impending delirium</b>.</div>`),
+C('#b5472f','#fff7f3','Differential diagnosis','Delirium excludes other psychiatric diagnoses while present',`<table><tr><th>Condition</th><th>Onset and clues</th></tr><tr><td><b>Delirium</b></td><td>Hours to days; altered arousal; impaired attention and awareness</td></tr><tr><td><b>Dementia</b></td><td>Months to years; normal arousal; sundowning; Lewy body fluctuates</td></tr><tr><td><b>Depression</b></td><td>Weeks to months; low mood, anhedonia</td></tr><tr><td><b>Schizophrenia</b></td><td>Teens to 20s; auditory hallucinations, withdrawal</td></tr><tr><td><b>Mania</b></td><td>Days to weeks; euphoria, less sleep</td></tr></table><div class="box">About <b>40%</b> of depression consults turn out to be delirium. Delirium is clinical; tests find the cause.</div>`),
+C('#7a4bc2','#f8f4ff','EEG and BIS','Objective support',`<ul><li><b>Diffuse slowing</b> on EEG, scaling with reduced arousal (Engel and Romano)</li><li>Relative <b>delta power</b> from two electrodes (F8, Pz) separated delirium in non-sedated cardiac surgery patients</li><li><b>BIS:</b> specificity <b>96%</b>, sensitivity only <b>27%</b> vs CAM-ICU</li></ul><div class="box">Research tools: need further validation.</div>`),
+C('#2a6fb0','#f2f8ff','Neurobiology','Seven overlapping models',`<ul><li><b>Models:</b> neuroinflammation, oxidative stress, neuronal ageing, neuroendocrine, sleep-circadian disruption, network dysconnectivity, neurotransmitter dysregulation</li><li><b>Neuroinflammation</b> best studied after surgery: higher pro- to anti-inflammatory ratio; <b>IL-6</b> rises during delirium (highest in hyperactive/mixed); <b>IL-8</b> and <b>cortisol</b> may rise before it</li><li><b>HPA axis:</b> raised cortisol before CABG predicts delirium</li><li>Lipowski: a “<b>disorder of wakefulness</b>”</li><li>Anticholinergic role: <b>unsettled</b></li></ul>`),
+C('#d17a00','#fffaf0','Outcomes: hip fracture','Long shadow of delirium',`<table><tr><th>Finding</th><th>Result</th></tr><tr><td>Hospital stay</td><td>About <b>1 week</b> longer; more cost</td></tr><tr><td>Function</td><td>Less return to pre-fracture ambulation; ADL decline at 1 year</td></tr><tr><td>2-year survival</td><td>Under half (delirium) vs two thirds</td></tr><tr><td>Survivors with MCI or dementia</td><td>~<b>4 in 5</b> vs 40%</td></tr><tr><td>3 years</td><td>Cognitive impairment OR 41.2; long-term care OR 5.6</td></tr><tr><td>Mortality</td><td><b>+17%</b> hazard of dying over 6 months <b>per delirious day</b></td></tr></table>`),
+C('#c2477e','#fff5f9','Outcomes: other settings','Beyond hip fracture',`<ul><li><b>Cardiac surgery:</b> function and cognition worse at 1 month, gone by 1 year; 1-year mortality <b>13% vs 5%</b></li><li><b>Critical illness:</b> in-hospital mortality <b>RR 2.2</b>; longer ventilation and ICU stay</li><li><b>Mixed major surgery:</b> longer stay, readmission, <b>institutional discharge</b></li><li><b>Liver transplant:</b> 4× in-hospital and 3× 1-year death</li><li>Oesophageal cancer resection: longer stay and ICU stay</li></ul>`),
+C('#1f7a6d','#f2fbf8','Causes: the vulnerability model','Predisposing, precipitating, perpetuating',`<div class="fl"><div class="st"><b>Predisposing</b><br>neuro integrity, age, frailty</div><div class="ar">+</div><div class="st"><b>Precipitating</b><br>acute insults</div><div class="ar">→</div><div class="st"><b>Delirium</b></div></div><div class="box">Delirium occurs when an insult <b>exceeds neurophysiological resilience</b> (cognitive reserve). <b>Perpetuating factors</b> (nutrition, sleep, stimulation) keep it going.</div><div class="box"><b>Universal risk factors:</b> advanced age, cognitive impairment, functional limitation, severity and complexity of illness, <b>frailty</b>.</div>`),
+C('#b5472f','#fff7f3','Risk factors by surgery','Table 4.5',`<table><tr><th>Cohort</th><th>Extra risk factors</th></tr><tr><td><b>Hip fracture</b></td><td>Male, institutional residence, heart failure, THA, <b>morphine</b>; ~<b>2×</b> risk of elective arthroplasty</td></tr><tr><td><b>Spine</b></td><td>Female, polypharmacy, <b>low haematocrit or albumin</b></td></tr><tr><td><b>Heart</b></td><td>Stroke, <b>depression</b>, diabetes, AF, carotid stenosis</td></tr><tr><td><b>Vascular</b></td><td>Depression, tobacco, <b>open repair</b></td></tr><tr><td><b>GI</b></td><td>Low albumin, ASA status, <b>alcohol</b>, BMI</td></tr><tr><td><b>ICU</b></td><td>Hypertension, emergency surgery, APACHE II, ventilation, acidosis</td></tr></table>`),
+C('#7a4bc2','#f8f4ff','Operative risk and prediction models','Anaesthesia type is not decisive',`<ul><li><b>Anaesthesia type</b> (general vs regional): <b>no clear link</b></li><li><b>Intra-operative:</b> longer surgery, <b>hypotension</b>, <b>transfusion</b>, invasive surgery</li><li><b>Post-operative:</b> prolonged intubation, inflammation, fever, <b>hyponatraemia</b>, complications</li></ul><div class="box">About <b>two dozen risk prediction models</b> exist; poorly validated. One test of 8 models: best AUC only <b>0.66</b>.</div>`),
+C('#2a6fb0','#f2f8ff','Finding the cause: mnemonics','Over half have two or more causes',`<table><tr><th>Mnemonic</th><th>Use</th></tr><tr><td><b>WWHHHHIMPS</b></td><td><b>Life-threatening, can’t miss:</b> Wernicke, Withdrawal, Hypertensive crisis, Hypoperfusion, Hypoglycaemia, Hyper/hypothermia, Intracranial, Metabolic/Meningitis, Poisons, Status epilepticus</td></tr><tr><td><b>I WATCH DEATH</b></td><td>Categorical list of causes</td></tr><tr><td><b>END ACUTE BRAIN FAILURE</b></td><td>Includes predisposing and precipitating factors</td></tr></table>`),
+C('#d17a00','#fffaf0','Precipitants','Table 4.6 (selected)',`<table><tr><th>Group</th><th>Examples</th></tr><tr><td><b>Inflammation</b></td><td>UTI, pneumonia, sepsis, meningitis, autoimmune encephalitis</td></tr><tr><td><b>Withdrawal</b></td><td>Alcohol, benzodiazepines, barbiturates</td></tr><tr><td><b>Metabolic</b></td><td>Liver or renal failure, <b>sodium</b>, calcium, pH</td></tr><tr><td><b>Toxins</b></td><td>Lithium, valproate, opioids, tacrolimus, <b>anticholinergics</b>, serotonin syndrome, NMS</td></tr><tr><td><b>Other</b></td><td>Seizure, hypoxia, B vitamins, glucose, thyroid, stroke, MI, trauma, DIC</td></tr></table>`),
+C('#1f7a6d','#f2fbf8','Perpetuation and recovery','Each delirious day counts',`<ul><li>Each extra day predicts <b>more morbidity and mortality</b>; persistent delirium at 6 months after hip fracture: ~<b>3×</b> 1-year mortality</li><li>Delirium can start <b>long-term cognitive impairment</b></li></ul><div class="box big"><b>Keys to recovery:</b> oxygenation, hydration, nutrition, sensory stimulation, mobility, intact sleep-wake cycles, cognitive activation, socialisation.</div>`),
+C('#c2477e','#fff5f9','Prevention: non-drug bundles','Up to 40% preventable',`<ul><li>Recommended for at-risk older adults; <b>multicomponent bundles</b>: <b>HELP</b> (ward) and <b>ABCDEF</b> (ICU)</li><li><b>Orientation, sensory aids</b> (glasses, hearing), cognitive stimulation, <b>early mobilisation</b></li><li>Hydration, nutrition, oxygenation; pain control with <b>fewer opioids</b></li><li><b>Sleep:</b> clustered night care, less noise and light</li><li>Review <b>lines and catheters</b>; remove <b>anticholinergics, benzodiazepines, opioids</b> where possible</li><li>Consider <b>geriatrics consult</b></li></ul>`),
+C('#b5472f','#fff7f3','Prevention: drugs','Evidence is mixed',`<table><tr><th>Agent</th><th>Verdict</th></tr><tr><td><b>Neuroleptics</b></td><td>Meta-analyses: risk down by nearly <b>half</b> in sufficiently at-risk older surgical patients; side effects limit <b>routine</b> use</td></tr><tr><td><b>Dexmedetomidine</b></td><td>Lower risk than propofol or opioid sedation; vs placebo unclear</td></tr><tr><td><b>Cholinesterase inhibitors</b></td><td><b>Do not use</b>: rivastigmine trial stopped, mortality <b>22% vs 8%</b></td></tr><tr><td><b>Melatonin</b></td><td>Shorter delirium, not prevention alone; give hours before bedtime</td></tr><tr><td><b>Ramelteon</b></td><td>New delirium <b>3% vs 32%</b> (one RCT)</td></tr><tr><td><b>Bright light</b></td><td>Blue-enhanced ICU light: <b>no benefit</b></td></tr></table>`),
+C('#7a4bc2','#f8f4ff','Prevention: surgery and anaesthesia','Choices that matter',`<ul><li><b>Enhanced recovery</b> (fast-track) pathways are standard</li><li><b>Less invasive</b> surgery: endovascular aortic repair <b>13%</b> vs open <b>29%</b></li><li><b>BIS-guided</b> anaesthetic depth lowers delirium (balance against awareness)</li><li><b>Benzodiazepine premedication</b> only for severe anxiety</li><li>Possible benefit of continuous remifentanil over boluses</li></ul>`),
+C('#2a6fb0','#f2f8ff','Managing established delirium','Step by step',`<div class="st"><b>1.</b> <b>Screen and diagnose</b>; build the differential</div><div class="ar">▼</div><div class="st"><b>2.</b> <b>Treat the cause</b> (WWHHHHIMPS first)</div><div class="ar">▼</div><div class="st"><b>3.</b> Fix <b>contributors</b>: hydration, nutrition, oxygen, sleep, sensory loss, immobility</div><div class="ar">▼</div><div class="st"><b>4.</b> <b>Non-drug bundle</b> for everyone</div><div class="ar">▼</div><div class="st"><b>5.</b> Neuroleptic only for <b>severe, distressing or dangerous</b> behaviour</div><div class="box">No drug is <b>FDA-approved</b> to prevent or treat delirium.</div>`),
+C('#1f7a6d','#f2fbf8','Hypoactive vs hyperactive','Different approaches',`<div class="cols"><div><h3>Hypoactive</h3><ul><li><b>Non-drug</b> first</li><li>Assertive nursing: out of bed daily; PT/OT; cognitive stimulation; “delirium toolbox”</li><li>Stimulants or modafinil: anecdotal; may cause <b>psychosis or switch</b> to hyperactive</li></ul></div><div><h3>Hyperactive</h3><ul><li>Dedicated nursing; <b>de-escalation</b>, redirection</li><li>Restraints only if unavoidable; <b>restraint-free</b> delirium rooms</li><li><b>T-A-DA:</b> <b>T</b>olerate, <b>A</b>nticipate, <b>D</b>on’t <b>A</b>gitate</li></ul></div></div>`),
+C('#c2477e','#fff5f9','Drugs for delirium symptoms','Guideline positions',`<ul><li><b>Placebo-controlled evidence is limited</b>; over 30 studies are open-label or active-controlled</li><li><b>PAD:</b> quetiapine may shorten delirium (one RCT)</li><li><b>NICE:</b> consider <b>haloperidol or olanzapine</b>, lowest dose, short term</li><li><b>AGS:</b> lowest effective dose, shortest time, for severe agitation or danger</li><li><b>Benzodiazepines: avoid</b>, except <b>alcohol or benzodiazepine withdrawal</b> (first line)</li></ul><div class="box big">All neuroleptics are off-label with a <b>black box</b> warning (elderly dementia-related psychosis).</div>`),
+C('#b5472f','#fff7f3','Neuroleptics at a glance','Table 4.7',`<table><tr><th>Drug</th><th>Start / max</th><th>Notes</th></tr><tr><td><b>Haloperidol</b></td><td>1 to 2 mg / 20 mg</td><td>EPS risk; IV less EPS, more cardiac effect; QTc +4.7 ms</td></tr><tr><td><b>Risperidone</b></td><td>0.5 to 1 / 6 mg</td><td>No anticholinergic; QTc +11.6; ODT or liquid</td></tr><tr><td><b>Quetiapine</b></td><td>25 to 50 / 200 mg</td><td>Sedating; orthostasis; QTc +14.5; 6 h</td></tr><tr><td><b>Olanzapine</b></td><td>2.5 to 5 / 20 mg</td><td>Mild QTc (+6.8); <b>no IM with benzodiazepines</b></td></tr><tr><td><b>Aripiprazole</b></td><td>2 to 5 / 30 mg</td><td>Akathisia in a third; little QTc; 72 h</td></tr></table>`),
+C('#a0432f','#fff6f3','Clinical decision pathway','Grand-rounds checklist',`<div class="st"><b>1.</b> <b>Risk:</b> age, cognition, frailty, surgery type, polypharmacy; start the <b>prevention bundle</b></div><div class="ar">▼</div><div class="st"><b>2.</b> <b>Screen every shift</b> (CAM, CAM-ICU, NuDESC, mRASS); check arousal</div><div class="ar">▼</div><div class="st"><b>3.</b> <b>Positive:</b> look for cause (infection, withdrawal, drugs, metabolic, hypoxia, pain)</div><div class="ar">▼</div><div class="st"><b>4.</b> Non-drug care; <b>lowest-dose neuroleptic</b> only if dangerous</div><div class="ar">▼</div><div class="st"><b>5.</b> Plan <b>cognitive follow-up</b>; document and inform the family</div>`),
+C('#a0432f','#fff6f3','Key takeaways','Take-home points',`<ul><li>Postoperative delirium <b>peaks on POD 2</b> and lasts <b>2 to 5 days</b></li><li>Universal risk: <b>age, cognitive and functional impairment, multimorbidity</b>, invasive surgery</li><li>Most delirium, especially <b>hypoactive</b>, is <b>missed without screening</b></li><li><b>Non-drug measures</b> prevent up to a third</li><li>Behaviour: <b>non-drug first</b>; neuroleptics for severe, distressing, dangerous symptoms</li></ul>`)
+];
+const g=document.getElementById('g'),N=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${N}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return;let f=36;i.style.fontSize=f+'px';
+while(f>16&&(i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1)){f--;i.style.fontSize=f+'px'}}
+const fitAll=()=>g.querySelectorAll('.c').forEach(fit);
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+</script>
+<script>
+(function(){
+  const SCALE=2;   // 2 = 2160x2160 px; use 1 for exactly 1080x1080
+  const GAP=450;   // max ms between the two taps
+  const SOURCES=['https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js','https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js'];
+
+  const css=document.createElement('style');
+  css.id='shot-css';
+  css.textContent='.cw{touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}#shot-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d2230;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px system-ui,sans-serif;z-index:99999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#shot-toast.on{opacity:1}';
+  document.head.appendChild(css);
+  const toast=document.createElement('div');toast.id='shot-toast';document.body.appendChild(toast);
+  let tt;function say(m,ms){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)}
+
+  const toBlob=c=>new Promise((res,rej)=>{try{c.toBlob(b=>b?res(b):rej(new Error('canvas is empty')),'image/png')}catch(e){rej(e)}});
+
+  /* Method 1 (default): the browser itself draws the card (SVG foreignObject).
+     Exactly what you see on screen: no re-implementation of CSS, no missing text. */
+  async function viaSvg(card){
+    const wrap=document.createElement('div');
+    wrap.setAttribute('style','position:relative;box-sizing:border-box;width:1080px;height:1080px;overflow:hidden;margin:0;padding:0;background:#fff');
+    document.querySelectorAll('style').forEach(s=>{if(s.id!=='shot-css')wrap.appendChild(s.cloneNode(true))});
+    const clone=card.cloneNode(true);
+    clone.removeAttribute('data-shot');
+    clone.style.transform='none';clone.style.left='0';clone.style.top='0';
+    wrap.appendChild(clone);
+    const xml=new XMLSerializer().serializeToString(wrap);
+    const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080"><foreignObject x="0" y="0" width="1080" height="1080">'+xml+'</foreignObject></svg>';
+    const img=new Image();
+    await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('svg render failed'));img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+    const canvas=document.createElement('canvas');canvas.width=1080*SCALE;canvas.height=1080*SCALE;
+    const ctx=canvas.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    return canvas;
+  }
+
+  /* Method 2 (fallback, e.g. some Safari versions): html2canvas */
+  function addScript(src){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>{s.remove();rej(new Error('blocked: '+src))};document.head.appendChild(s)})}
+  let lib;function load(){if(window.html2canvas)return Promise.resolve();if(lib)return lib;
+    lib=(async()=>{for(const src of SOURCES){try{await addScript(src);if(window.html2canvas)return}catch(e){}}lib=null;throw new Error('Could not load the fallback library (offline?). Open the downloaded HTML file in Chrome, Edge or Firefox.')})();return lib}
+  async function viaH2C(card){
+    await load();
+    card.setAttribute('data-shot','1');
+    try{
+      return await html2canvas(card,{scale:SCALE,width:1080,height:1080,windowWidth:1300,windowHeight:1300,scrollX:0,scrollY:0,backgroundColor:null,logging:false,useCORS:true,
+        onclone:function(doc){const c=doc.querySelector('.c[data-shot="1"]');if(!c)return;
+          const w=c.parentElement;w.style.cssText='position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:visible;border:0;border-radius:0;margin:0;padding:0;transform:none;aspect-ratio:auto';
+          c.style.transform='none';c.style.left='0';c.style.top='0'}});
+    }finally{card.removeAttribute('data-shot')}
+  }
+
+  let busy=false;
+  async function shoot(card){
+    if(busy)return;busy=true;say('Creating image...',8000);
+    try{
+      if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+      let blob;
+      try{blob=await toBlob(await viaSvg(card))}
+      catch(e1){console.warn('SVG export failed, using fallback:',e1);blob=await toBlob(await viaH2C(card))}
+      const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+      const name=((card.querySelector('h2')||{}).textContent||'card').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='card-'+String(idx).padStart(2,'0')+'-'+name+'.png';
+      document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+a.download);
+    }catch(err){console.error('Card export failed:',err);say('Could not save: '+(err&&err.message?err.message:err),6000)}
+    finally{busy=false}
+  }
+
+  let last={el:null,t:0,x:0,y:0};
+  document.addEventListener('pointerup',function(e){
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    const card=e.target.closest&&e.target.closest('.c');
+    if(!card){last.el=null;return}
+    const now=Date.now();
+    if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card)}
+    else{last={el:card,t:now,x:e.clientX,y:e.clientY}}
+  });
+})();
+</script>
+</body></html>

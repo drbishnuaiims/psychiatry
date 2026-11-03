@@ -123,6 +123,26 @@ window.GENERATED_GUIDELINES = [
     "readTime": "1 min read"
   },
   {
+    "title": "Delirium: Square Clinical Cards",
+    "shortTitle": "Delirium: Square Clinical Cards",
+    "authors": "Psychiatry CPG Notes",
+    "year": "",
+    "journal": "Books / Perioperative Psychiatry",
+    "category": "Books / Perioperative Psychiatry",
+    "description": "Summary of Oldham MA, Delirium (Perioperative Psychiatry, Chapter 4), for clinical decisions and grand rounds. Every card is a 1:1 square. Double-tap or double-click any card to save it as a PNG.…",
+    "tags": [
+      "Perioperative Psychiatry",
+      "Books"
+    ],
+    "keywords": [
+      "Delirium: Square Clinical Cards",
+      "Perioperative Psychiatry",
+      "Delirium Cards"
+    ],
+    "url": "books/perioperative-psychiatry/delirium-cards.html",
+    "readTime": "1 min read"
+  },
+  {
     "title": "Perioperative Pain: Square Clinical Cards",
     "shortTitle": "Perioperative Pain: Square Clinical Cards",
     "authors": "Psychiatry CPG Notes",
