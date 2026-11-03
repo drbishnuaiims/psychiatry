@@ -3,6 +3,11 @@
   "private": true,
   "scripts": {
     "build:index": "node scripts/generate-index.js",
-    "validate:index": "node scripts/generate-index.js --check"
+    "validate:index": "node scripts/generate-index.js --check",
+    "build": "npm run build:index",
+    "validate": "npm run validate:index",
+    "index": "npm run build:index",
+    "audit": "node scripts/audit.js",
+    "count": "node scripts/generate-index.js --count"
   }
 }
