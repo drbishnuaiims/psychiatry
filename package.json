@@ -1,0 +1,8 @@
+{
+  "name": "psychiatry",
+  "private": true,
+  "scripts": {
+    "build:index": "node scripts/generate-index.js",
+    "validate:index": "node scripts/generate-index.js --check"
+  }
+}
