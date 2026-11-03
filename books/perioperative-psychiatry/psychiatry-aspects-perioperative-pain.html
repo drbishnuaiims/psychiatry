@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Perioperative Pain: Square Clinical Cards</title>
+<style>
+:root{box-sizing:border-box;--bg:#f3f1ec;--ink:#1d2230;--mut:#5b6275;--pill:#fff;--bd:#d9d5ca;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}}
+:root[data-theme="dark"]{--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.4}
+header{max-width:1100px;margin:0 auto;padding:20px 16px 8px}
+header h1{font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;margin:0 0 4px}
+header p{margin:0 0 12px;color:var(--mut);font-size:.9rem}
+.bar{display:flex;flex-wrap:wrap;gap:8px}
+.bar button{font:inherit;font-size:.85rem;padding:8px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--pill);color:var(--ink);cursor:pointer}
+.bar button.on{background:#2f5bd8;border-color:#2f5bd8;color:#fff}
+.bar button:focus-visible{outline:3px solid #f0a020;outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 40px}
+.hint{color:var(--mut);font-size:.85rem;padding:4px 0 12px;margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:20px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.1)}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 64px;display:flex;flex-direction:column;background:var(--b,#fffdf7);color:#1d2230;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;font-size:34px;line-height:1.3;text-align:left}
+.c h2{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:1.08;margin:0 0 10px;color:var(--a);font-weight:700;flex:none}
+.c .sub{font-size:29px;line-height:1.25;color:#4d5568;margin:0 0 16px;flex:none}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5em;overflow:hidden;padding-bottom:12px;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:24px;font-size:24px;color:#778}
+.in ul{padding-left:1.2em}.in li{margin:.2em 0}
+.c b{background:#ffe38a;padding:0 .15em;border-radius:.2em;font-weight:700}
+.box{border-left:.22em solid var(--a);background:rgba(0,0,0,.06);padding:.4em .7em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.5em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.stats div{background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.35em .5em;text-align:center;font-size:.85em;line-height:1.2}
+.stats em{display:block;font-style:normal;font-family:Georgia,serif;font-size:1.9em;font-weight:700;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.92em;background:#fff;border-radius:.5em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.3em .55em}
+td{padding:.3em .55em;border-top:.06em solid #e3e0d6;vertical-align:top}
+.fl{display:flex;align-items:stretch;gap:.4em}.fl.v{flex-direction:column}
+.st{flex:1;background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.4em .6em;text-align:center;font-size:.9em;line-height:1.25}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.3em;line-height:1;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.1em .8em;font-size:.8em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.cols>div{background:#fff;border-radius:.6em;padding:.5em .7em;border-top:.25em solid var(--a)}
+.cols h3{margin:0 0 .2em;font-size:1em;color:var(--a)}
+.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:104px}.cover .sub{color:#e8ecff;font-size:38px}
+.cover .in{justify-content:center}
+.sec{display:none}.sec.on{display:block}
+@media (prefers-reduced-motion:reduce){</style></head><body>
+<header><h1>Psychiatric aspects of perioperative pain: square cards</h1>
+<p>Summary of Matos Santana, Perioperative Psychiatry, Chapter 6, for clinical decisions and grand rounds. Every card is a 1:1 square. Double-tap or double-click any card to save it as a PNG. Educational summary: verify drug choices and doses against current guidance.</p>
+</header>
+<main>
+<section id="notes"><p class="hint">Double-tap or double-click any card to save it as an image.</p><div class="grid" id="g"></div></section>
+</main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const cards=[
+C('#2b5fa8','#2b5fa8','Psychiatric aspects of perioperative pain','Assessment and management of postoperative pain, with attention to chronic pain and substance use disorders',`<div><span class="pill">Multimodal analgesia</span><span class="pill">Opioid pharmacology</span><span class="pill">Tolerance vs addiction</span><span class="pill">OUD perioperatively</span><span class="pill">Persistent postsurgical pain</span></div><div style="font-size:.7em;margin-top:.6em;opacity:.9">Source: Matos Santana TE. Perioperative Psychiatry (Springer 2019), Chapter 6</div>`,'cover'),
+C('#1f7a6d','#f2fbf8','Why it matters','Postoperative pain: common and under-treated',`<div class="stats"><div><em>&gt;80%</em>of patients have postoperative pain</div><div><em>Up to 75%</em>still moderate or severe at discharge</div></div><ul><li>Poor control delays <b>functional recovery</b> and raises risk of poor wound healing and <b>myocardial ischaemia</b></li><li>Pain is one of the <b>3 commonest causes</b> of delayed discharge after ambulatory surgery (with drowsiness and nausea)</li><li>Under half report <b>adequate relief</b>, yet most think pain is necessary and are satisfied</li></ul>`),
+C('#b5472f','#fff7f3','Classifying pain','By duration',`<table><tr><th>Type</th><th>Features</th></tr><tr><td><b>Transient</b></td><td>Receptor activation <b>without tissue damage</b>; rarely a clinical concern</td></tr><tr><td><b>Acute</b></td><td>Tissue injury; usually <b>&lt;1 month</b> (rarely 3 to 6); sympathetic signs: <b>tachycardia, sweating, tachypnoea</b>, visible distress</td></tr><tr><td><b>Chronic</b></td><td>Classically <b>&gt;6 months</b>; outlasts tissue healing; kept going by many factors</td></tr></table>`),
+C('#7a4bc2','#f8f4ff','Pain by mechanism','Three subtypes',`<table><tr><th>Subtype</th><th>Key points</th></tr><tr><td><b>Nociceptive</b></td><td>Real or threatened injury; <b>protective</b>; only with a noxious stimulus (pinprick, MI)</td></tr><tr><td><b>Inflammatory</b></td><td>Response to injury; sensitises receptors so <b>innocuous stimuli hurt</b>; e.g. surgical incision, burns; resolves with healing</td></tr><tr><td><b>Dysfunctional (neuropathic)</b></td><td>Direct <b>nerve injury</b>; maladaptive; e.g. diabetic neuropathy</td></tr></table>`),
+C('#2a6fb0','#f2f8ff','Physiology of pain','Four steps',`<div class="st"><b>Transduction:</b> nociceptors turn noxious stimulus into impulse</div><div class="ar">▼</div><div class="st"><b>Transmission:</b> <b>A-delta</b> (fast, sharp) and <b>C fibres</b> (slow, dull, visceral) to the dorsal horn, then spinothalamic tract to thalamus</div><div class="ar">▼</div><div class="st"><b>Perception:</b> sensory cortex; reticular formation adds arousal and emotion</div><div class="ar">▼</div><div class="st"><b>Modulation:</b> descending pathways (serotonin, noradrenaline, endorphins, <b>GABA, glycine</b>) dampen or amplify</div>`),
+C('#d17a00','#fffaf0','Stress response and sensitisation','The postsurgical state',`<ul><li>Fat and muscle breakdown, <b>hyperglycaemia</b>, impaired immunity</li><li><b>Sympathetic activation</b>: catecholamines, cortisol, growth hormone, prolactin, vasopressin, endorphins</li><li>Pro-inflammatory substances cause <b>peripheral sensitisation</b>: lower pain threshold, neurogenic oedema, <b>hyperalgesia</b> near the wound</li></ul><div class="box">Strong <b>C-fibre input</b> activates <b>NMDA receptors</b>, amplifying and prolonging the response (central hyperalgesia).</div>`),
+C('#1f7a6d','#f2fbf8','Where each drug acts','Treatment by pain phase',`<table><tr><th>Phase</th><th>Drugs and action</th></tr><tr><td><b>Transduction</b></td><td><b>NSAIDs</b> (COX inhibition), <b>acetaminophen</b>, <b>glucocorticoids</b>: block inflammatory mediators</td></tr><tr><td><b>Transmission</b></td><td><b>Opioids</b> (mu, delta: less substance P and glutamate); <b>NMDA antagonists</b> (ketamine, dextromethorphan); <b>alpha-2 agonists</b> (clonidine, short-lived)</td></tr><tr><td><b>Modulation</b></td><td><b>Tricyclics</b> via serotonin and noradrenaline</td></tr></table>`),
+C('#c2477e','#fff5f9','Before surgery: plan and educate','Preoperative period',`<ul><li>Collaborative, tailored information on <b>options, goals and expected pain</b>, matched to health literacy</li><li>Counselling lowers <b>anxiety, opioid use, sedative demand and length of stay</b></li><li>Explain how pain is <b>assessed and reported</b>; set realistic goals</li><li>Correct myths: pain “needs no treatment”, opioids mean <b>addiction</b></li><li>Include <b>family and caregivers</b></li></ul><div class="box big">Continue or adjust drugs with <b>withdrawal</b> risk: <b>benzodiazepines, opioids, barbiturates, gabapentin, baclofen</b>.</div>`),
+C('#b5472f','#fff7f3','Preoperative psychiatric assessment','Comorbidity changes recovery',`<ul><li><b>Anxiety and mood disorders</b> alter pain perception and slow recovery</li><li><b>Panic and claustrophobia</b> can be triggered after surgery (immobility, monitors, respiratory compromise)</li><li>Distress, <b>insomnia, irritability</b> raise analgesic demand</li><li>Assess <b>cognition</b>: deficits impair pain reporting</li><li><b>Preoperative opioid dependence</b>: higher requirement, delayed recovery</li><li><b>Substance use disorder</b>, especially OUD: plan to limit misuse</li></ul><div class="box">Know the <b>anaesthetic plan</b>: psychotropics may interfere with or duplicate pre-anaesthesia drugs.</div>`),
+C('#2a6fb0','#f2f8ff','Assessing pain after surgery','“The fifth vital sign”',`<ul><li>Self-report first: <b>verbal, visual analogue, face or numeric</b> rating scales</li><li>Also check <b>respiratory status and sedation</b>: every <b>1 to 2 hours</b> early on; <b>Pasero Opioid-Induced Sedation Scale</b></li><li>Reassess often; adjust to prevent <b>oversedation</b></li></ul><div class="box">Cognitive impairment, developmental disorder, language or cultural barriers: use <b>behavioural tools</b> and <b>caregiver input</b>.</div><div class="box big">Early signs of <b>respiratory depression</b>: lower the opioid dose, or rarely give an antagonist.</div>`),
+C('#7a4bc2','#f8f4ff','Multimodal analgesia','The standard approach',`<div class="box big">Combine <b>drugs with different (ideally synergistic) mechanisms</b>, routes and <b>non-drug</b> treatments.</div><ul><li>Lowers <b>pain scores, total analgesic use</b> and sometimes length of stay</li><li>Example: <b>NSAID + IV morphine PCA</b> reduces nausea and sedation vs morphine alone</li><li>Choice depends on surgery, pain type, patient preference, past response, <b>kidney and liver function</b></li></ul><div class="box">Watch for <b>NSAID bleeding or kidney injury</b> and <b>acetaminophen liver toxicity</b>.</div>`),
+C('#d17a00','#fffaf0','Opioids: route','Mainstay for moderate to severe acute pain',`<table><tr><th>Route</th><th>Role</th></tr><tr><td><b>Oral</b></td><td><b>Preferred</b>: IV is not superior</td></tr><tr><td><b>IV</b> (incl. <b>PCA</b>)</td><td>Fastest; PCA when oral not possible (ileus, aspiration risk) and patient can use it safely</td></tr><tr><td><b>Intramuscular</b></td><td><b>Avoid</b></td></tr><tr><td><b>Subcutaneous</b></td><td>Slow absorption, fewer side effects; mainly palliative; role unclear postoperatively</td></tr><tr><td><b>Sublingual, rectal</b></td><td>If swallowing is impaired</td></tr></table>`),
+C('#1f7a6d','#f2fbf8','Opioids: dose and schedule','Matching the pattern of pain',`<ul><li>First 24 h: pain is continuous, so <b>around-the-clock</b> dosing</li><li><b>Short-acting</b> preferred early (titratable); <b>long-acting</b> once pain stabilises</li></ul><table><tr><th>Schedule</th><th>Use when</th></tr><tr><td><b>Fixed (scheduled)</b></td><td>Severe, continuous pain; <b>substance use disorder</b>; <b>cognitive impairment</b></td></tr><tr><td><b>PRN</b></td><td>Intermittent, predictable pain (wound care, debridement)</td></tr><tr><td><b>Reverse PRN</b></td><td>Scheduled, but patient may <b>accept, refuse or delay</b></td></tr></table><div class="box">PRN in severe pain can make patients <b>preoccupied and dependent</b>, straining the staff relationship.</div>`),
+C('#c2477e','#fff5f9','Monitoring and tapering opioids','Safety first',`<ul><li>Watch <b>alertness, hypoventilation, hypoxia</b>, especially with sleep apnoea or other CNS depressants</li><li>Too sedated, delirious or hypoxic: <b>reduce the dose</b>; rarely an <b>antagonist</b></li><li>Pain despite analgesics: check <b>interactions</b>. <b>Codeine</b> is a prodrug needing <b>CYP2D6</b>; ~<b>7%</b> are poor metabolisers; paroxetine and fluoxetine inhibit it</li></ul><div class="box big">Dependence develops after <b>3+ weeks</b>. <b>Taper by 20 to 25% per day</b> (slower in chronic use). Withdrawal: abdominal pain, diarrhoea, aches, lacrimation, rhinorrhoea.</div>`),
+C('#b5472f','#fff7f3','Opioid quick reference','From Table 6.1 (selected)',`<table><tr><th>Opioid</th><th>Key points</th></tr><tr><td><b>Morphine</b></td><td>Glucuronide metabolites (M3G, M6G); the reference opioid</td></tr><tr><td><b>Codeine</b></td><td><b>Prodrug</b> (CYP2D6); unreliable in poor metabolisers; fatal neonatal respiratory depression</td></tr><tr><td><b>Hydromorphone</b></td><td>Extensive liver metabolism; used in <b>renal disease</b></td></tr><tr><td><b>Meperidine</b></td><td>Normeperidine: <b>seizures</b> with repeated dosing; avoid with <b>MAOIs</b></td></tr><tr><td><b>Fentanyl</b></td><td>CYP3A4; transdermal and iontophoretic forms</td></tr><tr><td><b>Methadone</b></td><td><b>QT prolongation</b>; incomplete cross-tolerance; NMDA antagonism</td></tr><tr><td><b>Buprenorphine</b></td><td><b>Partial agonist</b>; may precipitate withdrawal</td></tr></table><div class="box">Verify details against the printed table.</div>`),
+C('#7a4bc2','#f8f4ff','Non-opioid anti-inflammatory drugs','NSAIDs, acetaminophen, steroids',`<table><tr><th>Drug</th><th>Role and cautions</th></tr><tr><td><b>NSAIDs</b></td><td>Opioid-sparing; combine with acetaminophen. <b>Avoid in cardiovascular surgery</b> (MI, stroke); GI bleeding; renal dysfunction. COX-2 (celecoxib): less GI risk, same cardiovascular and renal concerns</td></tr><tr><td><b>Acetaminophen</b></td><td><b>Hepatotoxicity</b>: caution in chronic alcohol use or liver disease; reduced dose in cirrhosis</td></tr><tr><td><b>Corticosteroids</b></td><td>Dexamethasone, methylprednisolone; neurosurgery, cancer pain, cord compression, <b>tonsillectomy</b></td></tr></table>`),
+C('#2a6fb0','#f2f8ff','Antidepressants and gabapentinoids','Adjuncts',`<table><tr><th>Drug</th><th>Role and cautions</th></tr><tr><td><b>Tricyclics</b> (amitriptyline, nortriptyline)</td><td>Monoamine analgesia; limited by <b>anticholinergic</b> effects</td></tr><tr><td><b>SNRIs</b> (duloxetine)</td><td><b>Subacute</b> and chronic phase, not immediate postoperative: slow onset, early anxiety, bleeding and interactions</td></tr><tr><td><b>Gabapentin, pregabalin</b></td><td>Cut <b>opioid need and pain scores</b>; give pre- or postoperatively; <b>higher doses</b> work better; gabapentin absorption <b>saturable</b> (&gt;900 mg unreliable), pregabalin linear; both <b>renally cleared</b> (good in liver disease, risky in renal failure)</td></tr><tr><td><b>Carbamazepine</b></td><td>Trigeminal neuralgia, post-stroke, fibromyalgia</td></tr></table>`),
+C('#d17a00','#fffaf0','Ketamine, antipsychotics, topicals','Other adjuncts',`<ul><li><b>Ketamine (IV):</b> lowers pain, opioid need and nausea; reserve for <b>major surgery, opioid-dependent patients</b>, or opioid side effects; watch <b>nightmares, hallucinations, confusion</b></li><li><b>Antipsychotics:</b> mixed evidence; limited by <b>EPS and sedation</b>; <b>atypicals preferred</b>; neuroleptanalgesia may harm patients with <b>unstable angina</b></li><li><b>Capsaicin</b> (TRPV1): neuromas, neuropathic pain</li><li><b>Fentanyl iontophoretic patch (Ionsys):</b> needle-free, equals morphine PCA in hospital</li></ul>`),
+C('#1f7a6d','#f2fbf8','Physical non-drug treatments','Safe adjuncts',`<ul><li><b>TENS:</b> low-voltage current at the wound; activates descending inhibition and opioid receptors; <b>dose-dependent</b>; cuts analgesic use in moderate pain</li><li>Massage, acupuncture, cold, heat, warm insufflation, continuous passive motion, bracing: <b>safe, but evidence inconsistent</b></li></ul><div class="box">Useful where <b>drug side effects</b> are a concern.</div>`),
+C('#c2477e','#fff5f9','Psychological interventions','Low-risk adjuncts',`<ul><li><b>Relaxation, guided imagery, hypnosis, music</b>: most studies show less pain, <b>analgesic use and anxiety</b></li><li>No more than nominal risk; <b>valuable in older adults</b> (sedation, delirium with escalating opioids)</li><li>Needs <b>trained providers</b> (clinicians, psychologists, nurses, social workers)</li></ul><div class="box">Trials are <b>mixed</b>: preoperative CBT-physical therapy cut pain and disability, but preoperative CBT in lumbar fusion gave <b>no 1-year benefit</b>; one relaxation trial did <b>not</b> lower pain or opioid use.</div>`),
+C('#b5472f','#fff7f3','Mind and pain','Distress, catastrophising, CBT',`<ul><li>Preoperative <b>stress, anxiety, pessimism</b> predict slower healing and longer stay; <b>resilience</b> helps pain control</li><li><b>Catastrophising</b> raises pain and predicts <b>chronic pain</b>; <b>pain acceptance</b> helps function</li><li>High <b>neuroticism</b> goes with more distress</li><li><b>CBT</b> (coping, activity pacing, behavioural activation) mainly for <b>chronic pain</b></li></ul>`),
+C('#7a4bc2','#f8f4ff','Why pain is under-treated','Barriers',`<ul><li>Culture: pain is “<b>inevitable</b>” after surgery</li><li><b>Implicit bias</b> about thresholds in ethnic minorities</li><li>Unaddressed patient fear of side effects or <b>addiction</b></li><li>Prescriber fear of <b>misuse</b> or <b>disciplinary action</b>; poor pain training</li><li><b>Underuse of opioids</b>: doses too low or intervals too long</li></ul><div class="box big">Three hidden causes: <b>physiological dependence, opioid-induced hyperalgesia, pseudoaddiction</b>.</div>`),
+C('#2a6fb0','#f2f8ff','Dependence, tolerance and addiction','Not the same thing',`<table><tr><th>Term</th><th>Meaning</th></tr><tr><td><b>Physiological dependence</b></td><td>Neuroadaptation; need for the drug to stay stable; <b>withdrawal</b> on stopping</td></tr><tr><td><b>Tolerance</b></td><td>Needs <b>more</b> for the same effect; can appear in <b>as few as 7 days</b></td></tr><tr><td><b>Addiction (SUD)</b></td><td><b>Loss of control</b>, compulsive use despite harm, time spent obtaining or using, functional impairment</td></tr></table><div class="box">Confusing these under-treats severe pain. Separate <b>tolerance</b> from <b>disease progression</b> or inadequate treatment.</div>`),
+C('#d17a00','#fffaf0','Opioid-induced hyperalgesia','Paradoxical pain from opioids',`<ul><li>Loss of opioid benefit <b>without disease progression</b>; <b>diffuse allodynia</b></li><li>Seen with <b>high-dose chronic opioids</b> (e.g. methadone maintenance) and high <b>intraoperative</b> doses</li></ul><div class="box"><b>Options:</b> taper while treating withdrawal and add <b>non-opioids and behavioural</b> strategies; <b>switch opioid</b>; <b>ketamine</b>; <b>methadone</b> (incomplete cross-tolerance, NMDA block) or <b>buprenorphine</b> (kappa and delta antagonism).</div>`),
+C('#1f7a6d','#f2fbf8','Pseudoaddiction','A mistaken diagnosis',`<div class="box big">An <b>iatrogenic</b> picture: real pain treated with <b>too weak or too widely spaced</b> opioids.</div><div class="fl"><div class="st"><b>Under-treated pain</b></div><div class="ar">→</div><div class="st"><b>Requests for more, sooner</b>; anger, disruption</div><div class="ar">→</div><div class="st"><b>Misread</b> as addiction</div></div><div class="box">The patient is trying to show an <b>unmet need</b>. Treating the pain adequately resolves it.</div>`),
+C('#c2477e','#fff5f9','Pain not controlled: decision flow','Work through the causes',`<div class="st"><b>1.</b> Rule out a <b>new surgical or medical complication</b> (change in site, quality, severity)</div><div class="ar">▼</div><div class="st"><b>2.</b> Check <b>dose, interval, route</b>; drug interactions (e.g. CYP2D6 and codeine)</div><div class="ar">▼</div><div class="st"><b>3.</b> <b>Tolerance or dependence</b>? Raise dose, add adjuncts</div><div class="ar">▼</div><div class="st"><b>4.</b> <b>OIH</b>? Taper, switch, ketamine; <b>pseudoaddiction</b>? Treat pain adequately</div><div class="ar">▼</div><div class="st"><b>5.</b> Add <b>non-drug</b> measures; assess <b>SUD</b> separately</div>`),
+C('#b5472f','#fff7f3','Older adults','Start low, watch closely',`<ul><li><b>Lower starting doses</b>, especially with liver or kidney insufficiency</li><li>Monitor <b>confusion, sedation, respiratory depression</b></li><li><b>Polypharmacy</b>: check interactions; <b>QT</b>-prolonging opioids (methadone) with other QT drugs or low K/Mg</li><li>Potent opioids raise <b>fall</b> risk (vision, cognition, coordination)</li></ul><div class="box">Cognitive, developmental, geriatric and paediatric patients are <b>more often under-treated</b>: use developmentally appropriate scales and involve family.</div>`),
+C('#7a4bc2','#f8f4ff','Patients with addiction','Recognise and avoid misconceptions',`<div class="cols"><div><h3>Clues</h3><ul><li>Inconsistent story</li><li>Physical complications (e.g. <b>cirrhosis</b>)</li><li>Unexpected <b>toxicology</b></li><li>Concerning <b>PDMP</b> patterns</li><li>Missed follow-up, early use, “lost” medication, use for euphoria</li></ul></div><div><h3>Myths</h3><ul><li>“They will <b>get high</b>”</li><li>“Opioids won’t work”</li><li>“Usual <b>methadone</b> dose covers pain”</li></ul></div></div><div class="box big">Treat <b>pain and addiction separately</b>. Expect <b>higher doses</b>. Use <b>scheduled</b> dosing.</div>`),
+C('#2a6fb0','#f2f8ff','Opioid use disorder: methadone and buprenorphine','Perioperative handling',`<table><tr><th>Maintenance drug</th><th>Plan</th></tr><tr><td><b>Methadone</b></td><td><b>Continue</b> (once daily or split) and add a <b>different opioid</b> for acute pain</td></tr><tr><td><b>Buprenorphine</b></td><td>High-affinity <b>partial agonist</b>: blocks full agonists; on a full agonist it causes <b>withdrawal and worse pain</b>. <b>Hold 24 h before surgery</b>, use a shorter-acting full agonist, <b>re-induce</b> after acute pain</td></tr></table><div class="box">Under-treated OUD pain causes <b>opposition to care, leaving against advice, relapse</b>. Watch mental status; send <b>urine toxicology</b> if acute change.</div>`),
+C('#d17a00','#fffaf0','Going home: education and counselling','Transition to the outpatient setting',`<ul><li>Safe use; <b>driving</b> risk; <b>alcohol and CNS depressants</b> add to sedation</li><li>Close monitoring if <b>addiction</b> history or <b>benzodiazepines</b></li><li>Goal: <b>functional recovery</b>; explain planned dose reduction (<b>20 to 25% per day</b> after prolonged use)</li><li><b>Secure</b> medicines (diversion, theft)</li><li>Report <b>any change in location, quality or severity</b> of pain</li></ul>`),
+C('#1f7a6d','#f2fbf8','Persistent postsurgical pain','Acute pain turning chronic',`<ul><li>Pain after healing, can last <b>&gt;6 months</b>; common after <b>thoracotomy</b> (aching or burning along the scar)</li><li><b>Strongest predictor:</b> intense <b>early postoperative pain</b>, so treat early pain well</li><li>Preoperative <b>opioid use, chronic pain, anxiety, neuropathic pain</b>: worse and slower pain recovery, poorer control, <b>cognitive dysfunction</b></li></ul>`),
+C('#c2477e','#fff5f9','Becoming a chronic opioid user','Risk and CDC 2016 guidance',`<div class="stats"><div><em>~50%</em>of opioid-naive patients leave with an opioid</div><div><em>3%</em>still on opioids at 90 days</div></div><ul><li><b>Risk:</b> younger age, low income, diabetes, heart failure; preoperative SUD may be <b>missed</b> until later</li></ul><div class="box"><b>CDC:</b> non-drug and non-opioid first; clear functional goals; <b>lowest dose, under 90 MME/day</b>; prescriptions up to <b>7 days</b>; <b>avoid opioid + benzodiazepine</b>; urine toxicology; check the <b>PDMP</b>.</div>`),
+C('#b5472f','#fff7f3','Regulation and public health','Context for prescribers',`<ul><li>Prescription opioid deaths rose <b>fourfold</b> 1999 to 2013; overdose death rate in 2015 was <b>2.5 times</b> 1999</li><li>Over <b>two thirds</b> report unused opioids after surgery (diversion risk)</li><li><b>PDMPs</b> exist in nearly every US state; early evidence of less misuse</li><li>Many states cap first acute prescriptions at <b>7 days</b>; wider <b>naloxone</b> access</li></ul><div class="box">Know <b>local rules</b>; education reduces fear of disciplinary action.</div>`),
+C('#2b5fa8','#f2f6fd','Clinical decision pathway','Grand-rounds checklist',`<div class="st"><b>1.</b> <b>Before surgery:</b> educate, screen anxiety, mood, cognition, <b>SUD</b>, opioid use; continue withdrawal-risk drugs</div><div class="ar">▼</div><div class="st"><b>2.</b> Build a <b>multimodal, opioid-sparing</b> plan with the anaesthetic team</div><div class="ar">▼</div><div class="st"><b>3.</b> After surgery: scale, <b>sedation and respiratory checks</b>; scheduled dosing if severe or SUD</div><div class="ar">▼</div><div class="st"><b>4.</b> Uncontrolled? Look for <b>complications, tolerance, OIH, pseudoaddiction</b></div><div class="ar">▼</div><div class="st"><b>5.</b> Discharge: taper plan, safety, <b>PDMP</b>; watch <b>persistent pain</b></div>`),
+C('#2b5fa8','#f2f6fd','Key takeaways','Take-home points',`<ul><li>Poorly controlled pain delays recovery and raises complication risk</li><li><b>Preoperative education</b> lowers anxiety, opioid need and length of stay</li><li><b>Multimodal analgesia</b>: opioid + non-opioid + non-drug</li><li>Pain is also <b>psychological distress</b>; anxiety and pessimism worsen outcomes</li><li>Monitor <b>sedation and breathing</b>; check dose, schedule and <b>dependence or SUD</b></li><li>Dependence <b>is not</b> addiction; consider <b>OIH</b> and <b>pseudoaddiction</b></li></ul>`)
+];
+const g=document.getElementById('g'),N=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${N}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return;let f=36;i.style.fontSize=f+'px';
+while(f>16&&(i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1)){f--;i.style.fontSize=f+'px'}}
+const fitAll=()=>g.querySelectorAll('.c').forEach(fit);
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+</script>
+<script>
+(function(){
+  const SCALE=2;   // 2 = 2160x2160 px; use 1 for exactly 1080x1080
+  const GAP=450;   // max ms between the two taps
+  const SOURCES=['https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js','https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js'];
+
+  const css=document.createElement('style');
+  css.id='shot-css';
+  css.textContent='.cw{touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}#shot-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d2230;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px system-ui,sans-serif;z-index:99999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#shot-toast.on{opacity:1}';
+  document.head.appendChild(css);
+  const toast=document.createElement('div');toast.id='shot-toast';document.body.appendChild(toast);
+  let tt;function say(m,ms){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)}
+
+  const toBlob=c=>new Promise((res,rej)=>{try{c.toBlob(b=>b?res(b):rej(new Error('canvas is empty')),'image/png')}catch(e){rej(e)}});
+
+  /* Method 1 (default): the browser itself draws the card (SVG foreignObject).
+     Exactly what you see on screen: no re-implementation of CSS, no missing text. */
+  async function viaSvg(card){
+    const wrap=document.createElement('div');
+    wrap.setAttribute('style','position:relative;box-sizing:border-box;width:1080px;height:1080px;overflow:hidden;margin:0;padding:0;background:#fff');
+    document.querySelectorAll('style').forEach(s=>{if(s.id!=='shot-css')wrap.appendChild(s.cloneNode(true))});
+    const clone=card.cloneNode(true);
+    clone.removeAttribute('data-shot');
+    clone.style.transform='none';clone.style.left='0';clone.style.top='0';
+    wrap.appendChild(clone);
+    const xml=new XMLSerializer().serializeToString(wrap);
+    const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080"><foreignObject x="0" y="0" width="1080" height="1080">'+xml+'</foreignObject></svg>';
+    const img=new Image();
+    await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('svg render failed'));img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+    const canvas=document.createElement('canvas');canvas.width=1080*SCALE;canvas.height=1080*SCALE;
+    const ctx=canvas.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    return canvas;
+  }
+
+  /* Method 2 (fallback, e.g. some Safari versions): html2canvas */
+  function addScript(src){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>{s.remove();rej(new Error('blocked: '+src))};document.head.appendChild(s)})}
+  let lib;function load(){if(window.html2canvas)return Promise.resolve();if(lib)return lib;
+    lib=(async()=>{for(const src of SOURCES){try{await addScript(src);if(window.html2canvas)return}catch(e){}}lib=null;throw new Error('Could not load the fallback library (offline?). Open the downloaded HTML file in Chrome, Edge or Firefox.')})();return lib}
+  async function viaH2C(card){
+    await load();
+    card.setAttribute('data-shot','1');
+    try{
+      return await html2canvas(card,{scale:SCALE,width:1080,height:1080,windowWidth:1300,windowHeight:1300,scrollX:0,scrollY:0,backgroundColor:null,logging:false,useCORS:true,
+        onclone:function(doc){const c=doc.querySelector('.c[data-shot="1"]');if(!c)return;
+          const w=c.parentElement;w.style.cssText='position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:visible;border:0;border-radius:0;margin:0;padding:0;transform:none;aspect-ratio:auto';
+          c.style.transform='none';c.style.left='0';c.style.top='0'}});
+    }finally{card.removeAttribute('data-shot')}
+  }
+
+  let busy=false;
+  async function shoot(card){
+    if(busy)return;busy=true;say('Creating image...',8000);
+    try{
+      if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+      let blob;
+      try{blob=await toBlob(await viaSvg(card))}
+      catch(e1){console.warn('SVG export failed, using fallback:',e1);blob=await toBlob(await viaH2C(card))}
+      const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+      const name=((card.querySelector('h2')||{}).textContent||'card').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='card-'+String(idx).padStart(2,'0')+'-'+name+'.png';
+      document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+a.download);
+    }catch(err){console.error('Card export failed:',err);say('Could not save: '+(err&&err.message?err.message:err),6000)}
+    finally{busy=false}
+  }
+
+  let last={el:null,t:0,x:0,y:0};
+  document.addEventListener('pointerup',function(e){
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    const card=e.target.closest&&e.target.closest('.c');
+    if(!card){last.el=null;return}
+    const now=Date.now();
+    if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card)}
+    else{last={el:card,t:now,x:e.clientX,y:e.clientY}}
+  });
+})();
+</script>
+</body></html>
