@@ -265,6 +265,27 @@ window.GENERATED_GUIDELINES = [
     "readTime": "1 min read"
   },
   {
+    "title": "Alzheimer’s Disease: Square Clinical Cards",
+    "shortTitle": "Alzheimer’s Disease: Square Clinical Cards",
+    "authors": "Psychiatry CPG Notes",
+    "year": "",
+    "journal": "Books / Textbook Clinical Pharmacology",
+    "category": "Books / Textbook Clinical Pharmacology",
+    "description": "Grand-rounds cards from Textbook of Clinical Pharmacology, Chapter 15. Each card is a 1:1 square. Double-tap or double-click a card to save it as a 2160 px PNG. Doses are as printed in the source;…",
+    "tags": [
+      "Textbook Clinical Pharmacology",
+      "Books"
+    ],
+    "keywords": [
+      "Alzheimer’s Disease: Square Clinical Cards",
+      "Alzheimer’s disease",
+      "Textbook Clinical Pharmacology",
+      "Alzheimers Cards"
+    ],
+    "url": "books/textbook-clinical-pharmacology/alzheimers-cards.html",
+    "readTime": "1 min read"
+  },
+  {
     "title": "Migraine: Square Clinical Cards",
     "shortTitle": "Migraine: Square Clinical Cards",
     "authors": "Psychiatry CPG Notes",

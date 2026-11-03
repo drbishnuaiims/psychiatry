@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alzheimer’s Disease: Square Clinical Cards</title>
+<style id="main-css">
+:root{box-sizing:border-box;--bg:#f5f5f7;--ink:#1d1d1f;--mut:#6e6e73;color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);background:var(--bg);color:var(--ink);font-family:-apple-system,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif;line-height:1.45}
+header{max-width:1100px;margin:0 auto;padding:28px 16px 8px}
+header h1{font-size:1.9rem;letter-spacing:-.02em;margin:0 0 6px}
+header p{margin:0 0 8px;color:var(--mut);font-size:.92rem;max-width:760px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 48px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:22px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:22px;background:#fff;box-shadow:0 2px 14px rgba(0,0,0,.12);touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 60px;display:flex;flex-direction:column;background:var(--b,#fff);color:#1d1d1f;font-family:-apple-system,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif;font-size:34px;line-height:1.28;text-align:left;overflow:hidden}
+.c h2{font-size:56px;line-height:1.07;letter-spacing:-.02em;margin:0 0 8px;color:var(--a);font-weight:750;flex:none}
+.c .sub{font-size:28px;line-height:1.2;color:#6e6e73;margin:0 0 16px;flex:none;font-weight:500}
+.in{flex:none;display:flex;flex-direction:column;gap:.45em;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:20px;font-size:22px;color:#8e8e93}
+.in ul{padding-left:1.15em}.in li{margin:.15em 0}
+.c b{background:#fff0b3;padding:0 .12em;border-radius:.2em;font-weight:650;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.box{border-left:.2em solid var(--a);background:rgba(0,0,0,.05);padding:.35em .65em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.55em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.box.dx{background:#fff;border:.08em solid var(--a);border-left-width:.25em}
+.box.dx:before{content:"Clinical decision";display:block;font-size:.62em;letter-spacing:.08em;text-transform:uppercase;color:var(--a);font-weight:700}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.45em}
+.stats div{background:#fff;border:.08em solid var(--a);border-radius:.6em;padding:.3em .5em;text-align:center;font-size:.8em;line-height:1.15}
+.stats em{display:block;font-style:normal;font-size:1.7em;font-weight:750;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.84em;background:#fff;border-radius:.5em;overflow:hidden;table-layout:auto}
+th{background:var(--a);color:#fff;text-align:left;padding:.25em .5em}
+td{padding:.25em .5em;border-top:.05em solid #e5e5ea;vertical-align:top;overflow-wrap:anywhere}
+.fl{display:flex;align-items:stretch;gap:.35em}
+.st{flex:1;background:#fff;border:.08em solid var(--a);border-radius:.6em;padding:.3em .55em;text-align:center;font-size:.88em;line-height:1.2}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.05em;line-height:.9;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.08em .75em;font-size:.78em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.cols>div{background:#fff;border-radius:.6em;padding:.4em .6em;border-top:.22em solid var(--a);font-size:.92em;line-height:1.22;min-width:0}
+.cols h3{margin:0 0 .15em;font-size:1em;color:var(--a)}.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:96px}.cover .sub{color:#e8f0ff;font-size:36px}
+.cover .in{flex:1;justify-content:center}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px -apple-system,system-ui,sans-serif;z-index:9999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#toast.on{opacity:1}
+</style></head><body>
+<header><h1>Alzheimer’s disease</h1>
+<p>Grand-rounds cards from Textbook of Clinical Pharmacology, Chapter 15. Each card is a 1:1 square. Double-tap or double-click a card to save it as a 2160 px PNG. Doses are as printed in the source; verify against current prescribing information.</p></header>
+<main><div class="grid" id="g"></div></main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const B='#0071e3',T='#1f9d8a',O='#d9730d',P='#7a4bc2',R='#d63c4a',N='#8a4b2a';
+const cards=[
+C(P,P,'Alzheimer’s disease','Pathogenesis, staging and drug treatment',`<div><span class="pill">Risk factors</span><span class="pill">Amyloid and tau</span><span class="pill">Clinical stages</span><span class="pill">AChE inhibitors</span><span class="pill">Memantine</span></div><div style="font-size:.66em;margin-top:.6em;opacity:.9">Source: Textbook of Clinical Pharmacology, Chapter 15</div>`,'cover'),
+C(B,'#f2f8ff','Burden and risk factors','Neurodegenerative dementia of later life',`<div class="stats"><div><em>~50 million</em>people with AD dementia worldwide</div><div><em>&gt;2x by 2050</em>prevalence likely to more than double</div></div><div class="box">Occurs after <b>65 years</b>; classically called <b>senile dementia</b>.</div><div class="cols"><div><h3>Non-modifiable</h3><ul><li><b>Increasing age</b></li><li><b>APOE ε4</b> allele (chr 19)</li><li>Female gender</li><li><b>Down’s syndrome</b></li><li>Family history of dementia</li></ul></div><div><h3>Other well-established</h3><ul><li><b>Low education</b></li><li><b>Past head injury</b></li><li><b>Homocysteinaemia</b></li><li><b>Hypercholesterolaemia</b></li></ul></div></div>`),
+C(R,'#fff5f5','Histopathology','Three hallmark lesions',`<table><tr><th>Lesion</th><th>Key points</th></tr><tr><td><b>Extracellular amyloid plaques</b></td><td><b>Aβ</b>, a cleavage product of amyloid-β precursor protein (AβPP). Monomers aggregate to <b>oligomers, fibrils, insoluble plaques</b>; disrupt brain function</td></tr><tr><td><b>Intracellular neurofibrillary tangles</b></td><td><b>Hyperphosphorylated tau</b>. Tau normally holds neurons together; it breaks loose, microtubules are lost</td></tr><tr><td><b>Nerve cell death</b></td><td>Loss of <b>basal forebrain cholinergic neurons</b>: cholinergic deficit and short-term memory loss</td></tr></table><div class="box">Gross: <b>shrunken cortex and hippocampus, enlarged ventricles</b> (Fig 15.1).</div>`),
+C(O,'#fff9f0','Amyloid cascade hypothesis','From plaque to memory loss',`<div class="st"><b>Aβ accumulates</b> (cleaved from AβPP)</div><div class="ar">▼</div><div class="st">Dysregulated <b>synaptic and neuronal function</b></div><div class="ar">▼</div><div class="st"><b>Tau hyperphosphorylation</b>: neurofibrillary tangles form</div><div class="ar">▼</div><div class="st"><b>Neuronal loss</b>; failing neurotransmission</div><div class="ar">▼</div><div class="st"><b>Cholinergic deficit</b> (basal forebrain): short-term memory loss</div><div class="box">Treatment logic: <b>cholinergic deficit</b> is the target of AChE inhibitors; <b>glutamate excitotoxicity</b> is the target of memantine.</div>`),
+C(T,'#f1fbf9','Clinical stages','Progressive cortical spread',`<table><tr><th>Stage</th><th>Features</th></tr><tr><td><b>Pre-symptomatic</b></td><td>Years. Mild memory loss; early cortex and hippocampus change; <b>no functional impairment</b></td></tr><tr><td><b>Mild</b></td><td>Poor concentration and memory; <b>disorientation</b> to place and time; mood change, <b>depression</b>; trouble in daily life</td></tr><tr><td><b>Moderate</b></td><td>Spread to cerebral cortex: worse memory, <b>fails to recognise family and friends</b>, impulse control lost, difficulty reading, writing, speaking</td></tr><tr><td><b>Severe</b></td><td>Whole cortex. Cannot recognise family; <b>mute, incontinent, bedridden, dysphagia</b>; death from complications</td></tr></table>`),
+C(P,'#f8f4ff','Recognising the syndrome','Clinical presentation (Fig 15.2)',`<div class="cols"><div><h3>Cognitive</h3><ul><li><b>Memory loss</b>, misplacing items</li><li>Poor problem solving, unfinished tasks</li><li>Difficulty with <b>words</b></li><li>Confusion: <b>time and location</b></li><li>Trouble with <b>images and spaces</b></li></ul></div><div><h3>Behavioural</h3><ul><li><b>Poor judgement</b></li><li><b>Social withdrawal</b></li><li>Unfounded emotions, mood change</li><li><b>Delusions, hallucinations</b> in some</li></ul></div></div><div class="box dx">Impaired <b>activities of daily living</b> mark progression. With no specific cure, management targets <b>behavioural and neurological problems</b>.</div>`),
+C(R,'#fff5f5','Treatment algorithm','Two approved drug classes only',`<div class="st"><b>No specific or disease-modifying treatment</b>; aim is to ease symptoms</div><div class="ar">▼ mild to moderate ▼</div><div class="st"><b>Cholinesterase inhibitor:</b> donepezil, rivastigmine, galantamine (tacrine historic)</div><div class="ar">▼ moderate to severe ▼</div><div class="st"><b>Memantine</b> alone, or <b>with an AChE inhibitor</b></div><div class="ar">▼ at every stage ▼</div><div class="st"><b>Non-drug measures</b> and monitoring of progression (biomarkers)</div><div class="box">Success depends on <b>early treatment</b>.</div>`),
+C(B,'#f2f8ff','Cholinesterase inhibitors: doses','As printed in the source',`<table><tr><th>Drug</th><th>Start to max</th><th>Points</th></tr><tr><td><b>Tacrine</b></td><td>40 mg/day (10 mg QID) 4 wk; monthly rise to <b>160 mg/day</b></td><td>First FDA-approved. <b>Hepatotoxic</b>; frequent LFTs</td></tr><tr><td><b>Donepezil</b></td><td><b>5 mg</b>, monthly to <b>20 mg/day</b></td><td>Long-acting; well tolerated; no change in progression</td></tr><tr><td><b>Rivastigmine</b></td><td><b>1.5 mg BD</b> to <b>6 mg BD</b></td><td>Mild to moderate; <b>patch</b> available</td></tr><tr><td><b>Galantamine</b></td><td><b>4 mg BD</b>, monthly to <b>16 mg/day</b></td><td>Standard first line, mild to moderate</td></tr></table><div class="box">Increase <b>monthly</b>. Verify ceilings against the current label (donepezil labels often cap at 10 mg, 23 mg in moderate to severe).</div>`),
+C(O,'#fff9f0','Choosing an AChE inhibitor','Mechanisms, adverse effects, cautions',`<ul><li><b>Tacrine:</b> nausea, vomiting, diarrhoea, <b>hepatotoxicity</b>; adjust dose or switch</li><li><b>Donepezil:</b> mild, transient GI and nervous effects</li><li><b>Rivastigmine:</b> pseudo-irreversible block of <b>AChE and BuChE</b>; nausea, vomiting, dyspepsia, asthenia, anorexia, <b>weight loss</b></li><li><b>Galantamine:</b> competitive AChE block plus allosteric <b>nicotinic α-subunit</b> activation (ACh release)</li></ul><div class="box dx"><b>Transdermal rivastigmine:</b> continuous delivery, lower dose, fewer side effects, better caregiver satisfaction. <b>Galantamine</b> is contraindicated in <b>hepatic and renal impairment</b> (source).</div>`),
+C(P,'#f8f4ff','Memantine','NMDA antagonist for moderate to severe AD',`<div class="box">Low-affinity <b>uncompetitive NMDA antagonist</b>: prevents glutamate over-activation and <b>excitotoxicity</b>. The <b>only approved</b> drug in its class.</div><div class="fl"><div class="st"><b>Wk 1</b><br>5 mg OD</div><div class="ar">→</div><div class="st"><b>Wk 2</b><br>5 mg BD</div><div class="ar">→</div><div class="st"><b>Wk 3</b><br>10 mg AM, 5 mg PM</div><div class="ar">→</div><div class="st"><b>Wk 4</b><br>10 mg BD</div></div><div class="box dx">Use <b>alone</b> or <b>with an AChE inhibitor</b> (donepezil in the source; printed “donazepil”) for maximum benefit.</div>`),
+C(T,'#f1fbf9','Non-drug care and the future','When symptoms are not severe',`<ul><li>Look for <b>clear precipitants</b>: suboptimal prompting, personal care or toileting</li><li>Promote <b>social interaction, activity, exercise</b></li><li>Psychiatric-type drugs follow <b>psychiatric practice in younger patients</b>; <b>avoid strongly anticholinergic drugs</b></li></ul><div class="box"><b>Emerging:</b> chaperones (<b>heat shock proteins, VPS35</b>), <b>tau-targeted therapy</b>, <b>combination therapy</b> to slow progression.</div>`),
+C(N,'#fff6f1','Key takeaways','Remember these',`<ul><li>AD: <b>amyloid plaques, tau tangles, cholinergic neuron loss</b></li><li>Four stages: pre-symptomatic, mild, moderate, <b>severe</b></li><li>No cure; <b>symptomatic</b> drugs only</li><li><b>Mild to moderate:</b> donepezil, rivastigmine, galantamine</li><li><b>Moderate to severe:</b> memantine, with or without AChEI</li><li>Watch <b>liver</b> (tacrine) and <b>weight, GI effects</b> (rivastigmine)</li><li>Non-drug care throughout; <b>treat early</b></li></ul>`)
+];
+const g=document.getElementById('g'),NN=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${NN}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+/* Fit in layout units (transform-independent). Content bottom must stay above LIM, leaving a safety margin so the SVG raster can never clip. */
+const LIM=1080-84;
+function bad(c){const i=c.querySelector('.in');if(c.classList.contains('cover'))return false;
+ if(i.offsetTop+i.offsetHeight>LIM)return true;
+ return [...i.querySelectorAll('*')].some(e=>e.clientWidth>0&&e.scrollWidth>e.clientWidth+1)}
+function fit(c){const i=c.querySelector('.in');let f=34;i.style.fontSize=f+'px';
+ while(f>14&&bad(c)){f-=.5;i.style.fontSize=f+'px'}return !bad(c)}
+function fitAll(){g.querySelectorAll('.c').forEach(c=>{if(!fit(c))console.warn('Card still overflows:',c.querySelector('h2').textContent)})}
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+</script>
+<script>
+(function(){
+const SCALE=2,GAP=450,toast=document.createElement('div');toast.id='toast';document.body.appendChild(toast);
+let tt;const say=(m,ms)=>{toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)};
+const raf2=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function render(card){
+ /* Fresh unscaled copy at true 1080x1080, laid out in the live DOM so measurement matches rendering */
+ const stage=document.createElement('div');
+ stage.style.cssText='position:fixed;left:-20000px;top:0;width:1080px;height:1080px;pointer-events:none;z-index:-1';
+ const c=card.cloneNode(true);
+ c.style.cssText+=';transform:none;left:0;top:0;position:absolute';
+ stage.appendChild(c);document.body.appendChild(stage);
+ try{
+  if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+  await raf2();
+  fit(c);await raf2();
+  if(!fit(c)){const i=c.querySelector('.in');let f=parseFloat(i.style.fontSize);while(bad(c)&&f>8){f-=.5;i.style.fontSize=f+'px'}}
+  /* Pin the fitted size and card box so the serialized copy lays out identically */
+  const css=document.getElementById('main-css').textContent;
+  const xml=new XMLSerializer().serializeToString(c);
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080"><foreignObject x="0" y="0" width="1080" height="1080"><div xmlns="http://www.w3.org/1999/xhtml" style="width:1080px;height:1080px;position:relative;overflow:hidden"><style>'+css.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</style>'+xml+'</div></foreignObject></svg>';
+  const img=new Image();
+  await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('render failed'));img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+  if(img.decode)try{await img.decode()}catch(e){}
+  const cv=document.createElement('canvas');cv.width=cv.height=1080*SCALE;const x=cv.getContext('2d');
+  x.fillStyle='#fff';x.fillRect(0,0,cv.width,cv.height);
+  x.drawImage(img,0,0,cv.width,cv.height);await sleep(80);x.drawImage(img,0,0,cv.width,cv.height); /* Safari first-paint quirk */
+  return await new Promise((res,rej)=>cv.toBlob(b=>b?res(b):rej(new Error('empty canvas')),'image/png'));
+ }finally{stage.remove()}
+}
+let busy=false;
+async function shoot(card,touch){
+ if(busy)return;busy=true;say('Creating image...',8000);
+ try{
+  const blob=await render(card);
+  const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+  const name='card-'+String(idx).padStart(2,'0')+'-'+(card.querySelector('h2').textContent.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40))+'.png';
+  const file=new File([blob],name,{type:'image/png'});
+  if(touch&&navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file]});say('Shared');return}catch(e){if(e&&e.name==='AbortError')return}}
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+name);
+ }catch(err){console.error(err);say('Could not save: '+(err.message||err),6000)}finally{busy=false}
+}
+let last={el:null,t:0,x:0,y:0};
+document.addEventListener('pointerup',e=>{
+ if(e.pointerType==='mouse'&&e.button!==0)return;
+ const card=e.target.closest&&e.target.closest('.c');
+ if(!card){last.el=null;return}
+ const now=Date.now();
+ if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card,e.pointerType!=='mouse')}
+ else last={el:card,t:now,x:e.clientX,y:e.clientY};
+});
+})();
+</script>
+</body></html>
