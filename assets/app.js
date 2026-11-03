@@ -6,9 +6,21 @@ const empty=document.getElementById("emptyState");
 const topBtn=document.getElementById("topBtn");
 const themeBtn=document.getElementById("themeToggle");
 
+// Manual GUIDELINES win over GENERATED_GUIDELINES when normalized URLs match
+const normUrl=u=>String(u||"").trim().replace(/^(\.\/|\/)+/,"").split(/[?#]/)[0].toLowerCase();
+const ALL_GUIDELINES=(()=>{
+  const seen=new Set(),out=[];
+  [GUIDELINES,typeof GENERATED_GUIDELINES!=="undefined"?GENERATED_GUIDELINES:[]].forEach(list=>list.forEach(g=>{
+    const k=normUrl(g.url);
+    if(!k||seen.has(k))return;
+    seen.add(k);out.push(g);
+  }));
+  return out;
+})();
+
 function render(query=""){
   const q=query.trim().toLowerCase();
-  const results=GUIDELINES.filter(g=>
+  const results=ALL_GUIDELINES.filter(g=>
     [g.title,g.shortTitle,g.authors,g.journal,g.category,g.description,...g.tags,...(g.keywords||[])].join(" ").toLowerCase().includes(q)
   );
   grid.innerHTML=results.map((g,i)=>`
