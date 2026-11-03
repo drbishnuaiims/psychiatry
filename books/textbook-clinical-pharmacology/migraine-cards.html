@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Migraine: Square Clinical Cards</title>
+<style id="main-css">
+:root{box-sizing:border-box;--bg:#f5f5f7;--ink:#1d1d1f;--mut:#6e6e73;--pill:#fff;--bd:#d2d2d7;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--ink:#f5f5f7;--mut:#a1a1a6;--pill:#1c1c1e;--bd:#3a3a3c}}
+:root[data-theme="dark"]{--bg:#000;--ink:#f5f5f7;--mut:#a1a1a6;--pill:#1c1c1e;--bd:#3a3a3c}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif;line-height:1.45}
+header{max-width:1100px;margin:0 auto;padding:28px 16px 8px}
+header h1{font-size:1.9rem;letter-spacing:-.02em;margin:0 0 6px}
+header p{margin:0 0 8px;color:var(--mut);font-size:.92rem;max-width:760px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 48px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:22px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:22px;background:#fff;box-shadow:0 2px 14px rgba(0,0,0,.12);touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 60px;display:flex;flex-direction:column;background:var(--b,#fff);color:#1d1d1f;font-family:-apple-system,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif;font-size:34px;line-height:1.28;text-align:left;overflow:hidden}
+.c h2{font-size:58px;line-height:1.07;letter-spacing:-.02em;margin:0 0 8px;color:var(--a);font-weight:750;flex:none}
+.c .sub{font-size:28px;line-height:1.2;color:#6e6e73;margin:0 0 14px;flex:none;font-weight:500}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.45em;overflow:hidden;font-size:34px;padding-bottom:30px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:22px;font-size:22px;color:#8e8e93}
+.in ul{padding-left:1.15em}.in li{margin:.15em 0}
+.c b{background:#fff0b3;padding:0 .12em;border-radius:.2em;font-weight:650;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.box{border-left:.2em solid var(--a);background:rgba(0,0,0,.05);padding:.35em .65em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.55em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.box.dx{background:#fff;border:.08em solid var(--a);border-left-width:.25em}
+.box.dx:before{content:"Clinical decision";display:block;font-size:.62em;letter-spacing:.08em;text-transform:uppercase;color:var(--a);font-weight:700}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.45em}
+.stats div{background:#fff;border:.08em solid var(--a);border-radius:.6em;padding:.3em .5em;text-align:center;font-size:.8em;line-height:1.15}
+.stats em{display:block;font-style:normal;font-size:1.7em;font-weight:750;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.88em;background:#fff;border-radius:.5em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.25em .5em}
+td{padding:.25em .5em;border-top:.05em solid #e5e5ea;vertical-align:top}
+.fl{display:flex;align-items:stretch;gap:.35em}
+.st{flex:1;background:#fff;border:.08em solid var(--a);border-radius:.6em;padding:.3em .55em;text-align:center;font-size:.88em;line-height:1.2}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.05em;line-height:.9;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.08em .75em;font-size:.78em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.cols>div{background:#fff;border-radius:.6em;padding:.4em .6em;border-top:.22em solid var(--a);font-size:.92em;line-height:1.22}
+.cols h3{margin:0 0 .15em;font-size:1em;color:var(--a)}.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:96px}.cover .sub{color:#e8f0ff;font-size:36px}
+.cover .in{justify-content:center}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px -apple-system,system-ui,sans-serif;z-index:9999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#toast.on{opacity:1}
+</style></head><body>
+<header><h1>Migraine</h1>
+<p>Grand-rounds cards covering every point of the migraine section, Textbook of Clinical Pharmacology, Chapter 14. Each card is a 1:1 square. Double-tap or double-click a card to save it as a 2160 px PNG. Doses are as printed in the source; verify against current prescribing information.</p></header>
+<main><div class="grid" id="g"></div></main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const B='#0071e3',T='#1f9d8a',O='#d9730d',P='#7a4bc2',R='#d63c4a',K='#c2477e',N='#8a4b2a';
+const cards=[
+C(P,P,'Migraine','Diagnosis, acute treatment by severity, triptans, ergots and prophylaxis',`<div><span class="pill">Features</span><span class="pill">Mild, moderate, severe</span><span class="pill">Ergots</span><span class="pill">Triptans</span><span class="pill">Prophylaxis</span></div><div style="font-size:.66em;margin-top:.6em;opacity:.9">Source: Textbook of Clinical Pharmacology, Chapter 14 (migraine section)</div>`,'cover'),
+C(T,'#f1fbf9','What is migraine?','Features, triggers and diagnosis',`<ul><li><b>Hemicranial headache</b> with accompanying <b>aura</b> (visual or auditory hallucinations)</li><li><b>Déjà vu</b> phenomenon (repeated flashes of episodes)</li></ul><div class="box"><b>Aggravating factors:</b> decreased sleep and <b>skipping meals</b>.</div><div class="box dx"><b>Diagnosis:</b> if ophthalmic exam shows a <b>normal fundus</b> and ENT exam shows <b>normal ear ossicles</b>, the diagnosis is migraine (i.e. other causes excluded).</div><div class="box">Migraine is also a painful disease that can <b>perpetuate chronic pain</b>; <b>TCAs</b> and <b>botulinum toxin</b> are used in chronic migraine.</div>`),
+C(B,'#f2f8ff','Severity grading','Treat according to grade',`<table><tr><th>Grade</th><th>Pattern</th><th>Treatment</th></tr><tr><td><b>Mild</b></td><td>&lt;1 attack/month; throbbing, tolerable</td><td>Simple analgesics</td></tr><tr><td><b>Moderate</b></td><td>More intense; lasts <b>24 h</b>; nausea, vomiting, functional impairment</td><td><b>NSAIDs</b> + antiemetic</td></tr><tr><td><b>Severe</b></td><td><b>2-3 or more</b> attacks/month; <b>12-48 h</b>; vertigo, vomiting, aura</td><td><b>Ergots or triptans</b></td></tr></table><div class="box">Frequent attacks (<b>3-4 episodes/month</b>) add <b>prophylaxis</b>.</div>`),
+C(O,'#fff9f0','Mild migraine','Simple analgesics at first sign',`<div class="box">Fewer than <b>one attack per month</b> of throbbing but tolerable headache.</div><table><tr><th>Drug</th><th>Dose</th></tr><tr><td><b>Paracetamol</b></td><td><b>500 mg to 1 g</b></td></tr><tr><td><b>Aspirin</b></td><td><b>75 mg</b> BD (as printed)</td></tr></table><div class="box dx">Take at the <b>first indication</b> of an attack; repeat <b>6-hourly</b>.</div>`),
+C(R,'#fff5f5','Moderate migraine','NSAIDs plus antiemetic',`<div class="box">Throbbing headache, more intense, lasting <b>24 hours</b>, with <b>nausea, vomiting and functional impairment</b>.</div><table><tr><th>NSAID</th><th>Dose</th></tr><tr><td><b>Ibuprofen</b></td><td>400 mg BD</td></tr><tr><td><b>Naproxen</b></td><td>500 mg BD</td></tr><tr><td><b>Diclofenac</b></td><td>50 mg, 8-hourly</td></tr><tr><td><b>Mefenamic acid</b></td><td>500 mg TDS</td></tr></table><ul><li>Reduce <b>inflammation around cerebral and cranial vascular tissue</b></li><li>Take <b>only until the attack passes</b></li><li><b>Metoclopramide</b> is frequently added</li></ul>`),
+C(P,'#f8f4ff','Severe migraine: ergots','Specific antidotes',`<div class="box">Severe: <b>2-3 or more attacks/month</b>, throbbing, <b>12-48 h</b>, with vertigo, vomiting and aura. Specific drugs: <b>ergotamine, dihydroergotamine, triptans</b>.</div><ul><li><b>Mechanism:</b> reduce neurogenic inflammation and plasma leakage in the <b>dura mater</b> (retrograde stimulation of perivascular afferent nerves)</li></ul><table><tr><th>Drug</th><th>Dosing</th></tr><tr><td><b>Ergotamine</b></td><td><b>1 mg</b> oral, repeat every <b>30 min</b> until relief; <b>max 6 mg</b></td></tr><tr><td><b>Dihydroergotamine</b></td><td>Constricts <b>venules</b>; preferred; <b>2-6 mg</b> oral, max <b>10 mg</b></td></tr></table><div class="box big">Limit ergotamine to <b>6 mg</b> to avoid serious toxic <b>vasoconstriction</b>.</div>`),
+C(T,'#f1fbf9','Sumatriptan: mechanism','Selective 5-HT1D/1B agonist',`<ul><li><b>Presynaptic 5-HT1D/1B</b> receptor agonist</li><li><b>Constricts dilated cranial vessels</b>, especially <b>arteriovenous shunts in the carotid artery</b></li><li>In migraine these shunts dilate and <b>divert blood from brain parenchyma</b></li><li>May <b>inhibit inflammatory neuropeptide release</b> and plasma protein extravasation across dural vessels</li></ul><table><tr><th>Route</th><th>Dose</th></tr><tr><td>Oral (convenient)</td><td><b>25/50 mg</b> BD (sumatriptan / almotriptan, as printed)</td></tr><tr><td>Nausea or vomiting</td><td><b>6 mg SC</b></td></tr></table><div class="box dx">Give <b>at the earliest</b> in the acute attack.</div>`),
+C(B,'#f2f8ff','Triptan class','Agents and adverse effects',`<div class="cols"><div><h3>Agents</h3><ul><li>Sumatriptan, almotriptan</li><li>Zolmitriptan</li><li>Naratriptan</li><li>Rizatriptan</li><li>Frovatriptan</li></ul></div><div><h3>Adverse effects</h3><ul><li>Bitter taste; <b>stinging, burning, pain</b> at injection site</li><li>Oral: <b>paraesthesia, asthenia, fatigue</b>, drowsiness, nausea, vomiting</li><li><b>Tightness</b> of chest, jaw, neck</li></ul></div></div><div class="box big">Contraindicated: <b>ischaemic heart disease, hepatic or renal impairment, pregnancy</b>.</div><div class="box">Highly effective, but effect <b>wears off before the headache fully settles</b> (except <b>naratriptan, frovatriptan</b>).</div>`),
+C(O,'#fff9f0','Special situations and interactions','Choosing and combining',`<table><tr><th>Situation</th><th>Choice or rule</th></tr><tr><td><b>Children &gt;12 years</b></td><td><b>Zolmitriptan nasal spray</b>, acute migraine</td></tr><tr><td><b>Menstrual migraine</b></td><td><b>Frovatriptan</b> preferred</td></tr><tr><td><b>Nausea, vomiting</b></td><td>Sumatriptan <b>6 mg SC</b></td></tr><tr><td><b>Triptan + ergot</b></td><td>Not together, or within <b>24 hours</b> of each other</td></tr><tr><td><b>Caffeine</b></td><td><b>Increases ergotamine absorption</b> (source text cut off: "So, used")</td></tr></table>`),
+C(R,'#fff5f5','Migraine prophylaxis','For 3-4 episodes per month: "ABCD"',`<div class="box">Source: if headaches occur <b>3-4 times/month</b>, <b>ABCD (all 4 classes)</b> are listed.</div><table><tr><th>Class</th><th>Drug and dose</th></tr><tr><td><b>TCA</b></td><td>Amitriptyline <b>25-50 mg</b> at night; effective in many, <b>more side effects</b> than propranolol</td></tr><tr><td><b>Beta-blocker</b></td><td>Propranolol <b>40 mg BD</b> up to <b>160 mg BD</b>; cuts frequency and severity in <b>70%</b></td></tr><tr><td><b>Calcium channel blocker</b></td><td>Flunarizine <b>5-10 mg OD</b>; limits Ca overload from brain hypoxia</td></tr><tr><td><b>Anticonvulsants</b></td><td>Valproate <b>400-1200</b>, gabapentin <b>300-1200</b> mg/day, topiramate <b>25-50 mg OD</b>: <b>refractory</b> cases</td></tr></table>`),
+C(N,'#fff6f1','Migraine pathway','Grand-rounds algorithm',`<div class="st"><b>Diagnose:</b> hemicranial headache, aura; normal fundus and ENT; avoid <b>sleep loss, skipped meals</b></div><div class="ar">▼</div><div class="st"><b>Mild:</b> paracetamol 0.5-1 g or aspirin, early, 6-hourly</div><div class="ar">▼ not controlled ▼</div><div class="st"><b>Moderate:</b> NSAID + <b>metoclopramide</b>, until attack passes</div><div class="ar">▼ not controlled ▼</div><div class="st"><b>Severe:</b> <b>triptan early</b> (SC if vomiting) or <b>ergot</b>; never together</div><div class="ar">▼</div><div class="st"><b>3-4 attacks/month:</b> prophylaxis (TCA, propranolol, flunarizine, anticonvulsant)</div>`),
+C(N,'#fff6f1','Key takeaways','Remember these',`<ul><li>Grade by <b>frequency, duration and symptoms</b>; match the drug</li><li>Mild: <b>simple analgesic</b>; moderate: <b>NSAID + antiemetic</b>; severe: <b>triptan or ergot</b></li><li>Triptans work best <b>early</b>; <b>contraindicated in IHD, hepatic/renal impairment, pregnancy</b></li><li><b>No triptan within 24 h of ergots</b>; ergotamine max <b>6 mg</b></li><li>Special: <b>frovatriptan</b> menstrual; <b>zolmitriptan nasal</b> over 12 years</li><li>Prophylaxis: <b>propranolol</b> (70% respond), amitriptyline, flunarizine, anticonvulsants</li></ul>`)
+];
+const g=document.getElementById('g'),NN=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${NN}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+/* Fit: shrink body text until nothing overflows. Works in layout units, so independent of screen scale. */
+function over(i){return i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1}
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return true;let f=36;i.style.fontSize=f+'px';
+ while(f>11&&over(i)){f-=.5;i.style.fontSize=f+'px'}return !over(i)}
+function fitAll(){g.querySelectorAll('.c').forEach(c=>{if(!fit(c))console.warn('Card still overflows:',c.querySelector('h2').textContent)})}
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+</script>
+<script>
+(function(){
+const SCALE=2,GAP=450,toast=document.createElement('div');toast.id='toast';document.body.appendChild(toast);
+let tt;const say=(m,ms)=>{toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)};
+const raf2=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function render(card){
+ /* 1. Fresh, unscaled, unclipped copy at true 1080x1080 in an off-screen stage */
+ const stage=document.createElement('div');
+ stage.style.cssText='position:fixed;left:-20000px;top:0;width:1080px;height:1080px;pointer-events:none;z-index:-1';
+ const c=card.cloneNode(true);
+ c.style.cssText+=';transform:none;left:0;top:0;position:absolute;overflow:visible';
+ stage.appendChild(c);document.body.appendChild(stage);
+ try{
+  if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+  await raf2();
+  /* 2. Re-fit at native size, then verify. Never capture clipped text. */
+  const i=c.querySelector('.in');i.style.overflow='hidden';
+  fit(c);await raf2();fit(c);
+  if(over(i)){let f=parseFloat(i.style.fontSize);while(over(i)&&f>8){f-=.5;i.style.fontSize=f+'px'}}
+  i.style.overflow='visible';
+  /* 3. Serialize with the page CSS; full 1080x1080 */
+  const css=document.getElementById('main-css').textContent;
+  const xml=new XMLSerializer().serializeToString(c);
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080"><foreignObject x="0" y="0" width="1080" height="1080"><div xmlns="http://www.w3.org/1999/xhtml" style="width:1080px;height:1080px;position:relative;overflow:hidden"><style>'+css.replace(/</g,'&lt;')+'</style>'+xml+'</div></foreignObject></svg>';
+  const img=new Image();
+  await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('render failed'));img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+  const cv=document.createElement('canvas');cv.width=cv.height=1080*SCALE;const x=cv.getContext('2d');
+  x.fillStyle='#fff';x.fillRect(0,0,cv.width,cv.height);
+  x.drawImage(img,0,0,cv.width,cv.height);await sleep(60);x.drawImage(img,0,0,cv.width,cv.height); /* second draw: Safari first-paint quirk */
+  return await new Promise((res,rej)=>cv.toBlob(b=>b?res(b):rej(new Error('empty canvas')),'image/png'));
+ }finally{stage.remove()}
+}
+let busy=false;
+async function shoot(card,touch){
+ if(busy)return;busy=true;say('Creating image...',8000);
+ try{
+  const blob=await render(card);
+  const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+  const name='card-'+String(idx).padStart(2,'0')+'-'+(card.querySelector('h2').textContent.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40))+'.png';
+  const file=new File([blob],name,{type:'image/png'});
+  if(touch&&navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file]});say('Shared');return}catch(e){if(e&&e.name==='AbortError')return}}
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+name);
+ }catch(err){console.error(err);say('Could not save: '+(err.message||err),6000)}finally{busy=false}
+}
+let last={el:null,t:0,x:0,y:0};
+document.addEventListener('pointerup',e=>{
+ if(e.pointerType==='mouse'&&e.button!==0)return;
+ const card=e.target.closest&&e.target.closest('.c');
+ if(!card){last.el=null;return}
+ const now=Date.now();
+ if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card,e.pointerType!=='mouse')}
+ else last={el:card,t:now,x:e.clientX,y:e.clientY};
+});
+})();
+</script>
+</body></html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pain and Migraine: Square Clinical Cards</title>
+<style id="main-css">
+:root{box-sizing:border-box;--bg:#f5f5f7;--ink:#1d1d1f;--mut:#6e6e73;--pill:#fff;--bd:#d2d2d7;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--ink:#f5f5f7;--mut:#a1a1a6;--pill:#1c1c1e;--bd:#3a3a3c}}
+:root[data-theme="dark"]{--bg:#000;--ink:#f5f5f7;--mut:#a1a1a6;--pill:#1c1c1e;--bd:#3a3a3c}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif;line-height:1.45}
+header{max-width:1100px;margin:0 auto;padding:28px 16px 8px}
+header h1{font-size:1.9rem;letter-spacing:-.02em;margin:0 0 6px}
+header p{margin:0 0 8px;color:var(--mut);font-size:.92rem;max-width:760px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 48px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:22px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:22px;background:#fff;box-shadow:0 2px 14px rgba(0,0,0,.12);touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 60px;display:flex;flex-direction:column;background:var(--b,#fff);color:#1d1d1f;font-family:-apple-system,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif;font-size:34px;line-height:1.28;text-align:left;overflow:hidden}
+.c h2{font-size:58px;line-height:1.07;letter-spacing:-.02em;margin:0 0 8px;color:var(--a);font-weight:750;flex:none}
+.c .sub{font-size:28px;line-height:1.2;color:#6e6e73;margin:0 0 14px;flex:none;font-weight:500}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.45em;overflow:hidden;font-size:34px;padding-bottom:30px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:22px;font-size:22px;color:#8e8e93}
+.in ul{padding-left:1.15em}.in li{margin:.15em 0}
+.c b{background:#fff0b3;padding:0 .12em;border-radius:.2em;font-weight:650;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.box{border-left:.2em solid var(--a);background:rgba(0,0,0,.05);padding:.35em .65em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.55em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.box.dx{background:#fff;border:.08em solid var(--a);border-left-width:.25em}
+.box.dx:before{content:"Clinical decision";display:block;font-size:.62em;letter-spacing:.08em;text-transform:uppercase;color:var(--a);font-weight:700}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.45em}
+.stats div{background:#fff;border:.08em solid var(--a);border-radius:.6em;padding:.3em .5em;text-align:center;font-size:.8em;line-height:1.15}
+.stats em{display:block;font-style:normal;font-size:1.7em;font-weight:750;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.88em;background:#fff;border-radius:.5em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.25em .5em}
+td{padding:.25em .5em;border-top:.05em solid #e5e5ea;vertical-align:top}
+.fl{display:flex;align-items:stretch;gap:.35em}
+.st{flex:1;background:#fff;border:.08em solid var(--a);border-radius:.6em;padding:.3em .55em;text-align:center;font-size:.88em;line-height:1.2}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.05em;line-height:.9;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.08em .75em;font-size:.78em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.cols>div{background:#fff;border-radius:.6em;padding:.4em .6em;border-top:.22em solid var(--a);font-size:.92em;line-height:1.22}
+.cols h3{margin:0 0 .15em;font-size:1em;color:var(--a)}.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:96px}.cover .sub{color:#e8f0ff;font-size:36px}
+.cover .in{justify-content:center}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px -apple-system,system-ui,sans-serif;z-index:9999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#toast.on{opacity:1}
+</style></head><body>
+<header><h1>Acute &amp; chronic pain and migraine</h1>
+<p>Grand-rounds cards from Textbook of Clinical Pharmacology, Chapter 14. Each card is a 1:1 square. Double-tap or double-click a card to save it as a 2160 px PNG. Doses are as printed in the source; verify against current prescribing information.</p></header>
+<main><div class="grid" id="g"></div></main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const B='#0071e3',T='#1f9d8a',O='#d9730d',P='#7a4bc2',R='#d63c4a',K='#c2477e',N='#8a4b2a';
+const cards=[
+C(B,B,'Acute and chronic pain, and migraine','Mechanisms, assessment, drug therapy and decision pathways',`<div><span class="pill">Pain pathway</span><span class="pill">Assessment scales</span><span class="pill">WHO ladder</span><span class="pill">Neuropathic pain</span><span class="pill">Migraine</span></div><div style="font-size:.66em;margin-top:.6em;opacity:.9">Source: Textbook of Clinical Pharmacology, Chapter 14</div>`,'cover'),
+C(T,'#f1fbf9','What is pain?','IASP definition and types',`<div class="box">Unpleasant <b>sensory and emotional experience</b> tied to actual or potential tissue damage. Subjective; shaped by psychological, cultural and environmental factors.</div><div class="cols"><div><h3>Nociceptive</h3><ul><li><b>Somatic:</b> skin, muscle; well localised</li><li><b>Visceral:</b> organs; poorly localised, <b>referred</b></li></ul></div><div><h3>Neuropathic</h3><ul><li>Lesion or disease of the <b>somatosensory system</b></li><li>Up to <b>7%</b> of people</li></ul></div></div><ul><li>Visceral pain is referred as visceral and somatic fibres converge in the <b>dorsal column</b></li><li>Pain is the commonest symptom that brings patients to a doctor; &gt;<b>two-thirds</b> of ED visits</li></ul>`),
+C(R,'#fff5f5','Pain pathway','From nociceptor to cortex',`<div class="st"><b>Stimulus</b> (chemical, thermal, mechanical) activates <b>nociceptors</b></div><div class="ar">▼</div><div class="st">Mediators: <b>prostaglandins, bradykinin, histamine, serotonin, arachidonic acid</b></div><div class="ar">▼</div><div class="st"><b>A-delta</b> (myelinated, fast, sharp) and <b>C fibres</b> (slow, aching) to <b>dorsal horn</b></div><div class="ar">▼</div><div class="st"><b>Spinothalamic tract</b> (substance P) to thalamus, limbic system, cortex</div><div class="ar">▼</div><div class="st"><b>Descending inhibition:</b> enkephalin, serotonin, noradrenaline, GABA</div>`),
+C(O,'#fff9f0','Why untreated acute pain matters','Stress response and consequences',`<ul><li>Release of <b>cortisol, vasopressin, catecholamines</b>; peaks in first hours post-op</li><li>Hyperglycaemia, impaired immunity, <b>fat and muscle breakdown</b></li><li>Autonomic: nausea, sweating, tachycardia, BP change (e.g. angina)</li></ul><div class="box"><b>Consequences:</b> delayed wound healing, longer stay, weight loss, poor sleep, <b>chronic post-surgical pain</b>, PTSD, raised myocardial O2 demand, insulin resistance, coagulopathy.</div><div class="box big">Aim: <b>least pain, fewest adverse effects, preserved function</b>; treat the cause first.</div>`),
+C(P,'#f8f4ff','Pain scales','Match the tool to the patient',`<table><tr><th>Scale</th><th>Use</th></tr><tr><td><b>NRS 0 to 10</b></td><td>Adults; mild 1-3, moderate 4-7, <b>severe &gt;7</b></td></tr><tr><td><b>VAS</b> 100 mm</td><td>Most used in trials; <b>30-35%</b> drop is meaningful</td></tr><tr><td><b>Wong-Baker FACES</b></td><td>Children <b>3 years and older</b></td></tr><tr><td><b>FLACC</b></td><td>2 months to 7 years, cognitive impairment; 5 items, 0-10</td></tr><tr><td><b>PAINAD</b></td><td>Advanced dementia; 5 items, 0-10</td></tr><tr><td><b>BPS</b></td><td>ICU, sedated, ventilated; 3 items scored 1-4</td></tr><tr><td>PIPP, CRIES, NFCS</td><td>Neonates</td></tr></table>`),
+C(B,'#f2f8ff','Assessing pain well','History and reassessment',`<ul><li><b>Site, onset and cause</b> (trauma, surgery)</li><li><b>Character:</b> sharp, burning, throbbing; neuropathic tools <b>DN4, LANSS, NPQ, painDETECT</b></li><li><b>Intensity:</b> rest vs movement; now, last week, worst</li><li>Associated symptoms; effect on <b>sleep and function</b></li><li>Past drugs (dose, efficacy, side effects); comorbidity</li></ul><div class="box dx">Reassess about <b>every 15 minutes</b> in ED, more often if severe. In elderly, verbal descriptor scales are most reliable; pain is under-reported.</div>`),
+C(R,'#fff5f5','Acute pain algorithm','Emergency setting',`<div class="st"><b>Acknowledge</b> pain; assess by self-report <b>within 15 min</b></div><div class="ar">▼</div><div class="st"><b>Non-drug:</b> distraction, heat or cold, splinting</div><div class="ar">▼ inadequate relief ▼</div><div class="st"><b>Drug</b> by pain score, plus non-drug measures</div><div class="ar">▼</div><div class="st"><b>Reassess in 15 min:</b> NRS &gt;3 or VAS &gt;30 mm: <b>titrate or escalate</b></div><div class="box">Monitor ECG, breathing, SpO2, BP (capnography optional). Keep <b>airway and resuscitation</b> equipment ready.</div>`),
+C(O,'#fff9f0','WHO pain relief ladder','Oral, by the clock, until pain-free',`<div class="st"><b>Step 1:</b> non-opioid + adjuvant</div><div class="ar">▼ persistent or increasing ▼</div><div class="st"><b>Step 2:</b> opioid for mild-moderate pain + non-opioid + adjuvant</div><div class="ar">▼ persistent or increasing ▼</div><div class="st"><b>Step 3:</b> opioid for moderate-severe pain + non-opioid + adjuvant</div><div class="box">Give drugs <b>at regular intervals</b>, not only on demand. Modern adaptations add <b>nerve blocks, sublingual and transdermal opioids</b>.</div>`),
+C(T,'#f1fbf9','Non-drug therapies, acute pain','Adjuncts at every step',`<table><tr><th>Method</th><th>Key point</th></tr><tr><td>Relaxation, music</td><td>Needs practice: useful in <b>recovery</b>, not emergencies</td></tr><tr><td>Hypnosis</td><td>Better than comparators in <b>12 of 19</b> studies</td></tr><tr><td>Attention control</td><td>Imagery, music, video, VR; helpful in children</td></tr><tr><td>CBT</td><td><b>Little evidence</b> pre-hospital or ED</td></tr><tr><td>TENS</td><td>Cuts post-op analgesic need and anxiety</td></tr><tr><td>Cold / heat</td><td>Cold: pain, oedema, spasm; heat wrap helps acute low back pain</td></tr><tr><td>Traction, bracing</td><td>Fractures; protect neck, back, joints</td></tr></table>`),
+C(B,'#f2f8ff','Paracetamol and NSAIDs','Mild to moderate pain',`<table><tr><th>Drug</th><th>Essentials</th></tr><tr><td><b>Paracetamol</b> IV, PR, oral</td><td>Max <b>4 g/day</b> adult; child max <b>80 mg/kg/day</b>. Opioid-sparing up to 20%. Caution: <b>alcohol, liver or renal disease</b>. Contraindicated in <b>severe hepatic disease</b></td></tr><tr><td><b>NSAIDs</b> ibuprofen, diclofenac, ketorolac, naproxen</td><td>COX-1 and COX-2 block. Avoid in <b>first 3 days</b> of soft-tissue injury or fracture. Risks: gastritis, bleeding, <b>renal failure</b></td></tr></table><div class="box dx">NSAIDs contraindicated: <b>active peptic ulcer, uncontrolled hypertension, significant renal disease, IBD, prior TIA or stroke</b> (aspirin excepted). <b>Topical</b> diclofenac for sprains.</div>`),
+C(P,'#f8f4ff','COX-2 inhibitors','Four available',`<table><tr><th>Drug</th><th>Role</th></tr><tr><td><b>Etoricoxib</b></td><td>Oral 30-120 mg; tendinopathy, post-op, musculoskeletal pain</td></tr><tr><td><b>Celecoxib</b></td><td>RA, OA, ankylosing spondylitis, dysmenorrhoea; pre-op use; <b>second line</b>; caution in <b>cardiac disease</b></td></tr><tr><td><b>Parecoxib</b></td><td><b>Injectable</b>: post-op, renal colic, abdominal pain</td></tr><tr><td><b>Meloxicam</b></td><td>Half-life <b>20 h</b>, peak ~10 h: <b>little use in emergencies</b></td></tr></table><div class="box">COX-2 drives pain, fever and inflammation; COX-1 protects <b>stomach</b> (PGI2) and <b>platelets</b> (TXA2).</div>`),
+C(R,'#fff5f5','Opioids in acute pain','Weak for moderate, strong for severe',`<table><tr><th>Drug</th><th>Points</th></tr><tr><td><b>Codeine</b></td><td>Moderate pain; <b>contraindicated under 12 years</b> (ultrafast metabolism)</td></tr><tr><td><b>Tramadol</b></td><td>IV, SC, IM, oral; post-op, labour, MI, trauma; slow IV infusion cuts nausea</td></tr><tr><td><b>Morphine</b></td><td>Standard for severe pain; titrated boluses or <b>PCA</b></td></tr><tr><td><b>Fentanyl</b></td><td>Intranasal, oromucosal, IV; nasal: epistaxis, swallowing</td></tr><tr><td><b>Sufentanil</b></td><td>5-8x fentanyl; IN or oromucosal; <b>unlicensed in children</b></td></tr></table><div class="box">Adverse: nausea, sedation, <b>respiratory depression</b>, itch. Caution in opioid-naive, respiratory instability, suicide risk, interacting drugs.</div>`),
+C(O,'#fff9f0','Other acute analgesics','Blocks, ketamine, lidocaine, spasmolytics',`<ul><li><b>Nerve block:</b> no systemic sedation, so mental status is easier to monitor in head injury. Needs skill. Avoid with heart block, Class 1 antiarrhythmics, amiodarone; adrenaline contraindicated in <b>phaeochromocytoma, thyrotoxicosis, severe hypertension</b></li><li><b>Ketamine:</b> analgesic dose <b>0.5 mg/kg</b>; anaesthetic <b>1.5-2 mg/kg IV</b>; opioid-sparing, no respiratory depression</li><li><b>Lidocaine:</b> patch helps rib fracture pain; IV data limited</li><li><b>Dicyclomine 20 mg</b> oral/IM, <b>drotaverine 40-80 mg</b> TDS for colic (no obstruction)</li></ul>`),
+C(P,'#f8f4ff','Chronic pain and neuropathy','Chronification and causes',`<div class="box"><b>Chronification</b> risk: maladaptive coping, psychiatric illness, <b>pain catastrophising</b>; central facilitation/inhibition changes.</div><table><tr><th>Level</th><th>Causes</th></tr><tr><td>Peripheral nerve</td><td>Neuropathies, amputation, trauma, entrapment, <b>herpes zoster</b>, neoplasm</td></tr><tr><td>Spinal cord</td><td>Trauma, vascular, <b>MS</b>, syringomyelia, disc prolapse</td></tr><tr><td>Brain</td><td>Stroke, MS, <b>Parkinson's</b>, tumour, abscess</td></tr></table><div class="box">Also: diabetes, post-herpetic neuralgia, post-chemotherapy, trigeminal neuralgia, HIV, leprosy, CRPS.</div>`),
+C(T,'#f1fbf9','Neuropathic pain features','Recognise it',`<div class="cols"><div><h3>Positive</h3><ul><li>Burning, lancinating, electric shock</li><li>Dysaesthesia, paraesthesia</li><li><b>Allodynia, hyperalgesia</b></li></ul></div><div><h3>Negative</h3><ul><li>Partial or total sensory loss</li><li>Hypoalgesia</li><li>Weakness, tremor</li></ul></div></div><ul><li>Starts <b>distal</b> to the injury; nociceptive pain starts at the site</li><li>Trigeminal and glossopharyngeal neuralgia: <b>paroxysmal</b>, seconds, hundreds a day</li><li><b>Mononeuropathy</b> (one nerve), <b>multiplex</b> (several), <b>polyneuropathy</b> (diffuse, symmetric)</li><li>Pathology: <b>axonal</b> vs <b>demyelinating</b></li></ul>`),
+C(B,'#f2f8ff','Diagnosis and investigations','Confirm the neuropathy',`<ul><li>History: viral illness, new drugs, <b>toxins, heavy metals, alcohol</b>, family; worse at night; minor triggers</li><li>Exam: tone, power, reflexes, <b>pinprick, light touch</b>, autonomic signs; palpate the nerve</li></ul><table><tr><th>Test</th><th>Shows</th></tr><tr><td>Labs</td><td>CBC, ESR, glucose, protein electrophoresis, ANA, RF, CSF</td></tr><tr><td><b>EMG</b></td><td>Denervation: fibrillations, positive waves</td></tr><tr><td><b>NCS</b></td><td>Demyelinating vs axonal; focal compression</td></tr><tr><td>MRI, biopsy</td><td>Structural lesions; <b>skin punch</b> for small fibres</td></tr></table>`),
+C(O,'#fff9f0','Chronic pain: principles','Assess, then treat',`<ul><li>Assess <b>function, mood, sleep and quality of life</b>, not only intensity</li><li><b>Non-drug first</b> and alongside: exercise, TENS, massage, heat/cold, CBT, mindfulness, yoga, tai chi, acupuncture</li><li>Tailor drugs to <b>renal, hepatic, cardiac, cognitive</b> status</li><li>Treat depression, anxiety and poor sleep</li></ul><div class="box big"><b>Non-opioids first.</b> Opioids only if benefit outweighs risk and other options fail: <b>lowest dose, shortest time</b>.</div>`),
+C(R,'#fff5f5','Neuropathic pain algorithm','Stepwise, 4-6 week trials',`<div class="st"><b>1st line:</b> TCA, SNRI, gabapentinoid, or topical (focal)</div><div class="ar">▼</div><div class="st"><b>2nd line:</b> tramadol, or combine first-line drugs</div><div class="ar">▼</div><div class="st"><b>3rd:</b> specialist referral; SSRIs, anticonvulsants, NMDA antagonists, interventions</div><div class="ar">▼</div><div class="st"><b>5th:</b> low-dose opioids; review every 3 months</div><div class="ar">▼</div><div class="st"><b>6th:</b> neuromodulation, targeted drug delivery</div><div class="box">Poor mood, sleep or function: add <b>multidisciplinary care</b>.</div>`),
+C(P,'#f8f4ff','TCAs and SNRIs','Enhance descending inhibition',`<table><tr><th>Drug</th><th>Dose</th><th>Notes</th></tr><tr><td><b>Amitriptyline, nortriptyline, desipramine</b></td><td>Start <b>10-25 mg</b>, weekly rise to <b>150 mg</b></td><td>First line. Dry mouth, constipation, <b>orthostatic hypotension</b>, retention, falls</td></tr><tr><td><b>Duloxetine</b></td><td><b>30</b> then <b>60 mg</b>/day</td><td>Diabetic neuropathy, fibromyalgia; <b>no anticholinergic or cardiac effects</b></td></tr><tr><td><b>Venlafaxine</b></td><td><b>37.5</b> to <b>225 mg</b>/day</td><td>Effective in neuropathic pain</td></tr></table><div class="box dx">Elderly: TCAs cause <b>confusion, gait disturbance, falls</b>. Prefer <b>duloxetine</b>.</div>`),
+C(T,'#f1fbf9','Antiepileptics','Block ectopic discharge',`<table><tr><th>Drug</th><th>Dose</th><th>Points</th></tr><tr><td><b>Carbamazepine</b></td><td>100 mg BD, up to 1600</td><td>Trigeminal, glossopharyngeal, PHN. Monitor <b>LFT, sodium, CBC</b></td></tr><tr><td>Oxcarbazepine</td><td>1200-1800</td><td>Fewer idiosyncratic reactions</td></tr><tr><td>Phenytoin</td><td>200-500</td><td>Gum hypertrophy, hirsutism</td></tr><tr><td>Lamotrigine</td><td>50 to 400</td><td>Rash; refractory trigeminal, HIV</td></tr><tr><td>Topiramate</td><td>200-400</td><td>Diabetic neuropathy; weight loss</td></tr></table><div class="box">Doses mg/day. Source text reads "PNH"; context indicates <b>post-herpetic neuralgia (PHN)</b>.</div>`),
+C(B,'#f2f8ff','Gabapentinoids','First-line agents',`<div class="cols"><div><h3>Gabapentin</h3><ul><li><b>1800-3600 mg/day</b>, 3 doses</li><li>Saturable absorption; renal clearance: <b>adjust in renal impairment</b></li><li>Dizziness, somnolence, oedema, weight gain</li></ul></div><div><h3>Pregabalin</h3><ul><li>Start <b>75 mg</b> at night; <b>150-600 mg/day</b> in 2 doses</li><li>Higher affinity for calcium channel</li><li><b>Monitor mood</b>: suicidal ideation</li></ul></div></div><div class="box">Block presynaptic <b>voltage-gated calcium channels</b>, cutting substance P, glutamate and noradrenaline release.</div><div class="box dx">Start low, titrate slowly; allow <b>about 2 weeks</b> to judge effect.</div>`),
+C(O,'#fff9f0','Topicals, opioids, NMDA, botulinum toxin','Later-line and focal options',`<ul><li><b>Lidocaine 5% patch:</b> first or second line for focal pain (PHN); well tolerated in elderly</li><li><b>Capsaicin 8%:</b> TRPV1; painful at first, needs consistent use</li><li><b>Tramadol:</b> opioid plus reuptake block; less constipation than codeine. <b>Tapentadol</b> about one-fifth oxycodone potency</li><li><b>Dextromethorphan 400 mg/day</b>, ketamine, memantine: NMDA block; data conflicting</li><li><b>Botulinum toxin:</b> diabetic, SCI, CRPS, PHN, trigeminal; few side effects</li><li><b>NSAIDs:</b> limited role; add a <b>PPI</b> for long use</li></ul>`),
+C(R,'#fff5f5','Interventional pain management','When drugs fail',`<table><tr><th>Option</th><th>Use</th></tr><tr><td><b>Neural blockade</b></td><td>Steroid prolongs relief. Glycerol rhizolysis (trigeminal), stellate block (CRPS), epidural steroid (radiculopathy)</td></tr><tr><td>Radiofrequency</td><td>Facet, sacroiliac pain after diagnostic blocks</td></tr><tr><td>Spinal cord stimulator</td><td>Trial first; failed back surgery, CRPS</td></tr><tr><td>Surgery</td><td>Decompression (carpal, tarsal tunnel); dorsal rhizotomy, cordotomy</td></tr></table><div class="box">Risks include <b>nerve injury, infection, paralysis</b>; epidural steroids max <b>3 in 12 months</b>.</div>`),
+C(P,'#f8f4ff','Migraine: acute treatment','Stratify by severity',`<table><tr><th>Grade</th><th>Treatment</th></tr><tr><td><b>Mild</b> (&lt;1/month)</td><td>Paracetamol <b>0.5-1 g</b>; aspirin <b>75 mg</b> BD; repeat 6-hourly</td></tr><tr><td><b>Moderate</b> (24 h, nausea)</td><td>NSAID: ibuprofen <b>400 mg</b> BD, naproxen <b>500 mg</b> BD, diclofenac <b>50 mg</b> 8-hourly; <b>metoclopramide</b></td></tr><tr><td><b>Severe</b> (2-3+/month, 12-48 h)</td><td><b>Triptans</b> or <b>ergots</b>, early in the attack</td></tr></table><div class="box">Triggers: <b>poor sleep, skipped meals</b>. Diagnosis supported by normal fundus and ENT exam.</div>`),
+C(R,'#fff5f5','Triptans and ergots','Severe migraine',`<ul><li><b>Sumatriptan:</b> 5-HT1D/1B agonist; constricts cranial vessels, blocks neuropeptide release. Source: <b>25-50 mg</b> oral; <b>6 mg SC</b> if vomiting</li><li>Others: zolmitriptan (nasal, &gt;12 y), naratriptan, rizatriptan, <b>frovatriptan</b> (menstrual)</li><li><b>Ergotamine</b> 1 mg, repeat every 30 min to <b>6 mg</b>; DHE preferred</li></ul><div class="box big">Contraindicated: <b>ischaemic heart disease, hepatic/renal impairment, pregnancy</b>. No triptan within <b>24 h</b> of ergots.</div>`),
+C(T,'#f1fbf9','Migraine prophylaxis','If 3-4 or more attacks a month',`<table><tr><th>Class</th><th>Drug and dose</th></tr><tr><td>Beta-blocker</td><td><b>Propranolol</b> 40 mg BD up to 160 mg BD; helps ~70%</td></tr><tr><td>TCA</td><td>Amitriptyline <b>25-50 mg</b> at night; more side effects</td></tr><tr><td>Calcium blocker</td><td><b>Flunarizine</b> 5-10 mg OD</td></tr><tr><td>Anticonvulsants</td><td>Valproate 400-1200, gabapentin 300-1200 mg/day, topiramate 25-50 mg OD: <b>refractory</b></td></tr></table><div class="box">Chronic migraine: <b>botulinum toxin</b> is an option.</div>`),
+C(N,'#fff6f1','Key takeaways','Remember these',`<ul><li>Pain is <b>subjective</b>: use validated scales and <b>reassess often</b></li><li>Acute: <b>WHO ladder</b>, by the clock, plus non-drug measures</li><li>Avoid NSAIDs in <b>ulcer, renal disease, uncontrolled hypertension</b>; <b>no codeine under 12</b></li><li>Neuropathic first line: <b>TCA, SNRI, gabapentinoid</b>; topical if focal</li><li>Opioids last, <b>lowest dose, shortest time</b></li><li>Migraine: <b>early triptan</b>; never with ergots; prophylax if frequent</li></ul>`)
+];
+const g=document.getElementById('g'),NN=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${NN}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+/* Fit: shrink body text until nothing overflows. Works in layout units, so independent of screen scale. */
+function over(i){return i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1}
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return true;let f=36;i.style.fontSize=f+'px';
+ while(f>11&&over(i)){f-=.5;i.style.fontSize=f+'px'}return !over(i)}
+function fitAll(){g.querySelectorAll('.c').forEach(c=>{if(!fit(c))console.warn('Card still overflows:',c.querySelector('h2').textContent)})}
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+</script>
+<script>
+(function(){
+const SCALE=2,GAP=450,toast=document.createElement('div');toast.id='toast';document.body.appendChild(toast);
+let tt;const say=(m,ms)=>{toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)};
+const raf2=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function render(card){
+ /* 1. Fresh, unscaled, unclipped copy at true 1080x1080 in an off-screen stage */
+ const stage=document.createElement('div');
+ stage.style.cssText='position:fixed;left:-20000px;top:0;width:1080px;height:1080px;pointer-events:none;z-index:-1';
+ const c=card.cloneNode(true);
+ c.style.cssText+=';transform:none;left:0;top:0;position:absolute;overflow:visible';
+ stage.appendChild(c);document.body.appendChild(stage);
+ try{
+  if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+  await raf2();
+  /* 2. Re-fit at native size, then verify. Never capture clipped text. */
+  const i=c.querySelector('.in');i.style.overflow='hidden';
+  fit(c);await raf2();fit(c);
+  if(over(i)){let f=parseFloat(i.style.fontSize);while(over(i)&&f>8){f-=.5;i.style.fontSize=f+'px'}}
+  i.style.overflow='visible';
+  /* 3. Serialize with the page CSS; full 1080x1080 */
+  const css=document.getElementById('main-css').textContent;
+  const xml=new XMLSerializer().serializeToString(c);
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080"><foreignObject x="0" y="0" width="1080" height="1080"><div xmlns="http://www.w3.org/1999/xhtml" style="width:1080px;height:1080px;position:relative;overflow:hidden"><style>'+css.replace(/</g,'&lt;')+'</style>'+xml+'</div></foreignObject></svg>';
+  const img=new Image();
+  await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('render failed'));img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+  const cv=document.createElement('canvas');cv.width=cv.height=1080*SCALE;const x=cv.getContext('2d');
+  x.fillStyle='#fff';x.fillRect(0,0,cv.width,cv.height);
+  x.drawImage(img,0,0,cv.width,cv.height);await sleep(60);x.drawImage(img,0,0,cv.width,cv.height); /* second draw: Safari first-paint quirk */
+  return await new Promise((res,rej)=>cv.toBlob(b=>b?res(b):rej(new Error('empty canvas')),'image/png'));
+ }finally{stage.remove()}
+}
+let busy=false;
+async function shoot(card,touch){
+ if(busy)return;busy=true;say('Creating image...',8000);
+ try{
+  const blob=await render(card);
+  const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+  const name='card-'+String(idx).padStart(2,'0')+'-'+(card.querySelector('h2').textContent.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40))+'.png';
+  const file=new File([blob],name,{type:'image/png'});
+  if(touch&&navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file]});say('Shared');return}catch(e){if(e&&e.name==='AbortError')return}}
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+name);
+ }catch(err){console.error(err);say('Could not save: '+(err.message||err),6000)}finally{busy=false}
+}
+let last={el:null,t:0,x:0,y:0};
+document.addEventListener('pointerup',e=>{
+ if(e.pointerType==='mouse'&&e.button!==0)return;
+ const card=e.target.closest&&e.target.closest('.c');
+ if(!card){last.el=null;return}
+ const now=Date.now();
+ if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card,e.pointerType!=='mouse')}
+ else last={el:card,t:now,x:e.clientX,y:e.clientY};
+});
+})();
+</script>
+</body></html>

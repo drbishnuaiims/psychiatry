@@ -265,6 +265,48 @@ window.GENERATED_GUIDELINES = [
     "readTime": "1 min read"
   },
   {
+    "title": "Migraine: Square Clinical Cards",
+    "shortTitle": "Migraine: Square Clinical Cards",
+    "authors": "Psychiatry CPG Notes",
+    "year": "",
+    "journal": "Books / Textbook Clinical Pharmacology",
+    "category": "Books / Textbook Clinical Pharmacology",
+    "description": "Grand-rounds cards covering every point of the migraine section, Textbook of Clinical Pharmacology, Chapter 14. Each card is a 1:1 square. Double-tap or double-click a card to save it as a 2160 px…",
+    "tags": [
+      "Textbook Clinical Pharmacology",
+      "Books"
+    ],
+    "keywords": [
+      "Migraine: Square Clinical Cards",
+      "Migraine",
+      "Textbook Clinical Pharmacology",
+      "Migraine Cards"
+    ],
+    "url": "books/textbook-clinical-pharmacology/migraine-cards.html",
+    "readTime": "1 min read"
+  },
+  {
+    "title": "Pain and Migraine: Square Clinical Cards",
+    "shortTitle": "Pain and Migraine: Square Clinical Cards",
+    "authors": "Psychiatry CPG Notes",
+    "year": "",
+    "journal": "Books / Textbook Clinical Pharmacology",
+    "category": "Books / Textbook Clinical Pharmacology",
+    "description": "Grand-rounds cards from Textbook of Clinical Pharmacology, Chapter 14. Each card is a 1:1 square. Double-tap or double-click a card to save it as a 2160 px PNG. Doses are as printed in the source;…",
+    "tags": [
+      "Textbook Clinical Pharmacology",
+      "Books"
+    ],
+    "keywords": [
+      "Pain and Migraine: Square Clinical Cards",
+      "Acute & chronic pain and migraine",
+      "Textbook Clinical Pharmacology",
+      "Pain Migraine Cards"
+    ],
+    "url": "books/textbook-clinical-pharmacology/pain-migraine-cards.html",
+    "readTime": "1 min read"
+  },
+  {
     "title": "Parkinsonism: Square Clinical Cards",
     "shortTitle": "Parkinsonism: Square Clinical Cards",
     "authors": "Psychiatry CPG Notes",
