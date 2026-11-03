@@ -265,6 +265,27 @@ window.GENERATED_GUIDELINES = [
     "readTime": "1 min read"
   },
   {
+    "title": "Parkinsonism: Square Clinical Cards",
+    "shortTitle": "Parkinsonism: Square Clinical Cards",
+    "authors": "Psychiatry CPG Notes",
+    "year": "",
+    "journal": "Books / Textbook Clinical Pharmacology",
+    "category": "Books / Textbook Clinical Pharmacology",
+    "description": "Summary of Textbook of Clinical Pharmacology, Chapter 12, for clinical decisions and grand rounds. Every card is a 1:1 square. Double-tap or double-click any card to save it as a PNG. Verify doses…",
+    "tags": [
+      "Textbook Clinical Pharmacology",
+      "Books"
+    ],
+    "keywords": [
+      "Parkinsonism: Square Clinical Cards",
+      "Treatment of parkinsonism: square cards",
+      "Textbook Clinical Pharmacology",
+      "Parkinsonism Cards"
+    ],
+    "url": "books/textbook-clinical-pharmacology/parkinsonism-cards.html",
+    "readTime": "1 min read"
+  },
+  {
     "title": "ADHD Clinical Practice Guideline Notes | Shah, Grover & Avasthi 2019",
     "shortTitle": "ADHD Clinical Practice Guideline Notes",
     "authors": "Based on Shah R, Grover S, Avasthi A.",

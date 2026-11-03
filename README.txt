@@ -1,4 +1,4 @@
-./manage.sh publish "Added new CPG on schizophrenia"
+./manage.sh publish "Added new"
 
 # Psychiatry Knowledge Platform
 

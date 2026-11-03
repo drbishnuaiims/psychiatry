@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Parkinsonism: Square Clinical Cards</title>
+<style>
+:root{box-sizing:border-box;--bg:#f3f1ec;--ink:#1d2230;--mut:#5b6275;--pill:#fff;--bd:#d9d5ca;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}}
+:root[data-theme="dark"]{--bg:#15171d;--ink:#eceef4;--mut:#a3a9ba;--pill:#242833;--bd:#363b4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.4}
+header{max-width:1100px;margin:0 auto;padding:20px 16px 8px}
+header h1{font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;margin:0 0 4px}
+header p{margin:0 0 12px;color:var(--mut);font-size:.9rem}
+.bar{display:flex;flex-wrap:wrap;gap:8px}
+.bar button{font:inherit;font-size:.85rem;padding:8px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--pill);color:var(--ink);cursor:pointer}
+.bar button.on{background:#2f5bd8;border-color:#2f5bd8;color:#fff}
+.bar button:focus-visible{outline:3px solid #f0a020;outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 40px}
+.hint{color:var(--mut);font-size:.85rem;padding:4px 0 12px;margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:20px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.1)}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 64px;display:flex;flex-direction:column;background:var(--b,#fffdf7);color:#1d2230;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;font-size:34px;line-height:1.3;text-align:left}
+.c h2{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:1.08;margin:0 0 10px;color:var(--a);font-weight:700;flex:none}
+.c .sub{font-size:29px;line-height:1.25;color:#4d5568;margin:0 0 16px;flex:none}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5em;overflow:hidden;padding-bottom:12px;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:24px;font-size:24px;color:#778}
+.in ul{padding-left:1.2em}.in li{margin:.2em 0}
+.c b{background:#ffe38a;padding:0 .15em;border-radius:.2em;font-weight:700}
+.box{border-left:.22em solid var(--a);background:rgba(0,0,0,.06);padding:.4em .7em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.5em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.stats div{background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.35em .5em;text-align:center;font-size:.85em;line-height:1.2}
+.stats em{display:block;font-style:normal;font-family:Georgia,serif;font-size:1.9em;font-weight:700;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.92em;background:#fff;border-radius:.5em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.3em .55em}
+td{padding:.3em .55em;border-top:.06em solid #e3e0d6;vertical-align:top}
+.fl{display:flex;align-items:stretch;gap:.4em}.fl.v{flex-direction:column}
+.st{flex:1;background:#fff;border:.1em solid var(--a);border-radius:.6em;padding:.4em .6em;text-align:center;font-size:.9em;line-height:1.25}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.3em;line-height:1;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.1em .8em;font-size:.8em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.cols>div{background:#fff;border-radius:.6em;padding:.5em .7em;border-top:.25em solid var(--a)}
+.cols h3{margin:0 0 .2em;font-size:1em;color:var(--a)}
+.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:104px}.cover .sub{color:#e8ecff;font-size:38px}
+.cover .in{justify-content:center}
+.sec{display:none}.sec.on{display:block}
+@media (prefers-reduced-motion:reduce){</style></head><body>
+<header><h1>Treatment of parkinsonism: square cards</h1>
+<p>Summary of Textbook of Clinical Pharmacology, Chapter 12, for clinical decisions and grand rounds. Every card is a 1:1 square. Double-tap or double-click any card to save it as a PNG. Verify doses against current prescribing information.</p>
+</header>
+<main>
+<section id="notes"><p class="hint">Double-tap or double-click any card to save it as an image.</p><div class="grid" id="g"></div></section>
+</main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const cards=[
+C('#8a4b2a','#8a4b2a','Treatment of parkinsonism','Clinical features, pathology and drug therapy with dopamine replacement',`<div><span class="pill">Dopamine loss</span><span class="pill">Levodopa + DDC inhibitor</span><span class="pill">Agonists, MAO-B, COMT</span><span class="pill">Anticholinergics</span><span class="pill">Amantadine, DBS</span></div><div style="font-size:.7em;margin-top:.6em;opacity:.9">Source: Textbook of Clinical Pharmacology, Chapter 12</div>`,'cover'),
+C('#1f7a6d','#f2fbf8','What is parkinsonism?','Four cardinal features',`<div class="stats"><div><em>1 in 1000</em>of the general population</div><div><em>1%</em>of the elderly</div></div><ul><li>Gradually progressive <b>neurodegenerative</b> disorder, mainly middle to old age</li><li><b>Akinesia / hypokinesia</b></li><li><b>Muscular rigidity</b></li><li><b>Resting tremor</b></li><li><b>Postural abnormality</b></li></ul><div class="box">First described by <b>James Parkinson</b> in 1817 as the “shaking palsy” (paralysis agitans).</div>`),
+C('#b5472f','#fff7f3','Signs to recognise','Bedside clues',`<table><tr><th>Sign</th><th>Description</th></tr><tr><td><b>Cogwheel rigidity</b></td><td>Rigidity through flexion and extension of the whole movement</td></tr><tr><td><b>Pill-rolling tremor</b></td><td>Resting tremor; often starts in <b>one hand</b></td></tr><tr><td><b>Festinating gait</b></td><td>Short, fast steps, forward-flexed posture</td></tr><tr><td><b>Myerson’s sign</b></td><td>Tapping the glabella keeps causing blinking (basal ganglia)</td></tr><tr><td><b>Souques phenomenon</b></td><td>Seated patient tilted back: <b>no reflex leg extension</b> to counter the fall</td></tr><tr><td>Gait change</td><td>Less arm swing, worsening to <b>footdrop</b></td></tr></table>`),
+C('#7a4bc2','#f8f4ff','Pathology and diagnosis','Loss of nigral dopamine',`<ul><li><b>Degeneration of cells in the substantia nigra</b> (midbrain)</li><li><b>Lewy bodies</b>: eosinophilic hyaline intraneuronal inclusions</li><li>Accelerated loss of <b>dopamine and its receptors</b></li><li>Slow movement, stiffness, loss of balance</li><li>Cognition, behaviour, sleep and sensory problems, progressing to <b>dementia</b> in advanced stages</li></ul><div class="box"><b>Diagnosis:</b> clinical; <b>MRI</b> or <b>DaT scan</b> can help.</div>`),
+C('#2a6fb0','#f2f8ff','Aetiology','Mostly idiopathic',`<table><tr><th>Cause</th><th>Detail</th></tr><tr><td><b>Idiopathic</b></td><td><b>Commonest</b>: no cause found</td></tr><tr><td>Secondary</td><td>Viral inflammation, <b>head injury</b>, <b>stroke</b>, <b>MPTP</b> poisoning</td></tr><tr><td><b>Genetic</b></td><td>~<b>10%</b>; autosomal dominant and recessive mutations</td></tr></table><div class="box">Neural injury is <b>multifactorial</b>: predisposing genes, environment and diet interact.</div><div class="box big">Juvenile parkinsonism: onset <b>under 30 years</b>.</div>`),
+C('#d17a00','#fffaf0','Treatment goals','No cure: symptom control',`<ul><li>Manage symptoms and signs <b>as long as possible</b>, with <b>minimal side effects</b></li><li><b>No gold-standard regimen</b>: tailor to severity, time course and side effects</li><li>Mainstay: <b>dopamine replacement</b></li></ul><div class="fl"><div class="st"><b>Direct:</b> levodopa</div><div class="ar">+</div><div class="st"><b>Indirect:</b> dopamine agonists and drugs that boost dopaminergic transmission</div></div>`),
+C('#c2477e','#fff5f9','Dopamine synthesis','Why levodopa, not dopamine',`<div class="box">Dopamine <b>cannot cross the blood-brain barrier</b>: it must be made inside the CNS (and a little in the adrenal medulla).</div><div class="st"><b>Phenylalanine</b> (phenylalanine hydroxylase)</div><div class="ar">▼</div><div class="st"><b>L-tyrosine</b> (tyrosine hydroxylase)</div><div class="ar">▼</div><div class="st"><b>L-DOPA</b> (DOPA decarboxylase)</div><div class="ar">▼</div><div class="st"><b>Dopamine</b></div><div class="box">Minor route: tyramine to dopamine by <b>CYP2D6</b>.</div>`),
+C('#1f7a6d','#f2fbf8','Dopamine breakdown','Enzymes and drug targets',`<table><tr><th>Step</th><th>Enzyme</th></tr><tr><td>Dopamine to DOPAL</td><td><b>MAO</b></td></tr><tr><td>DOPAL to <b>DOPAC</b></td><td>Aldehyde dehydrogenase (ALDH)</td></tr><tr><td>DOPAC to <b>HVA</b></td><td><b>COMT</b></td></tr><tr><td>Dopamine to 3-methoxytyramine</td><td><b>COMT</b></td></tr><tr><td>DOPAL to DOPET</td><td>Alcohol dehydrogenase</td></tr></table><div class="box big">Main inactive products: <b>DOPAC and HVA</b>. Drugs block <b>MAO-B</b> and <b>COMT</b> to keep dopamine up.</div>`),
+C('#b5472f','#fff7f3','Drug classes at a glance','What each one does',`<table><tr><th>Class</th><th>Mechanism or role</th></tr><tr><td><b>Levodopa</b> + carbidopa/benserazide</td><td>Replaces striatal dopamine; <b>mainstay</b></td></tr><tr><td><b>Dopamine agonists</b></td><td>Stimulate receptors; early disease, adjunct later</td></tr><tr><td><b>MAO-B inhibitors</b></td><td>Slow dopamine breakdown</td></tr><tr><td><b>COMT inhibitors</b></td><td>Prolong levodopa; <b>motor fluctuations</b></td></tr><tr><td><b>Anticholinergics</b></td><td>Cut ACh activity; <b>tremor, stiffness</b>, young patients</td></tr><tr><td><b>Amantadine</b></td><td>DA release, reuptake block, NMDA block</td></tr></table>`),
+C('#7a4bc2','#f8f4ff','Levodopa: dose and combination','Always with a decarboxylase inhibitor',`<ul><li>Crosses the BBB; converted to dopamine by <b>DOPA decarboxylase</b></li><li><b>Start low</b>, titrate to response and side effects; usual <b>150 to 1000 mg/day</b>, divided</li></ul><div class="box"><b>Carbidopa or benserazide</b> (do not cross the BBB) block <b>peripheral</b> conversion, cutting peripheral side effects. Ratio: <b>25 mg inhibitor per 100 mg levodopa</b>, in 3 equal doses.</div><div class="box big">Give at least <b>30 minutes before meals</b>.</div>`),
+C('#2a6fb0','#f2f8ff','Levodopa: adverse effects','Motor and non-motor',`<table><tr><th>Effect</th><th>Detail</th></tr><tr><td><b>Wearing off</b></td><td>Each dose lasts <b>shorter</b> as disease progresses</td></tr><tr><td><b>Dyskinesias</b></td><td>Involuntary twisting movements; at <b>peak dose</b>, also at wearing off or off periods; worse with high, prolonged doses</td></tr><tr><td><b>On-off phenomenon</b></td><td>After <b>3 to 5 years</b> in some; swings between mobility and immobility (poor dopamine storage, variable absorption and BBB transport)</td></tr><tr><td><b>Other</b></td><td>Nausea, vomiting, <b>orthostatic hypotension</b>, anxiety, <b>hallucinations</b>, arrhythmias</td></tr></table>`),
+C('#d17a00','#fffaf0','Handling fluctuations and side effects','Practical steps',`<div class="st"><b>Lowest effective dose</b>; split the dose into smaller portions</div><div class="ar">▼</div><div class="st">On-off: levodopa <b>50 to 100 mg every 2 to 3 hours</b></div><div class="ar">▼</div><div class="st">Add <b>selegiline 10 mg/day</b> to prolong and potentiate levodopa</div><div class="ar">▼</div><div class="st">Consider <b>alternative treatments</b>; COMT inhibitor to lengthen “on” time</div>`),
+C('#c2477e','#fff5f9','Levodopa: drug interactions','What to avoid',`<table><tr><th>Drug</th><th>Effect</th></tr><tr><td><b>Pyridoxine</b> (B6)</td><td>Speeds peripheral conversion: <b>avoid</b></td></tr><tr><td><b>Antipsychotics</b> (phenothiazines, chlorpromazine), <b>metoclopramide</b></td><td>Block striatal DA receptors: <b>oppose levodopa</b>; cause drug-induced parkinsonism and cholinergic features (drooling, speech trouble, mood change, mask-like face)</td></tr><tr><td><b>Non-selective MAO inhibitors</b></td><td><b>Severe hypertension</b> from peripherally formed dopamine and noradrenaline</td></tr></table>`),
+C('#1f7a6d','#f2fbf8','Dopamine agonists','Direct receptor stimulation',`<div class="cols"><div><h3>Ergot</h3><ul><li><b>Bromocriptine</b></li><li>Pergolide</li><li>Cabergoline</li><li>Lisuride</li></ul></div><div><h3>Non-ergot</h3><ul><li><b>Pramipexole</b></li><li><b>Ropinirole</b></li><li>Rotigotine</li><li>Apomorphine</li></ul></div></div><ul><li><b>Less effective</b> than levodopa</li><li><b>Early disease:</b> delay starting levodopa</li><li><b>Advanced:</b> adjunct, improves control and lets you <b>cut the levodopa dose</b></li></ul>`),
+C('#b5472f','#fff7f3','Dopamine agonists: doses','Drug-specific points',`<table><tr><th>Drug</th><th>Receptor and dose</th></tr><tr><td><b>Bromocriptine</b></td><td>D2 agonist, partial D1 antagonist; weak alpha-blocker; half-life <b>3 h</b>; <b>1.25 mg twice daily</b> after meals</td></tr><tr><td><b>Pergolide</b></td><td>D1 and D2 agonist</td></tr><tr><td><b>Ropinirole</b></td><td>Selective D2; <b>9 to 16 mg/day</b> (max 24) in 3 to 4 doses</td></tr><tr><td><b>Pramipexole</b></td><td>Selective D2; start <b>0.125 mg three times daily</b>, double weekly; total <b>1.5 to 2.4 mg/day</b></td></tr><tr><td><b>Rotigotine</b></td><td><b>Patch</b> 4 to 6 mg: when oral route not possible (e.g. nil by mouth before surgery)</td></tr></table>`),
+C('#7a4bc2','#f8f4ff','Agonists: benefits and risks','Choosing an agonist',`<div class="cols"><div><h3>Benefits (vs levodopa)</h3><ul><li><b>Less dystonia, motor fluctuation, dyskinesia</b></li><li>Pramipexole and ropinirole: better tolerated, increasingly used as <b>monotherapy</b></li></ul></div><div><h3>Adverse effects</h3><ul><li><b>Postural hypotension</b></li><li><b>Somnolence</b>, nausea</li><li>Fatigue (bromocriptine, pergolide)</li></ul></div></div>`),
+C('#2a6fb0','#f2f8ff','MAO-B inhibitors','Selegiline and rasagiline',`<ul><li>Block a main dopamine-degrading enzyme, so <b>striatal dopamine rises</b></li><li>Relieve motor symptoms; <b>delay levodopa</b> in early disease</li><li>Combine with levodopa to <b>lower its dose</b></li><li>Selegiline may <b>slow progression</b> (fewer free radicals)</li></ul><table><tr><th>Drug</th><th>Dose</th></tr><tr><td>Selegiline</td><td><b>5 to 10 mg</b> daily</td></tr><tr><td>Rasagiline</td><td><b>0.5 to 1 mg</b> once daily</td></tr></table><div class="box">Adverse: insomnia, anxiety, postural hypotension. <b>Do not</b> combine selegiline with tricyclics or SSRIs, or give <b>pethidine</b> (hypertensive crisis; hyperpyrexia, agitation, delirium, coma).</div>`),
+C('#d17a00','#fffaf0','COMT inhibitors','Entacapone and tolcapone',`<ul><li>COMT breaks down dopamine and levodopa, in periphery and CNS</li><li>Blocking it <b>raises levodopa half-life and brain delivery</b>; <b>more “on” time</b></li><li>Adjunct for <b>motor fluctuations</b>; combination tablets with carbidopa-levodopa</li></ul><table><tr><th>Drug</th><th>Dose</th></tr><tr><td><b>Entacapone</b></td><td><b>200 mg</b> with each levodopa dose, 4 to 8 times a day</td></tr><tr><td><b>Tolcapone</b></td><td><b>100 mg</b> three times daily</td></tr></table><div class="box big">Tolcapone: <b>fatal hepatotoxicity</b>: monitor liver enzymes. COMT inhibitors can <b>amplify levodopa effects</b> (dyskinesia): may need a lower levodopa dose.</div>`),
+C('#c2477e','#fff5f9','Anticholinergics','Early, young, tremor-dominant',`<ul><li>Block striatal <b>cholinergic receptors</b> to restore balance after dopamine loss</li><li>Role: <b>young patients, early disease</b>, mild symptoms, especially <b>tremor and stiffness</b>; modest effect</li></ul><table><tr><th>Drug</th><th>Dose</th></tr><tr><td>Benztropine</td><td>1 to 4 mg twice daily</td></tr><tr><td>Orphenadrine</td><td>150 to 400 mg/day</td></tr><tr><td>Procyclidine</td><td>5 to 30 mg/day</td></tr><tr><td>Trihexyphenidyl</td><td>4 to 12 mg/day</td></tr><tr><td>Biperiden</td><td>2 to 12 mg/day (oral, IM, IV)</td></tr></table>`),
+C('#1f7a6d','#f2fbf8','Anticholinergic risks and antihistamines','Avoid in the elderly',`<div class="box big"><b>Avoid</b> in the elderly and in anyone with <b>cognitive problems</b>.</div><ul><li><b>Adverse:</b> blurred vision, dry mouth, constipation, <b>urinary retention</b>, drowsiness, confusion, memory problems, <b>hallucinations</b>, difficulty swallowing, dyskinesias</li><li><b>Antihistamines</b> (diphenhydramine, promethazine): central anticholinergic action; used in <b>drug-induced parkinsonism</b>, or in the elderly who cannot tolerate potent anticholinergics; marked <b>sedation</b></li></ul>`),
+C('#b5472f','#fff7f3','Amantadine','Releases dopamine and blocks reuptake',`<ul><li>Early disease, or <b>adjunct</b> to levodopa; <b>modest</b> effect</li><li>Can allow a <b>lower levodopa dose</b>, cutting <b>dyskinesia</b> risk (NMDA glutamate receptor block)</li><li><b>Dose: 100 mg twice daily</b></li></ul><div class="box"><b>Adverse:</b> hallucinations, confusion, poor concentration, <b>livedo reticularis</b>, leg swelling, blurred vision, nausea, appetite loss, insomnia and nightmares, sweating, agitation, headache.</div>`),
+C('#7a4bc2','#f8f4ff','Non-drug and special cases','Beyond tablets',`<ul><li><b>Deep brain stimulation:</b> high-frequency stimulation of <b>thalamus, subthalamic nucleus or globus pallidus</b> improves symptoms and <b>cuts levodopa dose</b></li><li><b>Levodopa + beta-blocker</b> when pulse rate &gt;90: levodopa <b>100 to 200 mg</b> (max 800 mg)</li><li><b>Juvenile parkinsonism:</b> onset under 30 years; may come with intellectual disability</li></ul>`),
+C('#8a4b2a','#fff6f1','Choosing therapy','Grand-rounds pathway',`<div class="st"><b>1.</b> Confirm <b>parkinsonism</b> (akinesia, rigidity, tremor, posture); exclude <b>drug-induced</b> causes (antipsychotics, metoclopramide)</div><div class="ar">▼</div><div class="st"><b>2.</b> <b>Mild early disease:</b> MAO-B inhibitor or dopamine agonist to <b>delay levodopa</b>; anticholinergic if <b>young, tremor-led</b></div><div class="ar">▼</div><div class="st"><b>3.</b> Symptoms limit function: <b>levodopa + decarboxylase inhibitor</b>, low and slow</div><div class="ar">▼</div><div class="st"><b>4.</b> Wearing off, dyskinesia, on-off: <b>smaller, more frequent doses</b>; add COMT inhibitor, selegiline, agonist or amantadine</div><div class="ar">▼</div><div class="st"><b>5.</b> Refractory: <b>deep brain stimulation</b></div>`),
+C('#8a4b2a','#fff6f1','Key takeaways','Remember these',`<ul><li>Four features: <b>akinesia, rigidity, resting tremor, postural change</b></li><li>Cause: nigral <b>dopamine loss</b> with Lewy bodies</li><li><b>Levodopa + carbidopa/benserazide</b> is the mainstay: 30 minutes before meals</li><li>Late problems: <b>wearing off, dyskinesia, on-off</b></li><li>Agonists, MAO-B and COMT inhibitors, amantadine: <b>adjuncts</b></li><li><b>Avoid</b> anticholinergics in the elderly and in cognitive impairment; avoid antipsychotics</li></ul>`)
+];
+const g=document.getElementById('g'),N=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${N}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return;let f=36;i.style.fontSize=f+'px';
+while(f>16&&(i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1)){f--;i.style.fontSize=f+'px'}}
+const fitAll=()=>g.querySelectorAll('.c').forEach(fit);
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+</script>
+<script>
+(function(){
+  const SCALE=2;   // 2 = 2160x2160 px; use 1 for exactly 1080x1080
+  const GAP=450;   // max ms between the two taps
+  const SOURCES=['https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js','https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js'];
+
+  const css=document.createElement('style');
+  css.id='shot-css';
+  css.textContent='.cw{touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}#shot-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d2230;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px system-ui,sans-serif;z-index:99999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#shot-toast.on{opacity:1}';
+  document.head.appendChild(css);
+  const toast=document.createElement('div');toast.id='shot-toast';document.body.appendChild(toast);
+  let tt;function say(m,ms){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)}
+
+  const toBlob=c=>new Promise((res,rej)=>{try{c.toBlob(b=>b?res(b):rej(new Error('canvas is empty')),'image/png')}catch(e){rej(e)}});
+
+  /* Method 1 (default): the browser itself draws the card (SVG foreignObject).
+     Exactly what you see on screen: no re-implementation of CSS, no missing text. */
+  async function viaSvg(card){
+    const wrap=document.createElement('div');
+    wrap.setAttribute('style','position:relative;box-sizing:border-box;width:1080px;height:1080px;overflow:hidden;margin:0;padding:0;background:#fff');
+    document.querySelectorAll('style').forEach(s=>{if(s.id!=='shot-css')wrap.appendChild(s.cloneNode(true))});
+    const clone=card.cloneNode(true);
+    clone.removeAttribute('data-shot');
+    clone.style.transform='none';clone.style.left='0';clone.style.top='0';
+    wrap.appendChild(clone);
+    const xml=new XMLSerializer().serializeToString(wrap);
+    const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080"><foreignObject x="0" y="0" width="1080" height="1080">'+xml+'</foreignObject></svg>';
+    const img=new Image();
+    await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('svg render failed'));img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+    const canvas=document.createElement('canvas');canvas.width=1080*SCALE;canvas.height=1080*SCALE;
+    const ctx=canvas.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    return canvas;
+  }
+
+  /* Method 2 (fallback, e.g. some Safari versions): html2canvas */
+  function addScript(src){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>{s.remove();rej(new Error('blocked: '+src))};document.head.appendChild(s)})}
+  let lib;function load(){if(window.html2canvas)return Promise.resolve();if(lib)return lib;
+    lib=(async()=>{for(const src of SOURCES){try{await addScript(src);if(window.html2canvas)return}catch(e){}}lib=null;throw new Error('Could not load the fallback library (offline?). Open the downloaded HTML file in Chrome, Edge or Firefox.')})();return lib}
+  async function viaH2C(card){
+    await load();
+    card.setAttribute('data-shot','1');
+    try{
+      return await html2canvas(card,{scale:SCALE,width:1080,height:1080,windowWidth:1300,windowHeight:1300,scrollX:0,scrollY:0,backgroundColor:null,logging:false,useCORS:true,
+        onclone:function(doc){const c=doc.querySelector('.c[data-shot="1"]');if(!c)return;
+          const w=c.parentElement;w.style.cssText='position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:visible;border:0;border-radius:0;margin:0;padding:0;transform:none;aspect-ratio:auto';
+          c.style.transform='none';c.style.left='0';c.style.top='0'}});
+    }finally{card.removeAttribute('data-shot')}
+  }
+
+  let busy=false;
+  async function shoot(card){
+    if(busy)return;busy=true;say('Creating image...',8000);
+    try{
+      if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+      let blob;
+      try{blob=await toBlob(await viaSvg(card))}
+      catch(e1){console.warn('SVG export failed, using fallback:',e1);blob=await toBlob(await viaH2C(card))}
+      const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+      const name=((card.querySelector('h2')||{}).textContent||'card').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='card-'+String(idx).padStart(2,'0')+'-'+name+'.png';
+      document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+a.download);
+    }catch(err){console.error('Card export failed:',err);say('Could not save: '+(err&&err.message?err.message:err),6000)}
+    finally{busy=false}
+  }
+
+  let last={el:null,t:0,x:0,y:0};
+  document.addEventListener('pointerup',function(e){
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    const card=e.target.closest&&e.target.closest('.c');
+    if(!card){last.el=null;return}
+    const now=Date.now();
+    if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card)}
+    else{last={el:card,t:now,x:e.clientX,y:e.clientY}}
+  });
+})();
+</script>
+</body></html>
