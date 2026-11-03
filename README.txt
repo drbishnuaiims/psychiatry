@@ -1,8 +1,4 @@
-git status
-git commit -m "Add automated indexing, website audit and GitHub Pages deployment"
-
-git push origin main 
-
+./manage.sh publish "Added new CPG on schizophrenia"
 
 # Psychiatry Knowledge Platform
 
