@@ -144,6 +144,26 @@ window.GENERATED_GUIDELINES = [
     "readTime": "1 min read"
   },
   {
+    "title": "Migraine Trigger Factors: Facts and Myths",
+    "shortTitle": "Migraine Trigger Factors: Facts and Myths",
+    "authors": "Psychiatry CPG Notes",
+    "year": "",
+    "journal": "Books / Oxford Textbook Headache",
+    "category": "Books / Oxford Textbook Headache",
+    "description": "Dietary nitrites in cured meat are a possible NO source, but 'hot-dog headache' is rare.",
+    "tags": [
+      "Oxford Textbook Headache",
+      "Books"
+    ],
+    "keywords": [
+      "Migraine Trigger Factors: Facts and Myths",
+      "Oxford Textbook Headache",
+      "Migraine Triggers Cards"
+    ],
+    "url": "books/oxford-textbook-headache/migraine-triggers-cards.html",
+    "readTime": "4 min read"
+  },
+  {
     "title": "Migraine Preventive Therapy – Grand Rounds Cards",
     "shortTitle": "Migraine Preventive Therapy",
     "authors": "Psychiatry CPG Notes",

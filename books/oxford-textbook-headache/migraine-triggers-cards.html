@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Migraine Trigger Factors: Facts and Myths</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#f5f5f7}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif;color:#1d1d1f;-webkit-font-smoothing:antialiased;padding:20px 12px 60px}
+.top{max-width:640px;margin:0 auto 18px;text-align:center;color:#6e6e73;font-size:14px;line-height:1.5}
+.top b{color:#1d1d1f;font-size:20px;display:block;margin-bottom:4px;letter-spacing:-.01em}
+.list{display:flex;flex-direction:column;align-items:center;gap:22px}
+.frame{width:100%;max-width:600px;position:relative}
+.card{--fs:15;--bl:#0071e3;--rd:#d70015;--gn:#1f8a3b;--or:#b45309;--pu:#7e3fa8;--mu:#6e6e73;--ln:#e5e5ea;
+ width:600px;height:600px;background:#fff;border-radius:28px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 30px rgba(0,0,0,.08);
+ display:flex;flex-direction:column;padding:30px 32px 20px;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif;
+ font-size:calc(var(--fs)*1px);line-height:1.38;color:#1d1d1f;transform-origin:top left;overflow:hidden;cursor:pointer;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+.card.exporting{border-radius:0;box-shadow:none}
+.card header{flex:none;margin-bottom:.7em}
+.card .k{font-size:.8em;color:var(--bl);font-weight:600;margin-bottom:.15em}
+.card h2{font-size:1.65em;line-height:1.12;letter-spacing:-.02em;font-weight:700}
+.card h3{font-size:1em;font-weight:700;margin:.55em 0 .2em}
+.body{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:.55em}
+.card footer{flex:none;display:flex;justify-content:space-between;font-size:.72em;color:#8e8e93;padding-top:.6em;border-top:1px solid var(--ln);margin-top:.6em}
+.card p{overflow-wrap:anywhere}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:.32em}
+.card li{padding-left:1.05em;position:relative;overflow-wrap:anywhere}
+.card li:before{content:"";position:absolute;left:.1em;top:.55em;width:.4em;height:.4em;border-radius:50%;background:var(--bl)}
+.card mark{background:#e8f1ff;color:#004fb0;padding:0 .3em;border-radius:.3em;font-weight:600}
+.card mark.r{background:#ffe8ea;color:#a8000f}.card mark.g{background:#e3f6e8;color:#14692b}
+.card mark.o{background:#fff1dc;color:#8a3f00}.card mark.p{background:#f3e8fa;color:#62298a}
+.card table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:.88em}
+.card th{text-align:left;font-weight:600;color:var(--mu);padding:.35em .45em;border-bottom:1.5px solid var(--ln)}
+.card td{padding:.38em .45em;border-bottom:1px solid var(--ln);vertical-align:top;overflow-wrap:anywhere}
+.card tr:last-child td{border-bottom:0}
+.box{border-radius:16px;padding:.7em .85em;background:#f5f5f7;overflow-wrap:anywhere}
+.box .t{font-weight:700;margin-bottom:.2em}
+.box.dec{background:#eef5ff;border-left:4px solid var(--bl)}.box.dec .t{color:#004fb0}
+.box.warn{background:#fff4f4;border-left:4px solid var(--rd)}.box.warn .t{color:#a8000f}
+.box.ok{background:#edf9f0;border-left:4px solid var(--gn)}.box.ok .t{color:#14692b}
+.box.pe{background:#fff7ea;border-left:4px solid #e08a00}.box.pe .t{color:#8a3f00}
+.row{display:flex;gap:.6em}.row>*{flex:1;min-width:0}
+.stat{background:#f5f5f7;border-radius:14px;padding:.55em .7em;overflow-wrap:anywhere}
+.stat b{display:block;font-size:1.55em;letter-spacing:-.02em;line-height:1.1}
+.stat span{font-size:.82em;color:var(--mu)}
+.fn{border-radius:14px;padding:.5em .75em;text-align:center;background:#f5f5f7;overflow-wrap:anywhere;font-size:.95em}
+.fn.b{background:#e8f1ff;color:#004fb0;font-weight:600}.fn.g{background:#e3f6e8;color:#14692b}.fn.r{background:#ffe8ea;color:#a8000f}.fn.o{background:#fff1dc;color:#8a3f00}
+.ar{text-align:center;color:#8e8e93;line-height:1;font-size:1em}
+.sm{font-size:.84em;color:var(--mu)}
+.card.cover{background:linear-gradient(160deg,#1d1d1f 0%,#0b2a5b 100%);color:#fff;justify-content:space-between;padding:44px 40px 26px}
+.card.cover .k{color:#7ab8ff;font-size:.95em}
+.card.cover h2{font-size:2.5em;line-height:1.05;letter-spacing:-.03em}
+.card.cover .sub{font-size:1.1em;color:#d2d2d7;margin-top:.7em;line-height:1.4}
+.card.cover .tags{display:flex;flex-wrap:wrap;gap:.45em}
+.card.cover .tags span{background:rgba(255,255,255,.12);color:#f5f5f7;padding:.3em .75em;border-radius:999px;font-size:.85em}
+.card.cover .src{font-size:.8em;color:#a1a1a6;line-height:1.4}
+.card.cover footer{border-top-color:rgba(255,255,255,.2);color:#a1a1a6}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:10px 18px;border-radius:999px;font:14px -apple-system,Helvetica,Arial,sans-serif;opacity:0;pointer-events:none;transition:opacity .25s;z-index:9}
+.toast.on{opacity:1}
+</style></head><body>
+<div class="top"><b>Migraine Trigger Factors: Facts and Myths</b>Grand-rounds card set. Double-click or double-tap any card to save it as a PNG.</div>
+<main class="list" id="list">
+
+<div class="frame"><section class="card cover"><div class="body" style="justify-content:space-between;gap:1em"><div><div class="k">Grand rounds · Migraine</div><h2>Migraine trigger factors</h2><div class="sub">Facts and myths: what perception, prospective studies and provocation trials actually show, and what to tell patients.</div></div>
+<div class="tags"><span>Weather</span><span>Food</span><span>Stress</span><span>Hormones</span><span>Sleep</span><span>NO · CGRP · PACAP</span><span>Clinical decisions</span></div>
+<div class="src">Schoonman GG, Schytz HW, Ashina M. Migraine trigger factors: facts and myths. Part 2, Migraine, Chapter 7.</div></div>
+<footer><span>Swipe for cards 1–10</span><span>Cover</span></footer></section></div>
+
+
+<div class="frame"><section class="card"><header><div class="k">Definition</div><h2>What is a migraine trigger?</h2></header>
+<div class="body">
+<div class="box dec"><div class="t">Definition</div>A factor that, on <mark>exposure or withdrawal</mark>, raises the probability of an attack, usually within <mark>48 hours</mark> (IHS).</div>
+<ul><li>Not a necessary cause: it may not always induce an attack, and attacks occur without triggers.</li>
+<li>Most data come from <mark class="r">retrospective surveys</mark> with recall bias. Prospective studies are few and conflicting.</li></ul>
+<div class="box pe"><div class="t">Key question at the bedside</div>Is this factor <b>causing</b> the attack, or is it an <mark class="o">early symptom</mark> of an attack already starting?</div></div><footer><span>Migraine triggers</span><span>1 / 10</span></footer></section></div>
+
+<div class="frame"><section class="card"><header><div class="k">Evidence</div><h2>Patient perception vs objective data</h2></header>
+<div class="body">
+<table><tr><th style="width:26%">Trigger</th><th style="width:37%">Patient perception</th><th>Objective finding</th></tr>
+<tr><td>Fasting</td><td>57% US vs <mark class="o">1% Japan</mark></td><td>Wide cultural variation</td></tr>
+<tr><td>Menses</td><td>65% US vs <mark class="o">9% China</mark></td><td>Confirmed prospectively</td></tr>
+<tr><td>Chinook wind</td><td>88% felt weather-sensitive</td><td>Confirmed in <mark class="r">21%</mark></td></tr>
+<tr><td>Chocolate</td><td>~25%</td><td>Negative or a trend</td></tr></table>
+<div class="box"><div class="t">Why they differ</div>Questionnaires measure <b>perception</b>, which attack symptoms can bias. Triggers may also act only in <mark>susceptible states</mark>: red wine only during menses, for example.</div></div><footer><span>Migraine triggers</span><span>2 / 10</span></footer></section></div>
+
+<div class="frame"><section class="card"><header><div class="k">Hormonal</div><h2>Menstrual migraine: a real trigger</h2></header>
+<div class="body">
+<ul><li>Days 1–3 of menses carry about <mark>2× risk</mark> of an attack (prospective data).</li>
+<li>Menstrual attacks tend to be more severe, longer and more treatment-resistant, usually <mark>without aura</mark>.</li>
+<li>Ovulation is not a trigger.</li>
+<li>Oral contraceptives can worsen migraine in some. Pregnancy often improves it, mainly in the 3rd trimester.</li></ul>
+<div class="box pe"><div class="t">Mechanism</div><mark class="p">Oestrogen withdrawal</mark> in the late luteal phase, with prostaglandin release.</div>
+<div class="box dec"><div class="t">Decision point</div>Pure menstrual migraine: consider <mark>stable oestrogen</mark> or <mark>perimenstrual prophylaxis</mark>, e.g. naproxen.</div></div><footer><span>Migraine triggers</span><span>3 / 10</span></footer></section></div>
+
+<div class="frame"><section class="card"><header><div class="k">Pharmacological</div><h2>Proven provokers: what experiments tell us</h2></header>
+<div class="body">
+<table><tr><th style="width:30%">Agent</th><th style="width:36%">Attack rate</th><th>Timing</th></tr>
+<tr><td>GTN (NO donor)</td><td><mark class="r">~80%</mark> MO; 50–67% MA</td><td>Delayed, ~5 h</td></tr>
+<tr><td>CGRP</td><td><mark class="r">~60%</mark></td><td>Delayed</td></tr>
+<tr><td>PACAP38</td><td><mark class="r">~60%</mark></td><td>Delayed</td></tr>
+<tr><td>Prostaglandins</td><td>Induce attacks</td><td><mark class="o">Immediate</mark></td></tr></table>
+<div class="box dec"><div class="t">Why it matters</div>Only these agents reproducibly trigger attacks in most patients. They map onto treatment targets: <mark class="p">CGRP</mark> and <mark class="p">PACAP</mark> signal via cAMP, NO via cGMP.</div>
+<p class="sm">Dietary nitrites in cured meat are a possible NO source, but 'hot-dog headache' is rare.</p></div><footer><span>Migraine triggers</span><span>4 / 10</span></footer></section></div>
+
+<div class="frame"><section class="card"><header><div class="k">Diet and weather</div><h2>Food and weather: weaker than believed</h2></header>
+<div class="body">
+<ul><li>10–50% of patients blame food. Commonly named: alcohol, cheese, chocolate, caffeine withdrawal, missed meals.</li>
+<li>Diary study of 327 patients: <mark>very limited effect</mark> of diet; beer even lowered risk.</li>
+<li>Provocation trials: <mark class="g">tyramine no different from placebo</mark>; chocolate negative or a trend; red wine positive only in pre-selected sensitive patients.</li>
+<li>Weather: prospective studies mostly negative, but a <mark>susceptible subgroup</mark> likely exists.</li></ul>
+<div class="box pe"><div class="t">Pearl</div>Pre-attack <mark class="o">food cravings</mark> can make a food look like a trigger when it is a premonitory symptom.</div></div><footer><span>Migraine triggers</span><span>5 / 10</span></footer></section></div>
+
+<div class="frame"><section class="card"><header><div class="k">Stress and lifestyle</div><h2>Stress, sleep and activity</h2></header>
+<div class="body">
+<ul><li><b>Stress:</b> number of stressors does not rise before attacks, but <mark>perceived stress and coping worsen</mark>.</li>
+<li><b>Sleep:</b> both lack and excess are reported. Likely <mark>both a trigger and part of the attack process</mark>.</li>
+<li><b>Exercise:</b> rarely provokes attacks under controlled conditions. Inactivity may be <mark class="o">premonitory</mark>.</li>
+<li><b>Smoking, sex:</b> small effect. Sex during an attack improved headache in many who tried it.</li></ul>
+<div class="box warn"><div class="t">Do not confuse</div>Primary exertional headache: pulsating pain brought on only by exertion.</div></div><footer><span>Migraine triggers</span><span>6 / 10</span></footer></section></div>
+
+<div class="frame"><section class="card"><header><div class="k">Clinical reasoning</div><h2>Trigger or premonitory symptom?</h2></header>
+<div class="body">
+<div class="row"><div class="box"><div class="t">True trigger</div><ul><li>Reproducible</li><li>Precedes symptoms</li><li>Proven: hormones, GTN, CGRP</li></ul></div><div class="box pe"><div class="t">Premonitory</div><ul><li>Craving, yawning, tiredness</li><li>Reduced coping with stress</li><li>Avoiding activity</li></ul></div></div>
+<div class="box warn"><div class="t">Why it's hard</div>Triggers cluster: a long jog brings heat, dehydration, low glucose, a chocolate bar and fatigue. The single culprit is rarely identifiable.</div>
+<div class="box dec"><div class="t">Tell patients</div>Some factors occur before an attack but may be <mark>early symptoms</mark>, not causes.</div></div><footer><span>Migraine triggers</span><span>7 / 10</span></footer></section></div>
+
+<div class="frame"><section class="card"><header><div class="k">Management</div><h2>Does trigger avoidance work?</h2></header>
+<div class="body">
+<div class="box warn"><div class="t">Evidence is thin</div>A small study showed ~50% fewer attacks with avoidance, but patients also took <mark class="r">early analgesic and antiemetic</mark>, a major confounder.</div>
+<ul><li>No convincing trial shows avoidance works as prophylaxis, despite being standard advice.</li>
+<li>Lab provocation with a patient's own reported triggers caused aura in only <mark class="o">11%</mark>.</li>
+<li>Graded <mark>exposure</mark> (CBT-style) has been suggested but is untested.</li></ul>
+<div class="box dec"><div class="t">Practical stance</div>Limit clear, reproducible triggers. Avoid long restriction lists, which add stress and may do nothing.</div></div><footer><span>Migraine triggers</span><span>8 / 10</span></footer></section></div>
+
+<div class="frame"><section class="card"><header><div class="k">Algorithm</div><h2>Approach to a patient who reports triggers</h2></header>
+<div class="body">
+<div class="fn b">Patient reports a trigger</div><div class="ar">↓</div>
+<div class="fn">Headache diary: factor, timing within 48 h, any prodrome</div><div class="ar">↓</div>
+<div class="row"><div class="fn g"><b>Tied to menses</b><br>Menstrual migraine plan</div><div class="fn o"><b>Reproducible factor</b><br>Sensible limit</div></div><div class="ar">↓</div>
+<div class="row"><div class="fn r"><b>Likely prodrome</b><br>Reassure</div><div class="fn"><b>Many vague triggers</b><br>No avoidance lists</div></div><div class="ar">↓</div>
+<div class="fn b">Explain the evidence; treat the migraine itself</div></div><footer><span>Migraine triggers</span><span>9 / 10</span></footer></section></div>
+
+<div class="frame"><section class="card"><header><div class="k">Take-home</div><h2>Key points</h2></header>
+<div class="body">
+<ul><li>Patient-reported triggers are common but <mark class="r">poorly supported</mark> by prospective data.</li>
+<li><mark class="g">Proven:</mark> oestrogen withdrawal and experimental agents (NO, CGRP, PACAP, prostaglandins).</li>
+<li>Many 'triggers' are <mark class="o">premonitory symptoms</mark>: cravings, tiredness, reduced stress tolerance.</li>
+<li>Avoidance has <mark>no convincing trial support</mark>; use it selectively.</li>
+<li>Always explain the gap between perception and evidence.</li></ul>
+<div class="box dec"><div class="t">One line</div>Treat the attack and the biology, not a list of foods.</div></div><footer><span>Migraine triggers</span><span>10 / 10</span></footer></section></div>
+
+</main>
+<div class="toast" id="toast"></div>
+<script>
+(function(){
+var cards=[].slice.call(document.querySelectorAll('.card')),toast=document.getElementById('toast'),busy=false;
+function say(m,ms){toast.textContent=m;toast.classList.add('on');clearTimeout(say.t);say.t=setTimeout(function(){toast.classList.remove('on')},ms||1800)}
+/* Shrink font until the body content fully fits: nothing is ever clipped */
+function fit(c){var b=c.querySelector('.body'),fs=15;c.style.setProperty('--fs',fs);
+ while(fs>8&&(b.scrollHeight>b.clientHeight+1||b.scrollWidth>b.clientWidth+1)){fs-=.25;c.style.setProperty('--fs',fs)}}
+function scale(){var s=Math.min(1,(window.innerWidth-24)/600);
+ cards.forEach(function(c){c.style.transform='scale('+s+')';c.parentNode.style.height=(600*s)+'px'})}
+function css(){var o='';[].forEach.call(document.styleSheets,function(s){try{[].forEach.call(s.cssRules,function(r){o+=r.cssText+'\n'})}catch(e){}});return o}
+function wait(){return new Promise(function(r){requestAnimationFrame(function(){requestAnimationFrame(r)})})}
+async function exportCard(c){
+ if(busy)return;busy=true;say('Rendering…',4000);
+ try{
+  if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+  fit(c);await wait();
+  var W=600,H=600,cl=c.cloneNode(true);
+  cl.classList.add('exporting');cl.style.transform='none';cl.style.width=W+'px';cl.style.height=H+'px';
+  var xml=new XMLSerializer().serializeToString(cl);
+  var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+W+'" height="'+H+'" viewBox="0 0 '+W+' '+H+'"><foreignObject x="0" y="0" width="'+W+'" height="'+H+'"><div xmlns="http://www.w3.org/1999/xhtml" style="width:'+W+'px;height:'+H+'px"><style>'+css().replace(/</g,'&lt;')+'</style>'+xml+'</div></foreignObject></svg>';
+  var img=new Image();
+  await new Promise(function(res,rej){img.onload=res;img.onerror=rej;img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+  if(img.decode)try{await img.decode()}catch(e){}
+  var k=1080/W,cv=document.createElement('canvas');cv.width=1080;cv.height=1080;
+  var x=cv.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,1080,1080);x.imageSmoothingQuality='high';
+  x.drawImage(img,0,0,W*k,H*k);
+  var n=cards.indexOf(c),nm=n===0?'cover':'card-'+(n<10?'0':'')+n;
+  cv.toBlob(function(bl){var a=document.createElement('a');a.href=URL.createObjectURL(bl);a.download='migraine-triggers-'+nm+'.png';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},3000);say('Saved '+(n===0?'cover':'card '+n)+' (1080×1080)')},'image/png');
+ }catch(e){say('Export failed, try again')}
+ busy=false}
+cards.forEach(function(c){var last=0;
+ c.addEventListener('dblclick',function(e){e.preventDefault();exportCard(c)});
+ c.addEventListener('touchend',function(){var t=Date.now();if(t-last<350){last=0;exportCard(c)}else last=t},{passive:true})});
+function init(){cards.forEach(fit);scale()}
+init();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(init);
+window.addEventListener('load',init);window.addEventListener('resize',scale);
+})();
+</script></body></html>
