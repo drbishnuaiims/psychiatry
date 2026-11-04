@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acute Migraine: Square Clinical Cards</title>
+<style id="main-css">
+:root{box-sizing:border-box;--bg:#f5f5f7;--ink:#1d1d1f;--mut:#6e6e73;color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);background:var(--bg);color:var(--ink);font-family:-apple-system,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif;line-height:1.45}
+header{max-width:1100px;margin:0 auto;padding:28px 16px 8px}
+header h1{font-size:1.9rem;letter-spacing:-.02em;margin:0 0 6px}
+header p{margin:0 0 8px;color:var(--mut);font-size:.92rem;max-width:760px}
+main{max-width:1100px;margin:0 auto;padding:12px 16px 48px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:22px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:22px;background:#fff;box-shadow:0 2px 14px rgba(0,0,0,.12);touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:56px 64px 60px;display:flex;flex-direction:column;background:var(--b,#fff);color:#1d1d1f;font-family:-apple-system,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif;font-size:34px;line-height:1.28;text-align:left;overflow:hidden}
+.c h2{font-size:56px;line-height:1.07;letter-spacing:-.02em;margin:0 0 8px;color:var(--a);font-weight:750;flex:none}
+.c .sub{font-size:28px;line-height:1.2;color:#6e6e73;margin:0 0 16px;flex:none;font-weight:500}
+.in{flex:none;display:flex;flex-direction:column;gap:.45em;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:44px;bottom:20px;font-size:22px;color:#8e8e93}
+.in ul{padding-left:1.15em}.in li{margin:.15em 0}
+.c b{background:#fff0b3;padding:0 .12em;border-radius:.2em;font-weight:650;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.box{border-left:.2em solid var(--a);background:rgba(0,0,0,.05);padding:.35em .65em;border-radius:0 .5em .5em 0}
+.box.big{background:var(--a);color:#fff;border:0;border-radius:.55em}
+.box.big b{background:rgba(255,255,255,.25);color:#fff}
+.box.dx{background:#fff;border:.08em solid var(--a);border-left-width:.25em}
+.box.dx:before{content:"Clinical decision";display:block;font-size:.62em;letter-spacing:.08em;text-transform:uppercase;color:var(--a);font-weight:700}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.45em}
+.stats div{background:#fff;border:.08em solid var(--a);border-radius:.6em;padding:.3em .5em;text-align:center;font-size:.8em;line-height:1.15}
+.stats em{display:block;font-style:normal;font-size:1.7em;font-weight:750;color:var(--a);line-height:1.1}
+table{border-collapse:collapse;width:100%;font-size:.84em;background:#fff;border-radius:.5em;overflow:hidden;table-layout:auto}
+th{background:var(--a);color:#fff;text-align:left;padding:.25em .5em}
+td{padding:.25em .5em;border-top:.05em solid #e5e5ea;vertical-align:top;overflow-wrap:anywhere}
+.fl{display:flex;align-items:stretch;gap:.35em}
+.st{flex:1;background:#fff;border:.08em solid var(--a);border-radius:.6em;padding:.3em .55em;text-align:center;font-size:.88em;line-height:1.2}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1.05em;line-height:.9;text-align:center}
+.pill{display:inline-block;background:#fff;color:var(--a);border-radius:99px;padding:.08em .75em;font-size:.78em;margin:0 .3em .4em 0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.cols>div{background:#fff;border-radius:.6em;padding:.4em .6em;border-top:.22em solid var(--a);font-size:.92em;line-height:1.22;min-width:0}
+.cols h3{margin:0 0 .15em;font-size:1em;color:var(--a)}.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover h2{color:#fff;font-size:96px}.cover .sub{color:#e8f0ff;font-size:36px}
+.cover .in{flex:1;justify-content:center}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px -apple-system,system-ui,sans-serif;z-index:9999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#toast.on{opacity:1}
+</style></head><body>
+<header><h1>Acute migraine treatment</h1>
+<p>Grand-rounds cards from Chapter 14 (Láinez and Grozeva), Oxford Textbook of Headache Syndromes, Part 2. Each card is a 1:1 square. Double-tap or double-click a card to save it as a 2160 px PNG. Doses are as printed in the source; verify against current prescribing information.</p></header>
+<main><div class="grid" id="g"></div></main>
+<script>
+const C=(a,b,t,s,body,x)=>({a,b,t,s,body,x:x||''});
+const B='#0071e3',T='#1f9d8a',O='#d9730d',P='#7a4bc2',R='#d63c4a',N='#8a4b2a';
+const cards=[
+C(P,P,'Acute migraine treatment','Stratified care, triptans, rescue and status migrainosus',`<div><span class="pill">Stratified care</span><span class="pill">Triptans</span><span class="pill">Ergots</span><span class="pill">NSAIDs</span><span class="pill">ED rescue</span><span class="pill">Status migrainosus</span></div><div style="font-size:.66em;margin-top:.6em;opacity:.9">Source: Oxford Textbook of Headache Syndromes, Chapter 14</div>`,'cover'),
+C(B,'#f2f8ff','Before you treat','Diagnosis, reassurance, non-drug measures',`<ul><li>Treat only after a correct <b>ICHD-3</b> diagnosis; attacks last <b>1 to 3 days</b>; aura in <b>20-25%</b></li><li>Explain, exclude feared life-threatening causes: not a <b>structural disorder</b></li><li><b>Headache diary:</b> triggers, frequency, intensity, drug use</li><li>Triggers: stress, alcohol, <b>poor sleep</b>, some foods, jet lag, <b>skipped meals</b></li><li>Lifestyle: sleep, exercise, stop smoking; relaxation, biofeedback</li></ul><div class="box">In the attack: avoid sensory stimuli, <b>dark quiet room</b>, ice packs, pressure on the ipsilateral <b>superficial temporal artery</b>.</div>`),
+C(T,'#f1fbf9','Step care vs stratified care','Choosing the starting point',`<div class="cols"><div><h3>Step care</h3><ul><li>Escalate from <b>simple analgesics</b> to specific drugs, across or within attacks</li></ul></div><div><h3>Stratified care</h3><ul><li>Choose by <b>initial severity and disability</b> (e.g. MIDAS)</li><li><b>Better efficacy</b></li></ul></div></div><div class="box dx"><b>Minimal disability:</b> non-specific drugs. <b>Significant disability:</b> specific acute (triptan) and/or preventive treatment. Severe nausea or vomiting: <b>non-oral route plus antiemetic</b>.</div><div class="box">Individualise by age, pain intensity, speed of onset, duration, associated symptoms, <b>comorbidity, pregnancy</b>, prior response.</div>`),
+C(R,'#fff5f5','Treat early, avoid overuse','Rules that prevent medication overuse headache',`<div class="box big"><b>Treat early</b> while pain is mild: better pain-free rates, less central sensitisation, higher satisfaction.</div><div class="stats"><div><em>≤2 days/week</em>acute treatment (not &gt;9 days/month)</div><div><em>≥1 day/week</em>acute use: start <b>preventive</b></div></div><ul><li><b>≥10 pain days/month:</b> never symptomatic treatment alone</li><li>Optimise acute therapy <b>before</b> adding prophylaxis</li><li>Failure is usually a <b>weak drug</b> or a <b>wrong formulation</b> (oral while vomiting)</li></ul>`),
+C(O,'#fff9f0','Acute treatment algorithm','Matching severity to drug and route',`<div class="st"><b>Mild to moderate:</b> NSAID, aspirin or paracetamol, <b>plus antiemetic</b></div><div class="ar">▼ poor response, or moderate to severe ▼</div><div class="st"><b>Triptan</b> early in the attack (add <b>NSAID</b> if recurrence)</div><div class="ar">▼ vomiting or rapid peak ▼</div><div class="st"><b>Non-oral triptan:</b> SC or nasal, plus antiemetic</div><div class="ar">▼ failure after ≥2 treated attacks ▼</div><div class="st">Try <b>another triptan</b>, combine, or <b>rescue</b> plan; review diagnosis, dose, overuse</div>`),
+C(B,'#f2f8ff','Specific vs non-specific agents','Table 14.1 and 14.3 essentials',`<table><tr><th>Class</th><th>Drugs and doses</th><th>Role</th></tr><tr><td><b>Triptans</b></td><td>7 agents; highest efficacy; many routes</td><td>Moderate to severe. Costly; avoid with <b>CV risk</b></td></tr><tr><td><b>Ergots</b></td><td>DHE 0.5-1 mg parenteral; ergotamine 1-2 mg PR</td><td>Cheap, good efficacy; <b>overuse risk</b>, nausea</td></tr><tr><td><b>NSAIDs</b></td><td>ASA 1 g, ibuprofen 800-1200, naproxen 1000, ketorolac 20 mg PO or 60 mg IM</td><td>Higher than usual pain doses; weak in severe attacks</td></tr><tr><td><b>Paracetamol</b></td><td>1 g PO or IV</td><td>Add <b>metoclopramide</b>; rarely enough in moderate to severe</td></tr></table>`),
+C(R,'#fff5f5','Ergots','Second-line, selected patients',`<ul><li>5-HT1B/1D agonists; also other 5-HT, α-adrenergic, <b>D2</b> actions: nausea, vomiting, cramps</li><li>Oral bioavailability <b>1%</b>, rectal max <b>3%</b>; efficacy between NSAIDs and triptans</li><li><b>Not for de novo patients:</b> triptans first. Keep in long-term satisfied users, no contraindication, ≤<b>1 attack/week</b>, or long attacks with recurrence</li><li>Ergotamine <b>1-2 mg PR</b> + antiemetic; max six 1 mg tablets or two suppositories/24 h; <b>one dosing day per week</b></li></ul><div class="box big">Contraindicated: <b>renal or hepatic failure, pregnancy, hypertension, sepsis, coronary, cerebral or peripheral vascular disease</b>.</div>`),
+C(P,'#f8f4ff','Dihydroergotamine (DHE)','Emergency IV protocol',`<div class="fl"><div class="st"><b>Test dose</b><br>0.5 mg IV push over 3-5 min (0.25 mg child)</div><div class="ar">→</div><div class="st"><b>Persists</b><br>another 0.5 mg</div><div class="ar">→</div><div class="st"><b>Then</b><br>1.0 mg every 8 h</div></div><ul><li>Persistent nausea: next dose <b>0.25 mg</b></li><li>Stop or <b>taper over 3-5 days</b> if headache-free or no response</li><li>Add antiemetic: <b>metoclopramide 10 mg IV</b> or prochlorperazine</li><li>Peak toxicity: give as <b>20-30 min infusion</b></li></ul><div class="box">Also IM, SC, nasal; <b>inhaled MAP0004</b>: less nausea, less vasoconstriction.</div>`),
+C(T,'#f1fbf9','Triptans: mechanism and safety','5-HT1B/1D agonists, level A evidence',`<ul><li><b>1B:</b> cranial vasoconstriction. <b>1D:</b> block CGRP and neuropeptide release; dorsal horn effect; descending inhibition</li><li>Superior to ergots and NSAIDs; first line for <b>moderate to severe</b> attacks</li><li>Adverse: fatigue, dizziness, asthenia, nausea, <b>transient chest symptoms</b>; <b>serotonin syndrome</b> with SSRI/SNRI is extremely rare</li></ul><div class="box dx"><b>Contraindicated:</b> ischaemic heart disease, angina, uncontrolled hypertension, cerebrovascular disease. <b>ECG if over 40</b> with cardiac risk factors. In aura, take at <b>pain onset</b> (taking during aura is safe).</div>`),
+C(O,'#fff9f0','Triptan efficacy at 2 hours','Headache response (pain relief)',`<table><tr><th>Triptan</th><th>Dose</th><th>2 h response</th></tr><tr><td><b>Sumatriptan SC</b></td><td>6 mg</td><td><b>&gt;80%</b></td></tr><tr><td>Sumatriptan oral</td><td>50-100 mg</td><td>~60%</td></tr><tr><td><b>Rizatriptan</b></td><td>5-10 mg</td><td><b>69%</b></td></tr><tr><td>Almotriptan</td><td>12.5 mg</td><td>61%</td></tr><tr><td>Zolmitriptan</td><td>2.5-5 mg</td><td>~60%</td></tr><tr><td>Eletriptan</td><td>40 / 80 mg</td><td>60% / 63%</td></tr><tr><td>Naratriptan</td><td>2.5 mg</td><td>48%</td></tr><tr><td>Frovatriptan</td><td>2.5 mg</td><td>44%</td></tr></table><div class="box">~<b>1/3</b> do not respond to a given oral triptan: try others in later attacks.</div>`),
+C(R,'#fff5f5','Choosing a triptan','Table 14.2 with key profiles',`<table><tr><th>Triptan</th><th>Best for</th></tr><tr><td><b>Sumatriptan SC 6 mg</b></td><td>Severe, resistant to oral or nasal; <b>vomiting</b></td></tr><tr><td><b>Sumatriptan oral 50 mg</b></td><td>Standard patient; possible pregnancy risk</td></tr><tr><td><b>Zolmitriptan nasal 5 mg</b></td><td>Oral failure, vomiting, <b>rapid escalation</b></td></tr><tr><td><b>Rizatriptan 10 mg</b></td><td>Serious, fast, short attacks; <b>5 mg with propranolol</b></td></tr><tr><td><b>Eletriptan 20-40 mg</b></td><td>Severe, long attacks; <b>lower recurrence</b></td></tr><tr><td>Naratriptan, frovatriptan</td><td>Long, mild-moderate; poor tolerance. <b>Frovatriptan 2.5 mg BD</b>: menstrual prevention</td></tr><tr><td>Almotriptan 12.5 mg</td><td>Standard; best tolerability</td></tr></table>`),
+C(B,'#f2f8ff','Sumatriptan routes and combinations','Fit the route to the attack',`<ul><li><b>SC:</b> fastest; recurrence in ~1/3 within a day, <b>second SC dose works</b>, oral second dose does not. Injection-site pain, flushing, neck pain, gone in ~45 min</li><li><b>Nasal 10-20 mg, PR 25 mg, patch</b> (bypasses gut; for nausea-delayed treatment)</li><li><b>Oral 50-100 mg:</b> gradual onset; 25 mg inferior</li></ul><div class="box dx"><b>Triptan + NSAID</b> (sumatriptan 50 or 85 mg + <b>naproxen 500 mg</b>; frovatriptan + dexketoprofen) beats either alone, cuts recurrence. Use after triptan failure or frequent recurrence.</div>`),
+C(T,'#f1fbf9','NSAIDs and paracetamol','Mild to moderate attacks',`<table><tr><th>Drug</th><th>Evidence</th></tr><tr><td><b>Aspirin</b> 900-1000 mg</td><td>Similar to sumatriptan 50 mg; <b>+ metoclopramide 10 mg</b> cuts nausea</td></tr><tr><td><b>Ibuprofen</b> 400 mg</td><td>Better than 200 mg; <b>soluble</b> acts faster; relief in ~half</td></tr><tr><td><b>Naproxen</b> 500-825 mg</td><td>NNT <b>11</b> (pain-free 2 h)</td></tr><tr><td><b>Diclofenac K</b> 50 mg</td><td>Effective; powder quicker</td></tr><tr><td><b>Paracetamol</b> 1 g</td><td>NNT <b>12</b>; +10 mg metoclopramide ≈ sumatriptan 100 mg for relief</td></tr></table><div class="box dx">Avoid NSAIDs in <b>gastric ulcer, renal failure, bleeding risk, aspirin-induced asthma</b>. <b>Pregnancy:</b> paracetamol first. <b>Cardiovascular disease:</b> possibly aspirin. Metamizole: <b>agranulocytosis</b> risk.</div>`),
+C(P,'#f8f4ff','Antiemetics, combinations, opioids','Adjuncts and what to avoid',`<ul><li><b>Dopamine antagonists</b> (metoclopramide 10 mg oral; 10-20 mg spray or injection; prochlorperazine, chlorpromazine): treat nausea <b>and</b> modestly the headache; safe options in <b>pregnancy</b> or when triptans and NSAIDs are contraindicated</li><li>Risks: sedation, <b>akathisia, dystonia</b>, NMS; diphenhydramine for EPS</li><li><b>Aspirin + paracetamol + caffeine</b> works in moderate attacks, not first line</li></ul><div class="box big">Not first line: <b>butalbital, codeine, tramadol, butorphanol</b> (overuse, dependence). Codeine combinations only after <b>triptan or NSAID failure or contraindication</b>.</div>`),
+C(O,'#fff9f0','Home rescue plan','When the triptan or NSAID fails',`<ul><li><b>Ketorolac IM</b> (train the patient)</li><li>Vomiting: <b>indomethacin PR</b> ± prochlorperazine and caffeine; <b>prochlorperazine 25 mg PR</b></li><li><b>Steroid short course</b> (prednisone or dexamethasone, taper over 2-3 days): at most <b>once a month</b>; weak evidence</li><li><b>DHE</b> nasal 2 mg or SC/IM 1 mg: only if <b>no triptan</b> taken</li><li>Opioids: exceptional only; <b>avoid morphine</b></li></ul><div class="box">Judge a drug failed only after <b>≥2 treated attacks</b> with adequate dose and no interfering factors.</div>`),
+C(R,'#fff5f5','Emergency department rescue','Mean pain relief in 2 or more RCTs',`<table><tr><th>Drug</th><th>Relief</th><th>Drug</th><th>Relief</th></tr><tr><td>Droperidol</td><td>82%</td><td>DHE</td><td>67%</td></tr><tr><td><b>Sumatriptan</b></td><td>78%</td><td>Chlorpromazine</td><td>65%</td></tr><tr><td><b>Prochlorperazine</b></td><td>77%</td><td>Ketorolac 30 IV</td><td>60%</td></tr><tr><td>Tramadol</td><td>76%</td><td>Metoclopramide IM</td><td>45%</td></tr><tr><td><b>Metoclopramide IV</b></td><td>70%</td><td>Valproate</td><td>32%</td></tr></table><div class="box dx">Guideline first line: <b>prochlorperazine, metoclopramide, SC sumatriptan</b>; ketorolac, lysine ASA lower evidence. <b>Avoid opioids</b> (longer stay, more returns). Recurrence in <b>&gt;50%</b> after discharge; dexamethasone helps, esp. attacks &gt;72 h. IV magnesium not recommended.</div>`),
+C(B,'#f2f8ff','Status migrainosus','Attack lasting more than 72 hours',`<div class="st"><b>1. Fluids and electrolytes</b> if needed</div><div class="ar">▼</div><div class="st"><b>2. Antiemetic:</b> IV metoclopramide, chlorpromazine, prochlorperazine (or tiapride 100 mg IV)</div><div class="ar">▼</div><div class="st"><b>3. Pain:</b> SC/nasal triptan if none used, or <b>IV DHE 0.5 mg q8h</b> + antiemetic</div><div class="ar">▼</div><div class="st"><b>4. Steroid:</b> dexamethasone 4-8 mg q6-8h or prednisolone 20-40 mg q6-8h, taper <b>3-4 days</b></div><div class="box">NSAIDs adjunct only. Many need <b>admission</b>.</div>`),
+C(T,'#f1fbf9','Future options','CGRP blockers and neuromodulation',`<ul><li><b>Gepants</b> (CGRP receptor antagonists): effective vs placebo, <b>not superior to triptans</b>; no coronary vasoconstriction, so possible in <b>coronary disease</b>. Telcagepant stopped for <b>liver toxicity</b>; ubrogepant positive</li><li><b>Single-pulse TMS:</b> more pain freedom at 2 h in migraine with aura</li><li><b>Vagus nerve stimulation</b> (gammaCore): open-study benefit; trials ongoing</li><li><b>MAP0004</b> inhaled DHE: promising first-line candidate</li></ul>`),
+C(N,'#fff6f1','Key takeaways','Remember these',`<ul><li>Diagnose first; <b>stratify by disability</b></li><li><b>Treat early</b>, route by nausea; ≤<b>2 days/week</b></li><li><b>Triptan first line</b> for moderate to severe; none with <b>CV disease</b></li><li>Add <b>NSAID</b> for recurrence; try ≥2 attacks, then switch</li><li>Ergots: second line; opioids and barbiturates: avoid</li><li><b>Pregnancy:</b> paracetamol, dopamine antagonists</li><li>ED: <b>prochlorperazine, metoclopramide, SC sumatriptan</b></li></ul>`)
+];
+const g=document.getElementById('g'),NN=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><h2>${d.t}</h2><div class="sub">${d.s}</div><div class="in">${d.body}</div><span class="n">${i+1}/${NN}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+/* Fit in layout units (transform-independent). Content bottom must stay above LIM, leaving a safety margin so the SVG raster can never clip. */
+const LIM=1080-84;
+function bad(c){const i=c.querySelector('.in');if(c.classList.contains('cover'))return false;
+ if(i.offsetTop+i.offsetHeight>LIM)return true;
+ return [...i.querySelectorAll('*')].some(e=>e.clientWidth>0&&e.scrollWidth>e.clientWidth+1)}
+function fit(c){const i=c.querySelector('.in');let f=34;i.style.fontSize=f+'px';
+ while(f>14&&bad(c)){f-=.5;i.style.fontSize=f+'px'}return !bad(c)}
+function fitAll(){g.querySelectorAll('.c').forEach(c=>{if(!fit(c))console.warn('Card still overflows:',c.querySelector('h2').textContent)})}
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+</script>
+<script>
+(function(){
+const SCALE=2,GAP=450,toast=document.createElement('div');toast.id='toast';document.body.appendChild(toast);
+let tt;const say=(m,ms)=>{toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)};
+const raf2=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function render(card){
+ /* Fresh unscaled copy at true 1080x1080, laid out in the live DOM so measurement matches rendering */
+ const stage=document.createElement('div');
+ stage.style.cssText='position:fixed;left:-20000px;top:0;width:1080px;height:1080px;pointer-events:none;z-index:-1';
+ const c=card.cloneNode(true);
+ c.style.cssText+=';transform:none;left:0;top:0;position:absolute';
+ stage.appendChild(c);document.body.appendChild(stage);
+ try{
+  if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+  await raf2();
+  fit(c);await raf2();
+  if(!fit(c)){const i=c.querySelector('.in');let f=parseFloat(i.style.fontSize);while(bad(c)&&f>8){f-=.5;i.style.fontSize=f+'px'}}
+  /* Pin the fitted size and card box so the serialized copy lays out identically */
+  const css=document.getElementById('main-css').textContent;
+  const xml=new XMLSerializer().serializeToString(c);
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080"><foreignObject x="0" y="0" width="1080" height="1080"><div xmlns="http://www.w3.org/1999/xhtml" style="width:1080px;height:1080px;position:relative;overflow:hidden"><style>'+css.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</style>'+xml+'</div></foreignObject></svg>';
+  const img=new Image();
+  await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('render failed'));img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+  if(img.decode)try{await img.decode()}catch(e){}
+  const cv=document.createElement('canvas');cv.width=cv.height=1080*SCALE;const x=cv.getContext('2d');
+  x.fillStyle='#fff';x.fillRect(0,0,cv.width,cv.height);
+  x.drawImage(img,0,0,cv.width,cv.height);await sleep(80);x.drawImage(img,0,0,cv.width,cv.height); /* Safari first-paint quirk */
+  return await new Promise((res,rej)=>cv.toBlob(b=>b?res(b):rej(new Error('empty canvas')),'image/png'));
+ }finally{stage.remove()}
+}
+let busy=false;
+async function shoot(card,touch){
+ if(busy)return;busy=true;say('Creating image...',8000);
+ try{
+  const blob=await render(card);
+  const idx=[...document.querySelectorAll('.c')].indexOf(card)+1;
+  const name='card-'+String(idx).padStart(2,'0')+'-'+(card.querySelector('h2').textContent.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40))+'.png';
+  const file=new File([blob],name,{type:'image/png'});
+  if(touch&&navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file]});say('Shared');return}catch(e){if(e&&e.name==='AbortError')return}}
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+name);
+ }catch(err){console.error(err);say('Could not save: '+(err.message||err),6000)}finally{busy=false}
+}
+let last={el:null,t:0,x:0,y:0};
+document.addEventListener('pointerup',e=>{
+ if(e.pointerType==='mouse'&&e.button!==0)return;
+ const card=e.target.closest&&e.target.closest('.c');
+ if(!card){last.el=null;return}
+ const now=Date.now();
+ if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card,e.pointerType!=='mouse')}
+ else last={el:card,t:now,x:e.clientX,y:e.clientY};
+});
+})();
+</script>
+</body></html>

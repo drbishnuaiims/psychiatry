@@ -123,6 +123,48 @@ window.GENERATED_GUIDELINES = [
     "readTime": "1 min read"
   },
   {
+    "title": "Acute Migraine: Square Clinical Cards",
+    "shortTitle": "Acute Migraine: Square Clinical Cards",
+    "authors": "Psychiatry CPG Notes",
+    "year": "",
+    "journal": "Books / Oxford Textbook Headache",
+    "category": "Books / Oxford Textbook Headache",
+    "description": "Grand-rounds cards from Chapter 14 (Láinez and Grozeva), Oxford Textbook of Headache Syndromes, Part 2. Each card is a 1:1 square. Double-tap or double-click a card to save it as a 2160 px PNG.…",
+    "tags": [
+      "Oxford Textbook Headache",
+      "Books"
+    ],
+    "keywords": [
+      "Acute Migraine: Square Clinical Cards",
+      "Acute migraine treatment",
+      "Oxford Textbook Headache",
+      "Migraine Acute Cards"
+    ],
+    "url": "books/oxford-textbook-headache/migraine-acute-cards.html",
+    "readTime": "1 min read"
+  },
+  {
+    "title": "Migraine Preventive Therapy – Grand Rounds Cards",
+    "shortTitle": "Migraine Preventive Therapy",
+    "authors": "Psychiatry CPG Notes",
+    "year": "",
+    "journal": "Books / Oxford Textbook Headache",
+    "category": "Books / Oxford Textbook Headache",
+    "description": "Grand-rounds cards from Charles & Evers, Oxford Textbook of Headache Syndromes (Ch. 15). Double-tap or double-click any card to save it as a high-resolution PNG.",
+    "tags": [
+      "Oxford Textbook Headache",
+      "Books"
+    ],
+    "keywords": [
+      "Migraine Preventive Therapy – Grand Rounds Cards",
+      "Migraine Preventive Therapy",
+      "Oxford Textbook Headache",
+      "Migraine Preventive Cards"
+    ],
+    "url": "books/oxford-textbook-headache/migraine_preventive_cards.html",
+    "readTime": "8 min read"
+  },
+  {
     "title": "Delirium: Square Clinical Cards",
     "shortTitle": "Delirium: Square Clinical Cards",
     "authors": "Psychiatry CPG Notes",
