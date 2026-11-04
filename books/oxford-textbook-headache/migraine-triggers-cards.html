@@ -4,16 +4,21 @@
 <title>Migraine Trigger Factors: Facts and Myths</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html{background:#f5f5f7}
+html{background:#f5f5f7;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif;color:#1d1d1f;-webkit-font-smoothing:antialiased;padding:20px 12px 60px}
 .top{max-width:640px;margin:0 auto 18px;text-align:center;color:#6e6e73;font-size:14px;line-height:1.5}
 .top b{color:#1d1d1f;font-size:20px;display:block;margin-bottom:4px;letter-spacing:-.01em}
 .list{display:flex;flex-direction:column;align-items:center;gap:22px}
-.frame{width:100%;max-width:600px;position:relative}
+.frame{width:100%;max-width:600px;position:relative;overflow:hidden;border-radius:28px}
+.frame .card{position:absolute;left:0;top:0}
+.save{display:block;margin:10px auto 0;border:0;background:#e8e8ed;color:#1d1d1f;font:600 14px -apple-system,Helvetica,Arial,sans-serif;padding:9px 18px;border-radius:999px;cursor:pointer;touch-action:manipulation}
+.save:active{background:#d2d2d7}
+.item{width:100%;max-width:600px}
+@media (max-width:640px){body{padding:12px 8px 48px}.top{font-size:13px;padding:0 8px}.top b{font-size:18px}.list{gap:16px}.frame{border-radius:20px}}
 .card{--fs:15;--bl:#0071e3;--rd:#d70015;--gn:#1f8a3b;--or:#b45309;--pu:#7e3fa8;--mu:#6e6e73;--ln:#e5e5ea;
  width:600px;height:600px;background:#fff;border-radius:28px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 30px rgba(0,0,0,.08);
  display:flex;flex-direction:column;padding:30px 32px 20px;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif;
- font-size:calc(var(--fs)*1px);line-height:1.38;color:#1d1d1f;transform-origin:top left;overflow:hidden;cursor:pointer;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+ font-size:calc(var(--fs)*1px);line-height:1.38;color:#1d1d1f;transform-origin:top left;overflow:hidden;cursor:pointer;touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
 .card.exporting{border-radius:0;box-shadow:none}
 .card header{flex:none;margin-bottom:.7em}
 .card .k{font-size:.8em;color:var(--bl);font-weight:600;margin-bottom:.15em}
@@ -57,7 +62,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Helve
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:10px 18px;border-radius:999px;font:14px -apple-system,Helvetica,Arial,sans-serif;opacity:0;pointer-events:none;transition:opacity .25s;z-index:9}
 .toast.on{opacity:1}
 </style></head><body>
-<div class="top"><b>Migraine Trigger Factors: Facts and Myths</b>Grand-rounds card set. Double-click or double-tap any card to save it as a PNG.</div>
+<div class="top"><b>Migraine Trigger Factors: Facts and Myths</b>Grand-rounds card set. Double-click or double-tap a card, or use the button under it, to save a PNG.</div>
 <main class="list" id="list">
 
 <div class="frame"><section class="card cover"><div class="body" style="justify-content:space-between;gap:1em"><div><div class="k">Grand rounds · Migraine</div><h2>Migraine trigger factors</h2><div class="sub">Facts and myths: what perception, prospective studies and provocation trials actually show, and what to tell patients.</div></div>
@@ -157,8 +162,8 @@ function say(m,ms){toast.textContent=m;toast.classList.add('on');clearTimeout(sa
 /* Shrink font until the body content fully fits: nothing is ever clipped */
 function fit(c){var b=c.querySelector('.body'),fs=15;c.style.setProperty('--fs',fs);
  while(fs>8&&(b.scrollHeight>b.clientHeight+1||b.scrollWidth>b.clientWidth+1)){fs-=.25;c.style.setProperty('--fs',fs)}}
-function scale(){var s=Math.min(1,(window.innerWidth-24)/600);
- cards.forEach(function(c){c.style.transform='scale('+s+')';c.parentNode.style.height=(600*s)+'px'})}
+function scale(){cards.forEach(function(c){var f=c.parentNode,w=f.parentNode.clientWidth||window.innerWidth-16,k=Math.min(1,w/600);
+ c.style.transform='scale('+k+')';f.style.height=(600*k)+'px'})}
 function css(){var o='';[].forEach.call(document.styleSheets,function(s){try{[].forEach.call(s.cssRules,function(r){o+=r.cssText+'\n'})}catch(e){}});return o}
 function wait(){return new Promise(function(r){requestAnimationFrame(function(){requestAnimationFrame(r)})})}
 async function exportCard(c){
@@ -183,9 +188,11 @@ async function exportCard(c){
 cards.forEach(function(c){var last=0;
  c.addEventListener('dblclick',function(e){e.preventDefault();exportCard(c)});
  c.addEventListener('touchend',function(){var t=Date.now();if(t-last<350){last=0;exportCard(c)}else last=t},{passive:true})});
+cards.forEach(function(c){var f=c.parentNode,w=document.createElement('div');w.className='item';f.parentNode.insertBefore(w,f);w.appendChild(f);
+ var b=document.createElement('button');b.className='save';b.type='button';b.textContent='Save as image';b.addEventListener('click',function(){exportCard(c)});w.appendChild(b)});
 function init(){cards.forEach(fit);scale()}
 init();
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(init);
-window.addEventListener('load',init);window.addEventListener('resize',scale);
+window.addEventListener('load',init);window.addEventListener('resize',scale);window.addEventListener('orientationchange',function(){setTimeout(scale,200)});
 })();
 </script></body></html>
