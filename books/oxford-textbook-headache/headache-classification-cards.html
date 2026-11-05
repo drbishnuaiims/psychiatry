@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Headache classification (ICHD-3): square clinical cards</title>
+<style>
+:root{--bg:#f5f5f7;--ink:#1d1d1f;--mut:#6e6e73;--pill:#fff;--bd:#d2d2d7;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--ink:#f5f5f7;--mut:#a1a1a6;--pill:#1c1c1e;--bd:#38383a}}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.4}
+header{max-width:1100px;margin:0 auto;padding:28px 16px 8px}
+header h1{font-size:1.9rem;letter-spacing:-.02em;margin:0 0 6px}
+header p{margin:0;color:var(--mut);font-size:.92rem;max-width:70ch}
+main{max-width:1100px;margin:0 auto;padding:16px 16px 48px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:22px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:22px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12);touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:60px 64px 68px;display:flex;flex-direction:column;background:var(--b,#fff);color:#1d1d1f;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:34px;line-height:1.3;text-align:left;overflow:hidden}
+.c .eb{font-size:26px;font-weight:600;color:var(--a);margin:0 0 8px;flex:none}
+.c h2{font-size:64px;line-height:1.06;letter-spacing:-.025em;margin:0 0 10px;font-weight:700;flex:none}
+.c .sub{font-size:29px;line-height:1.25;color:#6e6e73;margin:0 0 18px;flex:none}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5em;overflow:hidden;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:48px;bottom:26px;font-size:24px;color:#86868b}
+.in ul{padding-left:1.15em}.in li{margin:.2em 0}
+.c b{font-weight:700;background:linear-gradient(transparent 55%,color-mix(in srgb,var(--a) 22%,transparent) 55%)}
+.box{background:rgba(0,0,0,.05);padding:.45em .75em;border-radius:.6em}
+.box.dec{background:var(--a);color:#fff}.box.dec b{background:none;color:#fff;text-decoration:underline}
+.box.warn{background:#fff1f0;border:.08em solid #e5484d}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.stats div{background:#fff;border-radius:.7em;padding:.35em .5em;text-align:center;font-size:.85em;line-height:1.2}
+.stats em{display:block;font-style:normal;font-size:1.7em;font-weight:700;color:var(--a)}
+table{border-collapse:collapse;width:100%;font-size:.88em;background:#fff;border-radius:.6em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.3em .55em;font-weight:600}
+td{padding:.28em .55em;border-top:.06em solid #e5e5ea;vertical-align:top}
+.st{background:#fff;border-radius:.7em;padding:.38em .7em;text-align:center;font-size:.9em;line-height:1.25;box-shadow:0 0 0 .07em var(--a) inset}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1em;line-height:.8}
+.fl{display:flex;gap:.4em;align-items:stretch}.fl .st{flex:1}
+.pill{display:inline-block;background:rgba(255,255,255,.2);color:#fff;border-radius:99px;padding:.1em .8em;font-size:.8em;margin:0 .3em .4em 0;font-weight:600}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.cols>div{background:#fff;border-radius:.7em;padding:.45em .7em}
+.cols h3{margin:0 0 .2em;font-size:1em;color:var(--a)}.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover .eb,.cover .sub,.cover h2{color:#fff}.cover h2{font-size:92px}.cover .sub{font-size:36px;opacity:.9}
+.cover .in{justify-content:center}.cover .n{color:#ffffffaa}
+#shot-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px -apple-system,system-ui,sans-serif;z-index:99999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#shot-toast.on{opacity:1}
+</style></head><body>
+<header><h1>Headache classification and diagnosis (ICHD-3)</h1>
+<p>Grand-rounds summary of Olesen &amp; Lipton, Chapter 1. Every card is a 1:1 square. Double-tap or double-click a card to save it as a 2160 × 2160 PNG. Criteria are condensed; check the ICHD-3 text for exact wording.</p></header>
+<main><div class="grid" id="g"></div></main>
+<script>
+const C=(a,b,e,t,s,body,x)=>({a,b,e,t,s,body,x:x||''});
+const cards=[
+C('#0a66c2','#0a66c2','Olesen &amp; Lipton, Chapter 1','Classification and diagnosis of headache disorders','ICHD-3: structure, what changed, and how to apply it',`<div><span class="pill">Primary</span><span class="pill">Secondary</span><span class="pill">Cranial neuralgias</span><span class="pill">Operational criteria</span><span class="pill">ICD-11</span></div>`,'cover'),
+C('#0071e3','#f5f9ff','Why classify','From NIH 1962 to ICHD-3','Operational criteria make diagnosis reproducible',`<table><tr><th>System</th><th>Key point</th></tr><tr><td><b>NIH 1962</b></td><td>15 disorders; <b>not operational, not evidence-based</b>; migraine = “vascular headache” with vague features, so two clinicians could disagree</td></tr><tr><td><b>ICHD-1</b> 1988</td><td>First <b>operational</b> criteria</td></tr><tr><td><b>ICHD-2</b> 2004</td><td>Revision</td></tr><tr><td><b>ICHD-3</b></td><td>Beta 2013 (field-testing), final aligned with <b>ICD-11</b></td></tr></table><div class="box">Operational criteria = features, or combinations of features, that <b>establish or exclude</b> a diagnosis. ICHD is the <b>gold standard</b> and the base for treatment guidelines.</div>`),
+C('#5e5ce6','#f7f7ff','Structure','How ICHD-3 is built','Three categories, hierarchical codes',`<div class="fl"><div class="st"><b>Primary</b><br>The headache <b>is</b> the disease (migraine, cluster)</div><div class="st"><b>Secondary</b><br>Attributed to a disease, trauma or drug</div><div class="st"><b>Cranial neuralgias, facial pain</b></div></div><ul><li><b>Hierarchical codes:</b> 2 digits in general practice, 2–3 in neurology, more in headache clinics and research</li><li><b>Polythetic</b> criteria: met several ways (e.g. 2 of 4 pain features); <b>monothetic</b>: one way only</li><li><b>Diagnose every headache type</b> a patient has</li></ul><div class="box">Inheritance and treatment response are <b>not</b> criteria. Exception: <b>indomethacin response</b> (e.g. hemicrania continua).</div>`),
+C('#bf5af2','#fbf6ff','Co-existing headaches','One patient, several diagnoses','Code each type separately',`<table><tr><th>Combination</th><th>Example</th></tr><tr><td>Two primary</td><td>Migraine + tension-type headache</td></tr><tr><td>Primary + secondary</td><td><b>Chronic migraine + medication-overuse headache</b></td></tr><tr><td>Primary + neuralgia</td><td>Migraine with aura + trigeminal neuralgia</td></tr></table><div class="box dec"><b>Pitfall:</b> patients may not separate their headaches the way a specialist would. Ask about <b>each pattern</b> individually.</div>`),
+C('#0071e3','#f5f9ff','Primary headaches','What changed in ICHD-3','Unchanged: migraine without aura and tension-type headache',`<table><tr><th>Disorder</th><th>Change</th></tr><tr><td><b>Migraine with aura</b> (1.2)</td><td>Defined at <b>2-digit</b> level; subtypes at 3rd digit</td></tr><tr><td><b>Chronic migraine</b></td><td>Moved from Appendix to main body; <b>can coexist with MOH</b></td></tr><tr><td><b>Hemicrania continua</b></td><td>Moved to <b>Ch. 3</b> (trigeminal autonomic cephalalgias)</td></tr><tr><td><b>Nummular</b></td><td>New in Ch. 4</td></tr><tr><td>Sexual-activity headache</td><td>Simplified; pre-orgasmic vs orgasmic split dropped</td></tr><tr><td><b>Hypnic</b></td><td>Age criterion removed</td></tr><tr><td><b>NDPH</b></td><td>Criteria changed markedly</td></tr></table>`),
+C('#30a46c','#f3fbf6','Migraine with aura','Criteria (Box 1.1)','Aura symptoms must be fully reversible',`<ul><li><b>A:</b> ≥2 attacks meeting B and C</li><li><b>B:</b> ≥1 reversible aura symptom: <b>visual, sensory, speech/language, motor, brainstem, retinal</b></li><li><b>C:</b> ≥3 of 6: gradual spread ≥5 min; ≥2 symptoms in succession; each lasts <b>5–60 min</b>; ≥1 unilateral; ≥1 positive; headache with or within <b>60 min</b> after aura</li><li><b>D:</b> not better explained by another diagnosis</li></ul><div class="box">Motor aura may last up to <b>72 h</b>. Aphasia always counts as unilateral. Scintillations and pins and needles are <b>positive</b> symptoms.</div><div class="box">Familial hemiplegic migraine is subtyped by <b>gene</b>: the only primary headache attributed to an underlying cause.</div>`),
+C('#e5484d','#fff6f5','Chronic migraine','Criteria (Box 1.2)','Key change: CM and MOH can both be diagnosed',`<ul><li><b>A:</b> headache ≥<b>15 days/month</b> for >3 months</li><li><b>B:</b> prior ≥5 attacks of migraine with or without aura</li><li><b>C:</b> ≥<b>8 days/month</b> migraine-like (or believed migraine and relieved by triptan or ergot)</li><li><b>D:</b> not better explained; a <b>headache diary ≥1 month</b> is usually needed</li></ul><div class="box">Rationale for dual diagnosis: a primary headache <b>at least doubled</b> by a secondary cause gets both codes. CM and MOH commonly coexist; medication overuse is a risk factor for CM.</div><div class="box dec">After withdrawal: ~<b>50%</b> revert to episodic (&lt;15 days/month), so re-diagnose. If still chronic, MOH may be rescinded.</div>`),
+C('#ff9500','#fff9f0','Other migraine entities','Placement and controversy','',`<table><tr><th>Entity</th><th>Status</th></tr><tr><td><b>Vestibular migraine</b></td><td>Appendix; criteria with the <b>Bárány Society</b>; still disputed</td></tr><tr><td><b>Ophthalmoplegic migraine</b></td><td>Out of migraine chapter, now a <b>cranial neuropathy</b> (controversial)</td></tr><tr><td><b>Familial hemiplegic</b></td><td>Subtyped by genetic abnormality</td></tr></table><div class="box">EM vs CM split is criticised because headache days vary over time, but it identifies a <b>severely affected group</b> needing intensive treatment, with differences in epidemiology, imaging and treatment response.</div>`),
+C('#5e5ce6','#f7f7ff','Rare primary headaches','Quick criteria','Match the pattern',`<table><tr><th>Headache</th><th>Core features</th></tr><tr><td><b>Nummular</b></td><td>Coin-shaped scalp area; 3 of 4: sharp contour, fixed size/shape, round/elliptical, <b>1–6 cm</b></td></tr><tr><td><b>Hypnic</b></td><td>Only during sleep, wakes patient; ≥10 d/month &gt;3 mo; lasts 15 min–4 h; <b>no autonomic symptoms or restlessness</b></td></tr><tr><td><b>NDPH</b></td><td>Clear onset, continuous within <b>24 h</b>; &gt;3 months</td></tr><tr><td><b>Primary stabbing</b></td><td>Stabs lasting seconds; irregular; <b>no autonomic symptoms</b></td></tr><tr><td><b>Primary thunderclap</b></td><td>Peak in <b>&lt;1 min</b>; lasts ≥5 min</td></tr></table>`),
+C('#e5484d','#fff6f5','Thunderclap headache','Inclusion and exclusion','Never label primary until causes are excluded',`<div class="st"><b>Abrupt severe headache, peak &lt;1 min, lasts ≥5 min</b></div><div class="ar">▼</div><div class="st">Exclude <b>subarachnoid haemorrhage</b> and other causes: <b>MRI or CT angiography and venography</b></div><div class="ar">▼</div><div class="st"><b>Recurrent</b> thunderclap in ≤1 month, or triggered by sex, exertion, Valsalva, emotion, bathing → think <b>RCVS</b> (“strings and beads” on angiography)</div><div class="box warn">RCVS is often benign but can come with <b>PRES, dissection, ischaemic or haemorrhagic stroke</b>. May respond to <b>calcium channel blockers</b>.</div><div class="box">Time to peak is often poorly elicited in the ED, so slower headaches may be <b>wrongly</b> called thunderclap.</div>`),
+C('#0071e3','#f5f9ff','Secondary headaches','General criteria (Box 1.8)','Causation must be shown',`<ul><li><b>A:</b> any headache meeting C</li><li><b>B:</b> a disorder known to cause headache is diagnosed, with causation shown by ≥2 of: <b>temporal relation</b>; parallel worsening or improvement; typical features; other evidence</li><li><b>C:</b> not better explained by another diagnosis</li></ul><div class="box dec"><b>Change from ICHD-2:</b> headache remission after treating the cause is <b>not a reliable sole criterion</b>. Post-traumatic headache can persist &gt;3 months.</div><div class="box">Persistent headache after head trauma: onset within <b>7 days</b> of injury (or of being able to give a history). Delayed-onset form is in the Appendix.</div>`),
+C('#30a46c','#f3fbf6','Intracranial disorders','IIH, low CSF pressure, HaNDL','',`<table><tr><th>Disorder</th><th>Criteria highlights</th></tr><tr><td><b>IIH</b></td><td>CSF opening pressure <b>&gt;250 mm CSF</b> (280 in obese children); papilloedema <b>no longer required</b>; no specific headache features; BMI-stratified limits removed</td></tr><tr><td><b>Low CSF pressure</b></td><td><b>&lt;60 mm CSF</b> or imaging evidence of leak; <b>orthostatic feature no longer required</b></td></tr><tr><td><b>HaNDL</b></td><td>Migraine-like headache + deficits (hemiparaesthesia, dysphasia, hemiparesis) lasting <b>&gt;4 h</b>; CSF <b>&gt;15 WBC/µl</b></td></tr></table><div class="box">IIH can mimic chronic migraine or chronic TTH, and may coexist. Exclude <b>MOH</b> if no papilloedema, abducens palsy or typical imaging.</div>`),
+C('#bf5af2','#fbf6ff','Other secondary types','Chiari, substances, flight, dysreflexia','',`<table><tr><th>Disorder</th><th>Points</th></tr><tr><td><b>Chiari 1</b></td><td>Lasts <b>&lt;5 min</b>, cough/Valsalva, occipital; characterising helps <b>avoid unnecessary decompression</b>; tonsillar descent also occurs in low-pressure headache</td></tr><tr><td><b>MOH</b></td><td>≥15 days/month with pre-existing headache disorder; regular overuse &gt;3 months; ICHD-2 headache-day rules removed</td></tr><tr><td><b>Airplane travel</b></td><td>New; ≥2 episodes; on take-off or landing; exclude sinus disease</td></tr><tr><td><b>Autonomic dysreflexia</b></td><td>New; spinal cord injury; sudden, with <b>raised BP</b>; triggers bladder or bowel; can be <b>life-threatening</b>; exclude RCVS</td></tr></table>`),
+C('#ff9500','#fff9f0','Neck, jaw and psyche','Overlap with tension-type headache','',`<table><tr><th>Entity</th><th>Point</th></tr><tr><td><b>Cervicogenic</b></td><td>Now includes <b>neck soft tissues</b>; tenderness not excluded; reduced neck movement, provocation, or <b>blockade abolishes pain</b></td></tr><tr><td><b>Temporomandibular</b></td><td>Worse with chewing or jaw function; provoked by temporalis palpation or jaw movement</td></tr><tr><td><b>Psychiatric</b></td><td>Essentially unchanged; depression and anxiety may cause headache; Appendix to stimulate research</td></tr></table><div class="box dec">If pain arises from <b>muscle</b>, tension-type headache is the preferred diagnosis.</div>`),
+C('#e5484d','#fff6f5','Cranial neuralgias and facial pain','Trigeminal neuralgia vs persistent idiopathic facial pain','',`<div class="cols"><div><h3>Classical TN</h3><ul><li>Unilateral paroxysms in trigeminal distribution</li><li>Fraction of a second to <b>2 min</b>, severe</li><li><b>Electric shock-like</b>, shooting, stabbing</li><li>Triggered by <b>innocuous stimuli</b></li></ul></div><div><h3>Persistent idiopathic facial pain</h3><ul><li>Formerly “atypical facial pain”</li><li><b>Constant</b> boring, burning, pressing</li><li>TN drugs usually <b>ineffective</b></li></ul></div></div><div class="box">TN criteria are specific, possibly at the cost of sensitivity: pain radiating beyond the distribution may still respond to TN therapy, and <b>sensory abnormalities</b> are not rare.</div>`),
+C('#0071e3','#f5f9ff','Global context','ICD-11 and validation','',`<div class="stats"><div><em>7th</em>most disabling illness: migraine</div><div><em>#1</em>most disabling neurological disease: headache</div></div><ul><li>ICHD-3 used in <b>simplified form</b> in ICD-11; all primary headaches in the neurology chapter, key secondary ones cross-referenced</li><li>Field testing with WHO: <b>completeness</b>, <b>reliability</b> (same vignette, same diagnosis), <b>validity</b> (disability, family history, treatment response, comorbidity, biomarkers), <b>generalisability</b> (primary care to specialist)</li></ul>`),
+C('#1d1d1f','#f5f5f7','Clinical algorithm','Applying ICHD-3 to a patient','Synthesis of the chapter',`<div class="st"><b>1.</b> List <b>every</b> headache type the patient has</div><div class="ar">▼</div><div class="st"><b>2.</b> Red flags or known cause? Check <b>secondary criteria</b> (temporal link, parallel course, typical features)</div><div class="ar">▼</div><div class="st"><b>3.</b> Match primary pattern; ≥15 days/month → <b>diary ≥1 month</b>, assess <b>CM</b> and <b>MOH</b></div><div class="ar">▼</div><div class="st"><b>4.</b> Paroxysmal facial pain → <b>TN</b> vs persistent facial pain</div><div class="ar">▼</div><div class="st"><b>5.</b> Code at the right digit level; <b>re-diagnose</b> after withdrawal</div>`),
+C('#1d1d1f','#f5f5f7','Key takeaways','Remember these','',`<ul><li>ICHD-3: <b>primary, secondary, cranial neuralgias</b>; code <b>every</b> headache type</li><li><b>CM + MOH</b> can be diagnosed together; ~<b>50%</b> revert after withdrawal</li><li><b>Thunderclap:</b> exclude SAH and RCVS first</li><li>Secondary headache needs <b>causation evidence</b>; remission alone is unreliable</li><li><b>IIH</b> &gt;250 mm CSF, papilloedema not required</li><li>Muscle-origin pain → <b>tension-type headache</b></li><li>Treatment response is <b>not</b> a criterion, except indomethacin</li></ul>`)
+];
+const g=document.getElementById('g'),N=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><div class="eb">${d.e}</div><h2>${d.t}</h2>${d.s?`<div class="sub">${d.s}</div>`:''}<div class="in">${d.body}</div><span class="n">${i+1}/${N}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+/* Shrink body text until nothing overflows. Returns true if everything fits. */
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return true;let f=36;i.style.fontSize=f+'px';
+const over=()=>i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1;
+while(f>14&&over()){f--;i.style.fontSize=f+'px'}return !over()}
+const fitAll=()=>g.querySelectorAll('.c').forEach(fit);
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+</script>
+<script>
+(function(){
+const SCALE=2,GAP=450,S=1080;
+const css=document.getElementById('shot-toast');
+const toast=document.createElement('div');toast.id='shot-toast';document.body.appendChild(toast);
+let tt;const say=(m,ms)=>{toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)};
+const raf2=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+const toBlob=c=>new Promise((res,rej)=>c.toBlob(b=>b?res(b):rej(new Error('empty canvas')),'image/png'));
+/* Build an unscaled, off-screen 1080x1080 copy, wait for fonts and layout, re-fit, and verify. */
+async function stage(card){
+  if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+  const host=document.createElement('div');
+  host.style.cssText='position:fixed;left:-20000px;top:0;width:'+S+'px;height:'+S+'px;overflow:visible;pointer-events:none';
+  const clone=card.cloneNode(true);
+  clone.style.transform='none';clone.style.left='0';clone.style.top='0';
+  host.appendChild(clone);document.body.appendChild(host);
+  await raf2();
+  const ok=fit(clone);       /* re-measure at true size, not at the on-screen scale */
+  await raf2();
+  const inn=clone.querySelector('.in');
+  inn.style.overflow='visible';  /* never clip in the exported image */
+  return {host,clone,ok};
+}
+async function viaSvg(clone){
+  const wrap=document.createElement('div');
+  wrap.setAttribute('style','width:'+S+'px;height:'+S+'px;margin:0;padding:0;position:relative;overflow:hidden');
+  document.querySelectorAll('style').forEach(s=>wrap.appendChild(s.cloneNode(true)));
+  const c2=clone.cloneNode(true);wrap.appendChild(c2);
+  const xml=new XMLSerializer().serializeToString(wrap);
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+S+'" height="'+S+'" viewBox="0 0 '+S+' '+S+'"><foreignObject x="0" y="0" width="100%" height="100%">'+xml+'</foreignObject></svg>';
+  const img=new Image();
+  await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('svg render failed'));img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+  if(img.decode){try{await img.decode()}catch(e){}}
+  const cv=document.createElement('canvas');cv.width=cv.height=S*SCALE;
+  const x=cv.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,cv.width,cv.height);x.drawImage(img,0,0,cv.width,cv.height);
+  return cv;
+}
+let lib;function loadH2C(){if(window.html2canvas)return Promise.resolve();
+  return lib||(lib=new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';s.onload=res;s.onerror=()=>rej(new Error('Fallback library unavailable offline; use Chrome, Edge or Firefox'));document.head.appendChild(s)}))}
+async function viaH2C(clone){await loadH2C();return html2canvas(clone,{scale:SCALE,width:S,height:S,windowWidth:S+200,windowHeight:S+200,backgroundColor:null,logging:false})}
+let busy=false;
+async function shoot(card){
+  if(busy)return;busy=true;say('Creating image…',9000);
+  let st;
+  try{
+    st=await stage(card);
+    if(!st.ok)console.warn('Card content exceeds minimum font size; exporting with overflow visible.');
+    let blob;
+    try{blob=await toBlob(await viaSvg(st.clone))}
+    catch(e){console.warn('SVG export failed, using fallback:',e);blob=await toBlob(await viaH2C(st.clone))}
+    const idx=[...document.querySelectorAll('#g .c')].indexOf(card)+1;
+    const nm=(card.querySelector('h2').textContent||'card').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,50);
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='card-'+String(idx).padStart(2,'0')+'-'+nm+'.png';
+    document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+a.download);
+  }catch(err){console.error(err);say('Could not save: '+(err&&err.message||err),6000)}
+  finally{if(st)st.host.remove();busy=false}
+}
+let last={el:null,t:0,x:0,y:0};
+document.addEventListener('pointerup',e=>{
+  if(e.pointerType==='mouse'&&e.button!==0)return;
+  const card=e.target.closest&&e.target.closest('#g .c');
+  if(!card){last.el=null;return}
+  const now=Date.now();
+  if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card)}
+  else last={el:card,t:now,x:e.clientX,y:e.clientY};
+});
+})();
+</script>
+</body></html>

@@ -123,6 +123,27 @@ window.GENERATED_GUIDELINES = [
     "readTime": "1 min read"
   },
   {
+    "title": "Headache classification (ICHD-3): square clinical cards",
+    "shortTitle": "Headache classification (ICHD-3): square clinical cards",
+    "authors": "Psychiatry CPG Notes",
+    "year": "",
+    "journal": "Books / Oxford Textbook Headache",
+    "category": "Books / Oxford Textbook Headache",
+    "description": "Grand-rounds summary of Olesen & Lipton, Chapter 1. Every card is a 1:1 square. Double-tap or double-click a card to save it as a 2160 × 2160 PNG. Criteria are condensed; check the ICHD-3 text for…",
+    "tags": [
+      "Oxford Textbook Headache",
+      "Books"
+    ],
+    "keywords": [
+      "Headache classification (ICHD-3): square clinical cards",
+      "Headache classification and diagnosis (ICHD-3)",
+      "Oxford Textbook Headache",
+      "Headache Classification Cards"
+    ],
+    "url": "books/oxford-textbook-headache/headache-classification-cards.html",
+    "readTime": "1 min read"
+  },
+  {
     "title": "Acute Migraine: Square Clinical Cards",
     "shortTitle": "Acute Migraine: Square Clinical Cards",
     "authors": "Psychiatry CPG Notes",
