@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Taking a headache history: square clinical cards</title>
+<style>
+:root{--bg:#f5f5f7;--ink:#1d1d1f;--mut:#6e6e73;--pill:#fff;--bd:#d2d2d7;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--ink:#f5f5f7;--mut:#a1a1a6;--pill:#1c1c1e;--bd:#38383a}}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.4}
+header{max-width:1100px;margin:0 auto;padding:28px 16px 8px}
+header h1{font-size:1.9rem;letter-spacing:-.02em;margin:0 0 6px}
+header p{margin:0;color:var(--mut);font-size:.92rem;max-width:70ch}
+main{max-width:1100px;margin:0 auto;padding:16px 16px 48px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:22px}
+.cw{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:22px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12);touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.c{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;transform:scale(var(--k,.35));padding:60px 64px 68px;display:flex;flex-direction:column;background:var(--b,#fff);color:#1d1d1f;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:34px;line-height:1.3;text-align:left;overflow:hidden}
+.c .eb{font-size:26px;font-weight:600;color:var(--a);margin:0 0 8px;flex:none}
+.c h2{font-size:64px;line-height:1.06;letter-spacing:-.025em;margin:0 0 10px;font-weight:700;flex:none}
+.c .sub{font-size:29px;line-height:1.25;color:#6e6e73;margin:0 0 18px;flex:none}
+.in{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5em;overflow:hidden;font-size:34px}
+.in>*{flex:none;margin:0}
+.n{position:absolute;right:48px;bottom:26px;font-size:24px;color:#86868b}
+.in ul{padding-left:1.15em}.in li{margin:.2em 0}
+.c b{font-weight:700;background:color-mix(in srgb,var(--a) 24%,transparent);padding:.02em .14em;border-radius:.22em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.box{background:rgba(0,0,0,.05);padding:.45em .75em;border-radius:.6em}
+.box.dec{background:var(--a);color:#fff}.box.dec b{background:none;color:#fff;text-decoration:underline}
+.box.warn{background:#fff1f0;border:.08em solid #e5484d}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.stats div{background:#fff;border-radius:.7em;padding:.35em .5em;text-align:center;font-size:.85em;line-height:1.2}
+.stats em{display:block;font-style:normal;font-size:1.7em;font-weight:700;color:var(--a)}
+table{border-collapse:collapse;width:100%;font-size:.88em;background:#fff;border-radius:.6em;overflow:hidden}
+th{background:var(--a);color:#fff;text-align:left;padding:.3em .55em;font-weight:600}
+td{padding:.28em .55em;border-top:.06em solid #e5e5ea;vertical-align:top}
+.st{background:#fff;border-radius:.7em;padding:.38em .7em;text-align:center;font-size:.9em;line-height:1.25;box-shadow:0 0 0 .07em var(--a) inset}
+.ar{align-self:center;color:var(--a);font-weight:700;font-size:1em;line-height:.8}
+.fl{display:flex;gap:.4em;align-items:stretch}.fl .st{flex:1}
+.pill{display:inline-block;background:rgba(255,255,255,.2);color:#fff;border-radius:99px;padding:.1em .8em;font-size:.8em;margin:0 .3em .4em 0;font-weight:600}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.cols>div{background:#fff;border-radius:.7em;padding:.45em .7em}
+.cols h3{margin:0 0 .2em;font-size:1em;color:var(--a)}.cols ul{margin:0}
+.cover{background:var(--a)!important;color:#fff}.cover .eb,.cover .sub,.cover h2{color:#fff}.cover h2{font-size:92px}.cover .sub{font-size:36px;opacity:.9}
+.cover .in{justify-content:center}.cover .n{color:#ffffffaa}
+#shot-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:10px 18px;border-radius:14px;font:600 14px -apple-system,system-ui,sans-serif;z-index:99999;opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}#shot-toast.on{opacity:1}
+</style></head><body>
+<header><h1>Taking a headache history: tips and tricks</h1>
+<p>Grand-rounds summary of Lance &amp; Dodick, Chapter 2. Every card is a 1:1 square. Double-tap or double-click a card to save it as a 2160 × 2160 PNG. Verify details against the source text.</p></header>
+<main><div class="grid" id="g"></div></main>
+<script>
+const C=(a,b,e,t,s,body,x)=>({a,b,e,t,s,body,x:x||''});
+const cards=[
+C('#0a66c2','#0a66c2','Lance &amp; Dodick, Chapter 2','Taking a headache history','Tips and tricks: the most useful diagnostic tool',`<div><span class="pill">Temporal pattern</span><span class="pill">Aura</span><span class="pill">Site and quality</span><span class="pill">Triggers</span><span class="pill">Red flags</span></div>`,'cover'),
+C('#0071e3','#f5f9ff','Principles','Why the history comes first','Before CT and MRI, the case history was the best test',`<ul><li>Order of questions is flexible if you <b>define the headache pattern</b> and place symptoms in a diagnostic group</li><li><b>More than one headache type?</b> Analyse each <b>separately</b> (e.g. migraine plus tension-type)</li></ul><div class="cols"><div><h3>Recent onset, thunderclap, head injury</h3>Ask first about <b>past health, family, personal background</b>, then the event; compare life <b>before and after</b> onset</div><div><h3>Recurrent, increasing frequency</h3>Establish the <b>evolution</b> of the headache first</div></div><div class="box dec">Goal: a firm diagnosis on history alone, or at least <b>identify who needs investigation</b> for a structural cause.</div>`),
+C('#5e5ce6','#f7f7ff','Template','The headache history in order','',`<div class="st"><b>1.</b> Length of illness, frequency and duration</div><div class="ar">▼</div><div class="st"><b>2.</b> Onset: premonitory symptoms, aura</div><div class="ar">▼</div><div class="st"><b>3.</b> Site, quality, associated features</div><div class="ar">▼</div><div class="st"><b>4.</b> Precipitating, aggravating and relieving factors</div><div class="ar">▼</div><div class="st"><b>5.</b> Previous treatments (with doses)</div><div class="ar">▼</div><div class="st"><b>6.</b> Past health, family history, personal background</div><div class="ar">▼</div><div class="st"><b>7.</b> Diagnosis by onset pattern</div>`),
+C('#30a46c','#f3fbf6','Temporal pattern','Length, frequency, duration','Check that the answers make sense',`<table><tr><th>Length of illness</th><th>Meaning</th></tr><tr><td><b>Acute</b></td><td>Hours or days</td></tr><tr><td><b>Subacute</b></td><td>Weeks or months</td></tr><tr><td><b>Chronic</b></td><td>Years; in <b>chronic migraine</b> means ≥<b>15</b> migraine-like headaches a month</td></tr></table><div class="box warn"><b>Does not compute:</b> four headaches a week, each lasting 2 days.</div><div class="box dec">Many attacks in one day, each lasting minutes to hours, may be accurate for <b>cluster headache or another TAC</b>.</div><div class="box">Typical patterns (Fig 2.1): thunderclap, migraine, chronic tension-type, transformed migraine, cluster, intracranial lesion.</div>`),
+C('#bf5af2','#fbf6ff','Premonitory symptoms','Hours before the headache','Clear markers for migraine',`<div><b>Neck stiffness</b> · <b>yawning</b> · <b>drowsiness</b> · <b>elation</b> · <b>hunger</b> · <b>craving chocolate or sweets</b></div><div class="box warn"><b>Chocolate pitfall:</b> a morning headache after eating chocolate may not be a trigger; the craving can be the <b>first symptom</b> of the attack.</div><div class="box dec"><b>Why it matters:</b> recognition allows <b>nocturnal medication</b> to prevent next-day headache, or <b>earlier acute treatment</b>.</div><div class="box">Often recalled as a familiar feeling the evening before waking with headache.</div>`),
+C('#ff9500','#fff9f0','Aura','Visual aura and its mimics','',`<ul><li>Visual, sensory, language, motor or vestibular</li><li><b>Fortification spectrum</b> (teichopsia): zig-zag shimmer, ~<b>10%</b> of migrainous patients; <b>photopsia</b> (unformed flashes) another ~<b>25%</b></li><li>Moves slowly across a half-field over <b>10–60 min</b>, leaving impaired vision behind</li><li>Usually precedes headache; may persist, occur during headache, or occur <b>alone</b> (acephalgic migraine)</li><li>Paraesthesia, aphasia, hemiparesis may be part of aura</li></ul><div class="box dec"><b>Aura vs TIA:</b> migraine aura has a <b>slow progressive march</b> over visual field or body and a <b>leisurely disappearance</b>.</div>`),
+C('#e5484d','#fff6f5','Site','Where does it hurt?','Fig 2.3',`<table><tr><th>Disorder</th><th>Site</th></tr><tr><td><b>Migraine</b></td><td>Unilateral <b>or</b> bilateral</td></tr><tr><td><b>Cluster, TACs, trigeminal neuralgia</b></td><td>Unilateral in nearly all; <b>hemicrania continua</b> by definition</td></tr><tr><td>Cluster</td><td>Deep <b>behind one eye</b></td></tr><tr><td><b>Lower half headache</b> (facial migraine)</td><td>Mainly below the eye; <b>confused with sinusitis</b></td></tr><tr><td>Recurrent frontal pain</td><td>Often migraine <b>misdiagnosed as chronic sinusitis</b></td></tr></table>`),
+C('#0071e3','#f5f9ff','Quality','Words patients use','',`<table><tr><th>Description</th><th>Think of</th></tr><tr><td>Sudden, explosive</td><td><b>Thunderclap</b></td></tr><tr><td>Tight internal pressure, head inflated</td><td>Pressure-type headache</td></tr><tr><td>External weight, band, vice</td><td><b>Tension-type</b></td></tr><tr><td>Intense, stabbing, boring</td><td><b>Cluster, TACs</b></td></tr><tr><td>Throbbing</td><td>Migraine (often)</td></tr><tr><td>Brief stabbing</td><td>Trigeminal neuralgia; <b>ice-pick pains</b> (in chronic TTH or migraine)</td></tr></table><div class="box warn"><b>“Throbbing”</b> often means severity or fluctuation, not pulse-synchronous. Migraine may start dull and become pulsatile. <b>Ice cream headache:</b> mid-frontal, may refer to a usual migraine site. <b>Occipital neuralgia</b> can be constant and burning.</div>`),
+C('#30a46c','#f3fbf6','Associated features','Distinguishing the primary headaches','',`<table><tr><th>Type</th><th>Typical features</th></tr><tr><td><b>Migraine</b></td><td>Nausea, vomiting; <b>light, sound, smell</b> sensitivity; scalp <b>allodynia</b>; dilated, tender temporal arteries</td></tr><tr><td><b>Tension-type</b></td><td>Notable for <b>absence</b> of these (maybe mild constant photophobia or occasional nausea)</td></tr><tr><td><b>Cluster, TACs</b></td><td><b>Cranial autonomic</b> symptoms: ipsilateral Horner’s, red watering eye, nostril blocked or running</td></tr></table><div class="box">Interpretation: loss of inhibitory control of afferent input from special senses, skin and vessels, a “<b>nerve storm</b>”.</div>`),
+C('#e5484d','#fff6f5','Red flags','Associated features of secondary headache','Dramatic symptoms or signs',`<table><tr><th>Finding</th><th>Suggests</th></tr><tr><td><b>Neck rigidity</b> (most, not all)</td><td>SAH, meningitis, encephalitis</td></tr><tr><td>Sudden headache + <b>drop attack</b> (leg weakness, consciousness not necessarily impaired), drowsiness, yawning, vomiting without nausea</td><td><b>Colloid cyst</b> blocking third ventricle (raised ICP)</td></tr><tr><td><b>Progressive pupil dilatation</b></td><td>Extradural or subdural haematoma, <b>tentorial herniation</b> compressing CN III</td></tr><tr><td><b>Skin rash</b></td><td>Childhood infection, septicaemia, meningitis</td></tr><tr><td>Bony tenderness forehead, cheeks</td><td>Acute sinusitis</td></tr><tr><td>Circumcorneal injection</td><td>Glaucoma</td></tr></table><div class="box dec">Dilating pupil = <b>urgent action</b>.</div>`),
+C('#bf5af2','#fbf6ff','Triggers','Ask about each','',`<div class="cols"><div><h3>Migraine</h3><ul><li><b>Stress</b> (also tension-type); relaxation after stress (“weekend headache”)</li><li><b>Menstrual cycle</b>: oestradiol drop, premenstrual, mid-cycle</li><li>Glare, flicker, noise, perfumes</li><li>Specific foods, vasodilators</li><li>Hypoglycaemia, dehydration</li><li>Sleep change (too little, oversleeping)</li><li>Extreme weather change (also tension-type)</li></ul></div><div><h3>Other</h3><ul><li><b>Alcohol:</b> cluster, migraine</li><li>Tea, coffee: <b>caffeine withdrawal</b></li><li><b>Exercise</b> (exertional vascular headache); <b>sexual activity</b> (benign sex, orgasmic headache); <b>coughing</b> (benign cough headache, raised ICP)</li><li>Neck posture or movement: upper cervical, TTH</li><li>Talking, chewing, swallowing, touching face, wind: <b>TN</b> and short-lasting unilateral neuralgiform attacks with conjunctival injection and tearing</li><li><b>New or changed medications</b></li></ul></div></div><div class="box">Aura can follow input to a specific cortical area: flickering light, disco lights, or a vibrating lawn-mower handle (hand tingling, then sensory aura). Stress brought on one aura within minutes.</div>`),
+C('#ff9500','#fff9f0','Aggravating features','What makes it worse points to the cause','',`<table><tr><th>Aggravated by</th><th>Suggests</th></tr><tr><td><b>Jolting, jarring, sudden movement, coughing, straining</b></td><td><b>Raised ICP or space-occupying lesion</b></td></tr><tr><td><b>Present standing, eased lying down</b></td><td><b>Low CSF pressure</b></td></tr><tr><td>Chewing, jaw clenching, grinding teeth in sleep</td><td><b>Temporomandibular joint</b></td></tr><tr><td>Temporal or masseter pain on chewing (“jaw claudication”)</td><td><b>Temporal arteritis</b> (compromised blood supply)</td></tr></table><div class="box warn">Always check whether worsening matches a <b>new medication</b> or a dose change.</div>`),
+C('#30a46c','#f3fbf6','Relieving factors','Behaviour and response are diagnostic','',`<table><tr><th></th><th>Migraine</th><th>Cluster</th><th>Tension-type</th></tr><tr><td><b>Behaviour</b></td><td>Sits or lies in <b>dark room</b>, sleeps</td><td><b>Paces</b> or stands, hand over affected eye</td><td>Relaxing forehead and jaw muscles</td></tr><tr><td><b>Alcohol</b></td><td>Worse</td><td>Worse</td><td>Often <b>relieved</b></td></tr><tr><td><b>Other</b></td><td>Scalp pressure, hot or cold compress</td><td>Pressure, compress; <b>100% O₂ ~7 L/min</b> by mask relieves most</td><td></td></tr></table><div class="box">The medications that relieve the headache are <b>often informative</b> about its nature.</div>`),
+C('#5e5ce6','#f7f7ff','Treatments and past health','Details that change management','',`<ul><li><b>Previous treatment:</b> record each with outcome and <b>dose</b>: some patients got <b>subtherapeutic</b> doses, others take <b>large unsupervised analgesic amounts</b></li><li>List any illness before or with onset, and any <b>accident, injury or operation</b>; headache can accompany <b>infection, AIDS, malignancy, blood dyscrasias, vasculitis, polymyalgia rheumatica, endocrine disease</b></li><li>Review <b>eyes, ears, nose, throat, teeth, neck</b></li><li>Childhood <b>abdominal pain, vomiting attacks, motion sickness</b> often precede migraine</li></ul><div class="box dec"><b>Asthma</b> + migraine: avoid <b>beta blockers</b> (bronchoconstriction).</div><div class="box">Past thunderclap: ask about <b>spinal root pains in buttocks and thighs</b> hours to days later (blood tracking to the cauda equina).</div>`),
+C('#0071e3','#f5f9ff','Family and personal background','Context for diagnosis and treatment','',`<div class="stats"><div><em>&gt;50%</em>of migraine patients have a positive family history</div><div><em>3–20%</em>family history in cluster headache</div></div><ul><li>Twin studies: about <b>half</b> of migraine susceptibility genetic, half environmental; <b>familial hemiplegic migraine</b> is dominant</li><li>Personal background: birthplace and culture, education, occupation, marital history, lifestyle, <b>caffeine, alcohol, smoking, prescribed and recreational drugs</b>, hobbies</li></ul><div class="box">Look for unresolved problems (financial, sexual, inadequate achievement, resentment) that may underlie <b>chronic TTH or rising migraine frequency</b>, and whether symptoms are exaggerated or played down.</div>`),
+C('#e5484d','#fff6f5','Diagnosis by onset','Sudden and subacute','',`<div class="box warn"><b>Sudden severe (thunderclap) may be:</b> subarachnoid haemorrhage; <b>reversible segmental vasoconstriction</b> (Call–Fleming); orgasmic headache; meningitis, encephalitis; <b>pressor response</b> (phaeochromocytoma, MAOI with tyramine or incompatible drugs); obstructive hydrocephalus (colloid cyst); <b>carotid or vertebral dissection</b>.</div><div class="box dec"><b>Subacute may be:</b> expanding intracranial lesion; progressive hydrocephalus; <b>temporal arteritis (&gt;55 years)</b>; idiopathic intracranial hypertension; intracranial hypotension.</div>`),
+C('#ff9500','#fff9f0','Diagnosis by onset','Recurrent and chronic','',`<div class="cols"><div><h3>Recurrent episodes</h3><ul><li><b>Migraine</b> (incl. facial)</li><li><b>Cluster</b></li><li>Trigeminal and other neuralgias</li><li>TIA</li><li>Intermittent hydrocephalus</li><li>Paroxysmal hypertension</li><li>Tolosa–Hunt</li><li>Cough, exertional, sex headache</li><li>Hypnic; ice cream; ice pick</li><li>Sinusitis (rare for episodic headache)</li></ul></div><div><h3>Chronic</h3><ul><li><b>Tension-type</b></li><li><b>Chronic migraine</b></li><li><b>New daily persistent headache</b></li><li><b>Post-traumatic headache</b></li><li>Posterior idiopathic (atypical) facial pain</li><li>Postherpetic neuralgia</li></ul></div></div>`),
+C('#1d1d1f','#f5f5f7','Clinical algorithm','Reading the history','Synthesis of the chapter',`<div class="st"><b>Sudden or explosive onset?</b> Treat as <b>thunderclap</b>: SAH, vasoconstriction, dissection, hydrocephalus; urgent work-up</div><div class="ar">▼</div><div class="st"><b>Red flags?</b> Neck rigidity, rash, dilating pupil, drop attack, age &gt;55 with jaw pain, worse on straining</div><div class="ar">▼</div><div class="st"><b>Attacks per day, minutes to hours, one-sided, autonomic signs?</b> → cluster or TAC</div><div class="ar">▼</div><div class="st"><b>Premonitory symptoms, aura, nausea, photophobia?</b> → migraine; <b>none, band-like?</b> → tension-type</div><div class="ar">▼</div><div class="st">Check <b>medication use</b>, then investigate if pattern is atypical</div>`),
+C('#1d1d1f','#f5f5f7','Key takeaways','Remember these','',`<ul><li>History defines the pattern; <b>each headache type separately</b></li><li><b>Sanity-check</b> frequency against duration</li><li>Cravings and yawning are <b>premonitory</b>, not triggers</li><li>Aura <b>marches slowly</b>; TIA does not</li><li>Cluster patients <b>pace</b>; migraine patients <b>lie still</b></li><li>Alcohol: relieves TTH, <b>worsens</b> migraine and cluster</li><li>Straining or jolting worse → <b>raised ICP</b>; upright worse → <b>low CSF pressure</b></li><li>Always record <b>drug doses</b> and recent medication changes</li></ul>`)
+];
+const g=document.getElementById('g'),N=cards.length;
+g.innerHTML=cards.map((d,i)=>`<div class="cw"><div class="c ${d.x}" style="--a:${d.a};--b:${d.b}"><div class="eb">${d.e}</div><h2>${d.t}</h2>${d.s?`<div class="sub">${d.s}</div>`:''}<div class="in">${d.body}</div><span class="n">${i+1}/${N}</span></div></div>`).join('');
+const ro=new ResizeObserver(es=>es.forEach(e=>{const w=e.target.clientWidth;if(w)e.target.firstElementChild.style.setProperty('--k',w/1080)}));
+g.querySelectorAll('.cw').forEach(w=>ro.observe(w));
+/* Shrink body text until nothing overflows. Returns true if everything fits. */
+function fit(c){const i=c.querySelector('.in');if(!i.clientHeight)return true;let f=36;i.style.fontSize=f+'px';
+const over=()=>i.scrollHeight>i.clientHeight+1||i.scrollWidth>i.clientWidth+1;
+while(f>14&&over()){f--;i.style.fontSize=f+'px'}return !over()}
+const fitAll=()=>g.querySelectorAll('.c').forEach(fit);
+fitAll();addEventListener('load',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+</script>
+<script>
+(function(){
+const SCALE=2,GAP=450,S=1080;
+const css=document.getElementById('shot-toast');
+const toast=document.createElement('div');toast.id='shot-toast';document.body.appendChild(toast);
+let tt;const say=(m,ms)=>{toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),ms||2600)};
+const raf2=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+const toBlob=c=>new Promise((res,rej)=>c.toBlob(b=>b?res(b):rej(new Error('empty canvas')),'image/png'));
+/* Build an unscaled, off-screen 1080x1080 copy, wait for fonts and layout, re-fit, and verify. */
+async function stage(card){
+  if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+  const host=document.createElement('div');
+  host.style.cssText='position:fixed;left:-20000px;top:0;width:'+S+'px;height:'+S+'px;overflow:visible;pointer-events:none';
+  const clone=card.cloneNode(true);
+  clone.style.transform='none';clone.style.left='0';clone.style.top='0';
+  host.appendChild(clone);document.body.appendChild(host);
+  await raf2();
+  const ok=fit(clone);       /* re-measure at true size, not at the on-screen scale */
+  await raf2();
+  const inn=clone.querySelector('.in');
+  inn.style.overflow='visible';  /* never clip in the exported image */
+  return {host,clone,ok};
+}
+async function viaSvg(clone){
+  const wrap=document.createElement('div');
+  wrap.setAttribute('style','width:'+S+'px;height:'+S+'px;margin:0;padding:0;position:relative;overflow:hidden');
+  document.querySelectorAll('style').forEach(s=>wrap.appendChild(s.cloneNode(true)));
+  const c2=clone.cloneNode(true);wrap.appendChild(c2);
+  const xml=new XMLSerializer().serializeToString(wrap);
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+S+'" height="'+S+'" viewBox="0 0 '+S+' '+S+'"><foreignObject x="0" y="0" width="100%" height="100%">'+xml+'</foreignObject></svg>';
+  const img=new Image();
+  await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('svg render failed'));img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+  if(img.decode){try{await img.decode()}catch(e){}}
+  const cv=document.createElement('canvas');cv.width=cv.height=S*SCALE;
+  const x=cv.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,cv.width,cv.height);x.drawImage(img,0,0,cv.width,cv.height);
+  return cv;
+}
+let lib;function loadH2C(){if(window.html2canvas)return Promise.resolve();
+  return lib||(lib=new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';s.onload=res;s.onerror=()=>rej(new Error('Fallback library unavailable offline; use Chrome, Edge or Firefox'));document.head.appendChild(s)}))}
+async function viaH2C(clone){await loadH2C();return html2canvas(clone,{scale:SCALE,width:S,height:S,windowWidth:S+200,windowHeight:S+200,backgroundColor:null,logging:false})}
+let busy=false;
+async function shoot(card){
+  if(busy)return;busy=true;say('Creating image…',9000);
+  let st;
+  try{
+    st=await stage(card);
+    if(!st.ok)console.warn('Card content exceeds minimum font size; exporting with overflow visible.');
+    let blob;
+    try{blob=await toBlob(await viaSvg(st.clone))}
+    catch(e){console.warn('SVG export failed, using fallback:',e);blob=await toBlob(await viaH2C(st.clone))}
+    const idx=[...document.querySelectorAll('#g .c')].indexOf(card)+1;
+    const nm=(card.querySelector('h2').textContent||'card').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,50);
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='card-'+String(idx).padStart(2,'0')+'-'+nm+'.png';
+    document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);say('Saved: '+a.download);
+  }catch(err){console.error(err);say('Could not save: '+(err&&err.message||err),6000)}
+  finally{if(st)st.host.remove();busy=false}
+}
+let last={el:null,t:0,x:0,y:0};
+document.addEventListener('pointerup',e=>{
+  if(e.pointerType==='mouse'&&e.button!==0)return;
+  const card=e.target.closest&&e.target.closest('#g .c');
+  if(!card){last.el=null;return}
+  const now=Date.now();
+  if(last.el===card&&now-last.t<GAP&&Math.hypot(e.clientX-last.x,e.clientY-last.y)<45){last.el=null;shoot(card)}
+  else last={el:card,t:now,x:e.clientX,y:e.clientY};
+});
+})();
+</script>
+</body></html>

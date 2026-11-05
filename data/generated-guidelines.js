@@ -144,6 +144,27 @@ window.GENERATED_GUIDELINES = [
     "readTime": "1 min read"
   },
   {
+    "title": "Taking a headache history: square clinical cards",
+    "shortTitle": "Taking a headache history: square clinical cards",
+    "authors": "Psychiatry CPG Notes",
+    "year": "",
+    "journal": "Books / Oxford Textbook Headache",
+    "category": "Books / Oxford Textbook Headache",
+    "description": "Grand-rounds summary of Lance & Dodick, Chapter 2. Every card is a 1:1 square. Double-tap or double-click a card to save it as a 2160 × 2160 PNG. Verify details against the source text.",
+    "tags": [
+      "Oxford Textbook Headache",
+      "Books"
+    ],
+    "keywords": [
+      "Taking a headache history: square clinical cards",
+      "Taking a headache history: tips and tricks",
+      "Oxford Textbook Headache",
+      "Headache History Cards"
+    ],
+    "url": "books/oxford-textbook-headache/headache-history-cards.html",
+    "readTime": "1 min read"
+  },
+  {
     "title": "Acute Migraine: Square Clinical Cards",
     "shortTitle": "Acute Migraine: Square Clinical Cards",
     "authors": "Psychiatry CPG Notes",
